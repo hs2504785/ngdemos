@@ -45,3 +45,9 @@ $ngdemos-theme: mat-light-theme(
   @include angular-material-theme($theme-dark);
 }
 /* You can add global styles to this file, and also import other style files */
+
+// Custom style for my anchor elements
+a {
+  color: mat-color($ngdemos-accent);
+  text-decoration: none;
+}
