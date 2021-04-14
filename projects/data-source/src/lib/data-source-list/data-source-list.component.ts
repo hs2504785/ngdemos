@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
+import { Component, OnInit } from '@angular/core';
+import {
+  MatTreeFlatDataSource,
+  MatTreeFlattener,
+} from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { files } from './example-data';
+import { DataSourceEntityService } from '../services/data-source-entity.service';
+import { Observable } from 'rxjs';
 
 /** File node data with possible child nodes. */
 export interface FileNode {
@@ -24,10 +29,10 @@ export interface FlatTreeNode {
 @Component({
   selector: 'lib-data-source-list',
   templateUrl: './data-source-list.component.html',
-  styleUrls: ['./data-source-list.component.css']
+  styleUrls: ['./data-source-list.component.css'],
 })
-export class DataSourceListComponent {
-
+export class DataSourceListComponent implements OnInit {
+  dataSources$: Observable<any>;
   /** The TreeControl controls the expand/collapse state of tree nodes.  */
   treeControl: FlatTreeControl<FlatTreeNode>;
 
@@ -37,16 +42,33 @@ export class DataSourceListComponent {
   /** The MatTreeFlatDataSource connects the control and flattener to provide data. */
   dataSource: MatTreeFlatDataSource<FileNode, FlatTreeNode>;
 
-  constructor() {
+  constructor(private dataSourceService: DataSourceEntityService) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
       this.isExpandable,
-      this.getChildren);
+      this.getChildren
+    );
 
     this.treeControl = new FlatTreeControl(this.getLevel, this.isExpandable);
-    this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+    this.dataSource = new MatTreeFlatDataSource(
+      this.treeControl,
+      this.treeFlattener
+    );
     this.dataSource.data = files;
+  }
+
+  ngOnInit() {
+    this.dataSources$ = this.dataSourceService.entities$;
+
+    this.dataSources$.subscribe((res) => {
+      console.log('PAAPPA', res);
+    });
+    // const processDesignDataSources$ = this.dataSources$.pipe(
+    //   map((sources) => {
+    //     return this.reArrangeDefaultAndCustomFields(sources);
+    //   })
+    // );
   }
 
   /** Transform the data to something the tree can read. */
@@ -55,7 +77,7 @@ export class DataSourceListComponent {
       name: node.name,
       type: node.type,
       level,
-      expandable: !!node.children
+      expandable: !!node.children,
     };
   }
 

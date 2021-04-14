@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { TreeRoutingModule } from './tree-routing.module';
 import { TreeComponent } from './tree.component';
-import { DataSourceModule } from 'data-source';
 import { MatButtonModule } from '@angular/material/button';
+import { DataSourceModule } from 'projects/data-source/src/public-api';
 
 @NgModule({
   declarations: [TreeComponent],
-  imports: [CommonModule, TreeRoutingModule, DataSourceModule, MatButtonModule],
+  imports: [CommonModule, TreeRoutingModule, MatButtonModule, DataSourceModule],
+  providers: [],
 })
 export class TreeModule {}

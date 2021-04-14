@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-data-source',
+  selector: 'lib-test',
   template: `
     <p>
-      data-source works!
+      test works!
     </p>
   `,
   styles: [
   ]
 })
-export class DataSourceComponent implements OnInit {
+export class TestComponent implements OnInit {
 
   constructor() { }
 

@@ -7,6 +7,10 @@
       "data-source": [
         "dist/data-source/data-source",
         "dist/data-source"
+      ],
+      "test": [
+        "dist/test/test",
+        "dist/test"
       ]
     },
     "outDir": "./dist/out-tsc",
