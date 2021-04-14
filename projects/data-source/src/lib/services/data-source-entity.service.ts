@@ -3,6 +3,7 @@ import {
   EntityCollectionServiceBase,
   EntityCollectionServiceElementsFactory,
 } from '@ngrx/data';
+import { map, take } from 'rxjs/operators';
 
 @Injectable()
 export class DataSourceEntityService extends EntityCollectionServiceBase<any> {
@@ -10,89 +11,51 @@ export class DataSourceEntityService extends EntityCollectionServiceBase<any> {
     super('DataSource', serviceElementsFactory);
   }
 
-  // addOne(data) {
-  //   const dataToBeAdded = {
-  //     ...data,
-  //     _id: this.dsHelperService.getActiveTabId(data.processId),
-  //   };
-  //   this.addOneToCache(dataToBeAdded);
-  // }
+  addOne(data) {
+    this.addOneToCache(data);
+  }
 
-  // private handleMany(dataArr, update = false) {
-  //   const mappedArr = dataArr.map((item) => {
-  //     return { ...item, _id: this.dsHelperService.activeTabId };
-  //   });
+  addMany(dataArr) {
+    this.addManyToCache(dataArr);
+  }
 
-  //   if (update) {
-  //     this.updateManyInCache(mappedArr);
-  //   } else {
-  //     this.addManyToCache(mappedArr);
-  //   }
-  // }
+  updateOne(data) {
+    this.updateOneInCache(data);
+  }
 
-  // addMany(dataArr) {
-  //   this.handleMany(dataArr);
-  // }
+  updateMany(dataArr) {
+    this.updateManyInCache(dataArr);
+  }
 
-  // updateOne(data) {
-  //   const dataToBeUpdated = { ...data, _id: this.dsHelperService.activeTabId };
-  //   this.updateOneInCache(dataToBeUpdated);
-  // }
+  removeOne(elm) {
+    this.removeOneFromCache(elm);
+  }
 
-  // updateMany(dataArr) {
-  //   this.handleMany(dataArr, true);
-  // }
+  removeMany(dataArr) {
+    this.removeManyFromCache(dataArr);
+  }
 
-  // removeOne(elm, tabId = this.dsHelperService.activeTabId) {
-  //   const elmId = typeof elm === 'string' ? elm : elm.id;
-  //   this.removeOneFromCache(`${tabId}_${elmId}`);
-  // }
+  upsertOne(data) {
+    this.upsertOneInCache(data);
+  }
 
-  // removeMany(tabId = this.dsHelperService.activeTabId) {
-  //   this.entities$
-  //     .pipe(
-  //       map((sources) =>
-  //         sources.filter((source) => {
-  //           return source._id.includes(tabId);
-  //         })
-  //       ),
-  //       tap((res) => {
-  //         res.length && this.removeManyFromCache(res);
-  //       }),
-  //       take(1)
-  //     )
-  //     .subscribe();
-  // }
+  getOne(elm) {
+    const elmId = typeof elm === 'string' ? elm : elm.id;
+    return this.selectors$.entities$.pipe(
+      map((sources) => sources.filter((source) => source.id === elmId)[0]),
+      take(1)
+    );
+  }
 
-  // upsertOne(data) {
-  //   const dataToBeAdded = {
-  //     ...data,
-  //     _id: this.dsHelperService.getActiveTabId(data.processId),
-  //   };
-  //   this.upsertOneInCache(dataToBeAdded);
-  // }
+  patchOne(parentObj, childObj) {
+    const childTask = {
+      children: [...parentObj.children, childObj],
+    };
 
-  // getOneObs(elm) {
-  //   const elmId = typeof elm === 'string' ? elm : elm.id;
-  //   return this.selectors$.entities$.pipe(
-  //     map((sources) => sources.filter((source) => source.id === elmId)[0]),
-  //     take(1)
-  //   );
-  // }
+    const mergedTask = { ...parentObj, ...childTask };
 
-  // getOne(elm) {
-  //   return getValue(this.getOneObs(elm));
-  // }
-
-  // patchOne(parentObj, childObj) {
-  //   const childTask = {
-  //     children: [...parentObj.children, childObj],
-  //   };
-
-  //   const mergedTask = { ...parentObj, ...childTask };
-
-  //   this.upsertOne(mergedTask);
-  // }
+    this.upsertOne(mergedTask);
+  }
 
   // async patchOneById(parentId, childObj) {
   //   const parentObj = await this.getOne(parentId);
