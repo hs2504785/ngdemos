@@ -22,6 +22,10 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'tree',
+    loadChildren: () => import('./tree/tree.module').then((m) => m.TreeModule),
+  },
+  {
     path: '**',
     redirectTo: '/not-found',
   },
