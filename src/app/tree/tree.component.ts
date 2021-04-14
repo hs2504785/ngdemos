@@ -15,26 +15,23 @@ export class TreeComponent implements OnInit {
 
   addOne() {
     const startTask = {
-      name: 'Start',
-      id: 'StartEvent_97141A33-45DF-4458-891E-D54FCD5D6994',
+      id: 'TESTID',
+      name: 'Test',
+      type: 'folder',
       children: [
         {
-          name: 'Inputs',
+          name: 'src',
+          type: 'folder',
           children: [
             {
-              dataName: 'qwe',
-              dataType: 'Text',
-              id: 1587781833414,
-              name: 'qwe (Text)',
-              parentInfo: 'Start > Inputs > qwe (Text)',
+              name: 'cdk',
+              type: 'folder',
+              children: [
+                { name: 'package.json', type: 'file' },
+                { name: 'BUILD.bazel', type: 'file' },
+              ],
             },
-            {
-              dataName: 'ewe',
-              dataType: 'Text',
-              id: 1587781834553,
-              name: 'ewe (Text)',
-              parentInfo: 'Start > Inputs > ewe (Text)',
-            },
+            { name: 'material', type: 'folder' },
           ],
         },
       ],

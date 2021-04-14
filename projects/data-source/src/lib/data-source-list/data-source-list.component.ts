@@ -55,20 +55,27 @@ export class DataSourceListComponent implements OnInit {
       this.treeControl,
       this.treeFlattener
     );
-    this.dataSource.data = files;
   }
 
   ngOnInit() {
-    this.dataSources$ = this.dataSourceService.entities$;
+    this.initializeData();
 
-    this.dataSources$.subscribe((res) => {
-      console.log('PAAPPA', res);
-    });
     // const processDesignDataSources$ = this.dataSources$.pipe(
     //   map((sources) => {
     //     return this.reArrangeDefaultAndCustomFields(sources);
     //   })
     // );
+  }
+
+  initializeData() {
+    this.dataSourceService.addManyToCache(files);
+
+    this.dataSources$ = this.dataSourceService.entities$;
+
+    this.dataSources$.subscribe((res) => {
+      this.dataSource.data = res;
+      console.log('PAAPPA', res);
+    });
   }
 
   /** Transform the data to something the tree can read. */
