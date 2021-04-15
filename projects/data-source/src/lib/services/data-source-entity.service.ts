@@ -4,9 +4,14 @@ import {
   EntityCollectionServiceElementsFactory,
 } from '@ngrx/data';
 import { map, take } from 'rxjs/operators';
+import { MatTreeFlattener } from '@angular/material/tree';
+import { FileNode, FlatTreeNode } from '../models/data-source.interface';
 
 @Injectable()
 export class DataSourceEntityService extends EntityCollectionServiceBase<any> {
+  /** The TreeFlattener is used to generate the flat list of items from hierarchical data. */
+  treeFlattener: MatTreeFlattener<FileNode, FlatTreeNode>;
+
   constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super('DataSource', serviceElementsFactory);
   }
@@ -37,6 +42,10 @@ export class DataSourceEntityService extends EntityCollectionServiceBase<any> {
 
   upsertOne(data) {
     this.upsertOneInCache(data);
+  }
+
+  getAll() {
+    return this.selectors$.entities$;
   }
 
   getOne(elm) {

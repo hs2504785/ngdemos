@@ -7,24 +7,7 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { files } from './example-data';
 import { DataSourceEntityService } from '../services/data-source-entity.service';
 import { Observable } from 'rxjs';
-
-/** File node data with possible child nodes. */
-export interface FileNode {
-  name: string;
-  type: string;
-  children?: FileNode[];
-}
-
-/**
- * Flattened tree node that has been created from a FileNode through the flattener. Flattened
- * nodes include level index and whether they can be expanded or not.
- */
-export interface FlatTreeNode {
-  name: string;
-  type: string;
-  level: number;
-  expandable: boolean;
-}
+import { FileNode, FlatTreeNode } from '../models/data-source.interface';
 
 @Component({
   selector: 'lib-data-source-list',
@@ -50,6 +33,9 @@ export class DataSourceListComponent implements OnInit {
       this.getChildren
     );
 
+    // update service flattener
+    this.dataSourceService.treeFlattener = this.treeFlattener;
+
     this.treeControl = new FlatTreeControl(this.getLevel, this.isExpandable);
     this.dataSource = new MatTreeFlatDataSource(
       this.treeControl,
@@ -59,12 +45,6 @@ export class DataSourceListComponent implements OnInit {
 
   ngOnInit() {
     this.initializeData();
-
-    // const processDesignDataSources$ = this.dataSources$.pipe(
-    //   map((sources) => {
-    //     return this.reArrangeDefaultAndCustomFields(sources);
-    //   })
-    // );
   }
 
   initializeData() {
@@ -74,7 +54,6 @@ export class DataSourceListComponent implements OnInit {
 
     this.dataSources$.subscribe((res) => {
       this.dataSource.data = res;
-      console.log('PAAPPA', res);
     });
   }
 

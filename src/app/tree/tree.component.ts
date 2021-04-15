@@ -245,4 +245,17 @@ export class TreeComponent implements OnInit {
 
     this.dataSourceService.patchOne(startTask, workerTask);
   }
+
+  getFlattenNodes() {
+    // flattenNodes(this.dataSource.data)
+    console.log('HERREE ', this.dataSourceService.treeFlattener);
+
+    this.dataSourceService.getAll().subscribe((res) => {
+      console.log('Node matrix ', res);
+      console.log(
+        'Flatten Nodes ',
+        this.dataSourceService.treeFlattener.flattenNodes(res)
+      );
+    });
+  }
 }

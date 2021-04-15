@@ -4,3 +4,12 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
+
+.action {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    margin-bottom: 4px;
+  }
+}
