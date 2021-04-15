@@ -33,18 +33,28 @@ export class DataSourceListComponent implements OnInit {
       this.getChildren
     );
 
-    // update service flattener
-    this.dataSourceService.treeFlattener = this.treeFlattener;
-
     this.treeControl = new FlatTreeControl(this.getLevel, this.isExpandable);
     this.dataSource = new MatTreeFlatDataSource(
       this.treeControl,
       this.treeFlattener
     );
+
+    // update service flattener
+    this.dataSourceService.treeFlattener = this.treeFlattener;
+    this.dataSourceService.treeControl = this.treeControl;
   }
 
   ngOnInit() {
     this.initializeData();
+  }
+
+  editNode(node) {
+    console.log('edit', node);
+    const data = this.dataSource.data;
+    node.name = 'HEMant Singh';
+
+    // this.dataSource.data = null;
+    this.dataSource.data = data;
   }
 
   initializeData() {

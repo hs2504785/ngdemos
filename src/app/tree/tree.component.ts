@@ -249,6 +249,10 @@ export class TreeComponent implements OnInit {
   getFlattenNodes() {
     // flattenNodes(this.dataSource.data)
     console.log('HERREE ', this.dataSourceService.treeFlattener);
+    console.log(
+      'Flatten nodes with treeControl ',
+      this.dataSourceService.treeControl.dataNodes
+    );
 
     this.dataSourceService.getAll().subscribe((res) => {
       console.log('Node matrix ', res);

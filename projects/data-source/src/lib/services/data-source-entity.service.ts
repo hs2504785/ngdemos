@@ -6,9 +6,12 @@ import {
 import { map, take } from 'rxjs/operators';
 import { MatTreeFlattener } from '@angular/material/tree';
 import { FileNode, FlatTreeNode } from '../models/data-source.interface';
+import { FlatTreeControl } from '@angular/cdk/tree';
 
 @Injectable()
 export class DataSourceEntityService extends EntityCollectionServiceBase<any> {
+  treeControl: FlatTreeControl<FlatTreeNode>;
+
   /** The TreeFlattener is used to generate the flat list of items from hierarchical data. */
   treeFlattener: MatTreeFlattener<FileNode, FlatTreeNode>;
 

@@ -3,6 +3,7 @@
     *matTreeNodeDef="let node"
     matTreeNodeToggle
     matTreeNodePadding
+    (dblclick)="editNode(node)"
   >
     <button mat-icon-button disabled></button>
     <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
