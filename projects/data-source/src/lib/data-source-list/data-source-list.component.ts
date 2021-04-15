@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 import { FileNode, FlatTreeNode } from '../models/data-source.interface';
 import { DataSourceHelperService } from '../services/data-source-helper.service';
 import { clone } from '../shared/rfdc';
-import { changeProps } from 'find-and';
+import { changeProps, removeObject } from 'find-and';
 
 @Component({
   selector: 'lib-data-source-list',
@@ -124,6 +124,16 @@ export class DataSourceListComponent implements OnInit {
           );
         });
       }
+    });
+  }
+
+  deleteNode(node) {
+    const parentFlatNode: any = this.dsHelperService.getParent(node);
+    const parentNode = this.dsHelperService.flatNodeMap.get(parentFlatNode);
+
+    this.dataSourceService.getOne(parentNode.id).subscribe((rootNode) => {
+      const updatedRoot = removeObject(rootNode, { name: node.name });
+      this.dataSourceService.updateOne(updatedRoot);
     });
   }
 }

@@ -9,7 +9,23 @@
       {{ node.type === "file" ? "description" : "folder" }}
     </mat-icon>
     {{ node.name }}
-    <mat-icon class="edit-icon" (click)="editNode(node)"> mode_edit </mat-icon>
+
+    <button
+      class="icon-btn"
+      mat-mini-fab
+      color="accent"
+      (click)="editNode(node)"
+    >
+      <mat-icon>mode_edit</mat-icon>
+    </button>
+    <button
+      class="icon-btn"
+      mat-mini-fab
+      color="warn"
+      (click)="deleteNode(node)"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
   </mat-tree-node>
 
   <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
