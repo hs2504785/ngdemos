@@ -25,6 +25,7 @@ const routes: Routes = [
     path: 'tree',
     loadChildren: () => import('./tree/tree.module').then((m) => m.TreeModule),
   },
+  { path: 'table', loadChildren: () => import('./table/table.module').then(m => m.TableModule) },
   {
     path: '**',
     redirectTo: '/not-found',
