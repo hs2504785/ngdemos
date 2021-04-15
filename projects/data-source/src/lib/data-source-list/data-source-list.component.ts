@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   MatTreeFlatDataSource,
   MatTreeFlattener,
@@ -8,6 +8,9 @@ import { files } from './example-data';
 import { DataSourceEntityService } from '../services/data-source-entity.service';
 import { Observable } from 'rxjs';
 import { FileNode, FlatTreeNode } from '../models/data-source.interface';
+import { DataSourceHelperService } from '../services/data-source-helper.service';
+import { clone } from '../shared/rfdc';
+import { changeProps } from 'find-and';
 
 @Component({
   selector: 'lib-data-source-list',
@@ -15,6 +18,9 @@ import { FileNode, FlatTreeNode } from '../models/data-source.interface';
   styleUrls: ['./data-source-list.component.css'],
 })
 export class DataSourceListComponent implements OnInit {
+  @Output() editNodeChange = new EventEmitter();
+  activeNode = null;
+  expandedNodes: any;
   dataSources$: Observable<any>;
   /** The TreeControl controls the expand/collapse state of tree nodes.  */
   treeControl: FlatTreeControl<FlatTreeNode>;
@@ -25,7 +31,10 @@ export class DataSourceListComponent implements OnInit {
   /** The MatTreeFlatDataSource connects the control and flattener to provide data. */
   dataSource: MatTreeFlatDataSource<FileNode, FlatTreeNode>;
 
-  constructor(private dataSourceService: DataSourceEntityService) {
+  constructor(
+    private dataSourceService: DataSourceEntityService,
+    private dsHelperService: DataSourceHelperService
+  ) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
@@ -40,21 +49,17 @@ export class DataSourceListComponent implements OnInit {
     );
 
     // update service flattener
-    this.dataSourceService.treeFlattener = this.treeFlattener;
-    this.dataSourceService.treeControl = this.treeControl;
+    this.dsHelperService.treeFlattener = this.treeFlattener;
+    this.dsHelperService.treeControl = this.treeControl;
   }
 
   ngOnInit() {
     this.initializeData();
+    this.handleExpandedNodes();
   }
 
   editNode(node) {
-    console.log('edit', node);
-    const data = this.dataSource.data;
-    node.name = 'HEMant Singh';
-
-    // this.dataSource.data = null;
-    this.dataSource.data = data;
+    this.editNodeChange.emit(node);
   }
 
   initializeData() {
@@ -64,18 +69,24 @@ export class DataSourceListComponent implements OnInit {
 
     this.dataSources$.subscribe((res) => {
       this.dataSource.data = res;
+      this.dsHelperService.restoreExpandedNodes(this.treeControl);
     });
   }
 
   /** Transform the data to something the tree can read. */
-  transformer(node: FileNode, level: number): FlatTreeNode {
-    return {
+  transformer = (node: FileNode, level: number): FlatTreeNode => {
+    const flatNode = {
+      ...(node.id && { id: node.id }),
       name: node.name,
       type: node.type,
       level,
       expandable: !!node.children,
     };
-  }
+
+    this.dsHelperService.flatNodeMap.set(flatNode, node);
+
+    return flatNode;
+  };
 
   /** Get the level of the node */
   getLevel(node: FlatTreeNode): number {
@@ -95,5 +106,24 @@ export class DataSourceListComponent implements OnInit {
   /** Get the children for the node. */
   getChildren(node: FileNode): FileNode[] | null | undefined {
     return node.children;
+  }
+
+  handleExpandedNodes() {
+    this.treeControl.expansionModel.changed.subscribe((res) => {
+      if (res.added[0] && res.added.length) {
+        this.dsHelperService.toggleExpandedNodes(
+          this.treeControl,
+          res.added[0]
+        );
+      } else if (res.removed.length) {
+        res.removed.forEach((item) => {
+          this.dsHelperService.toggleExpandedNodes(
+            this.treeControl,
+            item,
+            true
+          );
+        });
+      }
+    });
   }
 }

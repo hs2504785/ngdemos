@@ -23,6 +23,7 @@ export const files = [
     ],
   },
   {
+    id: 'angularID',
     name: 'angular',
     type: 'folder',
     children: [
@@ -32,12 +33,15 @@ export const files = [
         children: [
           { name: '.travis.yml', type: 'file' },
           { name: 'firebase.json', type: 'file' },
+          { name: 'firebase1.json', type: 'file', work: 'None' },
+          { name: 'firebase2.json', type: 'file' },
         ],
       },
       { name: 'package.json', type: 'file' },
     ],
   },
   {
+    id: 'angularjsID',
     name: 'angularjs',
     type: 'folder',
     children: [

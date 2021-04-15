@@ -3,13 +3,13 @@
     *matTreeNodeDef="let node"
     matTreeNodeToggle
     matTreeNodePadding
-    (dblclick)="editNode(node)"
   >
     <button mat-icon-button disabled></button>
     <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
       {{ node.type === "file" ? "description" : "folder" }}
     </mat-icon>
     {{ node.name }}
+    <mat-icon class="edit-icon" (click)="editNode(node)"> mode_edit </mat-icon>
   </mat-tree-node>
 
   <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>

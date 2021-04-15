@@ -1,5 +1,6 @@
 /** File node data with possible child nodes. */
 export interface FileNode {
+  id?: string;
   name: string;
   type: string;
   children?: FileNode[];

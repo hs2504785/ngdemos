@@ -11,6 +11,7 @@ import {
 
 import { DataSourceService } from './services/data-source.service';
 import { DataSourceEntityService } from './services/data-source-entity.service';
+import { DataSourceHelperService } from './services/data-source-helper.service';
 
 export const entityMetadata: EntityMetadataMap = {
   DataSource: {
@@ -34,7 +35,11 @@ export const entityMetadata: EntityMetadataMap = {
   declarations: [DataSourceListComponent],
   imports: [MatTreeModule, MatIconModule, MatButtonModule],
   exports: [DataSourceListComponent],
-  providers: [DataSourceService, DataSourceEntityService],
+  providers: [
+    DataSourceService,
+    DataSourceEntityService,
+    DataSourceHelperService,
+  ],
 })
 export class DataSourceModule {
   constructor(

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataSourceEntityService } from 'projects/data-source/src/public-api';
+import {
+  DataSourceEntityService,
+  DataSourceHelperService,
+} from 'projects/data-source/src/public-api';
 
 @Component({
   selector: 'app-tree',
@@ -7,7 +10,10 @@ import { DataSourceEntityService } from 'projects/data-source/src/public-api';
   styleUrls: ['./tree.component.scss'],
 })
 export class TreeComponent implements OnInit {
-  constructor(private dataSourceService: DataSourceEntityService) {}
+  constructor(
+    private dataSourceService: DataSourceEntityService,
+    private dsHelperService: DataSourceHelperService
+  ) {}
 
   ngOnInit(): void {
     // console.log(this.dataSourceService);
@@ -248,18 +254,27 @@ export class TreeComponent implements OnInit {
 
   getFlattenNodes() {
     // flattenNodes(this.dataSource.data)
-    console.log('HERREE ', this.dataSourceService.treeFlattener);
+    console.log('HERREE ', this.dsHelperService.treeFlattener);
     console.log(
       'Flatten nodes with treeControl ',
-      this.dataSourceService.treeControl.dataNodes
+      this.dsHelperService.treeControl.dataNodes
     );
 
     this.dataSourceService.getAll().subscribe((res) => {
       console.log('Node matrix ', res);
       console.log(
         'Flatten Nodes ',
-        this.dataSourceService.treeFlattener.flattenNodes(res)
+        this.dsHelperService.treeFlattener.flattenNodes(res)
       );
+    });
+  }
+
+  onNodeEdit(flatNode) {
+    const currentNode = this.dsHelperService.flatNodeMap.get(flatNode);
+
+    this.dsHelperService.updateNode(flatNode, {
+      ...currentNode,
+      name: currentNode.name + ' UPDATED!',
     });
   }
 }

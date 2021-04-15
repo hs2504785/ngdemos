@@ -2,3 +2,8 @@
   color: #757575;
   margin-right: 5px;
 }
+
+.edit-icon {
+  margin-left: 4px;
+  cursor: pointer;
+}

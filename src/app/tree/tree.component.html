@@ -2,7 +2,11 @@
   <h1>Tree Demo</h1>
 </header>
 <div class="container">
-  <div class="col"><lib-data-source-list></lib-data-source-list></div>
+  <div class="col">
+    <lib-data-source-list
+      (editNodeChange)="onNodeEdit($event)"
+    ></lib-data-source-list>
+  </div>
   <div class="col action">
     <button mat-button mat-raised-button color="primary" (click)="addOne()">
       Add DS
