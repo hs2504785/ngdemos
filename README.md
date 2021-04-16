@@ -8,3 +8,7 @@ ngh --dir=dist/ngdemos --message="My First deploy"
 
 All done!
 https://hs2504785.github.io/ngdemos/
+
+## Resources
+
+https://www.npmjs.com/package/find-and
