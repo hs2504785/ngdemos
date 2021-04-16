@@ -19,6 +19,7 @@ import { changeProps, removeObject } from 'find-and';
 })
 export class DataSourceListComponent implements OnInit {
   @Output() editNodeChange = new EventEmitter();
+  @Output() addNodeChange = new EventEmitter();
   activeNode = null;
   expandedNodes: any;
   dataSources$: Observable<any>;
@@ -135,5 +136,9 @@ export class DataSourceListComponent implements OnInit {
       const updatedRoot = removeObject(rootNode, { name: node.name });
       this.dataSourceService.updateOne(updatedRoot);
     });
+  }
+
+  addNode(node) {
+    this.addNodeChange.emit(node);
   }
 }

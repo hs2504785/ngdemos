@@ -11,16 +11,16 @@
     {{ node.name }}
 
     <button
-      class="icon-btn"
-      mat-mini-fab
+      mat-icon-button
+      class="icon-btn edit"
       color="accent"
       (click)="editNode(node)"
     >
       <mat-icon>mode_edit</mat-icon>
     </button>
     <button
-      class="icon-btn"
-      mat-mini-fab
+      mat-icon-button
+      class="icon-btn delete"
       color="warn"
       (click)="deleteNode(node)"
     >
@@ -42,5 +42,14 @@
       {{ node.type === "file" ? "description" : "folder" }}
     </mat-icon>
     {{ node.name }}
+
+    <button
+      class="icon-btn"
+      mat-icon-button
+      color="accent"
+      (click)="addNode(node)"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
   </mat-tree-node>
 </mat-tree>

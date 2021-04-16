@@ -277,4 +277,14 @@ export class TreeComponent implements OnInit {
       name: currentNode.name + ' UPDATED!',
     });
   }
+
+  onNodeAdd(flatNode) {
+    const currentNode = this.dsHelperService.flatNodeMap.get(flatNode);
+
+    this.dsHelperService.addNode(flatNode, {
+      id: 'addNodeID',
+      name: 'My New node',
+      type: 'file',
+    });
+  }
 }

@@ -1,8 +1,14 @@
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { Injectable } from '@angular/core';
 import { MatTreeFlattener } from '@angular/material/tree';
-import { changeProps } from 'find-and';
+import {
+  changeProps,
+  insertObjectAfter,
+  insertObjectBefore,
+  replaceObject,
+} from 'find-and';
 import { FileNode, FlatTreeNode } from '../models/data-source.interface';
+import { clone } from '../shared/rfdc';
 import { DataSourceEntityService } from './data-source-entity.service';
 
 @Injectable()
@@ -73,5 +79,37 @@ export class DataSourceHelperService {
       );
       this.dataSourceService.updateOne(updatedRoot);
     });
+  }
+
+  addNodeToParent(rootNode, nodeToBeAdded) {
+    rootNode.children = [...rootNode.children, nodeToBeAdded];
+    this.dataSourceService.updateOne(rootNode);
+  }
+
+  addNode(flatNode, nodeToBeAdded) {
+    if (flatNode.level) {
+      const currentNode = this.flatNodeMap.get(flatNode);
+      const parentFlatNode: any = this.getParent(flatNode);
+      const rootNode = this.flatNodeMap.get(parentFlatNode);
+
+      this.dataSourceService.getOne(rootNode.id).subscribe((fatherNode) => {
+        const node = {
+          ...currentNode,
+          children: [...currentNode.children, nodeToBeAdded],
+        };
+
+        const updatedRoot = replaceObject(
+          fatherNode,
+          { name: flatNode.name },
+          node
+        );
+        this.dataSourceService.updateOne(updatedRoot);
+      });
+    } else {
+      const rootNode = this.flatNodeMap.get(flatNode);
+      const rootNodeClone = clone(rootNode);
+
+      this.addNodeToParent(rootNodeClone, nodeToBeAdded);
+    }
   }
 }

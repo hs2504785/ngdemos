@@ -5,5 +5,9 @@
 
 .icon-btn {
   margin-left: 10px;
-  cursor: pointer;
+}
+
+.edit ::ng-deep .mat-icon,
+.delete ::ng-deep .mat-icon {
+  font-size: 18px;
 }
