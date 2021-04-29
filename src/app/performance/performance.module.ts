@@ -13,9 +13,18 @@ import { ToolbarComponent } from '../shared/components/toolbar/toolbar.component
 import { AvoidFunctionCallComponent } from './components/avoid-function-call/avoid-function-call.component';
 import { ReturnSymbolPipe } from './pipes/return-symbol.pipe';
 import { NgforTrackByComponent } from './components/ngfor-track-by/ngfor-track-by.component';
+import { JustMatTableComponent } from './components/just-mat-table/just-mat-table.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
-  declarations: [PerformanceComponent, ToolbarComponent, AvoidFunctionCallComponent, ReturnSymbolPipe, NgforTrackByComponent],
+  declarations: [
+    PerformanceComponent,
+    ToolbarComponent,
+    AvoidFunctionCallComponent,
+    ReturnSymbolPipe,
+    NgforTrackByComponent,
+    JustMatTableComponent,
+  ],
   imports: [
     CommonModule,
     PerformanceRoutingModule,
@@ -25,6 +34,7 @@ import { NgforTrackByComponent } from './components/ngfor-track-by/ngfor-track-b
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
+    MatTableModule,
   ],
 })
 export class PerformanceModule {}

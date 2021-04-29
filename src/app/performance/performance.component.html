@@ -38,6 +38,15 @@
           NgFor TrackBy
         </a>
       </mat-list-item>
+      <mat-list-item>
+        <a
+          matLine
+          [routerLink]="['just-table']"
+          (click)="setTitle('Only include required module fromMaterial')"
+        >
+          Only Table Module in Build
+        </a>
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 
