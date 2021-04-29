@@ -4,6 +4,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   selector: 'app-avoid-function-call',
   templateUrl: './avoid-function-call.component.html',
   styleUrls: ['./avoid-function-call.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AvoidFunctionCallComponent implements OnInit {
   EXAMPLE_DATA: any[] = [
