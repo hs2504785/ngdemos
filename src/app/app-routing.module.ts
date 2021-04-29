@@ -27,6 +27,7 @@ const routes: Routes = [
   },
   { path: 'table', loadChildren: () => import('./table/table.module').then(m => m.TableModule) },
   { path: 'treegrid', loadChildren: () => import('./treegrid/treegrid.module').then(m => m.TreegridModule) },
+  { path: 'performance', loadChildren: () => import('./performance/performance.module').then(m => m.PerformanceModule) },
   {
     path: '**',
     redirectTo: '/not-found',
