@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   selector: 'app-avoid-function-call',
   templateUrl: './avoid-function-call.component.html',
   styleUrls: ['./avoid-function-call.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AvoidFunctionCallComponent implements OnInit {
   EXAMPLE_DATA: any[] = [
@@ -37,24 +37,4 @@ export class AvoidFunctionCallComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  returnFullSymbol(symbol: string) {
-    console.log('Called ');
-    switch (symbol) {
-      case 'H':
-        return 'Hydrogen';
-      case 'He':
-        return 'Hellium';
-      case 'Li':
-        return 'Lithium';
-      case 'Be':
-        return 'Beryllium';
-      case 'B':
-        return 'Boron';
-      case 'C':
-        return 'Carbon';
-      default:
-        return 'No Match';
-    }
-  }
 }
