@@ -6,7 +6,10 @@
     <button class="btn btn-warning" (click)="resetList()">Reset List</button>
   </div>
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let item of records">
+    <li
+      class="list-group-item"
+      *ngFor="let item of records; trackBy: symbolTrackBy"
+    >
       {{ item.symbol }}
     </li>
   </ul>
