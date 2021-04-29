@@ -54,30 +54,7 @@ export class NgforTrackByComponent implements OnInit {
         weight: 1.0079,
         symbol: 'Hemant',
       },
-      {
-        weight: 1.0079,
-        symbol: 'H',
-      },
-      {
-        weight: 4.0026,
-        symbol: 'He',
-      },
-      {
-        weight: 6.941,
-        symbol: 'Li',
-      },
-      {
-        weight: 9.0122,
-        symbol: 'Be',
-      },
-      {
-        weight: 10.811,
-        symbol: 'B',
-      },
-      {
-        weight: 12.0107,
-        symbol: 'C',
-      },
+      ...EXAMPLE_DATA,
     ];
   }
 
