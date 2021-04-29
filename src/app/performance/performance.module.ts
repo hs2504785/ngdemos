@@ -12,9 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { ToolbarComponent } from '../shared/components/toolbar/toolbar.component';
 import { AvoidFunctionCallComponent } from './components/avoid-function-call/avoid-function-call.component';
 import { ReturnSymbolPipe } from './pipes/return-symbol.pipe';
+import { NgforTrackByComponent } from './components/ngfor-track-by/ngfor-track-by.component';
 
 @NgModule({
-  declarations: [PerformanceComponent, ToolbarComponent, AvoidFunctionCallComponent, ReturnSymbolPipe],
+  declarations: [PerformanceComponent, ToolbarComponent, AvoidFunctionCallComponent, ReturnSymbolPipe, NgforTrackByComponent],
   imports: [
     CommonModule,
     PerformanceRoutingModule,
