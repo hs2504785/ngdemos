@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <h1>Load Component on scroll</h1>
+
+  <div class="card border-primary mb-3">
+    <div class="card-header">Section 1 - Get list of todos</div>
+    <div class="card-body text-primary">
+      <pre>{{ todos$ | async | json }}</pre>
+    </div>
+  </div>
+  <div class="card border-success mb-3">
+    <div class="card-header">Section 2 - Posts</div>
+    <div class="card-body text-success">
+      <pre>{{ posts$ | async | json }}</pre>
+    </div>
+  </div>
+  <div class="card border-warning mb-3">
+    <div class="card-header">Section 3 - Comments</div>
+    <div class="card-body text-warning">
+      <pre>{{ comments$ | async | json }}</pre>
+    </div>
+  </div>
+  <div class="card border-danger mb-3">
+    <div class="card-header">Section 4 - Albums</div>
+    <div class="card-body text-danger">
+      <pre>{{ albums$ | async | json }}</pre>
+    </div>
+  </div>
+  <div class="card border-danger mb-3">
+    <div class="card-header">Section 5 - Photos</div>
+    <div class="card-body text-danger">
+      <pre>{{ photos$ | async | json }}</pre>
+    </div>
+  </div>
+  <div class="card border-danger mb-3">
+    <div class="card-header">Section 6 - Users</div>
+    <div class="card-body text-danger">
+      <pre>{{ users$ | async | json }}</pre>
+    </div>
+  </div>
+</div>
