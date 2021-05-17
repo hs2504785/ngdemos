@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IntersectionStatus } from 'src/app/shared/directives/from-intersection-observer';
 import { IntrDataService } from '../services/intr-data.service';
 
 @Component({
@@ -8,6 +9,9 @@ import { IntrDataService } from '../services/intr-data.service';
   styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent implements OnInit {
+  visibilityStatus: {[key: string]: IntersectionStatus} = {};
+  intersectionStatus = IntersectionStatus;
+
   todos$: Observable<any[]>;
   posts$: Observable<any[]>;
   comments$: Observable<any[]>;
@@ -25,4 +29,7 @@ export class DemoComponent implements OnInit {
     this.users$ = this.intrDataService.getUsers();
   }
 
+  onVisibilityChanged(index: string, status: IntersectionStatus) {
+    this.visibilityStatus[index] = status;
+  }
 }

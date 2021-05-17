@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable()
 export class IntrDataService {
@@ -14,7 +15,7 @@ export class IntrDataService {
   constructor(private http: HttpClient) { }
 
   get(url): Observable<any[]> {
-    return this.http.get<any[]>(url);
+    return this.http.get<any[]>(url).pipe(delay(3000));
   }
 
   getTodos() {
