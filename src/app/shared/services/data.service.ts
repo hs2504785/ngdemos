@@ -3,8 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-@Injectable()
-export class IntrDataService {
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
   API_URL = 'https://jsonplaceholder.typicode.com';
   TODOS_URL = `${this.API_URL}/todos`;
   POSTS_URL = `${this.API_URL}/posts`;

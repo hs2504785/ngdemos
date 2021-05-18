@@ -6,7 +6,6 @@ import { IntersectionObserverComponent } from './intersection-observer.component
 import { IntersectionObserverDirective } from '../shared/directives/intersection-observer.directive';
 import { SampleComponent } from './sample/sample.component';
 import { DemoComponent } from './demo/demo.component';
-import { IntrDataService } from './services/intr-data.service';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
@@ -20,9 +19,6 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     CommonModule,
     ScrollingModule,
     IntersectionObserverRoutingModule
-  ],
-  providers: [
-    IntrDataService
   ]
 })
 export class IntersectionObserverModule { }

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IntersectionStatus } from 'src/app/shared/directives/from-intersection-observer';
-import { IntrDataService } from '../services/intr-data.service';
+import { DataService } from '../../shared/services/data.service';
 
 @Component({
   selector: 'app-demo',
@@ -19,15 +19,15 @@ export class DemoComponent implements OnInit {
   albums$: Observable<any[]>;
   photos$: Observable<any[]>;
   users$: Observable<any[]>;
-  constructor(private intrDataService: IntrDataService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.todos$ = this.intrDataService.getTodos();
-    this.posts$ = this.intrDataService.getPosts();
-    this.comments$ = this.intrDataService.getComments();
-    this.albums$ = this.intrDataService.getAlbums();
-    this.photos$ = this.intrDataService.getPhotos();
-    this.users$ = this.intrDataService.getUsers();
+    this.todos$ = this.dataService.getTodos();
+    this.posts$ = this.dataService.getPosts();
+    this.comments$ = this.dataService.getComments();
+    this.albums$ = this.dataService.getAlbums();
+    this.photos$ = this.dataService.getPhotos();
+    this.users$ = this.dataService.getUsers();
   }
 
   onVisibilityChanged(index: string, status: IntersectionStatus) {
