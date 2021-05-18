@@ -5,6 +5,7 @@ import { VirtualScrollRoutingModule } from './virtual-scroll-routing.module';
 import { VirtualScrollComponent } from './virtual-scroll.component';
 import { BasicComponent } from './components/basic/basic.component';
 import { DemoComponent } from './components/demo/demo.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DemoComponent } from './components/demo/demo.component';
   ],
   imports: [
     CommonModule,
-    VirtualScrollRoutingModule
+    VirtualScrollRoutingModule,
+    ScrollingModule
   ]
 })
 export class VirtualScrollModule { }
