@@ -40,6 +40,11 @@ export class DataService {
     return this.get(this.PHOTOS_URL);
   }
 
+  getPhotosNextBatch(offset, limit = 20) {
+    const pageNo = offset / limit ;
+    return this.get(`${this.PHOTOS_URL}?_page=${pageNo}&_limit=${limit}`);
+  }
+
   getUsers() {
     return this.get(this.USERS_URL);
   }

@@ -1,12 +1,19 @@
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import {
+  distinctUntilChanged,
+  mergeMap,
+  scan,
+  tap,
+  throttleTime,
+} from 'rxjs/operators';
 import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  styleUrls: ['./demo.component.scss'],
 })
 export class DemoComponent implements OnInit {
   photos$: Observable<any[]>;
@@ -15,59 +22,47 @@ export class DemoComponent implements OnInit {
 
   batch = 20;
   theEnd = false;
+  isLoading = false;
 
   offset = new BehaviorSubject(null);
-  infinite: Observable<any[]>;
 
-  constructor(private dataService: DataService) {
-    // const batchMap = this.offset.pipe(
-    //   throttleTime(500),
-    //   mergeMap(n => this.getBatch(n)),
-    //   scan((acc, batch) => {
-    //     return { ...acc, ...batch };
-    //   }, {})
-    // );
-
-    // this.infinite = batchMap.pipe(map(v => Object.values(v)));
-  }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.photos$ = this.dataService.getPhotos();
+    this.photos$ = this.offset.pipe(
+      throttleTime(500),
+      distinctUntilChanged(),
+      mergeMap((n) => this.getBatch(n)),
+      scan((acc, batch) => {
+        return [...acc, ...batch];
+      }, [])
+    );
   }
 
   getBatch(offset) {
-    console.log(offset);
-    // return this.db
-    //   .collection('people', ref =>
-    //     ref
-    //       .orderBy('name')
-    //       .startAfter(offset)
-    //       .limit(this.batch)
-    //   )
-    //   .snapshotChanges()
-    //   .pipe(
-    //     tap(arr => (arr.length ? null : (this.theEnd = true))),
-    //     map(arr => {
-    //       return arr.reduce((acc, cur) => {
-    //         const id = cur.payload.doc.id;
-    //         const data = cur.payload.doc.data();
-    //         return { ...acc, [id]: data };
-    //       }, {});
-    //     })
-    //   );
+    console.log('PAPPA', offset);
+    return this.dataService.getPhotosNextBatch(offset).pipe(
+      tap((arr) => {
+        this.isLoading = false;
+        if (arr.length < 20) {
+          this.theEnd = true;
+        }
+      })
+    );
   }
 
   nextBatch(e, offset) {
-    // if (this.theEnd) {
-    //   return;
-    // }
+    if (this.theEnd) {
+      return;
+    }
 
-    // const end = this.viewport.getRenderedRange().end;
-    // const total = this.viewport.getDataLength();
-    // console.log(`${end}, '>=', ${total}`);
-    // if (end === total) {
-    //   this.offset.next(offset);
-    // }
+    const end = this.viewport.getRenderedRange().end;
+    const total = this.viewport.getDataLength();
+    console.log(`At ${e} End is ${end}, '>=Total', ${total} offset ${offset}`);
+    if (total === end) {
+      this.isLoading = true;
+      this.offset.next(offset);
+    }
   }
 
   trackByIdx(i) {
