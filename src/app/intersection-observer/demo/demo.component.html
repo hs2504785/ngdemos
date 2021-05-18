@@ -98,12 +98,14 @@
           Section 5 - Photos ({{ photos.length }} records) ✅
         </div>
         <div class="card-body text-primary">
-          <ul class="list-group photos">
-            <li class="list-group-item" *ngFor="let photo of photos">
-              <h2>{{ photo.title }}</h2>
-              <pre>{{ photo | json }}</pre>
-            </li>
-          </ul>
+          <cdk-virtual-scroll-viewport class="photos-viewport" itemSize="231">
+            <ul class="list-group">
+              <li class="list-group-item photo" *cdkVirtualFor="let photo of photos">
+                <h2>{{ photo.title }}</h2>
+                <pre>{{ photo | json }}</pre>
+              </li>
+            </ul>
+          </cdk-virtual-scroll-viewport>
         </div>
       </ng-container>
     </ng-container>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IntersectionStatus } from 'src/app/shared/directives/from-intersection-observer';
 import { IntrDataService } from '../services/intr-data.service';
@@ -6,7 +6,8 @@ import { IntrDataService } from '../services/intr-data.service';
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  styleUrls: ['./demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DemoComponent implements OnInit {
   visibilityStatus: {[key: string]: IntersectionStatus} = {};
