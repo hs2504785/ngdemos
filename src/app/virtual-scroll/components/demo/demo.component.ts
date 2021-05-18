@@ -30,6 +30,7 @@ export class DemoComponent implements OnInit {
 
   ngOnInit() {
     this.photos$ = this.offset.pipe(
+      tap(() => this.isLoading = true),
       throttleTime(500),
       distinctUntilChanged(),
       mergeMap((n) => this.getBatch(n)),
@@ -40,7 +41,6 @@ export class DemoComponent implements OnInit {
   }
 
   getBatch(offset) {
-    console.log('PAPPA', offset);
     return this.dataService.getPhotosNextBatch(offset).pipe(
       tap((arr) => {
         this.isLoading = false;
@@ -60,7 +60,6 @@ export class DemoComponent implements OnInit {
     const total = this.viewport.getDataLength();
     console.log(`At ${e} End is ${end}, '>=Total', ${total} offset ${offset}`);
     if (total === end) {
-      this.isLoading = true;
       this.offset.next(offset);
     }
   }
