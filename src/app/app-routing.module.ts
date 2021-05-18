@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'treegrid', loadChildren: () => import('./treegrid/treegrid.module').then(m => m.TreegridModule) },
   { path: 'performance', loadChildren: () => import('./performance/performance.module').then(m => m.PerformanceModule) },
   { path: 'intersection-observer', loadChildren: () => import('./intersection-observer/intersection-observer.module').then(m => m.IntersectionObserverModule) },
+  { path: 'virtual-scroll', loadChildren: () => import('./virtual-scroll/virtual-scroll.module').then(m => m.VirtualScrollModule) },
   {
     path: '**',
     redirectTo: '/not-found',
