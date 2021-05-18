@@ -1,1 +1,17 @@
-<p>demo works!</p>
+<ng-container *ngIf="photos$ | async as photos">
+  <cdk-virtual-scroll-viewport
+    itemSize="100"
+    (scrolledIndexChange)="nextBatch($event, photos[photos.length - 1].id)"
+  >
+  <div *cdkVirtualFor="let photo of photos; let i = index; trackBy: trackByIdx" class="d-flex photo animate__animated animate__lightSpeedInRight">
+    <div class="flex-shrink-0">
+      <img [src]="photo.thumbnailUrl" alt="photo.title" class="img-fluid">
+    </div>
+    <div class="flex-grow-1 ms-3">
+      <h4>{{ i }}. {{ photo.title }}</h4>
+      <p><a href="{{ photo.url }}">{{ photo.url }}</a></p>
+    </div>
+  </div>
+
+  </cdk-virtual-scroll-viewport>
+</ng-container>
