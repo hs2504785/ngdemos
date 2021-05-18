@@ -80,6 +80,9 @@ MIT
 
 data-source
 
+faker
+MIT
+
 find-and
 MIT
 MIT License
