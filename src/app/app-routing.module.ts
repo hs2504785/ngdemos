@@ -17,11 +17,6 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
-  },
-  {
     path: 'tree',
     loadChildren: () => import('./tree/tree.module').then((m) => m.TreeModule),
   },
@@ -30,6 +25,13 @@ const routes: Routes = [
   { path: 'performance', loadChildren: () => import('./performance/performance.module').then(m => m.PerformanceModule) },
   { path: 'intersection-observer', loadChildren: () => import('./intersection-observer/intersection-observer.module').then(m => m.IntersectionObserverModule) },
   { path: 'virtual-scroll', loadChildren: () => import('./virtual-scroll/virtual-scroll.module').then(m => m.VirtualScrollModule) },
+  // default route
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
+  // Fallbak route
   {
     path: '**',
     redirectTo: '/not-found',
