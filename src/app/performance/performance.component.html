@@ -47,6 +47,15 @@
           Only Table Module in Build
         </a>
       </mat-list-item>
+      <mat-list-item>
+        <a
+          matLine
+          routerLink="/virtual-scroll/basic"
+          (click)="setTitle('Avoid Non tree shakable modules')"
+        >
+          Avoid non tree shakable modules (import * as faker from 'faker';)
+        </a>
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 
