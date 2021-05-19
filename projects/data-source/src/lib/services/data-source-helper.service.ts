@@ -36,7 +36,7 @@ export class DataSourceHelperService {
   restoreExpandedNodes(treeControl) {
     this.expandedNodes.forEach((nodeKey: string) => {
       const foundNode = treeControl.dataNodes.find(
-        (n) => (n['id'] || n['name']) === nodeKey
+        n => (n['id'] || n['name']) === nodeKey,
       );
       treeControl.expand(foundNode);
     });
@@ -71,11 +71,11 @@ export class DataSourceHelperService {
 
     const rootNode = this.flatNodeMap.get(parentFlatNode);
 
-    this.dataSourceService.getOne(rootNode.id).subscribe((rootNode) => {
+    this.dataSourceService.getOne(rootNode.id).subscribe(rootNode => {
       const updatedRoot = changeProps(
         rootNode,
         { name: flatNode.name },
-        nodeToBeUpdated
+        nodeToBeUpdated,
       );
       this.dataSourceService.updateOne(updatedRoot);
     });
@@ -92,7 +92,7 @@ export class DataSourceHelperService {
       const parentFlatNode: any = this.getParent(flatNode);
       const rootNode = this.flatNodeMap.get(parentFlatNode);
 
-      this.dataSourceService.getOne(rootNode.id).subscribe((fatherNode) => {
+      this.dataSourceService.getOne(rootNode.id).subscribe(fatherNode => {
         const node = {
           ...currentNode,
           children: [...currentNode.children, nodeToBeAdded],
@@ -101,7 +101,7 @@ export class DataSourceHelperService {
         const updatedRoot = replaceObject(
           fatherNode,
           { name: flatNode.name },
-          node
+          node,
         );
         this.dataSourceService.updateOne(updatedRoot);
       });

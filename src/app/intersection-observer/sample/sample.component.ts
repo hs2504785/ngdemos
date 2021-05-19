@@ -4,12 +4,11 @@ import { IntersectionStatus } from 'src/app/shared/directives/from-intersection-
 @Component({
   selector: 'app-sample',
   templateUrl: './sample.component.html',
-  styleUrls: ['./sample.component.scss']
+  styleUrls: ['./sample.component.scss'],
 })
 export class SampleComponent implements OnInit {
-
   list = [];
-  visibilityStatus: {[key: number]: IntersectionStatus} = {};
+  visibilityStatus: { [key: number]: IntersectionStatus } = {};
   intersectionStatus = IntersectionStatus;
 
   ngOnInit() {
@@ -27,6 +26,4 @@ export class SampleComponent implements OnInit {
   trackByIndex(index: number) {
     return index;
   }
-
-
 }

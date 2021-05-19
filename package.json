@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prettier": "prettier --write \"src/**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
+    "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
     "start": "ng serve -o",
     "build": "npm run build-lib && ng build --prod",
     "test": "ng test",
@@ -57,7 +57,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "lint-staged": "11.0.0",
     "ng-packagr": "^11.0.0",
-    "prettier": "^2.2.1",
+    "prettier": "2.3.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",

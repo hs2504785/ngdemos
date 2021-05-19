@@ -45,13 +45,13 @@ export class DataSourceModule {
   constructor(
     private eds: EntityDefinitionService,
     private entityDataService: EntityDataService,
-    private dataSourceService: DataSourceService
+    private dataSourceService: DataSourceService,
   ) {
     this.eds.registerMetadataMap(entityMetadata);
 
     this.entityDataService.registerService(
       'DataSource',
-      this.dataSourceService
+      this.dataSourceService,
     );
   }
 }

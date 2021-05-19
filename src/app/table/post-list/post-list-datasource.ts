@@ -167,15 +167,15 @@ export class PostListDataSource extends DataSource<PostListItem> {
       return merge(
         observableOf(this.data),
         this.paginator.page,
-        this.sort.sortChange
+        this.sort.sortChange,
       ).pipe(
         map(() => {
           return this.getPagedData(this.getSortedData([...this.data]));
-        })
+        }),
       );
     } else {
       throw Error(
-        'Please set the paginator and sort on the data source before connecting.'
+        'Please set the paginator and sort on the data source before connecting.',
       );
     }
   }
@@ -226,7 +226,7 @@ export class PostListDataSource extends DataSource<PostListItem> {
 function compare(
   a: string | number,
   b: string | number,
-  isAsc: boolean
+  isAsc: boolean,
 ): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

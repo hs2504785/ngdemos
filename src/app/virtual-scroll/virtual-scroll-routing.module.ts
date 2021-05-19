@@ -22,12 +22,12 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'basic',
-      }
+      },
     ],
   },
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class VirtualScrollRoutingModule { }
+export class VirtualScrollRoutingModule {}

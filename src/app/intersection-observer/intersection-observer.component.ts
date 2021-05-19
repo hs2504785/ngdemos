@@ -4,7 +4,6 @@ import { IntersectionStatus } from '../shared/directives/from-intersection-obser
 @Component({
   selector: 'app-intersection-observer',
   templateUrl: './intersection-observer.component.html',
-  styleUrls: ['./intersection-observer.component.scss']
+  styleUrls: ['./intersection-observer.component.scss'],
 })
-export class IntersectionObserverComponent {
-}
+export class IntersectionObserverComponent {}

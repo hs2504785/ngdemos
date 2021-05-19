@@ -12,7 +12,7 @@ import {
 export class TreeComponent implements OnInit {
   constructor(
     private dataSourceService: DataSourceEntityService,
-    private dsHelperService: DataSourceHelperService
+    private dsHelperService: DataSourceHelperService,
   ) {}
 
   ngOnInit(): void {
@@ -257,14 +257,14 @@ export class TreeComponent implements OnInit {
     console.log('HERREE ', this.dsHelperService.treeFlattener);
     console.log(
       'Flatten nodes with treeControl ',
-      this.dsHelperService.treeControl.dataNodes
+      this.dsHelperService.treeControl.dataNodes,
     );
 
-    this.dataSourceService.getAll().subscribe((res) => {
+    this.dataSourceService.getAll().subscribe(res => {
       console.log('Node matrix ', res);
       console.log(
         'Flatten Nodes ',
-        this.dsHelperService.treeFlattener.flattenNodes(res)
+        this.dsHelperService.treeFlattener.flattenNodes(res),
       );
     });
   }

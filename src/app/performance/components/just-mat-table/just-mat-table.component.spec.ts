@@ -10,17 +10,19 @@ describe('JustMatTableComponent', () => {
   let component: JustMatTableComponent;
   let fixture: ComponentFixture<JustMatTableComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ JustMatTableComponent ],
-      imports: [
-        NoopAnimationsModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatTableModule,
-      ]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [JustMatTableComponent],
+        imports: [
+          NoopAnimationsModule,
+          MatPaginatorModule,
+          MatSortModule,
+          MatTableModule,
+        ],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(JustMatTableComponent);

@@ -10,7 +10,7 @@ import { DataService } from '../../shared/services/data.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DemoComponent implements OnInit {
-  visibilityStatus: {[key: string]: IntersectionStatus} = {};
+  visibilityStatus: { [key: string]: IntersectionStatus } = {};
   intersectionStatus = IntersectionStatus;
 
   todos$: Observable<any[]>;
@@ -19,7 +19,7 @@ export class DemoComponent implements OnInit {
   albums$: Observable<any[]>;
   photos$: Observable<any[]>;
   users$: Observable<any[]>;
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.todos$ = this.dataService.getTodos();

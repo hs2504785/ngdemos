@@ -8,9 +8,8 @@ describe('AvoidFunctionCallComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AvoidFunctionCallComponent ]
-    })
-    .compileComponents();
+      declarations: [AvoidFunctionCallComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

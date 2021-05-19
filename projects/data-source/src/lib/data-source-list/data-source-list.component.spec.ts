@@ -9,16 +9,14 @@ describe('DataSourceListComponent', () => {
   let component: DataSourceListComponent;
   let fixture: ComponentFixture<DataSourceListComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DataSourceListComponent ],
-      imports: [
-        MatButtonModule,
-        MatIconModule,
-        MatTreeModule,
-      ]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [DataSourceListComponent],
+        imports: [MatButtonModule, MatIconModule, MatTreeModule],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DataSourceListComponent);

@@ -34,19 +34,19 @@ export class DataSourceListComponent implements OnInit {
 
   constructor(
     private dataSourceService: DataSourceEntityService,
-    private dsHelperService: DataSourceHelperService
+    private dsHelperService: DataSourceHelperService,
   ) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
       this.isExpandable,
-      this.getChildren
+      this.getChildren,
     );
 
     this.treeControl = new FlatTreeControl(this.getLevel, this.isExpandable);
     this.dataSource = new MatTreeFlatDataSource(
       this.treeControl,
-      this.treeFlattener
+      this.treeFlattener,
     );
 
     // update service flattener
@@ -68,7 +68,7 @@ export class DataSourceListComponent implements OnInit {
 
     this.dataSources$ = this.dataSourceService.entities$;
 
-    this.dataSources$.subscribe((res) => {
+    this.dataSources$.subscribe(res => {
       this.dataSource.data = res;
       this.dsHelperService.restoreExpandedNodes(this.treeControl);
     });
@@ -110,18 +110,18 @@ export class DataSourceListComponent implements OnInit {
   }
 
   handleExpandedNodes() {
-    this.treeControl.expansionModel.changed.subscribe((res) => {
+    this.treeControl.expansionModel.changed.subscribe(res => {
       if (res.added[0] && res.added.length) {
         this.dsHelperService.toggleExpandedNodes(
           this.treeControl,
-          res.added[0]
+          res.added[0],
         );
       } else if (res.removed.length) {
-        res.removed.forEach((item) => {
+        res.removed.forEach(item => {
           this.dsHelperService.toggleExpandedNodes(
             this.treeControl,
             item,
-            true
+            true,
           );
         });
       }
@@ -132,7 +132,7 @@ export class DataSourceListComponent implements OnInit {
     const parentFlatNode: any = this.dsHelperService.getParent(node);
     const parentNode = this.dsHelperService.flatNodeMap.get(parentFlatNode);
 
-    this.dataSourceService.getOne(parentNode.id).subscribe((rootNode) => {
+    this.dataSourceService.getOne(parentNode.id).subscribe(rootNode => {
       const updatedRoot = removeObject(rootNode, { name: node.name });
       this.dataSourceService.updateOne(updatedRoot);
     });

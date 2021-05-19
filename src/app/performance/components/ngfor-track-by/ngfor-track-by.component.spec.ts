@@ -8,9 +8,8 @@ describe('NgforTrackByComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgforTrackByComponent ]
-    })
-    .compileComponents();
+      declarations: [NgforTrackByComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

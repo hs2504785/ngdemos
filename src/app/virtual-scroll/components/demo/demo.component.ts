@@ -30,24 +30,24 @@ export class DemoComponent implements OnInit {
 
   ngOnInit() {
     this.photos$ = this.offset.pipe(
-      tap(() => this.isLoading = true),
+      tap(() => (this.isLoading = true)),
       throttleTime(500),
       distinctUntilChanged(),
-      mergeMap((n) => this.getBatch(n)),
+      mergeMap(n => this.getBatch(n)),
       scan((acc, batch) => {
         return [...acc, ...batch];
-      }, [])
+      }, []),
     );
   }
 
   getBatch(offset) {
     return this.dataService.getPhotosNextBatch(offset).pipe(
-      tap((arr) => {
+      tap(arr => {
         this.isLoading = false;
         if (arr.length < 20) {
           this.theEnd = true;
         }
-      })
+      }),
     );
   }
 

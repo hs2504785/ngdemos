@@ -1,17 +1,17 @@
-@import "abstracts/variables";
-@import "abstracts/font";
+@import 'abstracts/variables';
+@import 'abstracts/font';
 // @import 'abstracts/functions';
 // @import 'abstracts/mixins';
 
-@import "~bootswatch/dist/flatly/_variables";
-@import "~bootstrap/scss/bootstrap";
-@import "~bootswatch/dist/flatly/_bootswatch";
+@import '~bootswatch/dist/flatly/_variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootswatch/dist/flatly/_bootswatch';
 @import '~animate.css/animate.min.css';
 
 // @import 'vendors/jquery-ui';
 
-@import "base/reset";
-@import "base/typography";
+@import 'base/reset';
+@import 'base/typography';
 
 // @import "layout/navigation";
 // @import "layout/grid";
@@ -20,7 +20,7 @@
 // @import "layout/sidebar";
 // @import "layout/forms";
 
-@import "components/link";
+@import 'components/link';
 // @import "components/buttons";
 // @import "components/carousel";
 // @import "components/slider";
@@ -29,5 +29,5 @@
 // @import "pages/about";
 // @import "pages/contact";
 
-@import "themes/theme";
+@import 'themes/theme';
 // @import "themes/admin";

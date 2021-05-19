@@ -100,7 +100,10 @@
         <div class="card-body text-primary">
           <cdk-virtual-scroll-viewport class="photos-viewport" itemSize="231">
             <ul class="list-group">
-              <li class="list-group-item photo" *cdkVirtualFor="let photo of photos">
+              <li
+                class="list-group-item photo"
+                *cdkVirtualFor="let photo of photos"
+              >
                 <h2>{{ photo.title }}</h2>
                 <pre>{{ photo | json }}</pre>
               </li>

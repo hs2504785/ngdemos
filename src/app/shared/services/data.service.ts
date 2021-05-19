@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
   API_URL = 'https://jsonplaceholder.typicode.com';
@@ -14,7 +14,7 @@ export class DataService {
   ALBUMS_URL = `${this.API_URL}/albums`;
   PHOTOS_URL = `${this.API_URL}/photos`;
   USERS_URL = `${this.API_URL}/users`;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   get(url): Observable<any[]> {
     return this.http.get<any[]>(url).pipe(delay(3000));
@@ -41,7 +41,7 @@ export class DataService {
   }
 
   getPhotosNextBatch(offset, limit = 20) {
-    const pageNo = offset / limit ;
+    const pageNo = offset / limit;
     return this.get(`${this.PHOTOS_URL}?_page=${pageNo}&_limit=${limit}`);
   }
 

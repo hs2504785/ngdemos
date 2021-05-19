@@ -6,19 +6,15 @@ import { IntersectionObserverComponent } from './intersection-observer.component
 import { IntersectionObserverDirective } from '../shared/directives/intersection-observer.directive';
 import { SampleComponent } from './sample/sample.component';
 import { DemoComponent } from './demo/demo.component';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
     IntersectionObserverComponent,
     IntersectionObserverDirective,
     SampleComponent,
-    DemoComponent
+    DemoComponent,
   ],
-  imports: [
-    CommonModule,
-    ScrollingModule,
-    IntersectionObserverRoutingModule
-  ]
+  imports: [CommonModule, ScrollingModule, IntersectionObserverRoutingModule],
 })
-export class IntersectionObserverModule { }
+export class IntersectionObserverModule {}

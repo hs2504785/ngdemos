@@ -4,14 +4,8 @@ import { CommonModule } from '@angular/common';
 import { TreegridRoutingModule } from './treegrid-routing.module';
 import { TreegridComponent } from './treegrid.component';
 
-
 @NgModule({
-  declarations: [
-    TreegridComponent
-  ],
-  imports: [
-    CommonModule,
-    TreegridRoutingModule
-  ]
+  declarations: [TreegridComponent],
+  imports: [CommonModule, TreegridRoutingModule],
 })
-export class TreegridModule { }
+export class TreegridModule {}

@@ -6,7 +6,7 @@
   >
     <button mat-icon-button disabled></button>
     <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
-      {{ node.type === "file" ? "description" : "folder" }}
+      {{ node.type === 'file' ? 'description' : 'folder' }}
     </mat-icon>
     {{ node.name }}
 
@@ -35,11 +35,11 @@
       [attr.aria-label]="'Toggle ' + node.name"
     >
       <mat-icon class="mat-icon-rtl-mirror">
-        {{ treeControl.isExpanded(node) ? "expand_more" : "chevron_right" }}
+        {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
       </mat-icon>
     </button>
     <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
-      {{ node.type === "file" ? "description" : "folder" }}
+      {{ node.type === 'file' ? 'description' : 'folder' }}
     </mat-icon>
     {{ node.name }}
 

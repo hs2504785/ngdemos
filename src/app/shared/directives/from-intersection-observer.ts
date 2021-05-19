@@ -1,16 +1,16 @@
-import { Observable, Subject } from "rxjs";
-import { debounceTime, filter, mergeMap, tap } from "rxjs/operators";
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, filter, mergeMap, tap } from 'rxjs/operators';
 
 export enum IntersectionStatus {
   Visible = 'Visible',
   Pending = 'Pending',
-  NotVisible = 'NotVisible'
+  NotVisible = 'NotVisible',
 }
 
 export const fromIntersectionObserver = (
   element: HTMLElement,
   config: IntersectionObserverInit,
-  debounce = 0
+  debounce = 0,
 ) =>
   new Observable<IntersectionStatus>(subscriber => {
     const subject$ = new Subject<{
@@ -26,7 +26,7 @@ export const fromIntersectionObserver = (
           }
         });
       },
-      config
+      config,
     );
 
     subject$.subscribe(() => {
@@ -34,10 +34,7 @@ export const fromIntersectionObserver = (
     });
 
     subject$
-      .pipe(
-        debounceTime(debounce),
-        filter(Boolean)
-      )
+      .pipe(debounceTime(debounce), filter(Boolean))
       .subscribe(async ({ entry, observer }) => {
         const isEntryVisible = await isVisible(entry.target as HTMLElement);
 
@@ -55,7 +52,7 @@ export const fromIntersectionObserver = (
       unsubscribe() {
         intersectionObserver.disconnect();
         subject$.unsubscribe();
-      }
+      },
     };
   });
 

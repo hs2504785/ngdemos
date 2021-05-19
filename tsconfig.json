@@ -4,14 +4,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "data-source": [
-        "dist/data-source/data-source",
-        "dist/data-source"
-      ],
-      "test": [
-        "dist/test/test",
-        "dist/test"
-      ]
+      "data-source": ["dist/data-source/data-source", "dist/data-source"],
+      "test": ["dist/test/test", "dist/test"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -22,10 +16,7 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2018", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false

@@ -19,7 +19,7 @@ export class DemosComponent implements OnInit {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private router: Router
+    private router: Router,
   ) {}
 
   @ViewChild(MatSidenav) sidenav: MatSidenav;

@@ -7,17 +7,8 @@ import { BasicComponent } from './components/basic/basic.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-
 @NgModule({
-  declarations: [
-    VirtualScrollComponent,
-    BasicComponent,
-    DemoComponent
-  ],
-  imports: [
-    CommonModule,
-    VirtualScrollRoutingModule,
-    ScrollingModule
-  ]
+  declarations: [VirtualScrollComponent, BasicComponent, DemoComponent],
+  imports: [CommonModule, VirtualScrollRoutingModule, ScrollingModule],
 })
-export class VirtualScrollModule { }
+export class VirtualScrollModule {}
