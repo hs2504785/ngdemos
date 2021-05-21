@@ -193,6 +193,46 @@
           }
         }
       }
+    },
+    "rxdb": {
+      "projectType": "library",
+      "root": "projects/rxdb",
+      "sourceRoot": "projects/rxdb/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/rxdb/tsconfig.lib.json",
+            "project": "projects/rxdb/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/rxdb/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rxdb/src/test.ts",
+            "tsConfig": "projects/rxdb/tsconfig.spec.json",
+            "karmaConfig": "projects/rxdb/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rxdb/tsconfig.lib.json",
+              "projects/rxdb/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngdemos"

@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'not-found',
+    path: 'rxdb',
     loadChildren: () =>
-      import('./not-found/not-found.module').then(m => m.NotFoundModule),
+      import('projects/rxdb/src/public-api').then(m => m.RxdbModule),
   },
   {
     path: 'demos',
@@ -47,6 +47,12 @@ const routes: Routes = [
         m => m.VirtualScrollModule,
       ),
   },
+  {
+    path: 'not-found',
+    loadChildren: () =>
+      import('./not-found/not-found.module').then(m => m.NotFoundModule),
+  },
+
   // default route
   {
     path: '',

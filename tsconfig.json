@@ -4,7 +4,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "data-source": ["dist/data-source/data-source", "dist/data-source"],
+      "data-source": [
+        "dist/data-source/data-source",
+        "dist/data-source"
+      ],
+      "rxdb": [
+        "dist/rxdb/rxdb",
+        "dist/rxdb"
+      ],
       "test": ["dist/test/test", "dist/test"]
     },
     "outDir": "./dist/out-tsc",
