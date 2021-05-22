@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TodoInterface } from 'projects/rxdb/src/lib/models/todo.interface';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
@@ -20,7 +21,7 @@ export class DataService {
     return this.http.get<any[]>(url).pipe(delay(3000));
   }
 
-  getTodos() {
+  getTodos(): Observable<TodoInterface[]> {
     return this.get(this.TODOS_URL);
   }
 

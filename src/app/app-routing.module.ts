@@ -60,10 +60,10 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   // Fallbak route
-  {
-    path: '**',
-    redirectTo: '/not-found',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: '/not-found',
+  // },
 ];
 
 @NgModule({
