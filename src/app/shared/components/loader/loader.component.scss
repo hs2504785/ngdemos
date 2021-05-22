@@ -1,3 +1,5 @@
+@import 'variables';
+
 .loader-overlay {
   position: absolute;
   width: 100%;
@@ -20,7 +22,7 @@
   left: -200px;
   width: 200px;
   height: 4px;
-  background-color: #007bff;
+  background-color: $brand-primary; // 731DD8
   animation: loading 2s linear infinite;
 }
 

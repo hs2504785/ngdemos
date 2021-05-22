@@ -1,1 +1,5 @@
-$open-sans: 'Open Sans', sans-serif;
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+@import 'brand-variables';
