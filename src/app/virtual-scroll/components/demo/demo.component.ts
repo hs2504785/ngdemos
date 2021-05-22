@@ -34,7 +34,7 @@ export class DemoComponent implements OnInit {
       throttleTime(500),
       distinctUntilChanged(),
       mergeMap(n => this.getBatch(n)),
-      scan((acc, batch) => {
+      scan((acc, batch: any) => {
         return [...acc, ...batch];
       }, []),
     );
@@ -42,7 +42,7 @@ export class DemoComponent implements OnInit {
 
   getBatch(offset) {
     return this.dataService.getPhotosNextBatch(offset).pipe(
-      tap(arr => {
+      tap((arr: any) => {
         this.isLoading = false;
         if (arr.length < 20) {
           this.theEnd = true;

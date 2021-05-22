@@ -46,7 +46,10 @@ export class DataSourceEntityService extends EntityCollectionServiceBase<any> {
   getOne(elm) {
     const elmId = typeof elm === 'string' ? elm : elm.id;
     return this.selectors$.entities$.pipe(
-      map(sources => sources.filter(source => source.id === elmId)[0]),
+      map(
+        (sources: any) =>
+          sources.filter((source: any) => source.id === elmId)[0],
+      ),
       take(1),
     );
   }

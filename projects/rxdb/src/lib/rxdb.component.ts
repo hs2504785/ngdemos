@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from './services/database.service';
 
 @Component({
   selector: 'lib-rxdb',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class RxdbComponent implements OnInit {
-  constructor() {}
+  constructor(private dbService: DatabaseService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.dbService);
+  }
 }

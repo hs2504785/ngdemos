@@ -1,0 +1,6 @@
+<ul class="list-group" *ngIf="todos$ | async as todos">
+  <li class="list-group-item" *ngFor="let todo of todos">
+    {{ todo.id }} - {{ todo.title }}
+    <div>Completed: {{ todo.completed }}</div>
+  </li>
+</ul>
