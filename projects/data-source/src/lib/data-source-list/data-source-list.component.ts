@@ -9,8 +9,7 @@ import { DataSourceEntityService } from '../services/data-source-entity.service'
 import { Observable } from 'rxjs';
 import { FileNode, FlatTreeNode } from '../models/data-source.interface';
 import { DataSourceHelperService } from '../services/data-source-helper.service';
-import { clone } from '../shared/rfdc';
-import { changeProps, removeObject } from 'find-and';
+import { removeObject } from 'src/app/shared/modules/find-and';
 
 @Component({
   selector: 'lib-data-source-list',

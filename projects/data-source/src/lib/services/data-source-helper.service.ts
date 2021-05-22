@@ -1,12 +1,7 @@
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { Injectable } from '@angular/core';
 import { MatTreeFlattener } from '@angular/material/tree';
-import {
-  changeProps,
-  insertObjectAfter,
-  insertObjectBefore,
-  replaceObject,
-} from 'find-and';
+import { changeProps, replaceObject } from 'src/app/shared/modules/find-and';
 import { FileNode, FlatTreeNode } from '../models/data-source.interface';
 import { clone } from '../shared/rfdc';
 import { DataSourceEntityService } from './data-source-entity.service';

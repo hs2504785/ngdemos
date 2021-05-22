@@ -3,8 +3,7 @@
 ```
 npm install -g angular-cli-ghpages
 ng build --prod --base-href "https://hs2504785.github.io/ngdemos/"
-
-
+ngh --dir=dist/ngdemos --message="My First deploy"
 ```
 
 All done!
