@@ -6,6 +6,10 @@ import { EditTodoComponent } from './components/edit-todo/edit-todo.component';
 import { ViewTodoComponent } from './components/view-todo/view-todo.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { FormsModule } from '@angular/forms';
+// import { EffectsModule } from '@ngrx/effects';
+// import { TodoEffects } from './state/todo.effects';
+import { StoreModule } from '@ngrx/store';
+import { todoFeatureKey, todoReducer } from './state/todo.reducer';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,13 @@ import { FormsModule } from '@angular/forms';
     EditTodoComponent,
     ViewTodoComponent,
   ],
-  imports: [FormsModule, CommonModule, TodoRoutingModule],
+  imports: [
+    StoreModule.forFeature(todoFeatureKey, todoReducer),
+    FormsModule,
+    CommonModule,
+    TodoRoutingModule,
+    // EffectsModule.forFeature([TodoEffects]),
+  ],
   exports: [TodoComponent],
 })
 export class TodoModule {}
