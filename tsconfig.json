@@ -12,7 +12,14 @@
         "dist/rxdb/rxdb",
         "dist/rxdb"
       ],
-      "test": ["dist/test/test", "dist/test"]
+      "test": [
+        "dist/test/test",
+        "dist/test"
+      ],
+      "todo": [
+        "dist/todo/todo",
+        "dist/todo"
+      ]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
