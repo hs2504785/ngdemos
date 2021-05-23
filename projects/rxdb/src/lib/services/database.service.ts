@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { createRxDatabase, addRxPlugin } from 'rxdb/plugins/core';
-import { Observable } from 'rxjs';
-import { TodoInterface } from '../models/todo.interface';
 import { TODO_SCHEMA } from '../schemas/todo.schema';
 addRxPlugin(require('pouchdb-adapter-idb'));
 
@@ -47,28 +45,5 @@ export async function initDatabase() {
 export class DatabaseService {
   get db() {
     return window['db'];
-  }
-
-  getTodoItems(): Observable<TodoInterface[]> {
-    return todoCollection && todoCollection.todo.find().$;
-  }
-
-  async createTodoItem(todo) {
-    const newTodo = {
-      title: todo.title,
-      completed: !!todo.completed,
-      id: new Date().getTime().toString(),
-    };
-    return todoCollection.todo.insert(newTodo);
-  }
-
-  async removeTodoItem(todo) {
-    const query = todoCollection.todo.find().where('id').eq(todo.id);
-    const removedDocs = await query.remove();
-    return removedDocs;
-  }
-
-  async updateTodoItem(todo) {
-    return await todoCollection.todo.upsert(todo);
   }
 }

@@ -1,16 +1,6 @@
-import {
-  AfterViewInit,
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChange,
-  ViewChild,
-} from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
 import { TodoInterface } from '../../models/todo.interface';
-import { DatabaseService } from '../../services/database.service';
-import { TodoStore } from '../../services/todo-store.service';
+import { TododbService } from '../../services/tododb.service';
 
 @Component({
   selector: 'lib-edit-todo',
@@ -20,10 +10,7 @@ import { TodoStore } from '../../services/todo-store.service';
 export class EditTodoComponent implements OnInit {
   @Input() todo: TodoInterface;
 
-  constructor(
-    private todoStore: TodoStore,
-    private databaseService: DatabaseService,
-  ) {}
+  constructor(private tododbService: TododbService) {}
 
   ngOnInit(): void {
     // this.todo = todo;
@@ -31,6 +18,6 @@ export class EditTodoComponent implements OnInit {
 
   updateTodo(todo: TodoInterface) {
     // this.todoStore.updateTodo({ ...this.todo, ...todo });
-    this.databaseService.updateTodoItem({ id: this.todo.id, ...todo });
+    this.tododbService.updateTodoItem({ id: this.todo.id, ...todo });
   }
 }

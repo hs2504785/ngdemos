@@ -9,6 +9,7 @@ import { ViewTodoComponent } from './components/view-todo/view-todo.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { FormsModule } from '@angular/forms';
 import { TodoResolver } from './services/todo.resolver';
+import { TododbService } from './services/tododb.service';
 
 const routes: Routes = [
   {
@@ -46,7 +47,7 @@ const routes: Routes = [
     MatButtonModule,
     RouterModule.forChild(routes),
   ],
-  providers: [TodoResolver],
+  providers: [TodoResolver, TododbService],
   exports: [RxdbComponent],
 })
 export class RxdbModule {}
