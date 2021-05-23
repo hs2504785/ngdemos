@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from 'src/app/shared/services/data.service';
 import { TodoInterface } from '../../models/todo.interface';
+import { DatabaseService } from '../../services/database.service';
 import { TodoStore } from '../../services/todo-store.service';
 
 @Component({
@@ -12,10 +13,14 @@ import { TodoStore } from '../../services/todo-store.service';
 export class TodoListComponent implements OnInit {
   todos$: Observable<TodoInterface[]>;
   selectedTodo: TodoInterface;
-  constructor(private store: TodoStore) {}
+  constructor(
+    private store: TodoStore,
+    private databaseService: DatabaseService,
+  ) {}
 
   ngOnInit(): void {
-    this.todos$ = this.store.todos$;
+    // this.todos$ = this.store.todos$;
+    this.todos$ = this.databaseService.getTodoItems();
   }
 
   onTodoAdd(todo: TodoInterface) {
@@ -27,6 +32,7 @@ export class TodoListComponent implements OnInit {
   }
 
   removeTodo(todo: TodoInterface) {
-    this.store.removeTodo(todo);
+    // this.store.removeTodo(todo);
+    this.databaseService.removeTodoItem(todo);
   }
 }

@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: RxdbComponent,
-    resolve: [TodoResolver],
+    // resolve: [TodoResolver],
     children: [
       {
         path: 'add-todo',

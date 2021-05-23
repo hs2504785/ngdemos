@@ -9,7 +9,8 @@ import { DatabaseService } from './services/database.service';
 export class RxdbComponent implements OnInit {
   constructor(private dbService: DatabaseService) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    // this.dbService.ensureDBCreated();
     console.log(this.dbService);
   }
 }
