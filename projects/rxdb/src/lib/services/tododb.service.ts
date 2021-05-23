@@ -14,6 +14,10 @@ export class TododbService {
     return this.todoCollection.find().$;
   }
 
+  getCompletedTodoItems(): Observable<TodoInterface[]> {
+    return this.todoCollection.find().where('completed').eq(true).$;
+  }
+
   async createTodoItem(todo) {
     const newTodo = {
       title: todo.title,

@@ -11,12 +11,14 @@ import { TododbService } from '../../services/tododb.service';
 })
 export class TodoListComponent implements OnInit {
   todos$: Observable<TodoInterface[]>;
+  completedTodos$: Observable<TodoInterface[]>;
   selectedTodo: TodoInterface;
   constructor(private tododbService: TododbService) {}
 
   ngOnInit(): void {
     // this.todos$ = this.store.todos$;
     this.todos$ = this.tododbService.getTodoItems();
+    this.completedTodos$ = this.tododbService.getCompletedTodoItems();
   }
 
   onTodoAdd(todo: TodoInterface) {

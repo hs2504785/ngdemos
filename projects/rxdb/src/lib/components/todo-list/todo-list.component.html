@@ -16,6 +16,24 @@
         <i class="ti-trash" (click)="removeTodo(todo)"></i>
       </li>
     </ul>
+    <div *ngIf="completedTodos$ | async as todos">
+      <ng-container *ngIf="todos.length">
+        <h2 class="mt-5">Completed Todos ({{ todos.length }})</h2>
+        <ul class="list-group">
+          <li
+            class="list-group-item d-flex justify-content-between"
+            *ngFor="let todo of todos"
+          >
+            <div class="todo" (click)="selectedTodo = todo">
+              {{ todo.id }} - {{ todo.title }}
+              <div>Completed: {{ todo.completed }}</div>
+            </div>
+
+            <i class="ti-trash" (click)="removeTodo(todo)"></i>
+          </li>
+        </ul>
+      </ng-container>
+    </div>
   </div>
   <div class="col-sm-6">
     <lib-add-todo (addTodo)="onTodoAdd($event)"></lib-add-todo>
