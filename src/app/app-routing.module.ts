@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TodoResolver } from 'projects/todo/src/lib/services/todo.resolver';
 
 const routes: Routes = [
   {
     path: 'todos',
     loadChildren: () =>
       import('projects/todo/src/public-api').then(m => m.TodoModule),
+    resolve: [TodoResolver],
   },
   {
     path: 'demos',

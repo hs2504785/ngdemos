@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 // import { TodoEffects } from './state/todo.effects';
 import { StoreModule } from '@ngrx/store';
 import { todoFeatureKey, todoReducer } from './state/todo.reducer';
+import { TodoEffects } from './state/todo.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { todoFeatureKey, todoReducer } from './state/todo.reducer';
     FormsModule,
     CommonModule,
     TodoRoutingModule,
-    // EffectsModule.forFeature([TodoEffects]),
+    EffectsModule.forFeature([TodoEffects]),
   ],
   exports: [TodoComponent],
 })
