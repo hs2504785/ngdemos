@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { TodoInterface } from 'projects/rxdb/src/lib/models/todo.interface';
+import { TodoInterface } from 'projects/todo/src/lib/models/todo.interface';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 

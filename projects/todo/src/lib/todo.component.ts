@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoInterface } from 'projects/rxdb/src/lib/models/todo.interface';
 import { Observable, of } from 'rxjs';
+import { TodoInterface } from './models/todo.interface';
 
 @Component({
   selector: 'lib-todo',

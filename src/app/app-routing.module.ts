@@ -8,11 +8,6 @@ const routes: Routes = [
       import('projects/todo/src/public-api').then(m => m.TodoModule),
   },
   {
-    path: 'rxdb',
-    loadChildren: () =>
-      import('projects/rxdb/src/public-api').then(m => m.RxdbModule),
-  },
-  {
     path: 'demos',
     loadChildren: () => import('./demos/demos.module').then(m => m.DemosModule),
   },

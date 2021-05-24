@@ -11,10 +11,6 @@ import { entityConfig } from './entity-metadata';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './shared/components/loader/loader.component';
-import {
-  DatabaseService,
-  initDatabase,
-} from 'projects/rxdb/src/lib/services/database.service';
 
 @NgModule({
   declarations: [AppComponent, LoaderComponent],
@@ -29,14 +25,7 @@ import {
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig),
   ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: () => initDatabase,
-      multi: true,
-      deps: [DatabaseService],
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
