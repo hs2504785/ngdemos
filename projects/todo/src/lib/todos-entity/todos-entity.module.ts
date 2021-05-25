@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { TodosEntityRoutingModule } from './todos-entity-routing.module';
 import { TodosEntityComponent } from './todos-entity.component';
-
+import { FormsModule } from '@angular/forms';
+import { AddTodoComponent } from './components/add-todo/add-todo.component';
+import { EditTodoComponent } from './components/edit-todo/edit-todo.component';
+import { ViewTodoComponent } from './components/view-todo/view-todo.component';
 
 @NgModule({
   declarations: [
-    TodosEntityComponent
+    TodosEntityComponent,
+    AddTodoComponent,
+    EditTodoComponent,
+    ViewTodoComponent,
   ],
-  imports: [
-    CommonModule,
-    TodosEntityRoutingModule
-  ]
+  imports: [CommonModule, FormsModule, TodosEntityRoutingModule],
 })
-export class TodosEntityModule { }
+export class TodosEntityModule {}

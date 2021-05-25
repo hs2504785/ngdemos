@@ -1,0 +1,14 @@
+.add-todo {
+  display: flex;
+  align-self: center;
+}
+
+.todo {
+  flex: 1;
+}
+
+.ti-trash {
+  cursor: pointer;
+  margin-top: 2px;
+  margin-left: 10px;
+}

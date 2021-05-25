@@ -1,1 +1,32 @@
-<p>todos-entity works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <header class="d-flex justify-content-between mb-2">
+        <h1>Todo List</h1>
+        <a class="btn btn-primary add-todo" routerLink="add">
+          <i class="ti-plus"></i>
+        </a>
+      </header>
+
+      <ul class="list-group" *ngIf="todos$ | async as todos">
+        <li
+          class="list-group-item d-flex justify-content-between"
+          *ngFor="let todo of todos"
+        >
+          <div class="todo">
+            {{ todo.id }} - {{ todo.title }}
+            <div>Completed: {{ todo.completed }}</div>
+          </div>
+
+          <a [routerLink]="['edit', todo.id]"><i class="ti-pencil mr-2"></i></a>
+          <i class="ti-trash" (click)="removeTodo(todo)"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <router-outlet></router-outlet>
+      <!-- <lib-add-todo (addTodo)="onTodoAdd($event)"></lib-add-todo>
+      <lib-edit-todo *ngIf="selectedTodo" [todo]="selectedTodo"></lib-edit-todo> -->
+    </div>
+  </div>
+</div>
