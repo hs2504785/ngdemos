@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { TodoStateInterface } from '../../models/todo-state.interface';
 import { TodoInterface } from '../../models/todo.interface';
+import { addTodoAction } from '../../state/todo.actions';
 
 @Component({
   selector: 'lib-add-todo',
@@ -7,11 +10,12 @@ import { TodoInterface } from '../../models/todo.interface';
   styleUrls: ['./add-todo.component.scss'],
 })
 export class AddTodoComponent implements OnInit {
-  constructor() {}
+  constructor(private store: Store<TodoStateInterface>) {}
 
   ngOnInit(): void {}
 
   addTodo(todo: TodoInterface) {
     console.log('Todo', todo);
+    this.store.dispatch(addTodoAction({ todo }));
   }
 }

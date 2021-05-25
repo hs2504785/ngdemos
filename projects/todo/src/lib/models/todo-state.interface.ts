@@ -1,6 +1,6 @@
 import { TodoInterface } from './todo.interface';
 
-export interface TodoState {
+export interface TodoStateInterface {
   data: TodoInterface[];
   isLoading: boolean;
   error: null;

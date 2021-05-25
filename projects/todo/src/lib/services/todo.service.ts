@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { TodoInterface } from '../models/todo.interface';
 
 @Injectable({
@@ -14,15 +15,15 @@ export class TodoService {
     return this.http.get(`${this.API_URL}`);
   }
 
-  addTodo(todo: TodoInterface): any {
-    this.http.post(`${this.API_URL}`, todo).subscribe();
+  addTodo(todo: TodoInterface): Observable<TodoInterface> {
+    return this.http.post<TodoInterface>(`${this.API_URL}`, todo);
   }
 
   updateTodo(todo: TodoInterface): any {
-    this.http.put(`${this.API_URL}/${todo.id}`, todo).subscribe();
+    return this.http.put(`${this.API_URL}/${todo.id}`, todo);
   }
 
   removeTodo(todo: TodoInterface): any {
-    this.http.delete(`${this.API_URL}/${todo.id}`).subscribe();
+    return this.http.delete(`${this.API_URL}/${todo.id}`);
   }
 }

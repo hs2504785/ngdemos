@@ -1,10 +1,17 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import * as TodoActions from './todo.actions';
-import { TodoState } from '../models/todo-state.interface';
+import { TodoStateInterface } from '../models/todo-state.interface';
+import {
+  addTodoAction,
+  addTodoFailureAction,
+  addTodoSuccessAction,
+  loadTodos,
+  loadTodosFailure,
+  loadTodosSuccess,
+} from './todo.actions';
 
 export const todoFeatureKey = 'todo';
 
-export const initialState: TodoState = {
+export const initialState: TodoStateInterface = {
   data: null,
   isLoading: false,
   error: null,
@@ -14,13 +21,13 @@ export const initialState: TodoState = {
 export const reducer = createReducer(
   initialState,
 
-  on(TodoActions.loadTodos, (state): TodoState => {
+  on(loadTodos, (state): TodoStateInterface => {
     return {
       ...state,
       isLoading: true,
     };
   }),
-  on(TodoActions.loadTodosSuccess, (state, action): TodoState => {
+  on(loadTodosSuccess, (state, action): TodoStateInterface => {
     return {
       ...state,
       isLoading: false,
@@ -28,14 +35,42 @@ export const reducer = createReducer(
       loaded: true,
     };
   }),
-  on(TodoActions.loadTodosFailure, (state, action) => {
+  on(loadTodosFailure, (state, action) => {
     return {
       ...state,
       isLoading: false,
     };
   }),
+
+  // Add
+  on(
+    addTodoAction,
+    (state): TodoStateInterface => ({
+      ...state,
+      isLoading: true,
+    }),
+  ),
+  on(
+    addTodoSuccessAction,
+    (state, action): TodoStateInterface => ({
+      ...state,
+      isLoading: false,
+      data: [action.todo, ...state.data],
+    }),
+  ),
+
+  on(
+    addTodoFailureAction,
+    (state): TodoStateInterface => ({
+      ...state,
+      isLoading: false,
+    }),
+  ),
 );
 
-export function todoReducer(state: TodoState | undefined, action: Action) {
+export function todoReducer(
+  state: TodoStateInterface | undefined,
+  action: Action,
+) {
   return reducer(state, action);
 }
