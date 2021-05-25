@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { EditTodoComponent } from './components/edit-todo/edit-todo.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { ViewTodoComponent } from './components/view-todo/view-todo.component';
 import { TodoComponent } from './todo.component';
 
@@ -11,19 +12,55 @@ const routes: Routes = [
     component: TodoComponent,
     children: [
       {
-        path: 'add',
-        component: AddTodoComponent,
+        path: 'no-entity',
+        component: TodoListComponent,
+        children: [
+          {
+            path: 'add',
+            component: AddTodoComponent,
+          },
+          {
+            path: 'edit/:id',
+            component: EditTodoComponent,
+          },
+          {
+            path: 'view/:id',
+            component: ViewTodoComponent,
+          },
+        ],
       },
       {
-        path: 'edit/:id',
-        component: EditTodoComponent,
+        path: 'todos-entity',
+        loadChildren: () =>
+          import('./todos-entity/todos-entity.module').then(
+            m => m.TodosEntityModule,
+          ),
       },
       {
-        path: 'view/:id',
-        component: ViewTodoComponent,
+        path: '',
+        redirectTo: 'no-entity',
       },
     ],
   },
+
+  // {
+  //   path: '',
+  //   component: TodoComponent,
+  //   children: [
+  //     {
+  //       path: 'add',
+  //       component: AddTodoComponent,
+  //     },
+  //     {
+  //       path: 'edit/:id',
+  //       component: EditTodoComponent,
+  //     },
+  //     {
+  //       path: 'view/:id',
+  //       component: ViewTodoComponent,
+  //     },
+  //   ],
+  // },
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { todoFeatureKey, todoReducer } from './state/todo.reducer';
 import { TodoEffects } from './state/todo.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EffectsModule } from '@ngrx/effects';
     AddTodoComponent,
     EditTodoComponent,
     ViewTodoComponent,
+    TodoListComponent,
   ],
   imports: [
     StoreModule.forFeature(todoFeatureKey, todoReducer),
