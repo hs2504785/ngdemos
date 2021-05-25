@@ -7,6 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { EditTodoComponent } from './components/edit-todo/edit-todo.component';
 import { ViewTodoComponent } from './components/view-todo/view-todo.component';
+import { StoreModule } from '@ngrx/store';
+import {
+  entityTodoesFeatureKey,
+  entityTodoReducer,
+} from './state/todo.reducer';
 
 @NgModule({
   declarations: [
@@ -15,6 +20,11 @@ import { ViewTodoComponent } from './components/view-todo/view-todo.component';
     EditTodoComponent,
     ViewTodoComponent,
   ],
-  imports: [CommonModule, FormsModule, TodosEntityRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    TodosEntityRoutingModule,
+    StoreModule.forFeature(entityTodoesFeatureKey, entityTodoReducer),
+  ],
 })
 export class TodosEntityModule {}

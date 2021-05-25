@@ -19,13 +19,14 @@ import {
   loadTodosFailure,
   loadTodosSuccess,
 } from './todo.actions';
+import { entityLoadTodos } from '../todos-entity/state/todo.actions';
 
 @Injectable()
 export class TodoEffects {
   // Get All
   loadTodos$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(loadTodos),
+      ofType(loadTodos, entityLoadTodos),
       concatMap(
         () => this.todoService.getTodos(),
         // /** An EMPTY observable only emits completion. Replace with your own observable API request */
