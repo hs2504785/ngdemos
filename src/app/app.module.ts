@@ -11,6 +11,7 @@ import { entityConfig } from './entity-metadata';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './shared/components/loader/loader.component';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [AppComponent, LoaderComponent],
@@ -20,7 +21,10 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
     BrowserAnimationsModule,
     HttpClientModule,
 
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      router: routerReducer,
+    }),
+    StoreRouterConnectingModule.forRoot(),
     extModules,
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig),
