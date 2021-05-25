@@ -7,6 +7,9 @@ import {
   deleteTodoAction,
   deleteTodoFailureAction,
   deleteTodoSuccessAction,
+  editTodoAction,
+  editTodoFailureAction,
+  editTodoSuccessAction,
   loadTodos,
   loadTodosFailure,
   loadTodosSuccess,
@@ -64,6 +67,53 @@ export const reducer = createReducer(
 
   on(
     addTodoFailureAction,
+    (state): TodoStateInterface => ({
+      ...state,
+      isLoading: false,
+    }),
+  ),
+
+  on(
+    editTodoAction,
+    (state): TodoStateInterface => ({
+      ...state,
+      isLoading: true,
+    }),
+  ),
+  // Another way to update post
+  // on(
+  //   editPostSuccessAction,
+  //   (state, action): PostStateInterface => {
+  //     const index = state.data.findIndex((h) => h.id === action.post.id);
+  //     let updatedState = [...state.data];
+  //     if (index >= 0) {
+  //       updatedState = [
+  //         ...state.data.slice(0, index),
+  //         action.post,
+  //         ...state.data.slice(index + 1),
+  //       ];
+  //     }
+
+  //     return {
+  //       ...state,
+  //       isLoading: false,
+  //       data: updatedState,
+  //     };
+  //   }
+  // ),
+  on(editTodoSuccessAction, (state, action): TodoStateInterface => {
+    const updatedTodo = state.data.map(todo =>
+      todo.id === action.todo.id ? action.todo : todo,
+    );
+
+    return {
+      ...state,
+      isLoading: false,
+      data: updatedTodo,
+    };
+  }),
+  on(
+    editTodoFailureAction,
     (state): TodoStateInterface => ({
       ...state,
       isLoading: false,

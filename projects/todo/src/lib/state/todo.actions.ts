@@ -29,6 +29,21 @@ export const addTodoFailureAction = createAction(
   TodoActionTypes.ADD_TODO_FAILURE,
 );
 
+// Edit
+export const editTodoAction = createAction(
+  TodoActionTypes.EDIT_TODO,
+  props<{ todo: TodoInterface }>(),
+);
+
+export const editTodoSuccessAction = createAction(
+  TodoActionTypes.EDIT_TODO_SUCCESS,
+  props<{ todo: TodoInterface }>(),
+);
+
+export const editTodoFailureAction = createAction(
+  TodoActionTypes.EDIT_TODO_FAILURE,
+);
+
 // Delete
 export const deleteTodoAction = createAction(
   TodoActionTypes.DELETE_TODO,

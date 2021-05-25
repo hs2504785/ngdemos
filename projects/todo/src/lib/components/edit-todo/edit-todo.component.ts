@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { TodoStateInterface } from '../../models/todo-state.interface';
 import { TodoInterface } from '../../models/todo.interface';
+import { editTodoAction } from '../../state/todo.actions';
 
 @Component({
   selector: 'lib-edit-todo',
@@ -12,11 +15,14 @@ export class EditTodoComponent implements OnInit {
     completed: true,
   };
 
-  constructor() {}
+  constructor(private store: Store<TodoStateInterface>) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.todo = this.store.pipe(getTodoById())
+  }
 
   updateTodo(todo: TodoInterface) {
     console.log('Update ', todo);
+    this.store.dispatch(editTodoAction({ todo }));
   }
 }

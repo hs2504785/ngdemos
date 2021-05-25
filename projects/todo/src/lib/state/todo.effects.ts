@@ -12,6 +12,9 @@ import {
   deleteTodoAction,
   deleteTodoFailureAction,
   deleteTodoSuccessAction,
+  editTodoAction,
+  editTodoFailureAction,
+  editTodoSuccessAction,
   loadTodos,
   loadTodosFailure,
   loadTodosSuccess,
@@ -19,6 +22,7 @@ import {
 
 @Injectable()
 export class TodoEffects {
+  // Get All
   loadTodos$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(loadTodos),
@@ -34,6 +38,7 @@ export class TodoEffects {
     );
   });
 
+  // Add
   createTodo$ = createEffect(() =>
     this.actions$.pipe(
       ofType(addTodoAction),
@@ -50,6 +55,26 @@ export class TodoEffects {
     ),
   );
 
+  // Edit
+  editPost$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(editTodoAction),
+      switchMap(({ todo }) => {
+        // this.loader.show();
+        return this.todoService.updateTodo(todo).pipe(
+          map((todo: TodoInterface) => {
+            return editTodoSuccessAction({ todo });
+          }),
+          catchError(() => {
+            // this.loader.hide();
+            return of(editTodoFailureAction());
+          }),
+        );
+      }),
+    ),
+  );
+
+  // Delete
   deletePost$ = createEffect(() =>
     this.actions$.pipe(
       ofType(deleteTodoAction),
