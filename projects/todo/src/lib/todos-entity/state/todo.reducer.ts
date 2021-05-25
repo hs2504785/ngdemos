@@ -2,6 +2,7 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { sort, TodoInterface } from '../../models/todo.interface';
 import { loadTodosSuccess } from '../../state/todo.actions';
+import { updateEntityTodo } from './todo.actions';
 
 export const entityTodoesFeatureKey = 'entityTodos';
 
@@ -32,9 +33,9 @@ export const reducer = createReducer(
   // on(TodoActions.upsertTodos, (state, action) =>
   //   adapter.upsertMany(action.todos, state),
   // ),
-  // on(TodoActions.updateTodo, (state, action) =>
-  //   adapter.updateOne(action.todo, state),
-  // ),
+  on(updateEntityTodo, (state, action) =>
+    adapter.updateOne(action.todo, state),
+  ),
   // on(TodoActions.updateTodos, (state, action) =>
   //   adapter.updateMany(action.todos, state),
   // ),

@@ -36,10 +36,10 @@ export const entityLoadTodosFailure = createAction(
 //   props<{ todos: TodoInterface[] }>(),
 // );
 
-// export const updateTodo = createAction(
-//   '[Todo/API] Update Todo',
-//   props<{ todo: Update<TodoInterface> }>(),
-// );
+export const updateEntityTodo = createAction(
+  TodoActionTypes.EDIT_TODO,
+  props<{ todo: Update<TodoInterface> }>(),
+);
 
 // export const updateTodos = createAction(
 //   '[Todo/API] Update Todos',

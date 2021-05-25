@@ -19,7 +19,7 @@ export class TodoService {
     return this.http.post<TodoInterface>(`${this.API_URL}`, todo);
   }
 
-  updateTodo(todo: TodoInterface): Observable<TodoInterface> {
+  updateTodo(todo): Observable<TodoInterface> {
     return this.http.put<TodoInterface>(`${this.API_URL}/${todo.id}`, todo);
   }
 

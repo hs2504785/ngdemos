@@ -5,9 +5,11 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot,
 } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
+import { filter, first, tap } from 'rxjs/operators';
 import { loadTodos } from '../state/todo.actions';
+import { areTodosLoaded } from '../state/todo.selectors';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +20,15 @@ export class TodoResolver implements Resolve<boolean> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
   ): Observable<boolean> {
-    this.store.dispatch(loadTodos());
-    return of(true);
+    return this.store.pipe(
+      select(areTodosLoaded),
+      tap(loaded => {
+        if (!loaded) {
+          this.store.dispatch(loadTodos());
+        }
+      }),
+      filter(loaded => loaded),
+      first(),
+    );
   }
 }

@@ -12,6 +12,8 @@ import {
   entityTodoesFeatureKey,
   entityTodoReducer,
 } from './state/todo.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { EntityTodoEffects } from './entity-todo.effects';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import {
     FormsModule,
     TodosEntityRoutingModule,
     StoreModule.forFeature(entityTodoesFeatureKey, entityTodoReducer),
+    EffectsModule.forFeature([EntityTodoEffects]),
   ],
 })
 export class TodosEntityModule {}

@@ -38,3 +38,10 @@ export const getTodoById = createSelector(
     return todos && todos.find(item => item.id === +id);
   },
 );
+
+export const areTodosLoaded = createSelector(
+  todosFeatureSelector,
+  (state: TodoStateInterface): boolean => {
+    return state.loaded;
+  },
+);

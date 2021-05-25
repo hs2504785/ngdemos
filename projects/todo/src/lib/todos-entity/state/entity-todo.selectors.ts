@@ -1,7 +1,9 @@
+import { getSelectors, RouterReducerState } from '@ngrx/router-store';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import {
   entityTodoesFeatureKey,
   selectAll,
+  selectEntities,
   TodoStateInterface,
 } from './todo.reducer';
 
@@ -13,15 +15,20 @@ export const selectEntityTodos = createSelector(
   selectAll,
 );
 
-// export const selectRouterState =
-//   createFeatureSelector<RouterReducerState>('router');
+export const selectTodosEntities = createSelector(
+  entityTodosFeatureSelector,
+  selectEntities,
+);
 
-// export const { selectRouteParams } = getSelectors(selectRouterState);
+export const selectRouterState =
+  createFeatureSelector<RouterReducerState>('router');
 
-// export const getTodoById = createSelector(
-//   selectTodos,
-//   selectRouteParams,
-//   (todos, { id }) => {
-//     return todos && todos.find(item => item.id === +id);
-//   },
-// );
+export const { selectRouteParams } = getSelectors(selectRouterState);
+
+export const getEntityTodoById = createSelector(
+  selectTodosEntities,
+  selectRouteParams,
+  (entities, { id }) => {
+    return entities && entities[id];
+  },
+);
