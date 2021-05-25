@@ -9,6 +9,9 @@ import {
   addTodoAction,
   addTodoFailureAction,
   addTodoSuccessAction,
+  deleteTodoAction,
+  deleteTodoFailureAction,
+  deleteTodoSuccessAction,
   loadTodos,
   loadTodosFailure,
   loadTodosSuccess,
@@ -41,6 +44,22 @@ export class TodoEffects {
           }),
           catchError(() => {
             return of(addTodoFailureAction());
+          }),
+        );
+      }),
+    ),
+  );
+
+  deletePost$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteTodoAction),
+      switchMap(({ todoId }) => {
+        return this.todoService.removeTodo(todoId).pipe(
+          map(() => {
+            return deleteTodoSuccessAction();
+          }),
+          catchError(() => {
+            return of(deleteTodoFailureAction());
           }),
         );
       }),

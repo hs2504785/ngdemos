@@ -23,7 +23,7 @@ export class TodoService {
     return this.http.put(`${this.API_URL}/${todo.id}`, todo);
   }
 
-  removeTodo(todo: TodoInterface): any {
-    return this.http.delete(`${this.API_URL}/${todo.id}`);
+  removeTodo(todoId: number): Observable<any> {
+    return this.http.delete(`${this.API_URL}/${todoId}`);
   }
 }

@@ -4,6 +4,9 @@ import {
   addTodoAction,
   addTodoFailureAction,
   addTodoSuccessAction,
+  deleteTodoAction,
+  deleteTodoFailureAction,
+  deleteTodoSuccessAction,
   loadTodos,
   loadTodosFailure,
   loadTodosSuccess,
@@ -61,6 +64,31 @@ export const reducer = createReducer(
 
   on(
     addTodoFailureAction,
+    (state): TodoStateInterface => ({
+      ...state,
+      isLoading: false,
+    }),
+  ),
+
+  // Delete
+  on(deleteTodoAction, (state, action): TodoStateInterface => {
+    const todos = state.data.filter(h => h.id !== action.todoId);
+    return {
+      ...state,
+      data: todos,
+    };
+  }),
+
+  on(
+    deleteTodoSuccessAction,
+    (state): TodoStateInterface => ({
+      ...state,
+      isLoading: false,
+    }),
+  ),
+
+  on(
+    deleteTodoFailureAction,
     (state): TodoStateInterface => ({
       ...state,
       isLoading: false,

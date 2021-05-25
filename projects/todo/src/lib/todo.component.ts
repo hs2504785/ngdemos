@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { TodoInterface } from './models/todo.interface';
+import { deleteTodoAction } from './state/todo.actions';
 import { selectTodos } from './state/todo.selectors';
 
 @Component({
@@ -53,5 +54,7 @@ export class TodoComponent implements OnInit {
     // ]);
   }
 
-  removeTodo(todo: TodoInterface) {}
+  removeTodo(todo: TodoInterface) {
+    this.store.dispatch(deleteTodoAction({ todoId: todo.id }));
+  }
 }

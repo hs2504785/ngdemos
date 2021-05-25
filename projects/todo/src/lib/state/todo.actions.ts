@@ -28,3 +28,17 @@ export const addTodoSuccessAction = createAction(
 export const addTodoFailureAction = createAction(
   TodoActionTypes.ADD_TODO_FAILURE,
 );
+
+// Delete
+export const deleteTodoAction = createAction(
+  TodoActionTypes.DELETE_TODO,
+  props<{ todoId: number }>(),
+);
+
+export const deleteTodoSuccessAction = createAction(
+  TodoActionTypes.DELETE_TODO_SUCCESS,
+);
+
+export const deleteTodoFailureAction = createAction(
+  TodoActionTypes.DELETE_TODO_FAILURE,
+);
