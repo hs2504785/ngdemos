@@ -9,9 +9,10 @@ import { StoreModule } from '@ngrx/store';
 import { EntityDataModule } from '@ngrx/data';
 import { entityConfig } from './entity-metadata';
 import { EffectsModule } from '@ngrx/effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 
 @NgModule({
   declarations: [AppComponent, LoaderComponent],
@@ -29,7 +30,9 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
