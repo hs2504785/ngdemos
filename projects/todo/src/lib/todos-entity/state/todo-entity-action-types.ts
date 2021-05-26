@@ -11,7 +11,7 @@ export enum TodoActionTypes {
   EDIT_TODO_SUCCESS = '[Entity Edit Todo Component] Entity Edit todo success',
   EDIT_TODO_FAILURE = '[Entity Edit Todo Component] Edit todo failure',
 
-  DELETE_TODO = '[Todos] Delete Todo',
-  DELETE_TODO_SUCCESS = '[Todos] Delete todo success',
-  DELETE_TODO_FAILURE = '[Todos] Delete todo failure',
+  DELETE_ENTITY_TODO = '[Todos] Delete entity Todo',
+  DELETE_ENTITY_TODO_SUCCESS = '[Todos] Delete entity todo success',
+  DELETE_ENTITY_TODO_FAILURE = '[Todos] Delete entity todo failure',
 }

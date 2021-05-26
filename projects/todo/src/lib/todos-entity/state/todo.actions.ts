@@ -30,6 +30,20 @@ export const addEntityTodoFailure = createAction(
   TodoActionTypes.ADD_ENTITY_TODO_FAILURE,
 );
 
+export const deleteEntityTodo = createAction(
+  TodoActionTypes.DELETE_ENTITY_TODO,
+  props<{ todoId: number }>(),
+);
+
+export const deleteEntityTodoSuccess = createAction(
+  TodoActionTypes.DELETE_ENTITY_TODO_SUCCESS,
+  props<{ todoId: number }>(),
+);
+
+export const deleteEntityTodoFailure = createAction(
+  TodoActionTypes.DELETE_ENTITY_TODO_FAILURE,
+);
+
 // export const upsertTodo = createAction(
 //   '[Todo/API] Upsert Todo',
 //   props<{ todo: Todo }>(),

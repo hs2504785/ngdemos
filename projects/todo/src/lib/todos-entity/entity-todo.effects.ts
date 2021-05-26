@@ -8,6 +8,9 @@ import {
   addEntityTodo,
   addEntityTodoFailure,
   addEntityTodoSuccess,
+  deleteEntityTodo,
+  deleteEntityTodoFailure,
+  deleteEntityTodoSuccess,
   updateEntityTodo,
 } from './state/todo.actions';
 
@@ -41,6 +44,23 @@ export class EntityTodoEffects {
           }),
           catchError(() => {
             return of(addEntityTodoFailure());
+          }),
+        );
+      }),
+    ),
+  );
+
+  // Delete
+  deleteEntityTodo$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteEntityTodo),
+      switchMap(({ todoId }) => {
+        return this.todoService.removeTodo(todoId).pipe(
+          map(() => {
+            return deleteEntityTodoSuccess({ todoId });
+          }),
+          catchError(() => {
+            return of(deleteEntityTodoFailure());
           }),
         );
       }),

@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { TodoInterface } from '../models/todo.interface';
 import { deleteTodoAction } from '../state/todo.actions';
 import { selectEntityTodos } from './state/entity-todo.selectors';
+import { deleteEntityTodo } from './state/todo.actions';
 
 @Component({
   selector: 'lib-todos-entity',
@@ -40,6 +41,6 @@ export class TodosEntityComponent implements OnInit {
   }
 
   removeTodo(todo: TodoInterface) {
-    this.store.dispatch(deleteTodoAction({ todoId: todo.id }));
+    this.store.dispatch(deleteEntityTodo({ todoId: todo.id }));
   }
 }

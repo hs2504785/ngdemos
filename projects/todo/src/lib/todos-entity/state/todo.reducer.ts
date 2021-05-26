@@ -5,6 +5,8 @@ import { loadTodosSuccess } from '../../state/todo.actions';
 import {
   addEntityTodo,
   addEntityTodoSuccess,
+  deleteEntityTodo,
+  deleteEntityTodoSuccess,
   updateEntityTodo,
 } from './todo.actions';
 
@@ -43,9 +45,9 @@ export const reducer = createReducer(
   // on(TodoActions.updateTodos, (state, action) =>
   //   adapter.updateMany(action.todos, state),
   // ),
-  // on(TodoActions.deleteTodo, (state, action) =>
-  //   adapter.removeOne(action.id, state),
-  // ),
+  on(deleteEntityTodoSuccess, (state, action) =>
+    adapter.removeOne(action.todoId, state),
+  ),
   // on(TodoActions.deleteTodos, (state, action) =>
   //   adapter.removeMany(action.ids, state),
   // ),
