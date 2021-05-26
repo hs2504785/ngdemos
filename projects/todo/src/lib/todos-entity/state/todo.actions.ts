@@ -18,7 +18,7 @@ export const entityLoadTodosFailure = createAction(
 
 export const addEntityTodo = createAction(
   TodoActionTypes.ADD_ENTITY_TODO,
-  props<{ todo: any }>(),
+  props<{ todo: TodoInterface }>(),
 );
 
 export const addEntityTodoSuccess = createAction(
