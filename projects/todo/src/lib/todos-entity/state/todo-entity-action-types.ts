@@ -1,11 +1,11 @@
 export enum TodoActionTypes {
   GET_TODOS = '[Todo Resolver] Get Todos',
-  GET_TODOS_SUCCESS = '[Todo Effect] Get todos success',
-  GET_TODOS_FAILURE = '[Todo Effect] Get todos failure',
+  GET_TODOS_SUCCESS = '[Entity Todo Effect] Get todos success',
+  GET_TODOS_FAILURE = '[Entity Todo Effect] Get todos failure',
 
-  ADD_TODO = '[Add Todo Component] Add Todo',
-  ADD_TODO_SUCCESS = '[Add Todo Component] Add todo success',
-  ADD_TODO_FAILURE = '[Add Todo Component] Add todo failure',
+  ADD_ENTITY_TODO = '[Add Entity Todo Component] Add Entity Todo',
+  ADD_ENTITY_TODO_SUCCESS = '[Add Entity Todo Component] Add Entity todo success',
+  ADD_ENTITY_TODO_FAILURE = '[Add Entity Todo Component] Add Entity todo failure',
 
   EDIT_TODO = '[Entity Edit Todo Component] Entity Edit Todo',
   EDIT_TODO_SUCCESS = '[Entity Edit Todo Component] Entity Edit todo success',

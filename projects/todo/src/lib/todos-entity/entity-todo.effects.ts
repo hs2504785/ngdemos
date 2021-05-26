@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
+import { TodoInterface } from '../models/todo.interface';
 import { TodoService } from '../services/todo.service';
-import { updateEntityTodo } from './state/todo.actions';
+import {
+  addEntityTodo,
+  addEntityTodoFailure,
+  addEntityTodoSuccess,
+  updateEntityTodo,
+} from './state/todo.actions';
 
 @Injectable()
 export class EntityTodoEffects {
@@ -22,6 +28,23 @@ export class EntityTodoEffects {
         }),
       ),
     { dispatch: false },
+  );
+
+  // Add
+  createTodo$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(addEntityTodo),
+      switchMap(({ todo }) => {
+        return this.todoService.addTodo(todo).pipe(
+          map((todo: TodoInterface) => {
+            return addEntityTodoSuccess({ todo });
+          }),
+          catchError(() => {
+            return of(addEntityTodoFailure());
+          }),
+        );
+      }),
+    ),
   );
 
   constructor(private actions$: Actions, private todoService: TodoService) {}

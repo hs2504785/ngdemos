@@ -16,10 +16,19 @@ export const entityLoadTodosFailure = createAction(
   props<{ error: any }>(),
 );
 
-// export const addTodo = createAction(
-//   '[Todo/API] Add Todo',
-//   props<{ todo: Todo }>(),
-// );
+export const addEntityTodo = createAction(
+  TodoActionTypes.ADD_ENTITY_TODO,
+  props<{ todo: any }>(),
+);
+
+export const addEntityTodoSuccess = createAction(
+  TodoActionTypes.ADD_ENTITY_TODO_SUCCESS,
+  props<{ todo: TodoInterface }>(),
+);
+
+export const addEntityTodoFailure = createAction(
+  TodoActionTypes.ADD_ENTITY_TODO_FAILURE,
+);
 
 // export const upsertTodo = createAction(
 //   '[Todo/API] Upsert Todo',

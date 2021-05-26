@@ -2,7 +2,11 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { sort, TodoInterface } from '../../models/todo.interface';
 import { loadTodosSuccess } from '../../state/todo.actions';
-import { updateEntityTodo } from './todo.actions';
+import {
+  addEntityTodo,
+  addEntityTodoSuccess,
+  updateEntityTodo,
+} from './todo.actions';
 
 export const entityTodoesFeatureKey = 'entityTodos';
 
@@ -21,9 +25,9 @@ export const initialState: TodoStateInterface = adapter.getInitialState({
 
 export const reducer = createReducer(
   initialState,
-  // on(TodoActions.addTodo, (state, action) =>
-  //   adapter.addOne(action.todo, state),
-  // ),
+  on(addEntityTodoSuccess, (state, action) =>
+    adapter.addOne(action.todo, state),
+  ),
   // on(TodoActions.upsertTodo, (state, action) =>
   //   adapter.upsertOne(action.todo, state),
   // ),
