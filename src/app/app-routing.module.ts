@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: 'blogdemo',
     loadChildren: () =>
-      import('projects/blog/src/public-api').then(m => m.BlogModule),
+      import('projects/blogdemo/src/public-api').then(m => m.BlogdemoModule),
   },
   {
     path: 'todos',

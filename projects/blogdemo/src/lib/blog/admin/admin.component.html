@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" *ngIf="users$ | async as users">
+  <mat-form-field>
+    <mat-label>User</mat-label>
+    <mat-select
+      id="user"
+      [formControl]="selectedUser"
+      (selectionChange)="selectUser($event.value)"
+    >
+      <mat-option *ngFor="let user of users" [value]="user.id">{{
+        user.name
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

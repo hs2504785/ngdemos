@@ -8,6 +8,10 @@
         "dist/blog/blog",
         "dist/blog"
       ],
+      "blogdemo": [
+        "dist/blogdemo/blogdemo",
+        "dist/blogdemo"
+      ],
       "data-source": [
         "dist/data-source/data-source",
         "dist/data-source"
