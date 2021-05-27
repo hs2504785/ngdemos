@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'lib-blogdemo',
-  template: `
-    <h1>blogdemo works! blogdemo works! blogdemo works! blogdemo works!</h1>
-  `,
-  styles: [],
+  templateUrl: './blogdemo.component.html',
+  styles: [
+    `
+      :host {
+        height: 100vh;
+      }
+    `,
+  ],
 })
-export class BlogdemoComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class BlogdemoComponent {}

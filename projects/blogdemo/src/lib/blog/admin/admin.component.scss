@@ -1,0 +1,21 @@
+:host {
+  display: grid;
+
+  height: 100vh;
+
+  grid-template:
+    ' mat-toolbar     ' auto
+    ' router-outlet     ' 0
+    ' routed-component  ' minmax(0, 1fr);
+}
+
+// Put each of these components in the grid area matching its name.
+router-outlet {
+  grid-area: &;
+}
+
+// Whatever shows up in the DOM immediately after the router outlet
+// goes into the routed-component grid area.
+router-outlet + * {
+  grid-area: routed-component;
+}

@@ -1,0 +1,43 @@
+<ng-container *ngIf="user$ | async as user">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Username"
+            readonly
+            [value]="user.username"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Name" readonly [value]="user.name" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Email" readonly [value]="user.email" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Phone Number"
+            readonly
+            [value]="user.phone"
+          />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <ng-container *ngIf="(posts$ | async)?.length">
+    <app-post-list></app-post-list>
+    <app-post></app-post>
+  </ng-container>
+</ng-container>
