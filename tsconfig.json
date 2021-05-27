@@ -4,6 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "blog": [
+        "dist/blog/blog",
+        "dist/blog"
+      ],
       "data-source": [
         "dist/data-source/data-source",
         "dist/data-source"
