@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AdminComponent } from './admin/admin.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { PostComponent } from './post/post.component';
 import { UserComponent } from './user/user.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -16,6 +15,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import * as fromUser from './user/state/user.reducer';
+import { UserEffects } from './user/state/user.effects';
+import { userReducer } from './user/state/user.reducer';
+import { PostEffects } from './post-list/state/post.effects';
+import { postFeatureKey, postReducer } from './post-list/state/post.reducer';
 
 const routes: Routes = [
   {
@@ -26,12 +30,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AdminComponent,
-    PostListComponent,
-    PostComponent,
-    UserComponent,
-  ],
+  declarations: [AdminComponent, PostListComponent, UserComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -43,9 +42,9 @@ const routes: Routes = [
     MatButtonModule,
     MatListModule,
     RouterModule.forChild(routes),
-    // StoreModule.forFeature(fromUser.userFeatureKey, fromUser.reducer),
-    // EffectsModule.forFeature([UserEffects, PostEffects]),
-    // StoreModule.forFeature(fromPost.postFeatureKey, fromPost.reducer)
+    StoreModule.forFeature(fromUser.userFeatureKey, userReducer),
+    StoreModule.forFeature(postFeatureKey, postReducer),
+    EffectsModule.forFeature([UserEffects, PostEffects]),
   ],
 })
 export class BlogModule {}

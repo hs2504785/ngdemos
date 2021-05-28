@@ -3,8 +3,8 @@ import { FormControl } from '@angular/forms';
 import { ActivatedRoute, QueryParamsHandling, Router } from '@angular/router';
 import { Observable, combineLatest, of } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
-import { users } from '../../mocks/data';
 import { User } from '../../models/types';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-admin',
@@ -16,24 +16,19 @@ export class AdminComponent {
   readonly selectedUser = new FormControl();
 
   constructor(
-    // userService: UserService,
+    userService: UserService,
     private route: ActivatedRoute,
     private router: Router,
   ) {
-    this.users$ = of(users);
-    // this.users$ = combineLatest(
-    //   userService.users,
-    //   userService.currentUserId
-    // ).pipe(
-    //   tap(([users, userId]) => {
-    //     if (users.length) {
-    //       const id = +(userId ?? users[0].id);
-    //       this.selectedUser.setValue(id);
-    //       this.selectUser(id, 'preserve');
-    //     }
-    //   }),
-    //   map(([users]) => users)
-    // );
+    this.users$ = userService.users;
+
+    this.users$.subscribe((users: User[]) => {
+      if (users && users.length) {
+        const id = +users[0].id;
+        this.selectedUser.setValue(id);
+        this.selectUser(id, 'preserve');
+      }
+    });
   }
 
   selectUser(id: number, queryParamsHandling: QueryParamsHandling = 'merge') {

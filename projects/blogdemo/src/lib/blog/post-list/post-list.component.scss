@@ -1,3 +1,11 @@
+mat-list-item {
+  height: auto !important;
+}
+
+mat-list-item ::ng-deep .mat-list-item-content {
+  padding: 10px !important;
+}
+
 .mat-list-item-active {
   background-color: lightgray;
 }

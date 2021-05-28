@@ -29,8 +29,6 @@ const routes: Routes = [
     MatToolbarModule,
     MatButtonModule,
     RouterModule.forChild(routes),
-    // StoreModule.forFeature('blogModule', reducers),
-    // StoreModule.forFeature(titleFeatureKey, titleReducer),
   ],
   exports: [BlogdemoComponent],
 })

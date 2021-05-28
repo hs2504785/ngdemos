@@ -23,11 +23,11 @@ export class PostListComponent implements OnDestroy {
     private postService: PostService,
     private router: Router,
   ) {
-    this.posts = this.postService.posts;
-    // this.posts = userService.currentUserId.pipe(
-    //   tap(userId => (this.userId = userId)),
-    //   switchMap(userId => postService.getPostsByUser(userId)),
-    // );
+    // this.posts = this.postService.posts;
+    this.posts = userService.currentUserId.pipe(
+      tap(user => (this.userId = user.id)),
+      switchMap(user => postService.getPostsByUser(user.id)),
+    );
 
     // postService.currentPostId
     //   .pipe(takeUntil(this.unsubscribe))
