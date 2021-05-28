@@ -1,3 +1,4 @@
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
 import { User } from '../../../models/types';
 
@@ -5,21 +6,18 @@ import * as UserActions from './user.actions';
 
 export const userFeatureKey = 'user';
 
-export interface UserStateInterface {
-  users: User[];
-}
+export interface UserStateInterface extends EntityState<User> {}
 
-export const initialState: UserStateInterface = {
-  users: [],
-};
+export const adapter: EntityAdapter<User> = createEntityAdapter<User>();
 
-const reducer = createReducer(
+export const initialState: UserStateInterface = adapter.getInitialState({});
+
+export const reducer = createReducer(
   initialState,
 
-  on(UserActions.loadUsersSuccess, (state, action) => ({
-    ...state,
-    users: [...action.users],
-  })),
+  on(UserActions.loadUsersSuccess, (state, action) =>
+    adapter.setAll(action.users, state),
+  ),
 );
 
 export function userReducer(

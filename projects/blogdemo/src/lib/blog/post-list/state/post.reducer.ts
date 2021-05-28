@@ -1,45 +1,32 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { createReducer, on } from '@ngrx/store';
 import { Post } from '../../../models/types';
-import * as PostActions from './post.actions';
+import {
+  createPostSuccess,
+  deletePostSuccess,
+  loadPostsSuccess,
+  updatePostSuccess,
+} from './post.actions';
 
 export const postFeatureKey = 'post';
 
-export interface PostStateInterface {
-  posts: Post[];
-}
+export interface PostStateInterface extends EntityState<Post> {}
 
-export const initialState: PostStateInterface = {
-  posts: [],
-};
+export const adapter: EntityAdapter<Post> = createEntityAdapter<Post>();
+
+export const initialState: PostStateInterface = adapter.getInitialState({});
 
 export const postReducer = createReducer(
   initialState,
 
-  on(PostActions.loadPostsSuccess, (state, action) => ({
-    ...state,
-    posts: [...action.posts],
-  })),
-  on(PostActions.createPostSuccess, (state, action) => ({
-    ...state,
-    posts: [action.post, ...state.posts],
-  })),
-  on(PostActions.deletePostSuccess, (state, action) => ({
-    ...state,
-    posts: state.posts.filter(post => post.id !== action.postId),
-  })),
-  on(PostActions.updatePostSuccess, (state, action) => {
-    const index = state.posts.findIndex(post => post.id === action.post.id);
-    if (index >= 0) {
-      return {
-        ...state,
-        posts: [
-          ...state.posts.slice(0, index),
-          action.post,
-          ...state.posts.slice(index + 1, state.posts.length),
-        ],
-      };
-    } else {
-      return state;
-    }
-  }),
+  on(loadPostsSuccess, (state, action) => adapter.setAll(action.posts, state)),
+  on(createPostSuccess, (state, action) => adapter.addOne(action.post, state)),
+  on(deletePostSuccess, (state, action) =>
+    adapter.removeOne(action.postId, state),
+  ),
+  // Note: if we weren't sending this to the server, we could
+  // use the Update<Post> type, which is smaller
+  on(updatePostSuccess, (state, { post }) =>
+    adapter.updateOne({ id: post.id, changes: post }, state),
+  ),
 );

@@ -1,17 +1,19 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { selectCurrentUserId } from '../../state/router.selectors';
-import { userFeatureKey, UserStateInterface } from './user.reducer';
+
+import * as fromUser from './user.reducer';
+
+export const { selectAll, selectEntities } = fromUser.adapter.getSelectors();
 
 export const selectUserState =
-  createFeatureSelector<UserStateInterface>(userFeatureKey);
+  createFeatureSelector<fromUser.UserStateInterface>(fromUser.userFeatureKey);
 
-export const selectUsers = createSelector(
-  selectUserState,
-  state => state.users,
-);
+export const selectUsers = createSelector(selectUserState, selectAll);
 
 export const selectCurrentUser = createSelector(
-  selectUsers,
+  createSelector(selectUserState, selectEntities),
   selectCurrentUserId,
-  (users, userId) => users.find(user => user.id === userId),
+  (userEntities, currentUserId) => {
+    return currentUserId ? userEntities[currentUserId] : undefined;
+  },
 );

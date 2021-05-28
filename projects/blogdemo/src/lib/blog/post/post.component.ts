@@ -75,7 +75,7 @@ export class PostComponent {
       updatePost({
         post: {
           ...post,
-          title: this.title.value,
+          body: this.body.value,
         },
       }),
     );
