@@ -1,16 +1,16 @@
-<!-- <mat-card *ngIf="post$ | async as post">
-  <mat-card-header>
+<mat-card *ngIf="post$ | async as post">
+  <mat-card-header class="bg-light">
     <mat-form-field *ngIf="editingTitle">
       <input matInput [formControl]="title" (blur)="setTitle(post)" />
     </mat-form-field>
     <ng-container *ngIf="!editingTitle">
+      <mat-card-title>{{ post.title }}</mat-card-title>
       <button mat-icon-button (click)="delete(post)">
-        <mat-icon>delete</mat-icon>
+        <i class="ti-trash"></i>
       </button>
       <button mat-icon-button (click)="editingTitle = true">
-        <mat-icon>edit</mat-icon>
+        <i class="ti-pencil" title="Edit Title"></i>
       </button>
-      <mat-card-title>{{ post.title }}</mat-card-title>
     </ng-container>
   </mat-card-header>
   <mat-card-content>
@@ -19,9 +19,9 @@
     </mat-form-field>
     <ng-container *ngIf="!editingBody">
       <button mat-icon-button (click)="editingBody = true">
-        <mat-icon>edit</mat-icon>
+        <i class="ti-pencil"></i> Edit Body
       </button>
       <mat-card-title>{{ post.body }}</mat-card-title>
     </ng-container>
   </mat-card-content>
-</mat-card> -->
+</mat-card>

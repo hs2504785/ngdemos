@@ -21,51 +21,41 @@ export class PostEffects implements OnInitEffects {
     );
   });
 
-  // createPost$ = createEffect(() => {
-  //   return this.actions$.pipe(
-  //     ofType(PostActions.createPost),
-  //     concatMap(action =>
-  //       this.postLoaderService.create(action.post).pipe(
-  //         map(post => PostActions.createPostSuccess({ post })),
-  //         catchError(error =>
-  //           of(PostActions.createPostFailure({ error }))
-  //         )
-  //       )
-  //     )
-  //   );
-  // });
+  createPost$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PostActions.createPost),
+      concatMap(action =>
+        this.postService.create(action.post).pipe(
+          map(post => PostActions.createPostSuccess({ post })),
+          catchError(error => of(PostActions.createPostFailure({ error }))),
+        ),
+      ),
+    );
+  });
 
-  // deletePost$ = createEffect(() => {
-  //   return this.actions$.pipe(
-  //     ofType(PostActions.deletePost),
-  //     concatMap(action =>
-  //       this.postLoaderService.delete(action.post).pipe(
-  //         map(() =>
-  //           PostActions.deletePostSuccess({ postId: action.post.id })
-  //         ),
-  //         catchError(error =>
-  //           of(PostActions.deletePostFailure({ error }))
-  //         )
-  //       )
-  //     )
-  //   );
-  // });
+  deletePost$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PostActions.deletePost),
+      concatMap(action =>
+        this.postService.delete(action.post).pipe(
+          map(() => PostActions.deletePostSuccess({ postId: action.post.id })),
+          catchError(error => of(PostActions.deletePostFailure({ error }))),
+        ),
+      ),
+    );
+  });
 
-  // updatePost$ = createEffect(() => {
-  //   return this.actions$.pipe(
-  //     ofType(PostActions.updatePost),
-  //     concatMap(action =>
-  //       this.postLoaderService.update(action.post).pipe(
-  //         map(() =>
-  //           PostActions.updatePostSuccess({ post: action.post })
-  //         ),
-  //         catchError(error =>
-  //           of(PostActions.updatePostFailure({ error }))
-  //         )
-  //       )
-  //     )
-  //   );
-  // });
+  updatePost$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PostActions.updatePost),
+      concatMap(action =>
+        this.postService.update(action.post).pipe(
+          map(() => PostActions.updatePostSuccess({ post: action.post })),
+          catchError(error => of(PostActions.updatePostFailure({ error }))),
+        ),
+      ),
+    );
+  });
 
   constructor(private actions$: Actions, private postService: PostService) {}
 

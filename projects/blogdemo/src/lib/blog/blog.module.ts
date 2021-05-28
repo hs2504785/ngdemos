@@ -20,6 +20,7 @@ import { UserEffects } from './user/state/user.effects';
 import { userReducer } from './user/state/user.reducer';
 import { PostEffects } from './post-list/state/post.effects';
 import { postFeatureKey, postReducer } from './post-list/state/post.reducer';
+import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AdminComponent, PostListComponent, UserComponent],
+  declarations: [
+    AdminComponent,
+    PostListComponent,
+    UserComponent,
+    PostComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,

@@ -1,10 +1,12 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Observable, Subject } from 'rxjs';
 import { switchMap, takeUntil, tap } from 'rxjs/operators';
 import { Post } from '../../models/types';
 import { PostService } from '../../services/post.service';
 import { UserService } from '../../services/user.service';
+import { createPost } from './state/post.actions';
 
 @Component({
   selector: 'app-post-list',
@@ -19,6 +21,7 @@ export class PostListComponent implements OnDestroy {
   userId: number | undefined;
 
   constructor(
+    private store: Store,
     userService: UserService,
     private postService: PostService,
     private router: Router,
@@ -26,7 +29,7 @@ export class PostListComponent implements OnDestroy {
     // this.posts = this.postService.posts;
     this.posts = userService.currentUserId.pipe(
       tap(user => (this.userId = user.id)),
-      switchMap(user => postService.getPostsByUser(user.id)),
+      switchMap(user => this.postService.getPostsByUser(user.id)),
     );
 
     // postService.currentPostId
@@ -51,7 +54,7 @@ export class PostListComponent implements OnDestroy {
       title: 'placeholder title',
       userId: this.userId || 0,
     };
-    // this.postService.createPost(newPost);
+    this.store.dispatch(createPost({ post: newPost }));
   }
 
   ngOnDestroy(): void {

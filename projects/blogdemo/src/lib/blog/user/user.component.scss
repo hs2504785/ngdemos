@@ -29,3 +29,8 @@ app-post-list {
 app-post {
   grid-area: post;
 }
+
+.user ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: none !important;
+  height: auto;
+}
