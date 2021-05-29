@@ -1,4 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { decrement, increment, reset } from './state/counter.actions';
+import { CounterStateInterface } from './state/counter.reducer';
+import { selectCount } from './state/counter.selectors';
 
 @Component({
   selector: 'lib-counter',
@@ -7,20 +12,22 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CounterComponent implements OnInit {
-  count = 0;
-  constructor() {}
+  count$: Observable<number>;
+  constructor(private store: Store<CounterStateInterface>) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.count$ = this.store.pipe(select(selectCount));
+  }
 
   increment() {
-    this.count += 1;
+    this.store.dispatch(increment());
   }
 
   decrement() {
-    this.count -= 1;
+    this.store.dispatch(decrement());
   }
 
   reset() {
-    this.count = 0;
+    this.store.dispatch(reset());
   }
 }
