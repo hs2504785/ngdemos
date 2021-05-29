@@ -84,6 +84,8 @@ MIT
 @ngrx/store-devtools
 MIT
 
+blogdemo
+
 data-source
 
 rxjs
