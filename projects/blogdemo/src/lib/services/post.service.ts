@@ -1,59 +1,66 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { of } from 'rxjs';
-import { PostStateInterface } from '../blog/post-list/state/post.reducer';
 import {
-  selectPost,
-  selectPosts,
-  selectPostsByUser,
-} from '../blog/post-list/state/post.selectors';
-import { selectCurrentPostId } from '../blog/state/router.selectors';
-import { posts } from '../mocks/data';
-import { Post } from '../models/types';
+  EntityCollectionServiceBase,
+  EntityCollectionServiceElementsFactory,
+} from '@ngrx/data';
+import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
-export class PostService {
-  // posts = of(posts);
-  API_URL = 'https://jsonplaceholder.typicode.com/posts';
-  posts = this.store.pipe(select(selectPosts));
-  currentPost = this.store.pipe(select(selectPost));
-  // currentPostId = this.store.pipe(select(selectCurrentPostId));
+export class PostService extends EntityCollectionServiceBase<any> {
+  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
+    super('Post', serviceElementsFactory);
+  }
 
-  constructor(
-    private store: Store<PostStateInterface>,
-    private http: HttpClient,
-  ) {}
+  // getAll(): Observable<any> {
+  //   return this.dsHelperService.getDataSources();
+  // }
+
+  // add(book): Observable<Book> {
+  //   return this.http
+  //     .post(`${this.BASE_URL}`, book)
+  //     .pipe(map((res: any) => res));
+  // }
+
+  // update(book): Observable<Book> {
+  //   return this.http
+  //     .put(`${this.BASE_URL}/${book.id}`, book.changes)
+  //     .pipe(map((res: any) => res));
+  // }
+
+  // delete(bookId) {
+  //   return this.http
+  //     .delete(this.BASE_URL + bookId)
+  //     .pipe(map((res: any) => res));
+  // }
+
+  posts = this.entities$;
+  // currentPostId = this.store.pipe(select(selectCurrentPostId));
+  // currentPost = combineLatest([
+  //   this.posts,
+  //   this.currentPostId.pipe(filter(postId => !isNaN(postId))),
+  // ]).pipe(map(([posts, postId]) => posts.find(post => post.id === postId)));
+
+  // constructor(
+  //   private store: Store<State>,
+  //   private postEntityService: postEntityService
+  // ) {}
 
   getPostsByUser(userId: number | string) {
-    return this.store.pipe(select(selectPostsByUser(userId)));
-  }
-
-  load() {
-    return this.http.get<Post[]>(this.API_URL);
-  }
-
-  create(post: Omit<Post, 'id'>) {
-    return this.http.post<Post>(this.API_URL, post);
-  }
-
-  delete(post: Post) {
-    return this.http.delete(`${this.API_URL}/${post.id}`);
-  }
-
-  update(post: Post) {
-    return this.http.put<Post>(`${this.API_URL}/${post.id}`, post);
+    return this.posts.pipe(
+      map(posts => posts.filter(post => post.userId === +userId)),
+    );
   }
 
   // createPost(post: Omit<Post, 'id'>) {
-  //   this.store.dispatch(createPost({ post }));
+  //   // it's ok to exclude the id with a pessimistic save
+  //   this.postEntityService.add(post as Post, { isOptimistic: false });
   // }
 
   // deletePost(post: Post) {
-  //   this.store.dispatch(deletePost({ post }));
+  //   this.postEntityService.delete(post);
   // }
 
   // updatePost(post: Post) {
-  //   this.store.dispatch(updatePost({ post }));
+  //   this.postEntityService.update(post, { isOptimistic: false });
   // }
 }

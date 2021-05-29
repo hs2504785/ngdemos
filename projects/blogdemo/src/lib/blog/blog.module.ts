@@ -15,12 +15,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-import * as fromUser from './user/state/user.reducer';
-import { UserEffects } from './user/state/user.effects';
-import { userReducer } from './user/state/user.reducer';
-import { PostEffects } from './post-list/state/post.effects';
-import { postFeatureKey, postReducer } from './post-list/state/post.reducer';
 import { PostComponent } from './post/post.component';
+import {
+  EntityDataService,
+  EntityDefinitionService,
+  EntityMetadataMap,
+} from '@ngrx/data';
+import { UserDataService } from '../services/user-data.service';
+import { PostDataService } from '../services/post-data.service';
 
 const routes: Routes = [
   {
@@ -29,6 +31,22 @@ const routes: Routes = [
     children: [{ path: ':userId', component: UserComponent }],
   },
 ];
+
+export const userFeatureKey = 'User';
+export const postFeatureKey = 'Post';
+
+export const entityMetadata: EntityMetadataMap = {
+  [userFeatureKey]: {
+    entityDispatcherOptions: {
+      optimisticUpdate: true,
+    },
+  },
+  [postFeatureKey]: {
+    entityDispatcherOptions: {
+      optimisticUpdate: true,
+    },
+  },
+};
 
 @NgModule({
   declarations: [
@@ -48,9 +66,24 @@ const routes: Routes = [
     MatButtonModule,
     MatListModule,
     RouterModule.forChild(routes),
-    StoreModule.forFeature(fromUser.userFeatureKey, userReducer),
-    StoreModule.forFeature(postFeatureKey, postReducer),
-    EffectsModule.forFeature([UserEffects, PostEffects]),
   ],
 })
-export class BlogModule {}
+export class BlogModule {
+  constructor(
+    private eds: EntityDefinitionService,
+    private entityDataService: EntityDataService,
+    private userDataService: UserDataService,
+    private postDataService: PostDataService,
+  ) {
+    this.eds.registerMetadataMap(entityMetadata);
+
+    this.entityDataService.registerService(
+      userFeatureKey,
+      this.userDataService,
+    );
+    this.entityDataService.registerService(
+      postFeatureKey,
+      this.postDataService,
+    );
+  }
+}

@@ -1,38 +1,42 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
-import { UserStateInterface } from '../blog/user/state/user.reducer';
 import {
-  selectCurrentUser,
-  selectUsers,
-} from '../blog/user/state/user.selectors';
-import { User } from '../models/types';
-
-// import { selectCurrentUserId } from 'src/app/router.selectors';
-// import { selectCurrentUser, selectUsers } from './user.selectors';
+  EntityCollectionServiceBase,
+  EntityCollectionServiceElementsFactory,
+} from '@ngrx/data';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class UserService {
-  API_URL = 'https://jsonplaceholder.typicode.com/users';
-  users = this.store.pipe(select(selectUsers));
-  currentUserId = this.store.pipe(select(selectCurrentUser));
-  currentUser = this.store.pipe(select(selectCurrentUser));
-
-  constructor(
-    private store: Store<UserStateInterface>,
-    private http: HttpClient,
-  ) {}
-
-  // currentUser = of({
-  //   id: 1,
-  //   name: 'Kyle Cordes',
-  //   username: 'kcordes',
-  //   email: 'kcordes@fake.com',
-  //   phone: '123-123-1234',
-  // });
-
-  loadUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.API_URL);
+export class UserService extends EntityCollectionServiceBase<any> {
+  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
+    super('User', serviceElementsFactory);
+    // this.getAll();
   }
+
+  // users = this.entities$;
+  // currentUserId = this.store.pipe(select(selectCurrentUserId));
+  // currentUser = combineLatest([this.users, this.currentUserId]).pipe(
+  //   map(([users, userId]) => users.find(post => post.id === userId)),
+  // );
+
+  // getAll(): Observable<any> {
+  //   return this.dsHelperService.getDataSources();
+  // }
+
+  // add(book): Observable<Book> {
+  //   return this.http
+  //     .post(`${this.BASE_URL}`, book)
+  //     .pipe(map((res: any) => res));
+  // }
+
+  // update(book): Observable<Book> {
+  //   return this.http
+  //     .put(`${this.BASE_URL}/${book.id}`, book.changes)
+  //     .pipe(map((res: any) => res));
+  // }
+
+  // delete(bookId) {
+  //   return this.http
+  //     .delete(this.BASE_URL + bookId)
+  //     .pipe(map((res: any) => res));
+  // }
 }

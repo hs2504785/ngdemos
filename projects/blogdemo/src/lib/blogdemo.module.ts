@@ -4,6 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, Routes } from '@angular/router';
 import { BlogdemoComponent } from './blogdemo.component';
+import { BlogResolver } from './services/blog.resolver';
+import { PostDataService } from './services/post-data.service';
+import { UserDataService } from './services/user-data.service';
 const routes: Routes = [
   {
     path: '',
@@ -13,6 +16,7 @@ const routes: Routes = [
         path: 'blog',
         loadChildren: () =>
           import('./blog/blog.module').then(m => m.BlogModule),
+        resolve: [BlogResolver],
       },
       {
         path: '',
@@ -31,5 +35,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   exports: [BlogdemoComponent],
+  providers: [UserDataService, PostDataService, BlogResolver],
 })
 export class BlogdemoModule {}

@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, QueryParamsHandling, Router } from '@angular/router';
-import { Observable, combineLatest, of } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { User } from '../../models/types';
 import { UserService } from '../../services/user.service';
 
@@ -16,11 +15,11 @@ export class AdminComponent {
   readonly selectedUser = new FormControl();
 
   constructor(
-    userService: UserService,
+    private userService: UserService,
     private route: ActivatedRoute,
     private router: Router,
   ) {
-    this.users$ = userService.users;
+    this.users$ = this.userService.entities$;
 
     this.users$.subscribe((users: User[]) => {
       if (users && users.length) {

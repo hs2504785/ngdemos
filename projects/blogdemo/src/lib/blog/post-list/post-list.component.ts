@@ -1,42 +1,53 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable, Subject } from 'rxjs';
 import { switchMap, takeUntil, tap } from 'rxjs/operators';
 import { Post } from '../../models/types';
 import { PostService } from '../../services/post.service';
 import { UserService } from '../../services/user.service';
-import { createPost } from './state/post.actions';
+import {
+  selectCurrentPostId,
+  selectCurrentUserId,
+} from '../state/router.selectors';
 
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss'],
 })
-export class PostListComponent implements OnDestroy {
-  readonly posts: Observable<Post[]>;
+export class PostListComponent implements OnInit, OnDestroy {
+  posts: Observable<Post[]>;
   readonly title: Observable<string>;
   private readonly unsubscribe = new Subject<void>();
   selectedPostId: number | undefined;
   userId: number | undefined;
+  currentUserId$: Observable<number>;
 
   constructor(
-    private store: Store,
-    userService: UserService,
+    private userService: UserService,
     private postService: PostService,
     private router: Router,
-  ) {
-    // this.posts = this.postService.posts;
-    this.posts = userService.currentUserId.pipe(
-      tap(user => (this.userId = user.id)),
-      switchMap(user => this.postService.getPostsByUser(user.id)),
+    private store: Store,
+  ) {}
+
+  ngOnInit() {
+    this.currentUserId$ = this.store.pipe(select(selectCurrentUserId));
+    this.initializevalues();
+  }
+
+  initializevalues() {
+    this.posts = this.currentUserId$.pipe(
+      tap(userId => (this.userId = userId)),
+      switchMap(userId => this.postService.getPostsByUser(userId)),
     );
 
-    // postService.currentPostId
-    //   .pipe(takeUntil(this.unsubscribe))
-    //   .subscribe(
-    //     postId => (this.selectedPostId = postId ? +postId : undefined),
-    //   );
+    this.store
+      .pipe(select(selectCurrentPostId))
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe(
+        postId => (this.selectedPostId = postId ? +postId : undefined),
+      );
   }
 
   selectPost(postId: number) {
@@ -54,7 +65,7 @@ export class PostListComponent implements OnDestroy {
       title: 'placeholder title',
       userId: this.userId || 0,
     };
-    this.store.dispatch(createPost({ post: newPost }));
+    this.postService.add(newPost);
   }
 
   ngOnDestroy(): void {
