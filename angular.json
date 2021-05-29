@@ -267,6 +267,43 @@
           }
         }
       }
+    },
+    "crud": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "changeDetection": "OnPush"
+        }
+      },
+      "root": "projects/crud",
+      "sourceRoot": "projects/crud/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/crud/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/crud/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/crud/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/crud/src/test.ts",
+            "tsConfig": "projects/crud/tsconfig.spec.json",
+            "karmaConfig": "projects/crud/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngdemos"

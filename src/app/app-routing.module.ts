@@ -4,6 +4,11 @@ import { TodoResolver } from 'projects/todo/src/lib/services/todo.resolver';
 
 const routes: Routes = [
   {
+    path: 'crud',
+    loadChildren: () =>
+      import('projects/crud/src/public-api').then(m => m.CrudModule),
+  },
+  {
     path: 'blogdemo',
     loadChildren: () =>
       import('projects/blogdemo/src/public-api').then(m => m.BlogdemoModule),

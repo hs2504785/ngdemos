@@ -12,6 +12,10 @@
         "dist/blogdemo/blogdemo",
         "dist/blogdemo"
       ],
+      "crud": [
+        "dist/crud/crud",
+        "dist/crud"
+      ],
       "data-source": [
         "dist/data-source/data-source",
         "dist/data-source"
