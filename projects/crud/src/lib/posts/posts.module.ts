@@ -6,18 +6,15 @@ import { PostListComponent } from './post-list/post-list.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { PostComponent } from './post/post.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     PostListComponent,
     AddPostComponent,
     EditPostComponent,
-    PostComponent
+    PostComponent,
   ],
-  imports: [
-    CommonModule,
-    PostsRoutingModule
-  ]
+  imports: [CommonModule, PostsRoutingModule, ReactiveFormsModule],
 })
-export class PostsModule { }
+export class PostsModule {}

@@ -2,10 +2,16 @@
   <header class="d-flex justify-content-between">
     <h1>Add Post</h1>
   </header>
-  <form>
+  <form [formGroup]="form" (ngSubmit)="addPost()">
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
-      <input type="text" class="form-control" id="title" name="title" />
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        formControlName="title"
+      />
     </div>
     <div class="mb-3">
       <label for="body" class="form-label">Body</label>
@@ -15,6 +21,7 @@
         id="body"
         name="body"
         rows="3"
+        formControlName="body"
       ></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Add Post</button>
