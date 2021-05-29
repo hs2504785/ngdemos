@@ -1,0 +1,16 @@
+table {
+  table-layout: fixed;
+
+  th:first-child,
+  th:nth-child(2) {
+    width: 80px;
+  }
+  th:last-child {
+    width: 152px;
+  }
+
+  .view,
+  .delete {
+    margin-left: 4px;
+  }
+}

@@ -1,1 +1,38 @@
-<p>post-list works!</p>
+<div class="container-fluid">
+  <header class="d-flex justify-content-between">
+    <h1>Post List</h1>
+    <a routerLink="add" class="btn btn-primary align-self-center">
+      <i class="ti-plus"></i>
+    </a>
+  </header>
+  <table class="table table-bordered table-responsive">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Id</th>
+        <th>User ID</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts$ | async">
+        <td>{{ post.id }}</td>
+        <td>{{ post.userId }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+        <td>
+          <a [routerLink]="['edit', post.id]" class="btn btn-success">
+            <i class="ti-pencil"></i>
+          </a>
+          <a [routerLink]="['view', post.id]" class="btn btn-info view">
+            <i class="ti-eye"></i>
+          </a>
+          <button class="btn btn-danger delete" (click)="deletePost(post)">
+            <i class="ti-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

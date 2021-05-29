@@ -19,7 +19,7 @@ const routes: Routes = [
     component: EditPostComponent,
   },
   {
-    path: 'view',
+    path: 'view/:id',
     component: PostComponent,
   },
 ];
