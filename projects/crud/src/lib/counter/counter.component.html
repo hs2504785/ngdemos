@@ -1,1 +1,15 @@
-<p>counter works!</p>
+<div class="container-fluid">
+  <h1 class="text-center">Counter</h1>
+
+  <div class="card card-body">
+    <p>Count: {{ count }}</p>
+    <hr class="mt-2" />
+    <div>
+      <button class="btn btn-primary" (click)="increment()">Increment</button>
+      <button class="btn btn-warning ml-2" (click)="decrement()">
+        Increment
+      </button>
+      <button class="btn btn-danger ml-2" (click)="reset()">Reset</button>
+    </div>
+  </div>
+</div>

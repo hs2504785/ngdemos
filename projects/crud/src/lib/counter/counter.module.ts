@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { CounterRoutingModule } from './counter-routing.module';
 import { CounterComponent } from './counter.component';
-
+import { StoreModule } from '@ngrx/store';
+import * as fromCounter from './state/counter.reducer';
 
 @NgModule({
-  declarations: [
-    CounterComponent
-  ],
+  declarations: [CounterComponent],
   imports: [
     CommonModule,
-    CounterRoutingModule
-  ]
+    CounterRoutingModule,
+    StoreModule.forFeature(fromCounter.counterFeatureKey, fromCounter.reducer),
+  ],
 })
-export class CounterModule { }
+export class CounterModule {}
