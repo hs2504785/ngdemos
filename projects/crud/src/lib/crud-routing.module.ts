@@ -13,6 +13,11 @@ const routes: Routes = [
           import('./posts/posts.module').then(m => m.PostsModule),
       },
       {
+        path: 'counter',
+        loadChildren: () =>
+          import('./counter/counter.module').then(m => m.CounterModule),
+      },
+      {
         path: '',
         redirectTo: 'posts',
       },
