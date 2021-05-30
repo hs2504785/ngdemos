@@ -4,6 +4,7 @@ import {
   EntityCollectionServiceBase,
   EntityCollectionServiceElementsFactory,
 } from '@ngrx/data';
+import { map } from 'rxjs/operators';
 import { postFeatureKey } from '../posts.module';
 
 @Injectable({
@@ -12,5 +13,13 @@ import { postFeatureKey } from '../posts.module';
 export class PostService extends EntityCollectionServiceBase<any> {
   constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super(postFeatureKey, serviceElementsFactory);
+  }
+
+  getPostByIdFromCache(postId) {
+    return this.entities$.pipe(
+      map(posts => {
+        return posts.find(post => post.id === +postId);
+      }),
+    );
   }
 }

@@ -39,6 +39,7 @@ export class PostDataService extends DefaultDataService<any> {
     return this.http.delete(`${this.API_URL}/${postId}`);
   }
 
+  // to make call to backend, in our case it's not required as we are using resolver to load this module
   getById(postId) {
     return this.http.get(`${this.API_URL}/${postId}`);
   }
