@@ -17,6 +17,11 @@ const routes: Routes = [
         },
       },
       {
+        path: 'users',
+        loadChildren: () =>
+          import('./users/users.module').then(m => m.UsersModule),
+      },
+      {
         path: 'counter',
         loadChildren: () =>
           import('./counter/counter.module').then(m => m.CounterModule),
