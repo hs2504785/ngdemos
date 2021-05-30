@@ -1,8 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserInterface } from '../models/user.interface';
+import { UserService } from '../services/user.service';
 import { UserDialogComponent } from '../user-dialog/user-dialog.component';
 
 @Component({
@@ -12,11 +13,11 @@ import { UserDialogComponent } from '../user-dialog/user-dialog.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserListComponent implements OnInit {
-  users: UserInterface[];
-  constructor(private route: ActivatedRoute, private dialog: MatDialog) {}
+  users$: Observable<UserInterface[]>;
+  constructor(private dialog: MatDialog, private userService: UserService) {}
 
   ngOnInit(): void {
-    this.users = this.route.snapshot.data.users;
+    this.users$ = this.userService.entities$;
   }
 
   addUser() {
