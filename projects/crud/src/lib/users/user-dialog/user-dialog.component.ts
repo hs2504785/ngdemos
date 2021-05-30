@@ -72,10 +72,8 @@ export class UserDialogComponent {
     } else if (this.mode == 'create') {
       console.log('Add User', user);
 
-      // this.coursesService.add(course).subscribe(newCourse => {
-      //   console.log('New Course', newCourse);
-      //   this.dialogRef.close();
-      // });
+      this.userService.add(this.form.value);
+      this.dialogRef.close();
     }
   }
 }

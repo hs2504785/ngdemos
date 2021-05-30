@@ -17,9 +17,9 @@ export class UserDataService extends DefaultDataService<any> {
     return this.http.get<UserInterface[]>(`${this.API_URL}`);
   }
 
-  // add(post): Observable<PostInterface> {
-  //   return this.http.post<PostInterface>(`${this.API_URL}`, post);
-  // }
+  add(user): Observable<UserInterface> {
+    return this.http.post<UserInterface>(`${this.API_URL}`, user);
+  }
 
   // update(post): Observable<PostInterface> {
   //   return this.http.put<PostInterface>(
