@@ -3,9 +3,7 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   OnDestroy,
-  ChangeDetectorRef,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Observable, of, Subscription } from 'rxjs';
 import { PostInterface } from '../models/post.interface';
 import { PostService } from '../services/post.service';
@@ -20,11 +18,7 @@ export class PostListComponent implements OnInit, OnDestroy {
   posts$: Observable<PostInterface[]>;
   sub: Subscription;
 
-  constructor(
-    private route: ActivatedRoute,
-    private postService: PostService,
-    private cd: ChangeDetectorRef,
-  ) {}
+  constructor(private postService: PostService) {}
 
   ngOnInit(): void {
     this.posts$ = this.postService.entities$;
@@ -32,11 +26,7 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   deletePost(post) {
     console.log('Delete', post);
-
-    // this.sub = this.postService.delete(post.id).subscribe(() => {
-    //   this.posts = this.posts.filter(item => item.id !== post.id);
-    //   this.cd.detectChanges();
-    // });
+    this.postService.delete(post);
   }
 
   ngOnDestroy() {
