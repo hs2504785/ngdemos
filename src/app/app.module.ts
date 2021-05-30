@@ -11,8 +11,10 @@ import { entityConfig } from './entity-metadata';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderComponent } from './shared/components/loader/loader.component';
-import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
+import { appReducers } from './store/reducers';
+import { metaReducers } from './store/meta-reducers';
 
 @NgModule({
   declarations: [AppComponent, LoaderComponent],
@@ -22,9 +24,7 @@ import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
     BrowserAnimationsModule,
     HttpClientModule,
 
-    StoreModule.forRoot({
-      router: routerReducer,
-    }),
+    StoreModule.forRoot(appReducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
     extModules,
     EffectsModule.forRoot([]),
