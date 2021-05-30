@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrudComponent } from './crud.component';
 import { PostResolver } from './posts/services/post.resolver';
+import { UserResolver } from './users/services/user.resolver';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
         path: 'users',
         loadChildren: () =>
           import('./users/users.module').then(m => m.UsersModule),
+        resolve: {
+          users: UserResolver,
+        },
       },
       {
         path: 'counter',
