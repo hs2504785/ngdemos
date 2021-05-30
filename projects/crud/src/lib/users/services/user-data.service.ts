@@ -21,12 +21,12 @@ export class UserDataService extends DefaultDataService<any> {
     return this.http.post<UserInterface>(`${this.API_URL}`, user);
   }
 
-  // update(post): Observable<PostInterface> {
-  //   return this.http.put<PostInterface>(
-  //     `${this.API_URL}/${post.id}`,
-  //     post.changes,
-  //   );
-  // }
+  update(user): Observable<UserInterface> {
+    return this.http.put<UserInterface>(
+      `${this.API_URL}/${user.id}`,
+      user.changes,
+    );
+  }
 
   delete(userId): Observable<any> {
     return this.http.delete(`${this.API_URL}/${userId}`);

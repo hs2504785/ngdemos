@@ -21,7 +21,7 @@ export class UserDialogComponent {
 
   dialogTitle: string;
 
-  course: UserInterface;
+  user: UserInterface;
 
   mode: 'create' | 'update';
 
@@ -34,20 +34,22 @@ export class UserDialogComponent {
     private userService: UserService,
   ) {
     this.dialogTitle = data.dialogTitle;
-    this.course = data.course;
+    this.user = data.user;
     this.mode = data.mode;
 
     const formControls = {
       name: [''],
       email: [''],
-      company: [''],
+      company: this.fb.group({
+        name: '',
+      }),
       phone: [''],
       website: [''],
     };
 
     if (this.mode == 'update') {
       this.form = this.fb.group(formControls);
-      this.form.patchValue({ ...data.user });
+      this.form.patchValue({ ...this.user });
     } else if (this.mode == 'create') {
       this.form = this.fb.group({
         ...formControls,
@@ -61,18 +63,18 @@ export class UserDialogComponent {
 
   onSave() {
     const user: UserInterface = {
-      // ...this.user,
+      ...this.user,
       ...this.form.value,
     };
     if (this.mode == 'update') {
       console.log('Update User', user);
 
-      // this.coursesService.update(course);
+      this.userService.update(user);
       this.dialogRef.close();
     } else if (this.mode == 'create') {
       console.log('Add User', user);
 
-      this.userService.add(this.form.value);
+      this.userService.add(user);
       this.dialogRef.close();
     }
   }

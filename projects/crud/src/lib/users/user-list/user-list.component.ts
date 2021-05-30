@@ -45,7 +45,6 @@ export class UserListComponent implements OnInit {
       .afterClosed()
       .subscribe(res => {
         console.log('Closed', res);
-        // this.courseChanged.emit()
       });
   }
 
