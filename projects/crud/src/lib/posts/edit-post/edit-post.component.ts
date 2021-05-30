@@ -46,7 +46,7 @@ export class EditPostComponent implements OnInit, OnDestroy {
     const postToUpdate = { ...this.post, ...this.form.value };
     console.log('Update Post ', postToUpdate);
 
-    this.sub = this.postService.update(postToUpdate).subscribe(post => {
+    this.sub = this.postService.update(postToUpdate).subscribe(() => {
       this.router.navigateByUrl('/crud/posts');
     });
   }

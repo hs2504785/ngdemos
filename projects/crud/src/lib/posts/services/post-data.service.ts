@@ -9,7 +9,7 @@ import { POSTS } from './fake-posts';
 
 @Injectable()
 export class PostDataService extends DefaultDataService<any> {
-  API_URL = '/posts';
+  API_URL = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(http: HttpClient, httpUrlGenerator: HttpUrlGenerator) {
     super(postFeatureKey, http, httpUrlGenerator);

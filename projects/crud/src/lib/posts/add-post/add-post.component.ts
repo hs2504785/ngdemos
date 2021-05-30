@@ -33,7 +33,8 @@ export class AddPostComponent implements OnInit, OnDestroy {
 
   addPost() {
     console.log('Add Post ', this.form.value);
-    this.sub = this.postService.add(this.form.value).subscribe(post => {
+
+    this.sub = this.postService.add(this.form.value).subscribe(() => {
       this.router.navigateByUrl('/crud/posts');
     });
   }
