@@ -38,4 +38,8 @@ export class PostDataService extends DefaultDataService<any> {
   delete(postId): Observable<any> {
     return this.http.delete(`${this.API_URL}/${postId}`);
   }
+
+  getById(postId) {
+    return this.http.get(`${this.API_URL}/${postId}`);
+  }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { PostInterface } from '../models/post.interface';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'lib-post',
@@ -9,14 +11,14 @@ import { PostInterface } from '../models/post.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostComponent implements OnInit {
-  post$: Observable<PostInterface> = of({
-    userId: 1,
-    id: 1,
-    title:
-      'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-    body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
-  });
-  constructor() {}
+  post$: Observable<PostInterface>;
+  constructor(
+    private route: ActivatedRoute,
+    private postService: PostService,
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const currentPostId = this.route.snapshot.paramMap.get('id');
+    this.post$ = this.postService.getByKey(currentPostId);
+  }
 }
