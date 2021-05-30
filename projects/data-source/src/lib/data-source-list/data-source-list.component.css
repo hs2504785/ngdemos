@@ -11,3 +11,7 @@
 .delete ::ng-deep .mat-icon {
   font-size: 18px;
 }
+
+.ti-folder {
+  margin-top: 8px;
+}

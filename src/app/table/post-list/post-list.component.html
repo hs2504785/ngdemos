@@ -25,11 +25,13 @@
               expandedElement = expandedElement === element ? null : element
             "
           >
-            <mat-icon class="mat-icon-rtl-mirror">
-              {{
-                expandedElement === element ? 'expand_more' : 'chevron_right'
-              }}
-            </mat-icon>
+            <i
+              class="mat-icon-rtl-mirror"
+              [ngClass]="
+                expandedElement === element ? 'ti-angle-down' : 'ti-angle-right'
+              "
+            >
+            </i>
           </button>
 
           {{ element[column] }}

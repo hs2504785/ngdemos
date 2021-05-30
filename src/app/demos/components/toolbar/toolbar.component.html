@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <button mat-button class="sidenav-toggle" (click)="toggleSidenav.emit()">
-    <mat-icon>menu</mat-icon>
+    <i class="ti-menu"></i>
   </button>
 
   <span>Demos</span>
@@ -8,7 +8,7 @@
   <span class="example-spacer"></span>
 
   <button mat-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
+    <i class="ti-more-alt"></i>
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="toggleTheme.emit()">Toggle theme</button>

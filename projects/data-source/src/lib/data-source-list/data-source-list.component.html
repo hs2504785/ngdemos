@@ -5,9 +5,13 @@
     matTreeNodePadding
   >
     <button mat-icon-button disabled></button>
-    <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
-      {{ node.type === 'file' ? 'description' : 'folder' }}
-    </mat-icon>
+    <i
+      class="type-icon"
+      [attr.aria-label]="node.type + 'icon'"
+      [class.ti-file]="node.type === 'file'"
+      [class.ti-folder]="node.type !== 'file'"
+    >
+    </i>
     {{ node.name }}
 
     <button
@@ -16,7 +20,7 @@
       color="accent"
       (click)="editNode(node)"
     >
-      <mat-icon>mode_edit</mat-icon>
+      <i class="ti-pencil"></i>
     </button>
     <button
       mat-icon-button
@@ -24,7 +28,7 @@
       color="warn"
       (click)="deleteNode(node)"
     >
-      <mat-icon>delete</mat-icon>
+      <i class="ti-trash"></i>
     </button>
   </mat-tree-node>
 
@@ -34,22 +38,23 @@
       matTreeNodeToggle
       [attr.aria-label]="'Toggle ' + node.name"
     >
-      <mat-icon class="mat-icon-rtl-mirror">
-        {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
-      </mat-icon>
+      <i
+        class="mat-icon-rtl-mirror"
+        [class.ti-angle-down]="expandedElement !== element"
+        [class.ti-angle-right]="expandedElement === element"
+      >
+      </i>
     </button>
-    <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
-      {{ node.type === 'file' ? 'description' : 'folder' }}
+    <mat-icon
+      [attr.aria-label]="node.type + 'icon'"
+      [class.ti-file]="node.type === 'file'"
+      [class.ti-folder]="node.type !== 'file'"
+    >
     </mat-icon>
     {{ node.name }}
 
-    <button
-      class="icon-btn"
-      mat-icon-button
-      color="accent"
-      (click)="addNode(node)"
-    >
-      <mat-icon>add</mat-icon>
+    <button mat-icon-button color="accent" (click)="addNode(node)">
+      <i class="ti-plus"></i>
     </button>
   </mat-tree-node>
 </mat-tree>
