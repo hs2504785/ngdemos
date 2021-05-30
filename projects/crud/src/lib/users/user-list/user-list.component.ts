@@ -51,6 +51,7 @@ export class UserListComponent implements OnInit {
 
   deleteUser(user) {
     console.log('Delete User', user);
+    this.userService.delete(user.id);
   }
 
   trackByUser(index, user) {

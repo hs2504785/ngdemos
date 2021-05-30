@@ -1,24 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
+import { Observable } from 'rxjs';
+import { UserInterface } from '../models/user.interface';
 import { userFeatureKey } from '../users.module';
 
 @Injectable()
-export class PostDataService extends DefaultDataService<any> {
-  API_URL = 'https://jsonplaceholder.typicode.com/posts';
+export class UserDataService extends DefaultDataService<any> {
+  API_URL = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(http: HttpClient, httpUrlGenerator: HttpUrlGenerator) {
     super(userFeatureKey, http, httpUrlGenerator);
   }
 
-  // getAll(): Observable<PostInterface[]> {
-  //   return this.http.get<PostInterface[]>(`${this.API_URL}`).pipe(
-  //     catchError(err => {
-  //       console.log(err, 'Feting pos error', err);
-  //       return of(POSTS);
-  //     }),
-  //   );
-  // }
+  getAll(): Observable<UserInterface[]> {
+    return this.http.get<UserInterface[]>(`${this.API_URL}`);
+  }
 
   // add(post): Observable<PostInterface> {
   //   return this.http.post<PostInterface>(`${this.API_URL}`, post);
@@ -31,9 +28,9 @@ export class PostDataService extends DefaultDataService<any> {
   //   );
   // }
 
-  // delete(postId): Observable<any> {
-  //   return this.http.delete(`${this.API_URL}/${postId}`);
-  // }
+  delete(userId): Observable<any> {
+    return this.http.delete(`${this.API_URL}/${userId}`);
+  }
 
   // // to make call to backend, in our case it's not required as we are using resolver to load this module
   // getById(postId) {

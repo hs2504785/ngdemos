@@ -18,7 +18,7 @@ import {
   EntityDefinitionService,
   EntityMetadataMap,
 } from '@ngrx/data';
-import { UserDataService } from 'projects/blogdemo/src/lib/services/user-data.service';
+import { UserDataService } from './services/user-data.service';
 
 export const userFeatureKey = 'user-ngrx-data';
 
