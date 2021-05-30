@@ -11,7 +11,10 @@
     "e2e": "ng e2e",
     "lib-watch": "ng build data-source --watch",
     "build-lib": "ng build data-source",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "generate": "node ./server/generate.js > ./server/database.json",
+    "server": "json-server --watch ./server/database.json",
+    "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "private": true,
   "dependencies": {
@@ -34,7 +37,6 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.0",
     "bootswatch": "^4.6.0",
-    "faker": "^5.5.3",
     "rxjs": "6.6.7",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
@@ -49,9 +51,12 @@
     "@types/jasmine": "~3.7.4",
     "@types/node": "^15.6.1",
     "codelyzer": "^6.0.2",
+    "concurrently": "^6.2.0",
+    "faker": "^5.5.3",
     "husky": "6.0.0",
     "jasmine-core": "~3.7.1",
     "jasmine-spec-reporter": "~7.0.0",
+    "json-server": "^0.16.3",
     "karma": "~6.3.2",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
