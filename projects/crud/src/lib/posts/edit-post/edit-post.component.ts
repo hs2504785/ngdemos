@@ -1,6 +1,14 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  OnDestroy,
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { PostInterface } from '../models/post.interface';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'lib-edit-post',
@@ -8,10 +16,15 @@ import { PostInterface } from '../models/post.interface';
   styleUrls: ['./edit-post.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EditPostComponent implements OnInit {
+export class EditPostComponent implements OnInit, OnDestroy {
   form: FormGroup;
   post: PostInterface;
-  constructor(private fb: FormBuilder) {}
+  sub: Subscription;
+  constructor(
+    private fb: FormBuilder,
+    private postService: PostService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -32,5 +45,13 @@ export class EditPostComponent implements OnInit {
   updatePost() {
     const postToUpdate = { ...this.post, ...this.form.value };
     console.log('Update Post ', postToUpdate);
+
+    this.sub = this.postService.update(postToUpdate).subscribe(post => {
+      this.router.navigateByUrl('/crud/posts');
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub && this.sub.unsubscribe();
   }
 }

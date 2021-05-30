@@ -1,5 +1,13 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  OnDestroy,
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'lib-add-post',
@@ -7,9 +15,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./add-post.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddPostComponent implements OnInit {
+export class AddPostComponent implements OnInit, OnDestroy {
   form: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  sub: Subscription;
+  constructor(
+    private fb: FormBuilder,
+    private postService: PostService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -20,5 +33,12 @@ export class AddPostComponent implements OnInit {
 
   addPost() {
     console.log('Add Post ', this.form.value);
+    this.sub = this.postService.add(this.form.value).subscribe(post => {
+      this.router.navigateByUrl('/crud/posts');
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub && this.sub.unsubscribe();
   }
 }

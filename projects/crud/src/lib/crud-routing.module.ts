@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrudComponent } from './crud.component';
+import { PostResolver } from './posts/services/post.resolver';
 
 const routes: Routes = [
   {
@@ -11,6 +12,9 @@ const routes: Routes = [
         path: 'posts',
         loadChildren: () =>
           import('./posts/posts.module').then(m => m.PostsModule),
+        resolve: {
+          posts: PostResolver,
+        },
       },
       {
         path: 'counter',
