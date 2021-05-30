@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 import {
-  Router,
   Resolve,
   RouterStateSnapshot,
   ActivatedRouteSnapshot,
 } from '@angular/router';
-import { Observable, of, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { PostInterface } from '../models/post.interface';
-import { POSTS } from './fake-posts';
+import { Observable } from 'rxjs';
+import { first, tap } from 'rxjs/operators';
 import { PostService } from './post.service';
 
 @Injectable({
@@ -19,12 +16,14 @@ export class PostResolver implements Resolve<any> {
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
-  ): Observable<PostInterface[]> {
-    return this.postService.getAll().pipe(
-      catchError(err => {
-        console.log(err, 'Feting pos error', err);
-        return of(POSTS);
+  ): boolean | Observable<boolean> | Promise<boolean> {
+    return this.postService.loaded$.pipe(
+      tap(loaded => {
+        if (!loaded) {
+          this.postService.getAll();
+        }
       }),
+      first(),
     );
   }
 }

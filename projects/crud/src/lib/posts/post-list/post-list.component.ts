@@ -17,7 +17,7 @@ import { PostService } from '../services/post.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostListComponent implements OnInit, OnDestroy {
-  posts: PostInterface[];
+  posts$: Observable<PostInterface[]>;
   sub: Subscription;
 
   constructor(
@@ -27,16 +27,16 @@ export class PostListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.posts = this.route.snapshot.data['posts'];
+    this.posts$ = this.postService.entities$;
   }
 
   deletePost(post) {
     console.log('Delete', post);
 
-    this.sub = this.postService.delete(post.id).subscribe(() => {
-      this.posts = this.posts.filter(item => item.id !== post.id);
-      this.cd.detectChanges();
-    });
+    // this.sub = this.postService.delete(post.id).subscribe(() => {
+    //   this.posts = this.posts.filter(item => item.id !== post.id);
+    //   this.cd.detectChanges();
+    // });
   }
 
   ngOnDestroy() {
