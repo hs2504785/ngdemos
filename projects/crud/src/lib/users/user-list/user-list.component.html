@@ -21,7 +21,7 @@
         <div><strong>Website:</strong> {{ user.website }}</div>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button color="accent" [routerLink]="['view', '123213']">
+        <button mat-button color="accent" [routerLink]="['view', user.id]">
           VIEW
         </button>
         <button mat-button color="primary" (click)="editUser(user)">
