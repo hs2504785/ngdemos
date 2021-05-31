@@ -90,6 +90,8 @@ crud
 
 data-source
 
+github-repo
+
 rxjs
 Apache-2.0
                                Apache License
