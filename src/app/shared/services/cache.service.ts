@@ -17,15 +17,13 @@ export class CacheService {
     if (cachedResponse) {
       return of(cachedResponse);
     } else {
-      return this.http
-        .get<any>(`https://api.github.com/search/repositories?q=angular`)
-        .pipe(
-          publishReplay(1),
-          refCount(),
-          tap(resp => {
-            this.responseCache.set(url, resp);
-          }),
-        );
+      return this.http.get<any>(url).pipe(
+        publishReplay(1),
+        refCount(),
+        tap(resp => {
+          this.responseCache.set(url, resp);
+        }),
+      );
     }
   }
 
