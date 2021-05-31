@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Repos ( Caching Http Response Demo )</h1>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let repo of repos$ | async">
+      <h2>{{ repo.full_name }}</h2>
+      <p>{{ repo.description }}</p>
+    </li>
+  </ul>
+</div>

@@ -4,6 +4,13 @@ import { TodoResolver } from 'projects/todo/src/lib/services/todo.resolver';
 
 const routes: Routes = [
   {
+    path: 'github-repo',
+    loadChildren: () =>
+      import('projects/github-repo/src/public-api').then(
+        m => m.GithubRepoModule,
+      ),
+  },
+  {
     path: 'crud',
     loadChildren: () =>
       import('projects/crud/src/public-api').then(m => m.CrudModule),
