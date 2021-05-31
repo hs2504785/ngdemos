@@ -304,6 +304,37 @@
           }
         }
       }
+    },
+    "github-repo": {
+      "projectType": "library",
+      "root": "projects/github-repo",
+      "sourceRoot": "projects/github-repo/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/github-repo/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/github-repo/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/github-repo/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/github-repo/src/test.ts",
+            "tsConfig": "projects/github-repo/tsconfig.spec.json",
+            "karmaConfig": "projects/github-repo/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngdemos"
