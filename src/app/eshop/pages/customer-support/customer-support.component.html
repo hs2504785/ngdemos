@@ -1,6 +1,5 @@
 <div>
   <h3 class="mt-4 mb-4">Customer Support</h3>
-
   <div>
     <div>
       <div class="row">
@@ -44,10 +43,10 @@
             name="message"
           ></textarea>
         </div>
-        <ng-container *ngIf="isSendSuccess != null">
+        <ng-container *ngIf="(isSentSuccess$ | async) != null">
           <div
             class="alert alert-dismissible alert-success"
-            *ngIf="isSendSuccess"
+            *ngIf="isSentSuccess$ | async"
           >
             <button
               type="button"
@@ -57,11 +56,12 @@
             >
               &times;
             </button>
-            <strong>We got your message!</strong> We will be in touch.
+            <strong>We got your message {{ name$ | async }}!</strong> We will be
+            in touch.
           </div>
           <div
             class="alert alert-dismissible alert-danger"
-            *ngIf="!isSendSuccess"
+            *ngIf="!(isSentSuccess$ | async)"
           >
             <button
               type="button"
