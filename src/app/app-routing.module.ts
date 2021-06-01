@@ -4,6 +4,11 @@ import { TodoResolver } from 'projects/todo/src/lib/services/todo.resolver';
 
 const routes: Routes = [
   {
+    path: 'eshop',
+    loadChildren: () => import('./eshop/eshop.module').then(m => m.EshopModule),
+  },
+
+  {
     path: 'github-repo',
     loadChildren: () =>
       import('projects/github-repo/src/public-api').then(
