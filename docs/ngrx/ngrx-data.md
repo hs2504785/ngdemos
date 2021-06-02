@@ -2,9 +2,9 @@
 
 Abstraction over NgRx Entity
 
-![Comm](images/comm.png)
+![Comm](../images/comm.png)
 
-![Prob Tree](images/prob-tree.png)
+![Prob Tree](../images/prob-tree.png)
 
 ```
 npm i @ngrx/store
@@ -17,19 +17,19 @@ npm i @ngrx/data
 
 Inside Root Module
 
-![Config](images/data-config.png)
+![Config](../images/data-config.png)
 
 Define Entities
 
-![Entities](images/entity.png)
+![Entities](../images/entity.png)
 
 ## Last step - update service you used to have
 
-![Update Service](images/update-service.png)
+![Update Service](../images/update-service.png)
 
 ## Now Enjoy the service ( from component )
 
-![use service](images/use-service.png)
+![use service](../images/use-service.png)
 
 ```javascript
 constructor(private postService: PostService) {}
@@ -54,11 +54,11 @@ ngOnInit() {
 
 Available properties
 
-![Properties](images/data-property.png)
+![Properties](../images/data-property.png)
 
 Available Methods
 
-![Methods](images/data-methods.png)
+![Methods](../images/data-methods.png)
 
 ## Setup with lazy loaded module ( 99% time you want to use this )
 
