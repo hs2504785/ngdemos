@@ -83,6 +83,7 @@ const routes: Routes = [
     redirectTo: '/home',
     pathMatch: 'full',
   },
+  { path: 'ucard', loadChildren: () => import('./ucard/ucard.module').then(m => m.UcardModule) },
   // Fallbak route
   // {
   //   path: '**',
