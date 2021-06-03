@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { TodoInterface } from '../models/todo.interface';
 import { TodoService } from '../services/todo.service';
+import { TodoSocketService } from './services/todo-socket.service';
 import {
   addEntityTodo,
   addEntityTodoFailure,
@@ -67,5 +68,22 @@ export class EntityTodoEffects {
     ),
   );
 
-  constructor(private actions$: Actions, private todoService: TodoService) {}
+  // Socket Live Events
+  liveCreate$ = this.todoSocket.liveCreated$.pipe(
+    map(todo => addEntityTodoSuccess({ todo })),
+  );
+
+  // liveUpdate$ = this.todoSocket.liveUpdated$.pipe(
+  //   map(todo => editPost({ todo })),
+  // );
+
+  liveDestroy$ = this.todoSocket.liveDeleted$.pipe(
+    map(todoId => deleteEntityTodoSuccess({ todoId })),
+  );
+
+  constructor(
+    private actions$: Actions,
+    private todoService: TodoService,
+    private todoSocket: TodoSocketService,
+  ) {}
 }
