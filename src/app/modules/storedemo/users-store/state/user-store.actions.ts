@@ -46,16 +46,16 @@ export const loadStoreUsersFailure = createAction(
 //   TodoActionTypes.EDIT_TODO_FAILURE,
 // );
 
-// // Delete
-// export const deleteTodoAction = createAction(
-//   TodoActionTypes.DELETE_TODO,
-//   props<{ todoId: number }>(),
-// );
+// Delete
+export const deleteStoreUserAction = createAction(
+  UserStoreActionTypes.DELETE_STORE_USER,
+  props<{ id: number }>(),
+);
 
-// export const deleteTodoSuccessAction = createAction(
-//   TodoActionTypes.DELETE_TODO_SUCCESS,
-// );
+export const deleteStoreUserSuccessAction = createAction(
+  UserStoreActionTypes.DELETE_STORE_USER_SUCCESS,
+);
 
-// export const deleteTodoFailureAction = createAction(
-//   TodoActionTypes.DELETE_TODO_FAILURE,
-// );
+export const deleteStoreUserFailureAction = createAction(
+  UserStoreActionTypes.DELETE_STORE_USER_SUCCESS,
+);

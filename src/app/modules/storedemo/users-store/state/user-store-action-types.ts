@@ -11,7 +11,7 @@ export enum UserStoreActionTypes {
   EDIT_STORE_USER_SUCCESS = '[Edit User Component] Edit User success',
   EDIT_STORE_USER_FAILURE = '[Edit User Component] Edit User failure',
 
-  DELETE_STORE_USER = '[Users] Delete User',
-  DELETE_STORE_USER_SUCCESS = '[Users] Delete User success',
-  DELETE_STORE_USER_FAILURE = '[Users] Delete User failure',
+  DELETE_STORE_USER = '[User Store Component] Delete User',
+  DELETE_STORE_USER_SUCCESS = '[User Store Component] Delete User success',
+  DELETE_STORE_USER_FAILURE = '[User Store Component] Delete User failure',
 }

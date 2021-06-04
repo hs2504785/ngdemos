@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { UserStoreStateInterface } from '../models/user-store-state.interface';
 import * as UserStoreActions from './user-store.actions';
+import { deleteStoreUserSuccessAction } from './user-store.actions';
 
 export const userStoreFeatureKey = 'userStore';
 
@@ -110,28 +111,31 @@ export const userStoreReducer = createReducer(
   //   }),
   // ),
 
-  // // Delete
-  // on(deleteTodoAction, (state, action): TodoStateInterface => {
-  //   const todos = state.data.filter(h => h.id !== action.todoId);
-  //   return {
-  //     ...state,
-  //     data: todos,
-  //   };
-  // }),
+  // Delete
+  on(
+    UserStoreActions.deleteStoreUserAction,
+    (state, action): UserStoreStateInterface => {
+      const users = state.data.filter(h => h.id !== action.id);
+      return {
+        ...state,
+        data: users,
+      };
+    },
+  ),
 
-  // on(
-  //   deleteTodoSuccessAction,
-  //   (state): TodoStateInterface => ({
-  //     ...state,
-  //     isLoading: false,
-  //   }),
-  // ),
+  on(
+    UserStoreActions.deleteStoreUserSuccessAction,
+    (state): UserStoreStateInterface => ({
+      ...state,
+      isLoading: false,
+    }),
+  ),
 
-  // on(
-  //   deleteTodoFailureAction,
-  //   (state): TodoStateInterface => ({
-  //     ...state,
-  //     isLoading: false,
-  //   }),
-  // ),
+  on(
+    UserStoreActions.deleteStoreUserFailureAction,
+    (state): UserStoreStateInterface => ({
+      ...state,
+      isLoading: false,
+    }),
+  ),
 );

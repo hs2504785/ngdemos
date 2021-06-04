@@ -6,6 +6,7 @@ import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-confi
 import { UserStoreInterface } from './models/user-store-interface';
 import { UserStoreStateInterface } from './models/user-store-state.interface';
 import { UserStoreService } from './services/user-store.service';
+import { deleteStoreUserAction } from './state/user-store.actions';
 import { selectStoreUsers } from './state/user-store.selectors';
 import { UserStoreDialogComponent } from './user-store-dialog/user-store-dialog.component';
 
@@ -26,8 +27,9 @@ export class UsersStoreComponent implements OnInit {
     this.users$ = this.store.pipe(select(selectStoreUsers));
   }
 
-  removeUser() {
+  removeUser(user: UserStoreInterface) {
     console.log('Remove user');
+    this.store.dispatch(deleteStoreUserAction({ id: user.id }));
   }
 
   addUser() {

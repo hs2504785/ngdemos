@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import {
+  deleteStoreUserAction,
+  deleteStoreUserFailureAction,
+  deleteStoreUserSuccessAction,
   loadStoreUsers,
   loadStoreUsersFailure,
   loadStoreUsersSuccess,
@@ -26,6 +29,23 @@ export class UserStoreEffects {
       }),
     );
   });
+
+  // Delete
+  deleteStoreUsers$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteStoreUserAction),
+      mergeMap(({ id }) => {
+        return this.userStoreSetvice.removeUser(id).pipe(
+          map(() => {
+            return deleteStoreUserSuccessAction();
+          }),
+          catchError(() => {
+            return of(deleteStoreUserFailureAction());
+          }),
+        );
+      }),
+    ),
+  );
 
   constructor(
     private actions$: Actions,
