@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserDataInterface } from './models/user-data-interface';
@@ -13,14 +14,12 @@ import { UserDataDialogComponent } from './user-data-dialog/user-data-dialog.com
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersDataComponent {
-  users$: Observable<UserDataInterface[]>;
-  constructor(
-    private userDataService: UserDataService,
-    private dialog: MatDialog,
-  ) {}
+  users: UserDataInterface[];
+
+  constructor(private route: ActivatedRoute, private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.users$ = this.userDataService.getUsers();
+    this.users = this.route.snapshot.data['users'];
   }
 
   removeUser() {

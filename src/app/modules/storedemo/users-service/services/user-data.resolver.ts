@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
 import {
-  Router, Resolve,
+  Resolve,
   RouterStateSnapshot,
-  ActivatedRouteSnapshot
+  ActivatedRouteSnapshot,
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { UserDataInterface } from '../models/user-data-interface';
+import { UserDataService } from './user-data.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class UserDataResolver implements Resolve<boolean> {
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    return of(true);
+export class UserDataResolver implements Resolve<UserDataInterface[]> {
+  constructor(private userService: UserDataService) {}
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot,
+  ): Observable<UserDataInterface[]> {
+    return this.userService.getUsers();
   }
 }

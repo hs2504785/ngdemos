@@ -1,6 +1,6 @@
 <div class="container">
   <header class="d-flex justify-content-between">
-    <h1>Users List (Data)</h1>
+    <h1>Users List (Service)</h1>
     <button
       type="button"
       (click)="addUser()"
@@ -9,12 +9,11 @@
       <i class="ti-plus"></i>
     </button>
   </header>
-  <div class="d-flex mb-2" *ngFor="let user of users$ | async">
+  <div class="d-flex mb-2" *ngFor="let user of users">
     <div class="flex-shrink-0 mr-2">
       <img [src]="user.avatar" alt="..." />
     </div>
     <div class="flex-grow-1 ml-2">
-      a
       <div>
         <strong>{{ user.first_name }}</strong>
         <br />
