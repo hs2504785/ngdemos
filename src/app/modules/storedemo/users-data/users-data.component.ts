@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserDataInterface } from './models/user-data-interface';
-import { UserDataService } from './services/user-data.service';
+import { UserDataService1 } from './services/user-data.service';
 import { UserDataDialogComponent } from './user-data-dialog/user-data-dialog.component';
 
 @Component({
@@ -15,16 +15,17 @@ import { UserDataDialogComponent } from './user-data-dialog/user-data-dialog.com
 export class UsersDataComponent {
   users$: Observable<UserDataInterface[]>;
   constructor(
-    private userDataService: UserDataService,
+    private userDataService: UserDataService1,
     private dialog: MatDialog,
   ) {}
 
   ngOnInit(): void {
-    this.users$ = this.userDataService.getUsers();
+    this.users$ = this.userDataService.entities$;
   }
 
-  removeUser() {
+  removeUser(user) {
     console.log('Remove user');
+    this.userDataService.delete(user);
   }
 
   addUser() {
@@ -38,9 +39,8 @@ export class UsersDataComponent {
     this.dialog.open(UserDataDialogComponent, dialogConfig);
   }
 
-  editUser() {
+  editUser(user) {
     const dialogConfig = defaultDialogConfig();
-    const user = { name: 'hemant' };
     dialogConfig.data = {
       dialogTitle: 'Edit User',
       user,

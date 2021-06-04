@@ -9,6 +9,22 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import {
+  EntityDataService,
+  EntityDefinitionService,
+  EntityMetadataMap,
+} from '@ngrx/data';
+import { UsersDataService } from './services/users-data.service';
+
+export const usersFeatureKey = 'users';
+
+export const entityMetadata: EntityMetadataMap = {
+  [usersFeatureKey]: {
+    entityDispatcherOptions: {
+      optimisticUpdate: true,
+    },
+  },
+};
 
 @NgModule({
   declarations: [UsersDataComponent, UserDataDialogComponent],
@@ -22,4 +38,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
 })
-export class UsersDataModule {}
+export class UsersDataModule {
+  constructor(
+    private eds: EntityDefinitionService,
+    private entityDataService: EntityDataService,
+    private usersDataService: UsersDataService,
+  ) {
+    this.eds.registerMetadataMap(entityMetadata);
+
+    this.entityDataService.registerService(
+      usersFeatureKey,
+      this.usersDataService,
+    );
+  }
+}

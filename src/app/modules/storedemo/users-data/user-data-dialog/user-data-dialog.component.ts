@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { UserDataInterface } from '../models/user-data-interface';
-import { UserDataService } from '../services/user-data.service';
+import { UserDataService1 } from '../services/user-data.service';
 
 @Component({
   selector: 'app-user-data-dialog',
@@ -31,7 +31,7 @@ export class UserDataDialogComponent {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<UserDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data,
-    private userService: UserDataService,
+    private userService: UserDataService1,
   ) {
     this.dialogTitle = data.dialogTitle;
     this.user = data.user;
@@ -62,15 +62,17 @@ export class UserDataDialogComponent {
       ...this.user,
       ...this.form.value,
     };
+
     if (this.mode == 'update') {
       console.log('Update User', user);
 
-      // this.userService.update(user);
+      this.userService.update(user);
       this.dialogRef.close();
     } else if (this.mode == 'create') {
       console.log('Add User', user);
 
-      // this.userService.add(user);
+      user.avatar = 'https://robohash.org/test?size=128x128';
+      this.userService.add(user);
       this.dialogRef.close();
     }
   }
