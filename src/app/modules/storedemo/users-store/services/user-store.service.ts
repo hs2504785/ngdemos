@@ -13,7 +13,9 @@ export class UserStoreService {
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<UserStoreInterface[]> {
-    return this.http.get(`${this.API_URL}`).pipe(map((res: any) => res.data));
+    return this.http
+      .get<UserStoreInterface[]>(`${this.API_URL}`)
+      .pipe(map((res: any) => res.data));
   }
 
   addUser(user: UserStoreInterface): Observable<UserStoreInterface> {

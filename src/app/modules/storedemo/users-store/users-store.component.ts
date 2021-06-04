@@ -1,9 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Observable } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import { Observable, of } from 'rxjs';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserStoreInterface } from './models/user-store-interface';
+import { UserStoreStateInterface } from './models/user-store-state.interface';
 import { UserStoreService } from './services/user-store.service';
+import { selectStoreUsers } from './state/user-store.selectors';
 import { UserStoreDialogComponent } from './user-store-dialog/user-store-dialog.component';
 
 @Component({
@@ -15,12 +18,12 @@ import { UserStoreDialogComponent } from './user-store-dialog/user-store-dialog.
 export class UsersStoreComponent implements OnInit {
   users$: Observable<UserStoreInterface[]>;
   constructor(
-    private userStoreService: UserStoreService,
+    private store: Store<UserStoreStateInterface>,
     private dialog: MatDialog,
   ) {}
 
   ngOnInit(): void {
-    this.users$ = this.userStoreService.getUsers();
+    this.users$ = this.store.pipe(select(selectStoreUsers));
   }
 
   removeUser() {

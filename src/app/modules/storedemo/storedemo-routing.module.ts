@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StoredemoComponent } from './storedemo.component';
+import { UserStoreResolver } from './users-store/services/user-store.resolver';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
           import('./users-store/users-store.module').then(
             m => m.UsersStoreModule,
           ),
+        resolve: [UserStoreResolver],
       },
       {
         path: 'users-entity',
