@@ -9,6 +9,9 @@ import {
   deleteStoreUserAction,
   deleteStoreUserFailureAction,
   deleteStoreUserSuccessAction,
+  editStoreUserAction,
+  editStoreUserFailureAction,
+  editStoreUserSuccessAction,
   loadStoreUsers,
   loadStoreUsersFailure,
   loadStoreUsersSuccess,
@@ -68,23 +71,21 @@ export class UserStoreEffects {
   );
 
   // Edit
-  // editPost$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(editTodoAction),
-  //     switchMap(({ todo }) => {
-  //       // this.loader.show();
-  //       return this.userStoreSetvice.updateTodo(todo).pipe(
-  //         map((todo: TodoInterface) => {
-  //           return editTodoSuccessAction({ todo });
-  //         }),
-  //         catchError(() => {
-  //           // this.loader.hide();
-  //           return of(editTodoFailureAction());
-  //         }),
-  //       );
-  //     }),
-  //   ),
-  // );
+  editStoreUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(editStoreUserAction),
+      switchMap(({ user }) => {
+        return this.userStoreSetvice.updateUser(user).pipe(
+          map((user: UserStoreInterface) => {
+            return editStoreUserSuccessAction({ user });
+          }),
+          catchError(() => {
+            return of(editStoreUserFailureAction());
+          }),
+        );
+      }),
+    ),
+  );
 
   constructor(
     private actions$: Actions,

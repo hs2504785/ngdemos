@@ -43,9 +43,8 @@ export class UsersStoreComponent implements OnInit {
     this.dialog.open(UserStoreDialogComponent, dialogConfig);
   }
 
-  editUser() {
+  editUser(user) {
     const dialogConfig = defaultDialogConfig();
-    const user = { name: 'hemant' };
     dialogConfig.data = {
       dialogTitle: 'Edit User',
       user,

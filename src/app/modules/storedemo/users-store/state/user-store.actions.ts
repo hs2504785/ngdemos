@@ -32,20 +32,20 @@ export const addStoreUserFailureAction = createAction(
   UserStoreActionTypes.ADD_STORE_USER_FAILURE,
 );
 
-// // Edit
-// export const editTodoAction = createAction(
-//   TodoActionTypes.EDIT_TODO,
-//   props<{ todo: TodoInterface }>(),
-// );
+// Edit
+export const editStoreUserAction = createAction(
+  UserStoreActionTypes.EDIT_STORE_USER,
+  props<{ user: UserStoreInterface }>(),
+);
 
-// export const editTodoSuccessAction = createAction(
-//   TodoActionTypes.EDIT_TODO_SUCCESS,
-//   props<{ todo: TodoInterface }>(),
-// );
+export const editStoreUserSuccessAction = createAction(
+  UserStoreActionTypes.EDIT_STORE_USER_SUCCESS,
+  props<{ user: UserStoreInterface }>(),
+);
 
-// export const editTodoFailureAction = createAction(
-//   TodoActionTypes.EDIT_TODO_FAILURE,
-// );
+export const editStoreUserFailureAction = createAction(
+  UserStoreActionTypes.EDIT_STORE_USER_FAILURE,
+);
 
 // Delete
 export const deleteStoreUserAction = createAction(

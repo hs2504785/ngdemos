@@ -64,52 +64,55 @@ export const userStoreReducer = createReducer(
     }),
   ),
 
+  on(
+    UserStoreActions.editStoreUserAction,
+    (state): UserStoreStateInterface => ({
+      ...state,
+      isLoading: true,
+    }),
+  ),
+  // Another way to update post
   // on(
-  //   editTodoAction,
-  //   (state): TodoStateInterface => ({
-  //     ...state,
-  //     isLoading: true,
-  //   }),
-  // ),
-  // // Another way to update post
-  // // on(
-  // //   editPostSuccessAction,
-  // //   (state, action): PostStateInterface => {
-  // //     const index = state.data.findIndex((h) => h.id === action.post.id);
-  // //     let updatedState = [...state.data];
-  // //     if (index >= 0) {
-  // //       updatedState = [
-  // //         ...state.data.slice(0, index),
-  // //         action.post,
-  // //         ...state.data.slice(index + 1),
-  // //       ];
-  // //     }
+  //   editPostSuccessAction,
+  //   (state, action): PostStateInterface => {
+  //     const index = state.data.findIndex((h) => h.id === action.post.id);
+  //     let updatedState = [...state.data];
+  //     if (index >= 0) {
+  //       updatedState = [
+  //         ...state.data.slice(0, index),
+  //         action.post,
+  //         ...state.data.slice(index + 1),
+  //       ];
+  //     }
 
-  // //     return {
-  // //       ...state,
-  // //       isLoading: false,
-  // //       data: updatedState,
-  // //     };
-  // //   }
-  // // ),
-  // on(editTodoSuccessAction, (state, action): TodoStateInterface => {
-  //   const updatedTodo = state.data.map(todo =>
-  //     todo.id === action.todo.id ? action.todo : todo,
-  //   );
-
-  //   return {
-  //     ...state,
-  //     isLoading: false,
-  //     data: updatedTodo,
-  //   };
-  // }),
-  // on(
-  //   editTodoFailureAction,
-  //   (state): TodoStateInterface => ({
-  //     ...state,
-  //     isLoading: false,
-  //   }),
+  //     return {
+  //       ...state,
+  //       isLoading: false,
+  //       data: updatedState,
+  //     };
+  //   }
   // ),
+  on(
+    UserStoreActions.editStoreUserSuccessAction,
+    (state, action): UserStoreStateInterface => {
+      const updatedUser = state.data.map(user =>
+        user.id === action.user.id ? action.user : user,
+      );
+
+      return {
+        ...state,
+        isLoading: false,
+        data: updatedUser,
+      };
+    },
+  ),
+  on(
+    UserStoreActions.editStoreUserFailureAction,
+    (state): UserStoreStateInterface => ({
+      ...state,
+      isLoading: false,
+    }),
+  ),
 
   // Delete
   on(

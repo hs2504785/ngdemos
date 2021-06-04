@@ -11,7 +11,10 @@ import { Observable } from 'rxjs';
 import { UserStoreInterface } from '../models/user-store-interface';
 import { UserStoreStateInterface } from '../models/user-store-state.interface';
 import { UserStoreService } from '../services/user-store.service';
-import { addStoreUserAction } from '../state/user-store.actions';
+import {
+  addStoreUserAction,
+  editStoreUserAction,
+} from '../state/user-store.actions';
 
 @Component({
   selector: 'app-user-store-dialog',
@@ -68,7 +71,7 @@ export class UserStoreDialogComponent {
     if (this.mode == 'update') {
       console.log('Update User', user);
 
-      // this.userService.update(user);
+      this.store.dispatch(editStoreUserAction({ user }));
       this.dialogRef.close();
     } else if (this.mode == 'create') {
       console.log('Add User', user);
