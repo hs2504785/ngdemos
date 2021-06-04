@@ -31,6 +31,13 @@ const routes: Routes = [
           import('./users-data/users-data.module').then(m => m.UsersDataModule),
       },
       {
+        path: 'users-service',
+        loadChildren: () =>
+          import('./users-service/users-data.module').then(
+            m => m.UsersDataModule,
+          ),
+      },
+      {
         path: '',
         redirectTo: 'users-data',
       },

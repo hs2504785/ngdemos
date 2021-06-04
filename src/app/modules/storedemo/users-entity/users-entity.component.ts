@@ -4,9 +4,8 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserEntityInterface } from './models/user-entity-interface';
-import { UserEntityStateInterface } from './models/user-entity-state.interface';
-import { UserEntityService } from './services/user-entity.service';
 import { deleteEntityUserAction } from './state/user-entity.actions';
+import { UserEntityStateInterface } from './state/user-entity.reducer';
 import { selectEntityUsers } from './state/user-entity.selectors';
 import { UserEntityDialogComponent } from './user-entity-dialog/user-entity-dialog.component';
 

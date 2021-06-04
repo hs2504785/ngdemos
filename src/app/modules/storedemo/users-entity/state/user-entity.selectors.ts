@@ -1,20 +1,34 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { UserEntityStateInterface } from '../models/user-entity-state.interface';
 import * as fromUserEntity from './user-entity.reducer';
 
 export const selectUserEntityFeatureState =
-  createFeatureSelector<UserEntityStateInterface>(
+  createFeatureSelector<fromUserEntity.UserEntityStateInterface>(
     fromUserEntity.userEntityFeatureKey,
   );
 
 export const selectEntityUsers = createSelector(
   selectUserEntityFeatureState,
-  (state: UserEntityStateInterface) => state.data,
+  fromUserEntity.selectAll,
+);
+
+export const selectEntityUsersEntities = createSelector(
+  selectUserEntityFeatureState,
+  fromUserEntity.selectEntities,
 );
 
 export const areEntityUsersLoaded = createSelector(
   selectUserEntityFeatureState,
-  (state: UserEntityStateInterface): boolean => {
-    return state.loaded;
-  },
+  state => state.loaded,
 );
+// export const selectRouterState =
+//   createFeatureSelector<RouterReducerState>('router');
+
+// export const { selectRouteParams } = getSelectors(selectRouterState);
+
+// export const getEntityTodoById = createSelector(
+//   selectTodosEntities,
+//   selectRouteParams,
+//   (entities, { id }) => {
+//     return entities && entities[id];
+//   },
+// );

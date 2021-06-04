@@ -1,27 +1,27 @@
-import { Component, ChangeDetectionStrategy, Inject } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Inject,
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { UserEntityInterface } from '../models/user-entity-interface';
-import {
-  addEntityUserAction,
-  editEntityUserAction,
-} from '../state/user-entity.actions';
-import { UserEntityStateInterface } from '../state/user-entity.reducer';
+import { UserDataInterface } from '../models/user-data-interface';
+import { UserDataService } from '../services/user-data.service';
 
 @Component({
-  selector: 'app-user-entity-dialog',
-  templateUrl: './user-entity-dialog.component.html',
-  styleUrls: ['./user-entity-dialog.component.scss'],
+  selector: 'app-user-data-dialog',
+  templateUrl: './user-data-dialog.component.html',
+  styleUrls: ['./user-data-dialog.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserEntityDialogComponent {
+export class UserDataDialogComponent {
   form: FormGroup;
 
   dialogTitle: string;
 
-  user: UserEntityInterface;
+  user: UserDataInterface;
 
   mode: 'create' | 'update';
 
@@ -29,9 +29,9 @@ export class UserEntityDialogComponent {
 
   constructor(
     private fb: FormBuilder,
-    private dialogRef: MatDialogRef<UserEntityDialogComponent>,
+    private dialogRef: MatDialogRef<UserDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data,
-    private store: Store<UserEntityStateInterface>,
+    private userService: UserDataService,
   ) {
     this.dialogTitle = data.dialogTitle;
     this.user = data.user;
@@ -58,24 +58,19 @@ export class UserEntityDialogComponent {
   }
 
   onSave() {
-    const user: UserEntityInterface = {
+    const user: UserDataInterface = {
       ...this.user,
       ...this.form.value,
     };
     if (this.mode == 'update') {
       console.log('Update User', user);
 
-      this.store.dispatch(
-        editEntityUserAction({
-          user: { id: this.user.id, changes: this.form.value },
-        }),
-      );
+      // this.userService.update(user);
       this.dialogRef.close();
     } else if (this.mode == 'create') {
       console.log('Add User', user);
 
-      user.avatar = 'https://robohash.org/test?size=128x128';
-      this.store.dispatch(addEntityUserAction({ user }));
+      // this.userService.add(user);
       this.dialogRef.close();
     }
   }

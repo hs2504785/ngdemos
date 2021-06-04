@@ -1,3 +1,4 @@
+import { Update } from '@ngrx/entity';
 import { createAction, props } from '@ngrx/store';
 import { UserEntityInterface } from '../models/user-entity-interface';
 import { UserEntityActionTypes } from './user-entity-action-types';
@@ -35,17 +36,17 @@ export const addEntityUserFailureAction = createAction(
 // Edit
 export const editEntityUserAction = createAction(
   UserEntityActionTypes.EDIT_ENTITY_USER,
-  props<{ user: UserEntityInterface }>(),
+  props<{ user: Update<UserEntityInterface> }>(),
 );
 
-export const editEntityUserSuccessAction = createAction(
-  UserEntityActionTypes.EDIT_ENTITY_USER_SUCCESS,
-  props<{ user: UserEntityInterface }>(),
-);
+// export const editEntityUserSuccessAction = createAction(
+//   UserEntityActionTypes.EDIT_ENTITY_USER_SUCCESS,
+//   props<{ user: UserEntityInterface }>(),
+// );
 
-export const editEntityUserFailureAction = createAction(
-  UserEntityActionTypes.EDIT_ENTITY_USER_FAILURE,
-);
+// export const editEntityUserFailureAction = createAction(
+//   UserEntityActionTypes.EDIT_ENTITY_USER_FAILURE,
+// );
 
 // Delete
 export const deleteEntityUserAction = createAction(
@@ -53,10 +54,10 @@ export const deleteEntityUserAction = createAction(
   props<{ id: number }>(),
 );
 
-export const deleteEntityUserSuccessAction = createAction(
-  UserEntityActionTypes.DELETE_ENTITY_USER_SUCCESS,
-);
+// export const deleteEntityUserSuccessAction = createAction(
+//   UserEntityActionTypes.DELETE_ENTITY_USER_SUCCESS,
+// );
 
-export const deleteEntityUserFailureAction = createAction(
-  UserEntityActionTypes.DELETE_ENTITY_USER_SUCCESS,
-);
+// export const deleteEntityUserFailureAction = createAction(
+//   UserEntityActionTypes.DELETE_ENTITY_USER_SUCCESS,
+// );

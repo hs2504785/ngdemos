@@ -7,11 +7,7 @@ import {
   addEntityUserFailureAction,
   addEntityUserSuccessAction,
   deleteEntityUserAction,
-  deleteEntityUserFailureAction,
-  deleteEntityUserSuccessAction,
   editEntityUserAction,
-  editEntityUserFailureAction,
-  editEntityUserSuccessAction,
   loadEntityUsers,
   loadEntityUsersFailure,
   loadEntityUsersSuccess,
@@ -37,20 +33,23 @@ export class UserEntityEffects {
   });
 
   // Delete
-  deleteEntityUsers$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(deleteEntityUserAction),
-      mergeMap(({ id }) => {
-        return this.userentitySetvice.removeUser(id).pipe(
-          map(() => {
-            return deleteEntityUserSuccessAction();
-          }),
-          catchError(() => {
-            return of(deleteEntityUserFailureAction());
-          }),
-        );
-      }),
-    ),
+  deleteEntityUsers$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(deleteEntityUserAction),
+        mergeMap(({ id }) => {
+          return this.userentitySetvice.removeUser(id);
+          // .pipe(
+          //   map(() => {
+          //     return deleteEntityUserSuccessAction();
+          //   }),
+          //   catchError(() => {
+          //     return of(deleteEntityUserFailureAction());
+          //   }),
+          // );
+        }),
+      ),
+    { dispatch: false },
   );
 
   // Add
@@ -69,22 +68,20 @@ export class UserEntityEffects {
       }),
     ),
   );
-
   // Edit
-  editEntityUser$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(editEntityUserAction),
-      switchMap(({ user }) => {
-        return this.userentitySetvice.updateUser(user).pipe(
-          map((user: UserEntityInterface) => {
-            return editEntityUserSuccessAction({ user });
-          }),
-          catchError(() => {
-            return of(editEntityUserFailureAction());
-          }),
-        );
-      }),
-    ),
+  editEntityUser$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(editEntityUserAction),
+        switchMap(({ user }) => {
+          const update = {
+            id: user.id,
+            ...user.changes,
+          };
+          return this.userentitySetvice.updateUser(update);
+        }),
+      ),
+    { dispatch: false },
   );
 
   constructor(
