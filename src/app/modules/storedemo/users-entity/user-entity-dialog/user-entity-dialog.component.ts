@@ -6,9 +6,15 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { UserEntityInterface } from '../models/user-entity-interface';
+import { UserEntityStateInterface } from '../models/user-entity-state.interface';
 import { UserEntityService } from '../services/user-entity.service';
+import {
+  addEntityUserAction,
+  editEntityUserAction,
+} from '../state/user-entity.actions';
 
 @Component({
   selector: 'app-user-entity-dialog',
@@ -31,7 +37,7 @@ export class UserEntityDialogComponent {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<UserEntityDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data,
-    private userService: UserEntityService,
+    private store: Store<UserEntityStateInterface>,
   ) {
     this.dialogTitle = data.dialogTitle;
     this.user = data.user;
@@ -65,12 +71,13 @@ export class UserEntityDialogComponent {
     if (this.mode == 'update') {
       console.log('Update User', user);
 
-      // this.userService.update(user);
+      this.store.dispatch(editEntityUserAction({ user }));
       this.dialogRef.close();
     } else if (this.mode == 'create') {
       console.log('Add User', user);
 
-      // this.userService.add(user);
+      user.avatar = 'https://robohash.org/test?size=128x128';
+      this.store.dispatch(addEntityUserAction({ user }));
       this.dialogRef.close();
     }
   }
