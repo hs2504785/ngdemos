@@ -6,9 +6,12 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { UserStoreInterface } from '../models/user-store-interface';
+import { UserStoreStateInterface } from '../models/user-store-state.interface';
 import { UserStoreService } from '../services/user-store.service';
+import { addStoreUserAction } from '../state/user-store.actions';
 
 @Component({
   selector: 'app-user-store-dialog',
@@ -31,7 +34,7 @@ export class UserStoreDialogComponent {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<UserStoreDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data,
-    private userService: UserStoreService,
+    private store: Store<UserStoreStateInterface>,
   ) {
     this.dialogTitle = data.dialogTitle;
     this.user = data.user;
@@ -69,8 +72,8 @@ export class UserStoreDialogComponent {
       this.dialogRef.close();
     } else if (this.mode == 'create') {
       console.log('Add User', user);
-
-      // this.userService.add(user);
+      user.avatar = 'https://robohash.org/test?size=128x128';
+      this.store.dispatch(addStoreUserAction({ user }));
       this.dialogRef.close();
     }
   }

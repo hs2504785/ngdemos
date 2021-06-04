@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { UserStoreInterface } from '../models/user-store-interface';
 import { UserStoreActionTypes } from './user-store-action-types';
 
 // Get All
@@ -16,20 +17,20 @@ export const loadStoreUsersFailure = createAction(
   props<{ error: any }>(),
 );
 
-// // Add
-// export const addTodoAction = createAction(
-//   TodoActionTypes.ADD_TODO,
-//   props<{ todo: TodoInterface }>(),
-// );
+// Add
+export const addStoreUserAction = createAction(
+  UserStoreActionTypes.ADD_STORE_USER,
+  props<{ user: UserStoreInterface }>(),
+);
 
-// export const addTodoSuccessAction = createAction(
-//   TodoActionTypes.ADD_TODO_SUCCESS,
-//   props<{ todo: TodoInterface }>(),
-// );
+export const addStoreUserSuccessAction = createAction(
+  UserStoreActionTypes.ADD_STORE_USER_SUCCESS,
+  props<{ user: UserStoreInterface }>(),
+);
 
-// export const addTodoFailureAction = createAction(
-//   TodoActionTypes.ADD_TODO_FAILURE,
-// );
+export const addStoreUserFailureAction = createAction(
+  UserStoreActionTypes.ADD_STORE_USER_FAILURE,
+);
 
 // // Edit
 // export const editTodoAction = createAction(

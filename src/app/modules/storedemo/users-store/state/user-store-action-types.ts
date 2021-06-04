@@ -3,9 +3,9 @@ export enum UserStoreActionTypes {
   GET_STORE_USERS_SUCCESS = '[User Store Effect] Get Users success',
   GET_STORE_USERS_FAILURE = '[User Store Effect] Get Users failure',
 
-  ADD_STORE_USER = '[Add User Component] Add User',
-  ADD_STORE_USER_SUCCESS = '[Add User Component] Add User success',
-  ADD_STORE_USER_FAILURE = '[Add User Component] Add User failure',
+  ADD_STORE_USER = '[User Store Component] Add User',
+  ADD_STORE_USER_SUCCESS = '[User Store Component] Add User success',
+  ADD_STORE_USER_FAILURE = '[User Store Component] Add User failure',
 
   EDIT_STORE_USER = '[Edit User Component] Edit User',
   EDIT_STORE_USER_SUCCESS = '[Edit User Component] Edit User success',

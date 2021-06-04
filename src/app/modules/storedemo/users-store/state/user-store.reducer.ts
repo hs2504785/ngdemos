@@ -39,30 +39,30 @@ export const userStoreReducer = createReducer(
     };
   }),
 
-  // // Add
-  // on(
-  //   addTodoAction,
-  //   (state): TodoStateInterface => ({
-  //     ...state,
-  //     isLoading: true,
-  //   }),
-  // ),
-  // on(
-  //   addTodoSuccessAction,
-  //   (state, action): TodoStateInterface => ({
-  //     ...state,
-  //     isLoading: false,
-  //     data: [action.todo, ...state.data],
-  //   }),
-  // ),
+  // Add
+  on(
+    UserStoreActions.addStoreUserAction,
+    (state): UserStoreStateInterface => ({
+      ...state,
+      isLoading: true,
+    }),
+  ),
+  on(
+    UserStoreActions.addStoreUserSuccessAction,
+    (state, action): UserStoreStateInterface => ({
+      ...state,
+      isLoading: false,
+      data: [action.user, ...state.data],
+    }),
+  ),
 
-  // on(
-  //   addTodoFailureAction,
-  //   (state): TodoStateInterface => ({
-  //     ...state,
-  //     isLoading: false,
-  //   }),
-  // ),
+  on(
+    UserStoreActions.addStoreUserFailureAction,
+    (state): UserStoreStateInterface => ({
+      ...state,
+      isLoading: false,
+    }),
+  ),
 
   // on(
   //   editTodoAction,

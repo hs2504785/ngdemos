@@ -3,6 +3,9 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import {
+  addStoreUserAction,
+  addStoreUserFailureAction,
+  addStoreUserSuccessAction,
   deleteStoreUserAction,
   deleteStoreUserFailureAction,
   deleteStoreUserSuccessAction,
@@ -46,6 +49,42 @@ export class UserStoreEffects {
       }),
     ),
   );
+
+  // Add
+  createStoreUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(addStoreUserAction),
+      switchMap(({ user }) => {
+        return this.userStoreSetvice.addUser(user).pipe(
+          map((user: UserStoreInterface) => {
+            return addStoreUserSuccessAction({ user });
+          }),
+          catchError(() => {
+            return of(addStoreUserFailureAction());
+          }),
+        );
+      }),
+    ),
+  );
+
+  // Edit
+  // editPost$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(editTodoAction),
+  //     switchMap(({ todo }) => {
+  //       // this.loader.show();
+  //       return this.userStoreSetvice.updateTodo(todo).pipe(
+  //         map((todo: TodoInterface) => {
+  //           return editTodoSuccessAction({ todo });
+  //         }),
+  //         catchError(() => {
+  //           // this.loader.hide();
+  //           return of(editTodoFailureAction());
+  //         }),
+  //       );
+  //     }),
+  //   ),
+  // );
 
   constructor(
     private actions$: Actions,
