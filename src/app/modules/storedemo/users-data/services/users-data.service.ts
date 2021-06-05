@@ -10,16 +10,15 @@ import { usersFeatureKey } from '../users-data.module';
   providedIn: 'root',
 })
 export class UsersDataService extends DefaultDataService<any> {
-  API_URL = 'https://reqres.in/api/users';
+  API_URL = 'https://hksocket.herokuapp.com/users';
 
   constructor(http: HttpClient, httpUrlGenerator: HttpUrlGenerator) {
     super(usersFeatureKey, http, httpUrlGenerator);
   }
 
   getAll(): Observable<UserDataInterface[]> {
-    return this.http
-      .get<UserDataInterface[]>(`${this.API_URL}`)
-      .pipe(map((res: any) => res.data));
+    return this.http.get<UserDataInterface[]>(`${this.API_URL}`);
+    // .pipe(map((res: any) => res.data));
   }
 
   add(user): Observable<UserDataInterface> {

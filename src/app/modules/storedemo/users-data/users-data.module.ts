@@ -23,6 +23,7 @@ export const entityMetadata: EntityMetadataMap = {
     entityDispatcherOptions: {
       optimisticUpdate: true,
     },
+    selectId: user => user._id,
   },
 };
 
