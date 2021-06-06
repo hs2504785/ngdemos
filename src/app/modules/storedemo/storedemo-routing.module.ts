@@ -5,6 +5,7 @@ import { UserDataResolver as UserDataResolver1 } from './users-data/services/use
 import { UserEntityResolver } from './users-entity/services/user-entity.resolver';
 import { UserDataResolver } from './users-service/services/user-data.resolver';
 import { UserStoreResolver } from './users-store/services/user-store.resolver';
+import { UserWsResolver } from './users-ws/services/user-ws.resolver';
 
 const routes: Routes = [
   {
@@ -32,6 +33,12 @@ const routes: Routes = [
         loadChildren: () =>
           import('./users-data/users-data.module').then(m => m.UsersDataModule),
         resolve: [UserDataResolver1],
+      },
+      {
+        path: 'users-ws',
+        loadChildren: () =>
+          import('./users-ws/users-ws.module').then(m => m.UsersWsModule),
+        resolve: [UserWsResolver],
       },
       {
         path: 'users-service',
