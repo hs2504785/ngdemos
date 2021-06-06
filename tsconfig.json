@@ -12,6 +12,10 @@
         "dist/blogdemo/blogdemo",
         "dist/blogdemo"
       ],
+      "chat": [
+        "dist/chat/chat",
+        "dist/chat"
+      ],
       "crud": [
         "dist/crud/crud",
         "dist/crud"
