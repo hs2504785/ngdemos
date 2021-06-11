@@ -15,6 +15,7 @@ import { AuthEffects } from './state/effects/auth.effects';
 import { StoreModule } from '@ngrx/store';
 import { authFeatureKey, authReducers } from './state/reducers/auth.reducer';
 import { statusReducer } from './state/reducers/status.reducer';
+import { LoginEffects } from './state/effects/login.effects';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { statusReducer } from './state/reducers/status.reducer';
     MatFormFieldModule,
     MatInputModule,
     StoreModule.forFeature(authFeatureKey, authReducers),
-    EffectsModule.forFeature([AuthEffects]),
+    EffectsModule.forFeature([AuthEffects, LoginEffects]),
   ],
 })
 export class AuthModule {}

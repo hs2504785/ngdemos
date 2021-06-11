@@ -18,5 +18,3 @@ export const statusReducer = createReducer(
   on(loginSuccessAction, (state, { user }) => ({ ...state, user })),
   on(logout, () => initialState),
 );
-
-export const getUser = (state: StatusStateInterface) => state.user;

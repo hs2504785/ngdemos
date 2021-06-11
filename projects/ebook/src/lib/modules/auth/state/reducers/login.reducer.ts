@@ -36,6 +36,3 @@ export const loginReducer = createReducer(
     pending: false,
   })),
 );
-
-export const getError = (state: LoginStateInterface) => state.error;
-export const getPending = (state: LoginStateInterface) => state.pending;
