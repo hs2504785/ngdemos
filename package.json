@@ -34,7 +34,6 @@
     "@ngrx/router-store": "^12.0.0",
     "@ngrx/store": "^12.0.0",
     "@ngrx/store-devtools": "^12.0.0",
-    "@trellisorg/ngrx-data-websocket-client": "0.0.3",
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.0",
     "bootswatch": "^4.6.0",
