@@ -1,12 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({
-  name: 'ellipsis'
-})
+@Pipe({ name: 'ellipsis' })
 export class EllipsisPipe implements PipeTransform {
+  transform(str: string, strLength: number = 250) {
+    const withoutHtml = str.replace(/(<([^>]+)>)/gi, '');
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+    if (str.length >= strLength) {
+      return `${withoutHtml.slice(0, strLength)}...`;
+    }
+
+    return withoutHtml;
   }
-
 }

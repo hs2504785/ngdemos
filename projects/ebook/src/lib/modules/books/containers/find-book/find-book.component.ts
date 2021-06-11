@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { BookInterface } from '../../models/book.interface';
+import { searchBooks } from '../../state/books.actions';
+import {
+  selectSearchError,
+  selectSearchLoading,
+  selectSearchQuery,
+  selectSearchResults,
+} from '../../state/books.selectors';
 
 @Component({
   selector: 'lib-find-book',
@@ -15,13 +23,13 @@ export class FindBookComponent {
   error$: Observable<string>;
 
   constructor(private store: Store) {
-    // this.searchQuery$ = store.select(fromBooks.selectSearchQuery).pipe(take(1));
-    // this.books$ = store.select(fromBooks.selectSearchResults);
-    // this.loading$ = store.select(fromBooks.selectSearchLoading);
-    // this.error$ = store.select(fromBooks.selectSearchError);
+    this.searchQuery$ = store.select(selectSearchQuery).pipe(take(1));
+    this.books$ = store.select(selectSearchResults);
+    this.loading$ = store.select(selectSearchLoading);
+    this.error$ = store.select(selectSearchError);
   }
 
   search(query: string) {
-    // this.store.dispatch(FindBookPageActions.searchBooks({ query }));
+    this.store.dispatch(searchBooks({ query }));
   }
 }
