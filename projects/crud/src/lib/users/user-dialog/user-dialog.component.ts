@@ -74,7 +74,9 @@ export class UserDialogComponent {
     } else if (this.mode == 'create') {
       console.log('Add User', user);
 
-      this.userService.add(user);
+      this.userService.add(user, {
+        isOptimistic: false,
+      });
       this.dialogRef.close();
     }
   }

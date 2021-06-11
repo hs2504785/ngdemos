@@ -34,9 +34,13 @@ export class AddPostComponent implements OnInit, OnDestroy {
   addPost() {
     console.log('Add Post ', this.form.value);
 
-    this.sub = this.postService.add(this.form.value).subscribe(() => {
-      this.router.navigateByUrl('/crud/posts');
-    });
+    this.sub = this.postService
+      .add(this.form.value, {
+        isOptimistic: false,
+      })
+      .subscribe(() => {
+        this.router.navigateByUrl('/crud/posts');
+      });
   }
 
   ngOnDestroy() {

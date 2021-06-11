@@ -65,7 +65,9 @@ export class PostListComponent implements OnInit, OnDestroy {
       title: 'placeholder title',
       userId: this.userId || 0,
     };
-    this.postService.add(newPost);
+    this.postService.add(newPost, {
+      isOptimistic: false,
+    });
   }
 
   ngOnDestroy(): void {

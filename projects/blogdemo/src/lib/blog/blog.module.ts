@@ -39,11 +39,13 @@ export const entityMetadata: EntityMetadataMap = {
   [userFeatureKey]: {
     entityDispatcherOptions: {
       optimisticUpdate: true,
+      optimisticAdd: true,
     },
   },
   [postFeatureKey]: {
     entityDispatcherOptions: {
       optimisticUpdate: true,
+      optimisticAdd: true,
     },
   },
 };

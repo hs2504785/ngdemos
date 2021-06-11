@@ -72,7 +72,9 @@ export class UserWsDialogComponent {
       console.log('Add User', user);
 
       user.avatar = 'https://robohash.org/test?size=128x128';
-      this.userService.add(user);
+      this.userService.add(user, {
+        isOptimistic: false,
+      });
       this.dialogRef.close();
     }
   }
