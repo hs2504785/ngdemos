@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { logoutConfirmation } from './modules/auth/state/actions/logout.actions';
+import { selectLoggedIn } from './modules/auth/state/selectors/auth.selectors';
+import { closeSidenav, openSidenav } from './state/layout.actions';
+import { selectShowSidenav } from './state/layout.selectors';
 
 @Component({
   selector: 'lib-ebook',
@@ -10,7 +14,7 @@ import { Observable } from 'rxjs';
         <lib-nav-item
           (navigate)="closeSidenav()"
           *ngIf="loggedIn$ | async"
-          routerLink="/"
+          routerLink="books"
           icon="book"
           hint="View your book collection"
         >
@@ -19,7 +23,7 @@ import { Observable } from 'rxjs';
         <lib-nav-item
           (navigate)="closeSidenav()"
           *ngIf="loggedIn$ | async"
-          routerLink="/books/find"
+          routerLink="books/find"
           icon="search"
           hint="Find your next book!"
         >
@@ -63,8 +67,8 @@ export class EbookComponent {
      * Selectors can be applied with the `select` operator which passes the state
      * tree to the provided selector
      */
-    // this.showSidenav$ = this.store.select(fromRoot.selectShowSidenav);
-    // this.loggedIn$ = this.store.select(fromAuth.selectLoggedIn);
+    this.showSidenav$ = this.store.select(selectShowSidenav);
+    this.loggedIn$ = this.store.select(selectLoggedIn);
   }
 
   closeSidenav() {
@@ -74,14 +78,14 @@ export class EbookComponent {
      * updates and user interaction through the life of our
      * application.
      */
-    // this.store.dispatch(LayoutActions.closeSidenav());
+    this.store.dispatch(closeSidenav());
   }
 
   openSidenav() {
-    // this.store.dispatch(LayoutActions.openSidenav());
+    this.store.dispatch(openSidenav());
   }
 
   logout() {
-    // this.store.dispatch(AuthActions.logoutConfirmation());
+    this.store.dispatch(logoutConfirmation());
   }
 }

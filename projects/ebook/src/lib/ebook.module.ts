@@ -14,6 +14,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { AuthModule } from './modules/auth/auth.module';
 import { AuthGuard } from './modules/auth/services/auth.guard';
+import { StoreModule } from '@ngrx/store';
+import { layoutFeatureKey, layoutReducer } from './state/layout.reducer';
 
 const routes: Routes = [
   {
@@ -65,6 +67,7 @@ const routes: Routes = [
     MatListModule,
     MatToolbarModule,
     MatDialogModule,
+    StoreModule.forFeature(layoutFeatureKey, layoutReducer),
   ],
   exports: [EbookComponent],
 })

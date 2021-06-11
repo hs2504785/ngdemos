@@ -44,7 +44,7 @@ export class LoginEffects {
       this.actions$.pipe(
         ofType(loginRedirectAction, logout),
         tap(authed => {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/ebook/login']);
         }),
       ),
     { dispatch: false },

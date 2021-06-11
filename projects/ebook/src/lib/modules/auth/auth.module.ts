@@ -16,6 +16,8 @@ import { StoreModule } from '@ngrx/store';
 import { authFeatureKey, authReducers } from './state/reducers/auth.reducer';
 import { statusReducer } from './state/reducers/status.reducer';
 import { LoginEffects } from './state/effects/login.effects';
+import { LogoutEffects } from './state/effects/logout.effects';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,9 @@ import { LoginEffects } from './state/effects/login.effects';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
     StoreModule.forFeature(authFeatureKey, authReducers),
-    EffectsModule.forFeature([AuthEffects, LoginEffects]),
+    EffectsModule.forFeature([AuthEffects, LoginEffects, LogoutEffects]),
   ],
 })
 export class AuthModule {}
