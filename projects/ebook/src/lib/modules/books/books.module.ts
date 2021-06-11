@@ -12,8 +12,8 @@ import { BookAuthorsComponent } from './components/book-authors/book-authors.com
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { BookSearchComponent } from './components/book-search/book-search.component';
 import { BookPreviewComponent } from './components/book-preview/book-preview.component';
-import { EllipsisPipe } from '../shared/pipes/ellipsis.pipe';
-import { AddCommasPipe } from '../shared/pipes/add-commas.pipe';
+import { EllipsisPipe } from '../../shared/pipes/ellipsis.pipe';
+import { AddCommasPipe } from '../../shared/pipes/add-commas.pipe';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
