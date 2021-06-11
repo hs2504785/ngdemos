@@ -1,10 +1,17 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { BookInterface } from '../../models/book.interface';
 
 @Component({
   selector: 'lib-book-detail',
   templateUrl: './book-detail.component.html',
   styleUrls: ['./book-detail.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookDetailComponent {
   /**

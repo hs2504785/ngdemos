@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { BookInterface } from '../../models/book.interface';
 
 @Component({
   selector: 'lib-book-preview',
   templateUrl: './book-preview.component.html',
   styleUrls: ['./book-preview.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookPreviewComponent {
   @Input() book!: BookInterface;
