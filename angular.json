@@ -30,7 +30,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-	    "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -363,6 +363,42 @@
             "main": "projects/chat/src/test.ts",
             "tsConfig": "projects/chat/tsconfig.spec.json",
             "karmaConfig": "projects/chat/karma.conf.js"
+          }
+        }
+      }
+    },
+    "ebook": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ebook",
+      "sourceRoot": "projects/ebook/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ebook/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ebook/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ebook/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ebook/src/test.ts",
+            "tsConfig": "projects/ebook/tsconfig.spec.json",
+            "karmaConfig": "projects/ebook/karma.conf.js"
           }
         }
       }

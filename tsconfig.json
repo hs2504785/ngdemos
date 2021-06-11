@@ -24,6 +24,10 @@
         "dist/data-source/data-source",
         "dist/data-source"
       ],
+      "ebook": [
+        "dist/ebook/ebook",
+        "dist/ebook"
+      ],
       "github-repo": [
         "dist/github-repo/github-repo",
         "dist/github-repo"

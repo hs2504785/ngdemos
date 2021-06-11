@@ -1,0 +1,8 @@
+<lib-book-search
+  [query]="searchQuery$ | async"
+  [searching]="loading$ | async"
+  [error]="error$ | async"
+  (search)="search($event)"
+>
+</lib-book-search>
+<lib-book-preview-list [books]="books$ | async"> </lib-book-preview-list>
