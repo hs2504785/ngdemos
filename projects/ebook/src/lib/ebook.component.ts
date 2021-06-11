@@ -10,7 +10,7 @@ import { selectShowSidenav } from './state/layout.selectors';
   selector: 'lib-ebook',
   template: `
     <mat-sidenav-container fullscreen>
-      <lib-sidenav [open]="showSidenav$ | async" (closeMenu)="closeSidenav()">
+      <lib-sidenav [open]="showSidenav$ | async">
         <lib-nav-item
           (navigate)="closeSidenav()"
           *ngIf="loggedIn$ | async"
