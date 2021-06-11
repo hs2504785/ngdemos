@@ -1,16 +1,24 @@
-import { Action, createReducer, on } from '@ngrx/store';
-import * as AuthActions from '../actions/auth.actions';
+import { loginFeatureKey, loginReducer } from './login.reducer';
+import { statusFeatureKey, statusReducer } from './status.reducer';
 
 export const authFeatureKey = 'auth';
 
-export interface State {}
+export const authReducers = {
+  [statusFeatureKey]: statusReducer,
+  [loginFeatureKey]: loginReducer,
+};
 
-export const initialState: State = {};
+// export interface AuthState {
+//   [fromAuth.statusFeatureKey]: fromAuth.State;
+//   [fromLoginPage.loginPageFeatureKey]: fromLoginPage.State;
+// }
 
-export const authReducer = createReducer(
-  initialState,
+// export const initialState: State = {};
 
-  on(AuthActions.loadAuths, state => state),
-  on(AuthActions.loadAuthsSuccess, (state, action) => state),
-  on(AuthActions.loadAuthsFailure, (state, action) => state),
-);
+// export const authReducer = createReducer(
+//   initialState,
+
+//   on(AuthActions.loadAuths, state => state),
+//   on(AuthActions.loadAuthsSuccess, (state, action) => state),
+//   on(AuthActions.loadAuthsFailure, (state, action) => state),
+// );

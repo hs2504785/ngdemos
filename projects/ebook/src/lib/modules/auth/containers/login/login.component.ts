@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import { Credentials } from '../../models/auth.interface';
+import { loginAction } from '../../state/actions/login.actions';
 
 @Component({
   selector: 'lib-login',
@@ -17,7 +18,7 @@ export class LoginComponent {
   constructor(private store: Store, private router: Router) {}
 
   onSubmit(credentials: Credentials) {
-    this.router.navigate(['/ebook']);
-    // this.store.dispatch(LoginPageActions.login({ credentials }));
+    // this.router.navigate(['/ebook']);
+    this.store.dispatch(loginAction({ credentials }));
   }
 }

@@ -13,7 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './state/effects/auth.effects';
 import { StoreModule } from '@ngrx/store';
-import { authFeatureKey, authReducer } from './state/reducers/auth.reducer';
+import { authFeatureKey, authReducers } from './state/reducers/auth.reducer';
+import { statusReducer } from './state/reducers/status.reducer';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { authFeatureKey, authReducer } from './state/reducers/auth.reducer';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    StoreModule.forFeature(authFeatureKey, authReducer),
+    StoreModule.forFeature(authFeatureKey, authReducers),
     EffectsModule.forFeature([AuthEffects]),
   ],
 })
