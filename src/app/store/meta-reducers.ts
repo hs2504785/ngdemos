@@ -10,7 +10,7 @@ export function logger(reducer: ActionReducer<any>): ActionReducer<any> {
       !action.type.includes('router-store') &&
       !action.type.includes('store-devtools')
     ) {
-      console.group(action.type);
+      console.groupCollapsed(action.type);
       console.log(`%c prev state`, `color: #9E9E9E; font-weight: bold`, state);
       console.log(`%c action`, `color: #03A9F4; font-weight: bold`, action);
       console.log(
