@@ -22,6 +22,16 @@ ng add @schuchard/prettier
 
 https://www.npmjs.com/package/find-and
 
+## Analyse Bundle
+
+```
+// with source-map-explorer
+npm run sme
+
+// with webpack-bundle-analyzer
+npm run wba
+```
+
 ## Feature
 
 - NgRx Store CRUD
@@ -33,3 +43,4 @@ https://www.npmjs.com/package/find-and
 - RxDB Demo
 - On scroll load api on demand
 - Upgraded to Angular v12
+- Caching http calls
