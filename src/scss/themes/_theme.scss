@@ -35,15 +35,15 @@ $ngdemos-theme: mat-light-theme(
 // that you are using.
 @include angular-material-theme($ngdemos-theme);
 
-.dark-theme {
-  $primary-dark: mat-palette($mat-pink, 700);
-  $accent-dark: mat-palette($mat-green);
-  $warn-dark: mat-palette($mat-red);
+// .dark-theme {
+//   $primary-dark: mat-palette($mat-pink, 700);
+//   $accent-dark: mat-palette($mat-green);
+//   $warn-dark: mat-palette($mat-red);
 
-  $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
+//   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
 
-  @include angular-material-theme($theme-dark);
-}
+//   @include angular-material-theme($theme-dark);
+// }
 /* You can add global styles to this file, and also import other style files */
 
 // Custom style for my anchor elements
