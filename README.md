@@ -32,6 +32,15 @@ npm run sme
 npm run wba
 ```
 
+## Uncss
+
+```
+ng build
+npm run purgecss
+
+than deploy
+```
+
 ## Feature
 
 - NgRx Store CRUD

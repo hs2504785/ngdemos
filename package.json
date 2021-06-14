@@ -19,7 +19,8 @@
     "sme": "npm run sme-build && source-map-explorer dist/**/*.js",
     "wba-build": "ng build --stats-json",
     "wba": "npm run wba-build && webpack-bundle-analyzer dist/**/stats.json",
-    "uncss": "gulp --gulpfile tools/gulpfile.js purifyCSS"
+    "purifyCSS": "gulp --gulpfile tools/gulpfile.js purifyCSS",
+    "purgecss": "gulp --gulpfile tools/gulpfile.js purgecss"
   },
   "private": true,
   "dependencies": {
@@ -60,6 +61,7 @@
     "concurrently": "^6.2.0",
     "faker": "^5.5.3",
     "gulp": "^4.0.2",
+    "gulp-purgecss": "^4.0.3",
     "gulp-purifycss": "^0.2.0",
     "husky": "6.0.0",
     "jasmine-core": "~3.7.1",
