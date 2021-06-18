@@ -43,7 +43,8 @@
                 "src/scss/abstracts"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -115,7 +116,8 @@
             "styles": [
               "src/scss/main.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           }
         },
         "lint": {
@@ -403,43 +405,6 @@
             "main": "projects/ebook/src/test.ts",
             "tsConfig": "projects/ebook/tsconfig.spec.json",
             "karmaConfig": "projects/ebook/karma.conf.js"
-          }
-        }
-      }
-    },
-    "workerdemo": {
-      "projectType": "library",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss",
-          "changeDetection": "OnPush"
-        }
-      },
-      "root": "projects/workerdemo",
-      "sourceRoot": "projects/workerdemo/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/workerdemo/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/workerdemo/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/workerdemo/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/workerdemo/src/test.ts",
-            "tsConfig": "projects/workerdemo/tsconfig.spec.json",
-            "karmaConfig": "projects/workerdemo/karma.conf.js"
           }
         }
       }

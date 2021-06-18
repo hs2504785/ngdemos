@@ -4,13 +4,6 @@ import { TodoResolver } from 'projects/todo/src/lib/services/todo.resolver';
 
 const routes: Routes = [
   {
-    path: 'worker',
-    loadChildren: () =>
-      import('projects/workerdemo/src/public-api').then(
-        m => m.WorkerdemoModule,
-      ),
-  },
-  {
     path: 'ebook',
     loadChildren: () =>
       import('projects/ebook/src/public-api').then(m => m.EbookModule),
@@ -110,6 +103,11 @@ const routes: Routes = [
       import('./modules/storedemo/storedemo.module').then(
         m => m.StoredemoModule,
       ),
+  },
+  {
+    path: 'worker',
+    loadChildren: () =>
+      import('./modules/worker/worker.module').then(m => m.WorkerModule),
   },
   // Fallbak route
   // {
