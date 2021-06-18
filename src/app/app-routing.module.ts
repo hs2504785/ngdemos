@@ -4,6 +4,13 @@ import { TodoResolver } from 'projects/todo/src/lib/services/todo.resolver';
 
 const routes: Routes = [
   {
+    path: 'worker',
+    loadChildren: () =>
+      import('projects/workerdemo/src/public-api').then(
+        m => m.WorkerdemoModule,
+      ),
+  },
+  {
     path: 'ebook',
     loadChildren: () =>
       import('projects/ebook/src/public-api').then(m => m.EbookModule),

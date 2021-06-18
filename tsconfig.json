@@ -43,6 +43,10 @@
       "todo": [
         "dist/todo/todo",
         "dist/todo"
+      ],
+      "workerdemo": [
+        "dist/workerdemo/workerdemo",
+        "dist/workerdemo"
       ]
     },
     "outDir": "./dist/out-tsc",
