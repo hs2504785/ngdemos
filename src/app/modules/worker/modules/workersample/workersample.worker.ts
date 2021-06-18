@@ -1,6 +1,10 @@
 /// <reference lib="webworker" />
 
 addEventListener('message', ({ data }) => {
-  const response = `worker response to ${data}`;
-  postMessage(response);
+  let i = 0;
+  const arr = [];
+  for (i; i < data; i++) {
+    arr.push(i);
+  }
+  postMessage(arr);
 });

@@ -43,6 +43,7 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.0",
     "bootswatch": "^4.6.0",
+    "ng2-nvd3": "^2.0.0",
     "ngx-socket-io": "^4.0.0",
     "rxjs": "6.6.7",
     "tslib": "^2.2.0",

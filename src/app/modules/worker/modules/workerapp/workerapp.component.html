@@ -1,1 +1,31 @@
-<p>workerapp works!</p>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1>Chart Demo</h1>
+
+    <div>
+      <button
+        type="button"
+        class="btn btn-primary mr-2"
+        (click)="handleButtonClick()"
+      >
+        Main Thread Task
+      </button>
+      <button
+        type="button"
+        class="btn btn-info"
+        (click)="handleWebWorkerProcess()"
+      >
+        Web Worker Task
+      </button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="graph">
+      <nvd3 [options]="options" [data]="data"></nvd3>
+    </div>
+    <div class="container">
+      <div id="canContainer" class="canvasContainer"></div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,19 @@
 <div class="container">
-  <h1>Sample</h1>
-  <p>Lorem ipsum dolor sit amet.</p>
+  <h1>Test Web Worker Performance</h1>
+
+  <button class="btn btn-info mr-2" (click)="runWorker()">Web Worker</button>
+  <button class="btn btn-warning" (click)="runThread()">
+    JavaScript Thread
+  </button>
+  <hr />
+
+  <h3>Result</h3>
+  <div>
+    <h2>Web Worker</h2>
+    <div>Web Worker took: {{ workerTime }} ms</div>
+  </div>
+  <div>
+    <h2>JavaScript Thread</h2>
+    <div>JavaScript Thread took: {{ jsTime }} ms</div>
+  </div>
 </div>
