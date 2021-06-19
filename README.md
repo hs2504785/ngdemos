@@ -1,3 +1,12 @@
+## Dev
+
+```
+npm start
+
+// rebuild what changed
+ng serve --hmr
+```
+
 ## Build & Deploy
 
 ```
