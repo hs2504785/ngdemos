@@ -70,7 +70,8 @@
                   "with": "src/build-specifics/index.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "namedChunks": true
             },
             "development": {
               "buildOptimizer": false,

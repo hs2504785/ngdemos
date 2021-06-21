@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:3000',
-  socketConfig: {
-    url: 'http://localhost:3000',
-    opts: {
-      transports: ['websocket'],
-    },
-  },
+  // socketConfig: {
+  //   url: 'http://localhost:3000',
+  //   opts: {
+  //     transports: ['websocket'],
+  //   },
+  // },
 };
 
 /*

@@ -9,11 +9,6 @@ const routes: Routes = [
       import('projects/ebook/src/public-api').then(m => m.EbookModule),
   },
   {
-    path: 'chat',
-    loadChildren: () =>
-      import('projects/chat/src/public-api').then(m => m.ChatModule),
-  },
-  {
     path: 'eshop',
     loadChildren: () => import('./eshop/eshop.module').then(m => m.EshopModule),
   },
