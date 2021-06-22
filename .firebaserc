@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fitness-f2411": {
+      "hosting": {
+        "ngdemos": [
+          "fitness-f2411"
+        ]
+      }
+    }
+  }
+}
