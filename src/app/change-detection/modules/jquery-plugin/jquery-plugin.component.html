@@ -1,1 +1,34 @@
-<p>jquery-plugin works!</p>
+<div class="container">
+  <div class="text-center">
+    <button
+      class="btn btn-warning mr-2"
+      (click)="showRegular()"
+      [class.active]="!displayOptimized"
+    >
+      Show regular
+    </button>
+    <button
+      class="btn btn-warning mr-2"
+      (click)="showOptimized()"
+      [class.active]="displayOptimized"
+    >
+      Show optimized
+    </button>
+    <button class="btn btn-info" (click)="hello()">Say Hello</button>
+    <div *ngIf="!displayOptimized">
+      <app-color-picker (change)="onChange($event)"></app-color-picker>
+      <div class="color-preview" [style.background-color]="color">
+        color preview
+      </div>
+    </div>
+    <div *ngIf="displayOptimized">
+      <app-color-picker-optimized
+        (change)="onChange($event)"
+      ></app-color-picker-optimized>
+
+      <div class="color-preview" [style.background-color]="color">
+        color preview
+      </div>
+    </div>
+  </div>
+</div>

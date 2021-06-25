@@ -1,16 +1,43 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  AfterViewChecked,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'app-jquery-plugin',
   templateUrl: './jquery-plugin.component.html',
   styleUrls: ['./jquery-plugin.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class JqueryPluginComponent implements OnInit {
+export class JqueryPluginComponent implements OnInit, AfterViewChecked {
+  displayOptimized = false;
+  color: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit() {}
+
+  showOptimized() {
+    this.displayOptimized = true;
   }
 
+  showRegular() {
+    this.displayOptimized = false;
+  }
+
+  onChange(color: string) {
+    this.color = color;
+  }
+
+  ngAfterViewChecked() {
+    console.log('View checked!');
+  }
+
+  hello() {
+    console.log('Hello');
+  }
 }
