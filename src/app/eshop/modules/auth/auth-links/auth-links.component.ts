@@ -27,11 +27,11 @@ export class AuthLinksComponent implements OnInit {
     private router: Router,
     private modalService: BsModalService,
     private spinner: NgxSpinnerService,
-    private route: Router
+    private route: Router,
   ) {}
 
   ngOnInit(): void {
-    this.authService.user.subscribe((user) => (this.user = user));
+    this.authService.user.subscribe(user => (this.user = user));
   }
 
   logout() {
@@ -46,7 +46,7 @@ export class AuthLinksComponent implements OnInit {
     this.authService.updatedUserSelection(fromAuthModels.UserModel);
     localStorage.removeItem('user');
 
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
     this.alertService.danger('You are logged out');
 
     setTimeout(() => {
@@ -57,10 +57,10 @@ export class AuthLinksComponent implements OnInit {
 
   updateShoppingCart(userid) {
     const observer = {
-      next: (cartlist) => {
+      next: cartlist => {
         this.cartService.updatedCartSelection(cartlist);
       },
-      error: (err) => console.error(err),
+      error: err => console.error(err),
     };
     this.cartService.getCartByUserId(userid).subscribe(observer);
   }
@@ -69,7 +69,7 @@ export class AuthLinksComponent implements OnInit {
     this.spinner.show();
     this.alertService.info('Checking your information...');
     const observer = {
-      next: (user) => {
+      next: user => {
         this.user = user;
 
         this.updateShoppingCart(this.user.id);
@@ -80,12 +80,12 @@ export class AuthLinksComponent implements OnInit {
           /** spinner ends after 5 seconds */
           this.spinner.hide();
           this.alertService.success(
-            'Welcome Back ' + this.user.username + ' !'
+            'Welcome Back ' + this.user.username + ' !',
           );
           this.route.navigate(['/shopping/products']);
         }, 1000);
       },
-      error: (err) => {
+      error: err => {
         this.alertService.danger('Unable to login');
         this.spinner.hide();
       },

@@ -15,6 +15,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
 import { appReducers } from './store/reducers';
 import { metaReducers } from './store/meta-reducers';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, LoaderComponent],
@@ -29,6 +31,12 @@ import { metaReducers } from './store/meta-reducers';
     extModules,
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },

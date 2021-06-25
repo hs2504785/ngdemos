@@ -9,10 +9,10 @@ export class AdminGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
   isAdmin: boolean;
   canActivate(): boolean {
-    this.authService.user.subscribe((user) => {
+    this.authService.user.subscribe(user => {
       this.isAdmin = user.isadmin;
       if (!this.isAdmin) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
       }
     });
 

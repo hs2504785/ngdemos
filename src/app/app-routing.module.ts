@@ -41,10 +41,6 @@ const routes: Routes = [
     loadChildren: () => import('./demos/demos.module').then(m => m.DemosModule),
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-  },
-  {
     path: 'tree',
     loadChildren: () => import('./tree/tree.module').then(m => m.TreeModule),
   },
@@ -81,13 +77,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./not-found/not-found.module').then(m => m.NotFoundModule),
   },
-
-  // default route
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
-  },
   {
     path: 'ucard',
     loadChildren: () => import('./ucard/ucard.module').then(m => m.UcardModule),
@@ -104,12 +93,24 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/worker/worker.module').then(m => m.WorkerModule),
   },
-  { path: 'change-detection', loadChildren: () => import('./change-detection/change-detection.module').then(m => m.ChangeDetectionModule) },
+  {
+    path: 'change-detection',
+    loadChildren: () =>
+      import('./change-detection/change-detection.module').then(
+        m => m.ChangeDetectionModule,
+      ),
+  },
+  // default route
+  {
+    path: '',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+    pathMatch: 'full',
+  },
   // Fallbak route
-  // {
-  //   path: '**',
-  //   redirectTo: '/not-found',
-  // },
+  {
+    path: '**',
+    redirectTo: '/not-found',
+  },
 ];
 
 @NgModule({
