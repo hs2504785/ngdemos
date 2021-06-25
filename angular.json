@@ -44,7 +44,11 @@
               ]
             },
             "scripts": [],
-            "webWorkerTsConfig": "tsconfig.worker.json"
+            "webWorkerTsConfig": "tsconfig.worker.json",
+            "allowedCommonJsDependencies": [
+              "ng2-nvd3",
+              "nvd3"
+            ]
           },
           "configurations": {
             "production": {
@@ -56,9 +60,9 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "10kb"
-                }
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
+                },
               ],
               "fileReplacements": [
                 {
