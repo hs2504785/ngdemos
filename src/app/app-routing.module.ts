@@ -104,6 +104,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/worker/worker.module').then(m => m.WorkerModule),
   },
+  { path: 'change-detection', loadChildren: () => import('./change-detection/change-detection.module').then(m => m.ChangeDetectionModule) },
   // Fallbak route
   // {
   //   path: '**',

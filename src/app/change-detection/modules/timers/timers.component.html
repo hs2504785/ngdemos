@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="t-center mb-4">
+    <button
+      class="btn btn-warning mr-2"
+      (click)="setZone(true)"
+      [class.active]="inZone"
+    >
+      Show regular
+    </button>
+    <button
+      class="btn btn-primary mr-2"
+      (click)="setZone(false)"
+      [class.active]="!inZone"
+    >
+      Show optimized
+    </button>
+    <button class="btn btn-info" (click)="hello()">Say Hello</button>
+  </div>
+
+  <div class="t-center">
+    <ng-container *ngIf="inZone">
+      <app-canvas></app-canvas>
+    </ng-container>
+    <ng-container *ngIf="!inZone">
+      <app-canvas-optimized></app-canvas-optimized>
+    </ng-container>
+  </div>
+</div>
