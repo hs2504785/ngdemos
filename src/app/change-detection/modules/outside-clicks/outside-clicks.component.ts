@@ -1,16 +1,36 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  AfterViewChecked,
+} from '@angular/core';
 
 @Component({
   selector: 'app-outside-clicks',
   templateUrl: './outside-clicks.component.html',
   styleUrls: ['./outside-clicks.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OutsideClicksComponent implements OnInit {
+export class OutsideClicksComponent implements OnInit, AfterViewChecked {
+  displayOptimized = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit() {}
+
+  showOptimized() {
+    this.displayOptimized = true;
   }
 
+  showRegular() {
+    this.displayOptimized = false;
+  }
+
+  ngAfterViewChecked() {
+    console.log('Change detection triggered!..............................');
+  }
+
+  hello() {
+    console.log('Hello');
+  }
 }

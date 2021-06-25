@@ -1,1 +1,29 @@
-<p>outside-clicks works!</p>
+<div class="container">
+  <div class="text-center">
+    <button
+      class="btn btn-warning mr-2"
+      (click)="showRegular()"
+      [class.active]="!displayOptimized"
+    >
+      Show regular
+    </button>
+    <button
+      class="btn btn-primary mr-2"
+      (click)="showOptimized()"
+      [class.active]="displayOptimized"
+    >
+      Show optimized
+    </button>
+    <button class="btn btn-info" (click)="hello()">Say Hello</button>
+    <div *ngIf="!displayOptimized" class="mt-4">
+      <app-dropdown></app-dropdown>
+      <app-dropdown></app-dropdown>
+      <app-dropdown></app-dropdown>
+    </div>
+    <div *ngIf="displayOptimized" class="mt-4">
+      <app-dropdown-optimized></app-dropdown-optimized>
+      <app-dropdown-optimized></app-dropdown-optimized>
+      <app-dropdown-optimized></app-dropdown-optimized>
+    </div>
+  </div>
+</div>
