@@ -1,17 +1,3 @@
-# Memoization
-
-```javascript
-npm i memo-decorator --save
-
-// with angular pipe
-import memo from 'memo-decorator';
-
-@memo()
-transform() {
-
-}
-```
-
 ## Handle Frequent Update
 
 ```javascript
