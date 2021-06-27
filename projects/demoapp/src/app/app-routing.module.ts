@@ -24,7 +24,13 @@ const routes: Routes = [
       ),
     pathMatch: 'full',
   },
-  { path: 'credit-card', loadChildren: () => import('./credit-card/credit-card.module').then(m => m.CreditCardModule) },
+  {
+    path: 'credit-card',
+    loadChildren: () =>
+      import('./modules/credit-card/credit-card.module').then(
+        m => m.CreditCardModule,
+      ),
+  },
   {
     path: '**',
     redirectTo: '/',
