@@ -1,5 +1,8 @@
 <hr />
 <h1>ngTemplateOutlet Demo</h1>
-<ng-container [ngTemplateOutlet]="tmpl"> </ng-container>
+<ng-container [ngTemplateOutlet]="tmpl" [ngTemplateOutletContext]="ctx">
+</ng-container>
 
-<ng-template #tmpl> Ankit: Noida, India </ng-template>
+<ng-template #tmpl let-name let-location="location">
+  {{ name }}: {{ location }}
+</ng-template>
