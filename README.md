@@ -16,7 +16,7 @@ ng build --base-href "https://hs2504785.github.io/ngdemos/ngapp/"
 // Fitness App
 ng build --project=fitness --base-href "https://hs2504785.github.io/ngdemos/fitness/"
 
-// Fitness demo app
+//  Demo app
 ng build --project=demoapp --base-href "https://hs2504785.github.io/ngdemos/demoapp/"
 
 ngh --dir=dist --message="My First deploy"
