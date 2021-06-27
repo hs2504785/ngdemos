@@ -34,6 +34,14 @@ export class ContentProjectionComponent implements OnDestroy {
       console.log(res);
     });
     console.log(this.component);
+
+    // Create Login
+    const component2 = this.entry.createComponent(factory);
+    console.log(component2);
+  }
+
+  moveComponent() {
+    this.entry.move(this.component.hostView, 1);
   }
 
   destroyComponent() {
