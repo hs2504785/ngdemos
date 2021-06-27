@@ -1,7 +1,7 @@
 <div>
   <div #entry></div>
-  <ng-template #tmpl>
-    <div>Hemant : Hyderabad, India</div>
+  <ng-template #tmpl let-myname let-location="location">
+    <div>{{ myname }} : {{ location }}</div>
   </ng-template>
   <ng-template #tmp2>
     <div>Hemant : Hyderabad, India (on button click)</div>

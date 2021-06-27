@@ -19,7 +19,10 @@ export class DynamicTemplateComponent implements AfterViewInit {
   @ViewChild('tmp2', { read: TemplateRef }) tmpl2: TemplateRef<any>;
 
   ngAfterViewInit() {
-    this.entry.createEmbeddedView(this.tmpl);
+    this.entry.createEmbeddedView(this.tmpl, {
+      $implicit: 'Hemant Kumar Singh',
+      location: 'Bangalore, India',
+    });
   }
 
   addTemplate() {
