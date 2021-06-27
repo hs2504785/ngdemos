@@ -13,14 +13,19 @@ ng serve --hmr
 npm install -g angular-cli-ghpages
 ng build --base-href "https://hs2504785.github.io/ngdemos/ngapp/"
 
-// Build & Deploy Fitness App
+// Fitness App
 ng build --project=fitness --base-href "https://hs2504785.github.io/ngdemos/fitness/"
+
+// Fitness demo app
+ng build --project=demoapp --base-href "https://hs2504785.github.io/ngdemos/demoapp/"
 
 ngh --dir=dist --message="My First deploy"
 ```
 
 All done!
-https://hs2504785.github.io/ngdemos/
+https://hs2504785.github.io/ngdemos/ngapp
+https://hs2504785.github.io/ngdemos/demoapp
+https://hs2504785.github.io/ngdemos/fitness
 
 ## Generate lazy module
 
