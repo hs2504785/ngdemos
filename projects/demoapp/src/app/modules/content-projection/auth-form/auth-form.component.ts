@@ -11,6 +11,7 @@ import {
   ContentChild,
   ViewChildren,
   ChangeDetectorRef,
+  ElementRef,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -26,7 +27,7 @@ import { AuthRememberComponent } from './auth-remember.component';
         <ng-content></ng-content>
         <label>
           Email address
-          <input type="email" name="email" ngModel />
+          <input type="email" name="email" ngModel #email />
         </label>
         <label>
           Password
@@ -68,12 +69,16 @@ import { AuthRememberComponent } from './auth-remember.component';
       h3 {
         margin-bottom: 20px;
       }
+      .email {
+        border-color: #9f72e6;
+      }
     `,
   ],
 })
 export class AuthFormComponent
   implements AfterContentInit, OnDestroy, AfterViewInit
 {
+  @ViewChild('email') email: ElementRef;
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
   @ViewChildren(AuthMessageComponent) message: QueryList<AuthMessageComponent>;
   @ContentChild(AuthRememberComponent)
@@ -96,7 +101,13 @@ export class AuthFormComponent
   }
 
   ngAfterViewInit() {
-    console.log(this.message);
+    console.log(this.email);
+    this.email.nativeElement.setAttribute(
+      'placeholder',
+      'Enter your email address',
+    );
+    this.email.nativeElement.classList.add('email');
+    this.email.nativeElement.focus();
     this.message.forEach(item => {
       item.days = 50;
     });
