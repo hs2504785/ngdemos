@@ -9,6 +9,8 @@ import {
   ViewChild,
   AfterViewInit,
   ContentChild,
+  ViewChildren,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -31,6 +33,12 @@ import { AuthRememberComponent } from './auth-remember.component';
           <input type="password" name="password" ngModel />
         </label>
         <ng-content select="auth-remember"></ng-content>
+        <auth-message
+          [style.display]="showMessage ? 'inline' : 'none'"
+        ></auth-message>
+        <auth-message
+          [style.display]="showMessage ? 'inline' : 'none'"
+        ></auth-message>
         <auth-message
           [style.display]="showMessage ? 'inline' : 'none'"
         ></auth-message>
@@ -67,11 +75,13 @@ export class AuthFormComponent
   implements AfterContentInit, OnDestroy, AfterViewInit
 {
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
-  @ViewChild(AuthMessageComponent) message: AuthMessageComponent;
+  @ViewChildren(AuthMessageComponent) message: QueryList<AuthMessageComponent>;
   @ContentChild(AuthRememberComponent)
   remember: AuthRememberComponent;
   showMessage = false;
   sub: Subscription;
+
+  constructor(private cd: ChangeDetectorRef) {}
 
   onSubmit(value: User) {
     this.submitted.emit(value);
@@ -81,12 +91,17 @@ export class AuthFormComponent
     if (this.remember) {
       this.sub = this.remember.checked.subscribe(val => {
         this.showMessage = val;
-        this.message.days = 10;
       });
     }
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    console.log(this.message);
+    this.message.forEach(item => {
+      item.days = 50;
+    });
+    this.cd.detectChanges();
+  }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
