@@ -1,5 +1,4 @@
 import {
-  AfterContentInit,
   AfterViewInit,
   ChangeDetectorRef,
   Component,
@@ -18,11 +17,13 @@ export class DynamicTemplateComponent implements AfterViewInit {
   @ViewChild('tmpl', { read: TemplateRef }) tmpl: TemplateRef<any>;
   @ViewChild('tmp2', { read: TemplateRef }) tmpl2: TemplateRef<any>;
 
+  constructor(private cd: ChangeDetectorRef) {}
   ngAfterViewInit() {
     this.entry.createEmbeddedView(this.tmpl, {
       $implicit: 'Hemant Kumar Singh',
       location: 'Bangalore, India',
     });
+    this.cd.detectChanges();
   }
 
   addTemplate() {

@@ -49,6 +49,6 @@ export class ContentProjectionComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this.sub && this.sub.unsubscribe();
   }
 }

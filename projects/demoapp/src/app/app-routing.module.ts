@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'dynamic-template',
     loadChildren: () =>
-      import('./dynamic-template/dynamic-template.module').then(
+      import('./modules/dynamic-template/dynamic-template.module').then(
         m => m.DynamicTemplateModule,
       ),
   },
