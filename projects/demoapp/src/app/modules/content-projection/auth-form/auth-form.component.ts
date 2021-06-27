@@ -12,6 +12,7 @@ import {
   ViewChildren,
   ChangeDetectorRef,
   ElementRef,
+  Renderer2,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -86,7 +87,7 @@ export class AuthFormComponent
   showMessage = false;
   sub: Subscription;
 
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(private cd: ChangeDetectorRef, private renderer: Renderer2) {}
 
   onSubmit(value: User) {
     this.submitted.emit(value);
@@ -102,12 +103,19 @@ export class AuthFormComponent
 
   ngAfterViewInit() {
     console.log(this.email);
-    this.email.nativeElement.setAttribute(
+    this.renderer.setAttribute(
+      this.email.nativeElement,
       'placeholder',
       'Enter your email address',
     );
-    this.email.nativeElement.classList.add('email');
-    this.email.nativeElement.focus();
+    this.renderer.addClass(this.email.nativeElement, 'email');
+    this.renderer.selectRootElement(this.email.nativeElement).focus();
+    // this.email.nativeElement.setAttribute(
+    //   'placeholder',
+    //   'Enter your email address',
+    // );
+    // this.email.nativeElement.classList.add('email');
+    // this.email.nativeElement.focus();
     this.message.forEach(item => {
       item.days = 50;
     });
