@@ -2,3 +2,10 @@
   <p>{{ file.name }}</p>
   <p>{{ file.size | filesize }}</p>
 </div>
+
+<h1>File Size from component</h1>
+
+<div *ngFor="let file of mappedFiles">
+  <p>{{ file.name }}</p>
+  <p>{{ file.size }}</p>
+</div>
