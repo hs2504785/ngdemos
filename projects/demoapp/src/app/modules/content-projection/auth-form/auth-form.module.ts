@@ -7,8 +7,13 @@ import { AuthRememberComponent } from './auth-remember.component';
 import { AuthMessageComponent } from './auth-message.component';
 
 @NgModule({
-  declarations: [AuthFormComponent, AuthRememberComponent, AuthMessageComponent],
+  declarations: [
+    AuthFormComponent,
+    AuthRememberComponent,
+    AuthMessageComponent,
+  ],
   imports: [CommonModule, FormsModule],
   exports: [AuthFormComponent, AuthRememberComponent],
+  entryComponents: [AuthFormComponent],
 })
 export class AuthFormModule {}

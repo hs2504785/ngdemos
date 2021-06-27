@@ -1,14 +1,18 @@
-:host {
-  display: inline-block;
+.form {
+  display: block;
   background-color: #ffffff;
   border-radius: 2px;
   border: 1px solid #dce5f2;
   box-shadow: 0 1px 4px rgba(53, 60, 72, 0.1);
   padding: 30px 0;
 }
-:host > div {
+.form > div {
   display: flex;
 }
 auth-form:first-child form {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+button {
+  margin-right: 10px;
 }
