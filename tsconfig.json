@@ -4,6 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@libs/shared": [
+        "dist/libs/shared/libs-shared",
+        "dist/libs/shared"
+      ],
       "blog": [
         "dist/blog/blog",
         "dist/blog"
