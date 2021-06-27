@@ -1,6 +1,15 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  ContentChild,
+  AfterContentInit,
+  OnDestroy,
+} from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { User } from './auth-form.interface';
+import { AuthRememberComponent } from './auth-remember.component';
 
 @Component({
   selector: 'auth-form',
@@ -17,6 +26,7 @@ import { User } from './auth-form.interface';
           <input type="password" name="password" ngModel />
         </label>
         <ng-content select="auth-remember"></ng-content>
+        <div *ngIf="showMessage">You will be logged in for 30 days</div>
         <ng-content select="button"></ng-content>
       </form>
     </div>
@@ -46,10 +56,27 @@ import { User } from './auth-form.interface';
     `,
   ],
 })
-export class AuthFormComponent {
+export class AuthFormComponent implements AfterContentInit, OnDestroy {
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
+  @ContentChild(AuthRememberComponent) remember: AuthRememberComponent;
+  showMessage = false;
+  sub: Subscription;
 
   onSubmit(value: User) {
     this.submitted.emit(value);
+  }
+
+  ngAfterContentInit() {
+    console.log(this.remember);
+
+    if (this.remember) {
+      this.sub = this.remember.checked.subscribe(val => {
+        this.showMessage = val;
+      });
+    }
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }
