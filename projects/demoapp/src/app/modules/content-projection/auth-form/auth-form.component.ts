@@ -2,9 +2,10 @@ import {
   Component,
   Output,
   EventEmitter,
-  ContentChild,
   AfterContentInit,
   OnDestroy,
+  ContentChildren,
+  QueryList,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -58,7 +59,8 @@ import { AuthRememberComponent } from './auth-remember.component';
 })
 export class AuthFormComponent implements AfterContentInit, OnDestroy {
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
-  @ContentChild(AuthRememberComponent) remember: AuthRememberComponent;
+  @ContentChildren(AuthRememberComponent)
+  remember: QueryList<AuthRememberComponent>;
   showMessage = false;
   sub: Subscription;
 
@@ -69,9 +71,11 @@ export class AuthFormComponent implements AfterContentInit, OnDestroy {
   ngAfterContentInit() {
     console.log(this.remember);
 
-    if (this.remember) {
-      this.sub = this.remember.checked.subscribe(val => {
-        this.showMessage = val;
+    if (this.remember.length) {
+      this.remember.forEach(item => {
+        this.sub = item.checked.subscribe(val => {
+          this.showMessage = val;
+        });
       });
     }
   }
