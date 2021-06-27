@@ -36,6 +36,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/tooltip/tooltip.module').then(m => m.TooltipModule),
   },
+  { path: 'file-size', loadChildren: () => import('./modules/file-size/file-size.module').then(m => m.FileSizeModule) },
   {
     path: '**',
     redirectTo: '/',
