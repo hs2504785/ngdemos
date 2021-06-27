@@ -7,11 +7,16 @@ import { User } from './auth-form/auth-form.interface';
   styleUrls: ['./content-projection.component.scss'],
 })
 export class ContentProjectionComponent {
+  remember = false;
   createUser(user: User) {
     console.log('Create account', user);
   }
 
   loginUser(user: User) {
-    console.log('Login', user);
+    console.log('Login', user, this.remember);
+  }
+
+  rememberUser(val) {
+    this.remember = true;
   }
 }
