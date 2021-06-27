@@ -6,10 +6,14 @@ import {
   OnDestroy,
   ContentChildren,
   QueryList,
+  ViewChild,
+  AfterViewInit,
+  ContentChild,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { User } from './auth-form.interface';
+import { AuthMessageComponent } from './auth-message.component';
 import { AuthRememberComponent } from './auth-remember.component';
 
 @Component({
@@ -27,7 +31,9 @@ import { AuthRememberComponent } from './auth-remember.component';
           <input type="password" name="password" ngModel />
         </label>
         <ng-content select="auth-remember"></ng-content>
-        <div *ngIf="showMessage">You will be logged in for 30 days</div>
+        <auth-message
+          [style.display]="showMessage ? 'inline' : 'none'"
+        ></auth-message>
         <ng-content select="button"></ng-content>
       </form>
     </div>
@@ -57,10 +63,13 @@ import { AuthRememberComponent } from './auth-remember.component';
     `,
   ],
 })
-export class AuthFormComponent implements AfterContentInit, OnDestroy {
+export class AuthFormComponent
+  implements AfterContentInit, OnDestroy, AfterViewInit
+{
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
-  @ContentChildren(AuthRememberComponent)
-  remember: QueryList<AuthRememberComponent>;
+  @ViewChild(AuthMessageComponent) message: AuthMessageComponent;
+  @ContentChild(AuthRememberComponent)
+  remember: AuthRememberComponent;
   showMessage = false;
   sub: Subscription;
 
@@ -69,16 +78,15 @@ export class AuthFormComponent implements AfterContentInit, OnDestroy {
   }
 
   ngAfterContentInit() {
-    console.log(this.remember);
-
-    if (this.remember.length) {
-      this.remember.forEach(item => {
-        this.sub = item.checked.subscribe(val => {
-          this.showMessage = val;
-        });
+    if (this.remember) {
+      this.sub = this.remember.checked.subscribe(val => {
+        this.showMessage = val;
+        this.message.days = 10;
       });
     }
   }
+
+  ngAfterViewInit() {}
 
   ngOnDestroy() {
     this.sub.unsubscribe();
