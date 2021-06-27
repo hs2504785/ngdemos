@@ -32,6 +32,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'tooltip',
+    loadChildren: () =>
+      import('./modules/tooltip/tooltip.module').then(m => m.TooltipModule),
+  },
+  {
     path: '**',
     redirectTo: '/',
   },
