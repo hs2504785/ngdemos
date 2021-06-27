@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MyForComponent } from './components/my-for/my-for.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MyForComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

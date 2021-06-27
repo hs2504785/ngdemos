@@ -1,1 +1,15 @@
 <p>tooltip works!</p>
+
+<hr />
+
+<h1>My For Demo</h1>
+<div>
+  <ul>
+    <li *myFor="let item of items; let i = index">
+      {{ i }} Member: {{ item.name | json }}
+    </li>
+    <ng-template myFor [myForOf]="items" let-item let-i="index">
+      <li>{{ i }} Member: {{ item.name | json }}</li>
+    </ng-template>
+  </ul>
+</div>

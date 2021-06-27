@@ -3,15 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { TooltipRoutingModule } from './tooltip-routing.module';
 import { TooltipComponent } from './tooltip.component';
-
+import { MyForDirective } from 'projects/libs/shared/src/public-api';
 
 @NgModule({
-  declarations: [
-    TooltipComponent
-  ],
-  imports: [
-    CommonModule,
-    TooltipRoutingModule
-  ]
+  declarations: [TooltipComponent, MyForDirective],
+  imports: [CommonModule, TooltipRoutingModule],
 })
-export class TooltipModule { }
+export class TooltipModule {}
