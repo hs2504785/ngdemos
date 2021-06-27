@@ -10,6 +10,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'dynamic-template',
+    loadChildren: () =>
+      import('./dynamic-template/dynamic-template.module').then(
+        m => m.DynamicTemplateModule,
+      ),
+  },
+  {
     path: '',
     loadChildren: () =>
       import('./modules/dashboard/dashboard.module').then(
