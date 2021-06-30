@@ -100,12 +100,6 @@ const routes: Routes = [
         m => m.ChangeDetectionModule,
       ),
   },
-  // default route
-  {
-    path: '',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-    pathMatch: 'full',
-  },
   // Fallbak route
   {
     path: '**',

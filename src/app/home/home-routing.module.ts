@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home.component';
 
 const routes: Routes = [
+  // default route
   {
     path: '',
     component: HomeComponent,
+    pathMatch: 'full',
   },
 ];
 

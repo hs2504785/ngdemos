@@ -17,11 +17,13 @@ import { appReducers } from './store/reducers';
 import { metaReducers } from './store/meta-reducers';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent, LoaderComponent],
   imports: [
     BrowserModule,
+    HomeModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -35,7 +37,7 @@ import { environment } from '../environments/environment';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [
