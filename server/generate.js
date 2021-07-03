@@ -56,7 +56,7 @@ database.users.push({
 
 database.messages.push(
   {
-    "id": 1,
+    "_id": "1",
     "folder": "inbox",
     "from": "Jane Smith",
     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis, neque at ultricies fringilla, ligula metus",
@@ -64,7 +64,7 @@ database.messages.push(
     "timestamp": 1487848162905
   },
   {
-    "id": 2,
+    "_id": "2",
     "folder": "inbox",
     "from": "John Doe",
     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis, neque at ultricies fringilla, ligula metus",
@@ -72,7 +72,7 @@ database.messages.push(
     "timestamp": 1487845787719
   },
   {
-    "id": 3,
+    "_id": "3",
     "folder": "inbox",
     "from": "Joseph Hanes",
     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis, neque at ultricies fringilla, ligula metus",
@@ -80,7 +80,7 @@ database.messages.push(
     "timestamp": 1487845787719
   },
   {
-    "id": 4,
+    "_id": "4",
     "folder": "trash",
     "from": "Laurence Murray",
     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis, neque at ultricies fringilla, ligula metus",

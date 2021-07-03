@@ -11,36 +11,36 @@ import { MessageResolver } from './services/message.resolver';
 
 export const ROUTES: Routes = [
   {
-    path: 'folder/:name',
-    component: MailFolderComponent,
-    resolve: {
-      messages: MailFolderResolver
-    },
-    pathMatch:'full'
+    path: 'mail',
+    component: MailAppComponent,
+    children: [
+      {
+        path: 'folder/:name',
+        component: MailFolderComponent,
+        resolve: {
+          messages: MailFolderResolver,
+        },
+      },
+      {
+        path: 'message/:id',
+        component: MailViewComponent,
+        outlet: 'pane',
+        resolve: {
+          message: MessageResolver,
+        },
+      },
+    ],
   },
-  {
-    path: 'message/:id',
-    component: MailViewComponent,
-    outlet: 'pane',
-    resolve: {
-      message: MessageResolver
-    },
-  }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(ROUTES)
-  ],
+  imports: [CommonModule, RouterModule.forChild(ROUTES)],
   declarations: [
     MailFolderComponent,
     MailAppComponent,
     MailItemComponent,
-    MailViewComponent
+    MailViewComponent,
   ],
-  exports: [
-    MailAppComponent
-  ]
+  exports: [MailAppComponent],
 })
 export class MailModule {}
