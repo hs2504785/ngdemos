@@ -658,6 +658,109 @@
           }
         }
       }
+    },
+    "mailapp": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/mailapp",
+      "sourceRoot": "projects/mailapp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mailapp",
+            "index": "projects/mailapp/src/index.html",
+            "main": "projects/mailapp/src/main.ts",
+            "polyfills": "projects/mailapp/src/polyfills.ts",
+            "tsConfig": "projects/mailapp/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/mailapp/src/favicon.ico",
+              "projects/mailapp/src/assets"
+            ],
+            "styles": [
+              "projects/mailapp/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/mailapp/src/environments/environment.ts",
+                  "with": "projects/mailapp/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "mailapp:build:production"
+            },
+            "development": {
+              "browserTarget": "mailapp:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mailapp:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mailapp/src/test.ts",
+            "polyfills": "projects/mailapp/src/polyfills.ts",
+            "tsConfig": "projects/mailapp/tsconfig.spec.json",
+            "karmaConfig": "projects/mailapp/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/mailapp/src/favicon.ico",
+              "projects/mailapp/src/assets"
+            ],
+            "styles": [
+              "projects/mailapp/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngdemos"

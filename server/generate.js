@@ -6,6 +6,7 @@ var database = {
   categories: [],
   carts: [],
   users: [],
+  messages: []
 };
 
 for (var i = 1; i <= 200; i++) {
@@ -52,5 +53,40 @@ database.users.push({
   email: "user@user.com",
   isadmin: false,
 });
+
+database.messages.push(
+  {
+    "id": 1,
+    "folder": "inbox",
+    "from": "Jane Smith",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis, neque at ultricies fringilla, ligula metus",
+    "full": "Full message from Jane Smith",
+    "timestamp": 1487848162905
+  },
+  {
+    "id": 2,
+    "folder": "inbox",
+    "from": "John Doe",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis, neque at ultricies fringilla, ligula metus",
+    "full": "Full message from John Doe",
+    "timestamp": 1487845787719
+  },
+  {
+    "id": 3,
+    "folder": "inbox",
+    "from": "Joseph Hanes",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis, neque at ultricies fringilla, ligula metus",
+    "full": "Full message from Joseph Hanes",
+    "timestamp": 1487845787719
+  },
+  {
+    "id": 4,
+    "folder": "trash",
+    "from": "Laurence Murray",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis, neque at ultricies fringilla, ligula metus",
+    "full": "Full message from Laurence Murray",
+    "timestamp": 1487845787719
+  }
+);
 
 console.log(JSON.stringify(database));
