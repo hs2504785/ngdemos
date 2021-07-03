@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { CustomPreloadingStrategyService } from './shared/services/custom-preloading-strategy.service';
 
 export const routes: Routes = [
   {
@@ -8,6 +9,7 @@ export const routes: Routes = [
       import('./modules/dashboard/dashboard.module').then(
         m => m.DashboardModule,
       ),
+    data: { preload: true },
   },
   { path: '**', redirectTo: 'mail/folder/inbox' },
 ];
@@ -15,7 +17,7 @@ export const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      preloadingStrategy: PreloadAllModules,
+      preloadingStrategy: CustomPreloadingStrategyService,
     }),
   ],
   exports: [RouterModule],
