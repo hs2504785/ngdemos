@@ -8,15 +8,42 @@ import { Mail } from '../../models/mail.interface';
   selector: 'mail-view',
   styleUrls: ['mail-view.component.scss'],
   template: `
-    <div class="mail-view" *ngIf="message | async as message">
-      <h2>{{ message.from }}</h2>
-      <p>{{ message.full }}</p>
+    <div class="mail-view">
+      <h2>{{ (message | async).from }}</h2>
+      <p>{{ (message | async).full }}</p>
     </div>
-  `
+    <div class="mail-reply">
+      <textarea
+        (change)="updateReply($event.target.value)"
+        placeholder="Type your reply..."
+        [value]="reply"
+      >
+      </textarea>
+      <button type="button" (click)="sendReply()">Send</button>
+    </div>
+  `,
 })
 export class MailViewComponent {
-  message: Observable<Mail> = this.route.data.pipe(
-    pluck('message')
-  );
+  message: Observable<Mail> = this.route.data.pipe(pluck('message'));
+  reply = '';
+  hasUnsavedChanges = false;
+
   constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.params.subscribe(() => {
+      this.reply = '';
+      this.hasUnsavedChanges = false;
+    });
+  }
+
+  updateReply(value: string) {
+    this.reply = value;
+    this.hasUnsavedChanges = true;
+  }
+
+  sendReply() {
+    console.log('Sent!', this.reply);
+    this.hasUnsavedChanges = false;
+  }
 }

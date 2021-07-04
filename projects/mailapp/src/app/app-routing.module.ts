@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './modules/auth/auth.guard';
 import { CustomPreloadingStrategy } from './shared/services/custom-preloading-strategy.service';
 
 export const routes: Routes = [
   {
     path: 'dashboard',
+    canLoad: [AuthGuard],
     loadChildren: () =>
       import('./modules/dashboard/dashboard.module').then(
         m => m.DashboardModule,

@@ -10,25 +10,17 @@ import { Mail } from '../../models/mail.interface';
   styleUrls: ['mail-folder.component.scss'],
   template: `
     <h2>{{ title | async }}</h2>
-    <mail-item
-      *ngFor="let message of (messages | async)"
-      [message]="message">
+    <mail-item *ngFor="let message of messages | async" [message]="message">
     </mail-item>
-  `
+  `,
 })
 export class MailFolderComponent implements OnInit {
   messages: Observable<Mail[]>;
   title: Observable<string>;
-  constructor(private route: ActivatedRoute) {
-
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-     this.messages = this.route.data.pipe(
-       pluck('messages')
-     );
-    this.title = this.route.params.pipe(
-      pluck('name')
-    );
+    this.messages = this.route.data.pipe(pluck('messages'));
+    this.title = this.route.params.pipe(pluck('name'));
   }
 }

@@ -10,6 +10,6 @@ import { Component } from '@angular/core';
     <div class="mail">
       <router-outlet name="pane"></router-outlet>
     </div>
-  `
+  `,
 })
 export class MailAppComponent {}
