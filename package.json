@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
-    "start": "ng serve -o --hmr --proxy-config ./proxy.json",
-    "mailApp": "ng serve -o --hmr --project=mailapp",
+    "start": "ng serve -o --hmr",
+    "mailapp": "npm run server && ng serve -o --hmr --project=mailapp",
+    "demoapp": "ng serve -o --hmr --project=demoapp",
     "build": "npm run build-lib && ng build",
     "test": "ng test",
     "lint": "ng lint",

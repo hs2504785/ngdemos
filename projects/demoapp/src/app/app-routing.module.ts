@@ -3,6 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'stock-inventory',
+    loadChildren: () =>
+      import('./modules/stock-inventory/stock-inventory.module').then(
+        m => m.StockInventoryModule,
+      ),
+  },
+  {
     path: 'content-projection',
     loadChildren: () =>
       import('./modules/content-projection/content-projection.module').then(
@@ -36,7 +43,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/tooltip/tooltip.module').then(m => m.TooltipModule),
   },
-  { path: 'file-size', loadChildren: () => import('./modules/file-size/file-size.module').then(m => m.FileSizeModule) },
+  {
+    path: 'file-size',
+    loadChildren: () =>
+      import('./modules/file-size/file-size.module').then(
+        m => m.FileSizeModule,
+      ),
+  },
   {
     path: '**',
     redirectTo: '/',
