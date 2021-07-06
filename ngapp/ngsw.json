@@ -1,0 +1,210 @@
+{
+  "configVersion": 1,
+  "timestamp": 1625500448428,
+  "index": "https://hs2504785.github.io/ngdemos/ngapp/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://hs2504785.github.io/ngdemos/ngapp/118.b3727badb01fe4e70bf3.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/136.ad80a0969d04558b5a22.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/157.f8498fb5012275a5f9b6.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/168.6d0c6e5b4b4135b0408b.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/199.56db669ebe28ff0a9906.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/203.18ec11e77d613cdf2388.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/232.4f55a751fb173103da39.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/254.6bbe955d758ffa0b55a4.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/291.3022552591ac35f47bdc.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/307.224c6264461a31b8a232.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/327.6a98ad0abea1b0795d86.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/347.d7d069d8b57baa6bef7d.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/368.9ee434a3c3fee42678a3.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/41.f293da499436dbbaade6.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/42.86571e2e7b1bbdae6df1.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/443.f19d0a32005c1bc0fac2.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/468.8278f7f27f4d350da672.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/49.3fd1c4390334a1b9d26d.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/545.df688c1cba7744b0c24a.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/550.92dfb3ae0ce72e25f936.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/572.618c02cc94c515cee7e2.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/583.fee159fb4ac54cdfac65.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/590.4f4f379cfeb5ffe0c8e9.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/592.752311bfdff5eff289c8.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/60.46198ed0b25abec6f915.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/629.cf0c722448f7da7b8f3b.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/638.4affa6909aee2387ff8b.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/664.27ed7b85314681c44f31.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/679.072feea626f07d072512.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/681.8411a282fdb3ccd09002.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/693.ac208226f220ae4b48c5.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/70.4c01a02bbc6680c9074b.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/743.b8facaa05609dcfa7657.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/752.4f0dbc45ce2f2604843b.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/757.c4f9d7099288b657496b.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/784.6328118b65cfeca1501f.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/824.10112b379f6115befd0d.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/827.34335175aa8d03320928.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/841.0d1191ecec78a2c5ba7e.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/901.867d1ecbd361a512ee59.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/915.19c337deee2006389ed1.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/920.cc001d05775939d1ac74.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/922.50f0d0c533fb562d222e.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/935.786f76b5125ead596009.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/982.dc71fd4556efe99ce4c9.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/994.e8cb085f8dc24597d7dc.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/favicon.ico",
+        "https://hs2504785.github.io/ngdemos/ngapp/index.html",
+        "https://hs2504785.github.io/ngdemos/ngapp/main.e9406be91f008b8a7dc4.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/manifest.webmanifest",
+        "https://hs2504785.github.io/ngdemos/ngapp/polyfills.d9b34f406dac55b56757.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/runtime.fa16baa78b97e8d73374.js",
+        "https://hs2504785.github.io/ngdemos/ngapp/styles.41680324dcb85c66725f.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-128x128.png",
+        "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-144x144.png",
+        "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-152x152.png",
+        "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-192x192.png",
+        "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-384x384.png",
+        "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-512x512.png",
+        "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-72x72.png",
+        "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-96x96.png",
+        "https://hs2504785.github.io/ngdemos/ngapp/themify.29b39089170885ae2967.woff",
+        "https://hs2504785.github.io/ngdemos/ngapp/themify.9bad94440d49256265a5.eot",
+        "https://hs2504785.github.io/ngdemos/ngapp/themify.c4292f34297f1004471a.svg",
+        "https://hs2504785.github.io/ngdemos/ngapp/themify.eda8b94308c6f538f04a.ttf"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-performance",
+      "patterns": [
+        "\\/assets\\/i18n\\/.*",
+        "\\/api\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    },
+    {
+      "name": "api-freshness",
+      "patterns": [
+        "\\/api\\/todos"
+      ],
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "timeoutMs": 10000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "https://hs2504785.github.io/ngdemos/ngapp/118.b3727badb01fe4e70bf3.js": "c0e062bc64f7bc158ddbcba26a618c256e5dd162",
+    "https://hs2504785.github.io/ngdemos/ngapp/136.ad80a0969d04558b5a22.js": "8314356587cc23b68f917fd73de8b1fd8718b539",
+    "https://hs2504785.github.io/ngdemos/ngapp/157.f8498fb5012275a5f9b6.js": "08aab154013e7e3c16dbc510494d8502d377de09",
+    "https://hs2504785.github.io/ngdemos/ngapp/168.6d0c6e5b4b4135b0408b.js": "19fffaa75e4160974ce27c6d3e29302ebbc686b5",
+    "https://hs2504785.github.io/ngdemos/ngapp/199.56db669ebe28ff0a9906.js": "28de92058c2dd21d6725db975f46dde762e3b156",
+    "https://hs2504785.github.io/ngdemos/ngapp/203.18ec11e77d613cdf2388.js": "7eef80e56e96edcd2ce88d3f4e173fb45bed53a8",
+    "https://hs2504785.github.io/ngdemos/ngapp/232.4f55a751fb173103da39.js": "35d5001c5c794f08be322ec3b032b6ace178a45c",
+    "https://hs2504785.github.io/ngdemos/ngapp/254.6bbe955d758ffa0b55a4.js": "c1f437bb8fbccba93eb32750979357b2398f11f3",
+    "https://hs2504785.github.io/ngdemos/ngapp/291.3022552591ac35f47bdc.js": "b774dd37591f78d9a4b9336b2adbb29d69a90ea3",
+    "https://hs2504785.github.io/ngdemos/ngapp/307.224c6264461a31b8a232.js": "3545b3aa422b7225e08d15094290608aeb788302",
+    "https://hs2504785.github.io/ngdemos/ngapp/327.6a98ad0abea1b0795d86.js": "7654394de193b1b27add0ade71efc0019b1ad539",
+    "https://hs2504785.github.io/ngdemos/ngapp/347.d7d069d8b57baa6bef7d.js": "86de67400a652c7656b7d7c456ce1d053f142955",
+    "https://hs2504785.github.io/ngdemos/ngapp/368.9ee434a3c3fee42678a3.js": "dca4765a2710b0dde60a6a360f92e550869838f4",
+    "https://hs2504785.github.io/ngdemos/ngapp/41.f293da499436dbbaade6.js": "c62bec4cf1cc86f1316c92516a64811ac25075e2",
+    "https://hs2504785.github.io/ngdemos/ngapp/42.86571e2e7b1bbdae6df1.js": "cd22b8b2d491ccb0731bf543b027b81249c8d957",
+    "https://hs2504785.github.io/ngdemos/ngapp/443.f19d0a32005c1bc0fac2.js": "cfa33578b18c8c7f0751ed8f1d482226310a20ed",
+    "https://hs2504785.github.io/ngdemos/ngapp/468.8278f7f27f4d350da672.js": "9f5604db461d1fcac680fe5790d9690eb945b6ce",
+    "https://hs2504785.github.io/ngdemos/ngapp/49.3fd1c4390334a1b9d26d.js": "6c194fa37c0d7fb856957daa1abfd6b070455c02",
+    "https://hs2504785.github.io/ngdemos/ngapp/545.df688c1cba7744b0c24a.js": "8c8b7b9c6794f48c6468204d904101baa9b5a1ae",
+    "https://hs2504785.github.io/ngdemos/ngapp/550.92dfb3ae0ce72e25f936.js": "473f380c56d8fb6bdd61118485eaef16c9339c11",
+    "https://hs2504785.github.io/ngdemos/ngapp/572.618c02cc94c515cee7e2.js": "8b87386a3ea5d651fa23550a551d5440fda9c915",
+    "https://hs2504785.github.io/ngdemos/ngapp/583.fee159fb4ac54cdfac65.js": "f29a083aa304be24ce175f2efd736fa65e36b1e5",
+    "https://hs2504785.github.io/ngdemos/ngapp/590.4f4f379cfeb5ffe0c8e9.js": "fb7743cc34b67c67b8ae1f261d6bbe19efe831a5",
+    "https://hs2504785.github.io/ngdemos/ngapp/592.752311bfdff5eff289c8.js": "1a8b6e69dd0d7a068bda654cd0108a961535ef49",
+    "https://hs2504785.github.io/ngdemos/ngapp/60.46198ed0b25abec6f915.js": "4751990607372323479ad0692a2872bcc783b6a5",
+    "https://hs2504785.github.io/ngdemos/ngapp/629.cf0c722448f7da7b8f3b.js": "8ae79e882fc83a5cc493143aca158e5e24889ee9",
+    "https://hs2504785.github.io/ngdemos/ngapp/638.4affa6909aee2387ff8b.js": "27fa3aed4f6bc2cb727e4d96f84bfda707197875",
+    "https://hs2504785.github.io/ngdemos/ngapp/664.27ed7b85314681c44f31.js": "282255dad11946387f4ed91e5ddf8e64d23f8543",
+    "https://hs2504785.github.io/ngdemos/ngapp/679.072feea626f07d072512.js": "5fef30e6afad5cc2481e7f0fa965a63e9e0862fa",
+    "https://hs2504785.github.io/ngdemos/ngapp/681.8411a282fdb3ccd09002.js": "5fd639b83826aa98c9b5d392ff8d57515617f8e4",
+    "https://hs2504785.github.io/ngdemos/ngapp/693.ac208226f220ae4b48c5.js": "6a3b0cfcbf561bfcb5050d1f0d24e3a61d392305",
+    "https://hs2504785.github.io/ngdemos/ngapp/70.4c01a02bbc6680c9074b.js": "07471fb87d4cda5df877553ec030a865a95fc432",
+    "https://hs2504785.github.io/ngdemos/ngapp/743.b8facaa05609dcfa7657.js": "497a3255ee0bd8c5e58de3e5c56b3efb0cbfdc78",
+    "https://hs2504785.github.io/ngdemos/ngapp/752.4f0dbc45ce2f2604843b.js": "efbfccf1a13eed6ff3b0aedd4bc107527fb35496",
+    "https://hs2504785.github.io/ngdemos/ngapp/757.c4f9d7099288b657496b.js": "ae627f220003bcf0a51d6269942aec5028d49104",
+    "https://hs2504785.github.io/ngdemos/ngapp/784.6328118b65cfeca1501f.js": "d5c7d15c7ba398e3e3ca485759443c836826fb48",
+    "https://hs2504785.github.io/ngdemos/ngapp/824.10112b379f6115befd0d.js": "445f988e22db0a2464231145186744601a65ab55",
+    "https://hs2504785.github.io/ngdemos/ngapp/827.34335175aa8d03320928.js": "67720b30affe0d9d5c4ef1a0bc8f4419907c7a9f",
+    "https://hs2504785.github.io/ngdemos/ngapp/841.0d1191ecec78a2c5ba7e.js": "de812ad1bdc9d2a769c34f634c725b54a2ac290a",
+    "https://hs2504785.github.io/ngdemos/ngapp/901.867d1ecbd361a512ee59.js": "16fd8b991b2d75c716b390f363ecc5c6a715b25b",
+    "https://hs2504785.github.io/ngdemos/ngapp/915.19c337deee2006389ed1.js": "05e3d6632b30fbf551f25749a9887324d4e8e0dd",
+    "https://hs2504785.github.io/ngdemos/ngapp/920.cc001d05775939d1ac74.js": "44c64688e38bdbfc3d86638413bc75be317a313e",
+    "https://hs2504785.github.io/ngdemos/ngapp/922.50f0d0c533fb562d222e.js": "3ee4b3bc278113bb79e739a51148b2af28106805",
+    "https://hs2504785.github.io/ngdemos/ngapp/935.786f76b5125ead596009.js": "6c224c7a9da5f2c032daf79dcf41b827f1a5fc76",
+    "https://hs2504785.github.io/ngdemos/ngapp/982.dc71fd4556efe99ce4c9.js": "768916142a0f510c80207afefba948070b049d3b",
+    "https://hs2504785.github.io/ngdemos/ngapp/994.e8cb085f8dc24597d7dc.js": "e70b64d3460d25e1c4b758a9b355c816f237ec97",
+    "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://hs2504785.github.io/ngdemos/ngapp/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://hs2504785.github.io/ngdemos/ngapp/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://hs2504785.github.io/ngdemos/ngapp/index.html": "87bdec4c016774a8b2f374381fdaf423eedb4b65",
+    "https://hs2504785.github.io/ngdemos/ngapp/main.e9406be91f008b8a7dc4.js": "c13b119780633c60c8db2a3b258399436d4e3102",
+    "https://hs2504785.github.io/ngdemos/ngapp/manifest.webmanifest": "a888569c7d5f733bd5a05b6a913e9dfe00259d91",
+    "https://hs2504785.github.io/ngdemos/ngapp/polyfills.d9b34f406dac55b56757.js": "f39e82e289bfa7c956842fae45fa73bece9e11ea",
+    "https://hs2504785.github.io/ngdemos/ngapp/runtime.fa16baa78b97e8d73374.js": "b3d9a30b32f0eab776d18b28e066ca0aa89a6e6e",
+    "https://hs2504785.github.io/ngdemos/ngapp/styles.41680324dcb85c66725f.css": "438222ca79c46b943ec119b336bcfb563f6ff219",
+    "https://hs2504785.github.io/ngdemos/ngapp/themify.29b39089170885ae2967.woff": "9394f35bd2addd24666b79bfc36d4f9d247cb01d",
+    "https://hs2504785.github.io/ngdemos/ngapp/themify.9bad94440d49256265a5.eot": "df12a0942cf1933f0915fe3d910fa2379f092d83",
+    "https://hs2504785.github.io/ngdemos/ngapp/themify.c4292f34297f1004471a.svg": "106a9ed6d6b0936376b5723611a602a2e3da66c6",
+    "https://hs2504785.github.io/ngdemos/ngapp/themify.eda8b94308c6f538f04a.ttf": "5bb1fe69452a484566a81076af7567728fe7e43b"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
