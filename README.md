@@ -77,3 +77,7 @@ than deploy
 - On scroll load api on demand
 - Upgraded to Angular v12
 - Caching http calls
+
+## Locale Flags
+
+https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css
