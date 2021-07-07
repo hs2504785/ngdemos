@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { PostInterface } from 'projects/crud/src/lib/posts/models/post.interface';
 import { PostService } from 'projects/crud/src/lib/posts/services/post.service';
 import { Observable, Subscription } from 'rxjs';
@@ -19,6 +20,7 @@ export class AppComponent {
   constructor(
     private dataService: DataService,
     private localeService: LocaleService,
+    private translateService: TranslateService,
   ) {}
 
   ngOnInit(): void {
@@ -35,5 +37,13 @@ export class AppComponent {
       this.selectedLang = lang;
       this.getPosts();
     });
+  }
+
+  buy() {
+    alert(
+      `Translated Response: ${this.translateService.instant(
+        'CONGRATULATIONS',
+      )}`,
+    );
   }
 }

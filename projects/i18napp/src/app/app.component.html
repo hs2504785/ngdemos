@@ -4,9 +4,6 @@
     <h1>
       Post List <span *ngIf="selectedLang">{{ selectedLang }}</span>
     </h1>
-    <a routerLink="add" class="btn btn-primary align-self-center">
-      <i class="ti-plus"></i>
-    </a>
   </header>
   <small class="my-3 d-block"
     >Server side multilingual fetch ( look for Header 'Accept-Language' )</small
@@ -16,8 +13,13 @@
       <tr>
         <th>Id</th>
         <th>User ID</th>
-        <th>Title</th>
+        <th>
+          {{ 'TITLE' | translate: { value1: 'Mr' } }}
+          <br />
+          (<small>translate with param</small>)
+        </th>
         <th>Body</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -26,6 +28,11 @@
         <td>{{ post.userId }}</td>
         <td>{{ post.title }}</td>
         <td>{{ post.body }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="buy()">
+            {{ 'BUY' | translate }}
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

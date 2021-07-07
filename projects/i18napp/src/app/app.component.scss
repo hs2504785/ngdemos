@@ -7,3 +7,7 @@ table {
   overflow-y: auto;
   height: calc(100vh - 70px);
 }
+
+thead th:last-child {
+  width: 200px;
+}

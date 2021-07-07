@@ -6,7 +6,7 @@ import { distinctUntilChanged } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class LocaleService {
-  private localeSubject = new BehaviorSubject<string>('us');
+  private localeSubject = new BehaviorSubject<string>('en');
   localeStore$ = this.localeSubject.asObservable().pipe(distinctUntilChanged());
 
   get locale(): string {

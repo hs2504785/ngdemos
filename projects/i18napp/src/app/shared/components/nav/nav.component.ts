@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { LocaleService } from '../../services/locale.service';
 
 @Component({
@@ -8,15 +9,21 @@ import { LocaleService } from '../../services/locale.service';
 })
 export class NavComponent implements OnInit {
   show = false;
-  selectedLocale = 'us';
-  constructor(private localeService: LocaleService) {}
+  selectedLocale = 'en';
+  constructor(
+    private localeService: LocaleService,
+    private translateService: TranslateService,
+  ) {}
 
   ngOnInit(): void {}
 
-  changeLocale(event, val) {
+  changeLocale(event, lang) {
     event.preventDefault();
-    this.localeService.locale = val;
+    // already set in app.module.ts
+    // this.translateService.setDefaultLang('en');
+    this.translateService.use(lang);
+    this.localeService.locale = lang;
     this.show = false;
-    this.selectedLocale = val;
+    this.selectedLocale = lang;
   }
 }
