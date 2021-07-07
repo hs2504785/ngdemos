@@ -1,11 +1,16 @@
 <app-nav></app-nav>
 <div class="container-fluid app-wrapper">
   <header class="d-flex justify-content-between">
-    <h1>Post List</h1>
+    <h1>
+      Post List <span *ngIf="selectedLang">{{ selectedLang }}</span>
+    </h1>
     <a routerLink="add" class="btn btn-primary align-self-center">
       <i class="ti-plus"></i>
     </a>
   </header>
+  <small class="my-3 d-block"
+    >Server side multilingual fetch ( look for Header 'Accept-Language' )</small
+  >
   <table class="table table-bordered table-responsive">
     <thead class="thead-inverse">
       <tr>

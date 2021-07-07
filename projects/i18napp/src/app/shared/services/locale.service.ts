@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocaleService {
-  private _locale: string;
+  private localeSubject = new BehaviorSubject<string>('us');
+  localeStore$ = this.localeSubject.asObservable().pipe(distinctUntilChanged());
 
-  set locale(value: string) {
-    this._locale = value;
-  }
   get locale(): string {
-    return this._locale || 'us';
+    return this.localeSubject.value;
+  }
+
+  set locale(lang: string) {
+    this.localeSubject.next(lang);
   }
 }
