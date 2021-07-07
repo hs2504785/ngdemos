@@ -761,6 +761,109 @@
           }
         }
       }
+    },
+    "i18napp": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/i18napp",
+      "sourceRoot": "projects/i18napp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/i18napp",
+            "index": "projects/i18napp/src/index.html",
+            "main": "projects/i18napp/src/main.ts",
+            "polyfills": "projects/i18napp/src/polyfills.ts",
+            "tsConfig": "projects/i18napp/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/i18napp/src/favicon.ico",
+              "projects/i18napp/src/assets"
+            ],
+            "styles": [
+              "projects/i18napp/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/i18napp/src/environments/environment.ts",
+                  "with": "projects/i18napp/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "i18napp:build:production"
+            },
+            "development": {
+              "browserTarget": "i18napp:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "i18napp:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/i18napp/src/test.ts",
+            "polyfills": "projects/i18napp/src/polyfills.ts",
+            "tsConfig": "projects/i18napp/tsconfig.spec.json",
+            "karmaConfig": "projects/i18napp/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/i18napp/src/favicon.ico",
+              "projects/i18napp/src/assets"
+            ],
+            "styles": [
+              "projects/i18napp/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngdemos"
