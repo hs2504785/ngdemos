@@ -78,6 +78,12 @@ than deploy
 - Upgraded to Angular v12
 - Caching http calls
 
+## i18n Feature
+
+- Server side translation ( send Accept-Language)
+- Client Side Translation ngx-translate
+- Language specific style
+
 ## Locale Flags
 
 https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css
