@@ -1,4 +1,5 @@
 {
   "BUY": "يشتري",
-  "CONGRATULATIONS": "مبروك على طلبك"
+  "CONGRATULATIONS": "مبروك على طلبك",
+  "TITLE": "{{ value1 }} لقب"
 }
