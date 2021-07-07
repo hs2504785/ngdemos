@@ -25,5 +25,6 @@ export class NavComponent implements OnInit {
     this.localeService.locale = lang;
     this.show = false;
     this.selectedLocale = lang;
+    document.documentElement.lang = lang;
   }
 }
