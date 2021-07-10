@@ -100,6 +100,7 @@ const routes: Routes = [
         m => m.ChangeDetectionModule,
       ),
   },
+  { path: 'search-sort-paginate', loadChildren: () => import('./modules/search-sort-paginate/search-sort-paginate.module').then(m => m.SearchSortPaginateModule) },
   // Fallbak route
   {
     path: '**',
