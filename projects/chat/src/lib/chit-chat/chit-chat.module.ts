@@ -2,13 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ChitChatRoutingModule } from './chit-chat-routing.module';
-
+import { ChitChatComponent } from './chit-chat.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    ChitChatRoutingModule
-  ]
+  declarations: [ChitChatComponent],
+  imports: [CommonModule, ChitChatRoutingModule],
 })
-export class ChitChatModule { }
+export class ChitChatModule {}

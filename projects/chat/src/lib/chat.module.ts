@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { ChatComponent } from './chat.component';
-import { BasicChatComponent } from './basic-chat/basic-chat.component';
-import { ChitChatComponent } from './chit-chat/chit-chat.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -28,8 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ChatComponent, BasicChatComponent, ChitChatComponent],
+  declarations: [ChatComponent],
   imports: [RouterModule.forChild(routes)],
-  exports: [ChatComponent],
 })
 export class ChatModule {}
