@@ -1,1 +1,22 @@
-<p>search-sort-paginate works!</p>
+<div class="container">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a routerLink="frontend" routerLinkActive="active" class="nav-link"
+          >Frontend</a
+        >
+      </li>
+      <li class="nav-item">
+        <a routerLink="backend" routerLinkActive="active" class="nav-link"
+          >Backend</a
+        >
+      </li>
+    </ul>
+  </header>
+</div>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

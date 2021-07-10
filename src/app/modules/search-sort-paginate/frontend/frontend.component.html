@@ -1,0 +1,8 @@
+<ng-container *ngIf="products$ | async as products">
+  <app-products
+    [products]="products | search: filter.s | sort: filter.sort"
+    (setFilters)="filter = $event"
+    [filter]="filter"
+    [lastPage]="lastPage(products | search: filter.s)"
+  ></app-products>
+</ng-container>
