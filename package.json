@@ -29,7 +29,7 @@
     "perf:report": "lighthouse --throttling.cpuSlowdownMultiplier=2.4 --output-path=./dist/lighthouse-report.html http://localhost:4200 --budget-path=./tools/budget.json --view",
     "demodeploy": "ng build --project=demoapp --base-href \"/ngdemos/demoapp/\"",
     "i18ndeploy": "ng build --project=i18napp --base-href \"/ngdemos/i18napp/\"",
-    "predeploy": "ng build --base-href \"/ngdemos/ngapp/\"",
+    "ngappdeploy": "ng build --base-href \"/ngdemos/ngapp/\"",
     "deploy": "ngh --dir=dist --message=\"My First deploy\""
   },
   "private": true,
