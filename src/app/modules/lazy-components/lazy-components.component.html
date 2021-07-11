@@ -1,13 +1,37 @@
 <header class="m-2 d-flex justify-content-center">
   <button class="btn btn-outline-success mr-2" (click)="getLazy1()">
-    Lazy1
+    Lazy1 Component
   </button>
-  <button class="btn btn-outline-warning" (click)="getLazy2()">Lazy2</button>
+  <button class="btn btn-outline-warning" (click)="getLazy2()">
+    Lazy2 Component
+  </button>
 </header>
 
 <div class="container">
   <h1>Lazy Loaded component goes here</h1>
   <div class="card card-body">
     <ng-template #entry></ng-template>
+  </div>
+</div>
+
+<header class="m-2 mt-5 d-flex justify-content-center">
+  <a
+    routerLink="lazy1"
+    routerLinkActive="active"
+    class="btn btn-outline-success mr-2"
+    >Lazy1 Module</a
+  >
+  <a
+    routerLink="lazy2"
+    routerLinkActive="active"
+    class="btn btn-outline-warning"
+    >Lazy2 Module</a
+  >
+</header>
+
+<div class="container">
+  <h1>Lazy Loaded modules goes here</h1>
+  <div class="card card-body">
+    <router-outlet></router-outlet>
   </div>
 </div>
