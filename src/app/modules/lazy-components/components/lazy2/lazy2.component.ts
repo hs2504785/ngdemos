@@ -7,6 +7,7 @@ import {
   ViewChild,
   AfterViewInit,
   AfterContentInit,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { Lazy2aComponent } from './lazy2a/lazy2a.component';
 import { Lazy2bComponent } from './lazy2b/lazy2b.component';
@@ -20,7 +21,10 @@ import { Lazy2bComponent } from './lazy2b/lazy2b.component';
 export class Lazy2Component implements OnInit {
   @ViewChild('childContainer', { read: ViewContainerRef, static: true })
   childContainer: ViewContainerRef;
-  constructor(private cfr: ComponentFactoryResolver) {}
+  constructor(
+    private cfr: ComponentFactoryResolver,
+    private cd: ChangeDetectorRef,
+  ) {}
 
   ngOnInit() {
     const componentFactorya = this.cfr.resolveComponentFactory(Lazy2aComponent);
@@ -28,5 +32,6 @@ export class Lazy2Component implements OnInit {
     this.childContainer.clear();
     this.childContainer.createComponent(componentFactorya);
     this.childContainer.createComponent(componentFactoryb);
+    this.cd.detectChanges();
   }
 }
