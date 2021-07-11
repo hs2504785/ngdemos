@@ -105,7 +105,20 @@ const routes: Routes = [
         m => m.ChangeDetectionModule,
       ),
   },
-  { path: 'search-sort-paginate', loadChildren: () => import('./modules/search-sort-paginate/search-sort-paginate.module').then(m => m.SearchSortPaginateModule) },
+  {
+    path: 'search-sort-paginate',
+    loadChildren: () =>
+      import('./modules/search-sort-paginate/search-sort-paginate.module').then(
+        m => m.SearchSortPaginateModule,
+      ),
+  },
+  {
+    path: 'lazy-components',
+    loadChildren: () =>
+      import('./modules/lazy-components/lazy-components.module').then(
+        m => m.LazyComponentsModule,
+      ),
+  },
   // Fallbak route
   {
     path: '**',

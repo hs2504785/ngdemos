@@ -84,6 +84,8 @@ than deploy
 - Client Side Translation ngx-translate
 - Language specific style
 
+# References
+
 ## Locale Flags
 
 https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css
@@ -91,3 +93,7 @@ https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css
 ## CSS Layout
 
 https://1linelayouts.glitch.me/
+
+## Lazy Load Components
+
+https://johnpapa.net/angular-9-lazy-loading-components/
