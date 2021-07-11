@@ -50,6 +50,7 @@ const routes: Routes = [
         m => m.FileSizeModule,
       ),
   },
+  { path: 'songs', loadChildren: () => import('./modules/songs/songs.module').then(m => m.SongsModule) },
   {
     path: '**',
     redirectTo: '/',
