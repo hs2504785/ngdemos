@@ -1,0 +1,218 @@
+{
+  "configVersion": 1,
+  "timestamp": 1625980794362,
+  "index": "/ngdemos/ngapp/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/ngdemos/ngapp/1041.1cf812bf4c6b5b5ffaf8.js",
+        "/ngdemos/ngapp/1168.62d8fddc4a91f2df344f.js",
+        "/ngdemos/ngapp/168.6d0c6e5b4b4135b0408b.js",
+        "/ngdemos/ngapp/2053.12357e27c088f1a6a1bb.js",
+        "/ngdemos/ngapp/2468.03b583f360baec9b7dcb.js",
+        "/ngdemos/ngapp/2572.f45a9548e5645bee5a24.js",
+        "/ngdemos/ngapp/2920.bba3f320dcd151cfeb4d.js",
+        "/ngdemos/ngapp/2935.43144d6d6a3965b77299.js",
+        "/ngdemos/ngapp/3070.c94a01b430e7f647203e.js",
+        "/ngdemos/ngapp/3118.5d1ba25fee2021834acb.js",
+        "/ngdemos/ngapp/3681.e7e00dd8265f9008db66.js",
+        "/ngdemos/ngapp/3841.29befb6426c120171612.js",
+        "/ngdemos/ngapp/3915.2cc0c4e98cc7e321cdfa.js",
+        "/ngdemos/ngapp/4443.5125a306b56b338e552d.js",
+        "/ngdemos/ngapp/447.5aeb2e432443d583abc6.js",
+        "/ngdemos/ngapp/4752.996361cd32e353f2a9d5.js",
+        "/ngdemos/ngapp/4784.5c5bc174fa50a874a32e.js",
+        "/ngdemos/ngapp/5291.47a7b3bf9bceea669871.js",
+        "/ngdemos/ngapp/5368.04d932c5370230ee1c35.js",
+        "/ngdemos/ngapp/5693.7c4b9c6a863c05721461.js",
+        "/ngdemos/ngapp/5901.112835a0090f21d7b6da.js",
+        "/ngdemos/ngapp/6042.9663523676300b5e42b3.js",
+        "/ngdemos/ngapp/6049.d63d49f7647b1c47add9.js",
+        "/ngdemos/ngapp/6140.b7e33e833205e6fc0025.js",
+        "/ngdemos/ngapp/6157.dfc788d6a9b7a485842b.js",
+        "/ngdemos/ngapp/6347.7d104df73a6bd0c2f8cf.js",
+        "/ngdemos/ngapp/6547.f3f0bfd6c41451467128.js",
+        "/ngdemos/ngapp/664.3b44cfe94d23d833acab.js",
+        "/ngdemos/ngapp/6679.2a9d244dbabf9eccb44b.js",
+        "/ngdemos/ngapp/6757.5013bd3dcf31dae13423.js",
+        "/ngdemos/ngapp/6827.3aee7ed987af74bb17ec.js",
+        "/ngdemos/ngapp/6922.41753db75fe6840dc3f0.js",
+        "/ngdemos/ngapp/6982.cc4bb1a15e33f1eac5d4.js",
+        "/ngdemos/ngapp/7070.6bdab876422d22f88951.js",
+        "/ngdemos/ngapp/7136.d80fef2cf6ba93b4a184.js",
+        "/ngdemos/ngapp/7199.aff2886226d643a15e9b.js",
+        "/ngdemos/ngapp/7307.3167837ba79e6adfcf94.js",
+        "/ngdemos/ngapp/7327.f74741d0cc12f8085376.js",
+        "/ngdemos/ngapp/7583.13c9a74dd4e2c18b9c5c.js",
+        "/ngdemos/ngapp/7743.800793ab70a896682d25.js",
+        "/ngdemos/ngapp/8203.ef15dd2dd91a74e6694d.js",
+        "/ngdemos/ngapp/8545.88e702cac2976aec6277.js",
+        "/ngdemos/ngapp/8590.f3e2c994dee56927bdf0.js",
+        "/ngdemos/ngapp/8592.4a380a4b81ca582da42b.js",
+        "/ngdemos/ngapp/8824.fcf28de2977dca9d2b73.js",
+        "/ngdemos/ngapp/9199.9255d26787c22d476b52.js",
+        "/ngdemos/ngapp/9232.c019a0244426c629b92b.js",
+        "/ngdemos/ngapp/9550.6c383b789195f50b870a.js",
+        "/ngdemos/ngapp/9629.d33db8b1901c25e3d767.js",
+        "/ngdemos/ngapp/994.f750f252d89ed70b6027.js",
+        "/ngdemos/ngapp/favicon.ico",
+        "/ngdemos/ngapp/index.html",
+        "/ngdemos/ngapp/main.3f5b59aceea493b4c0c7.js",
+        "/ngdemos/ngapp/manifest.webmanifest",
+        "/ngdemos/ngapp/polyfills.5f43f6dbebd1ef38d8a8.js",
+        "/ngdemos/ngapp/runtime.ca249b9f06d95bf364f4.js",
+        "/ngdemos/ngapp/styles.563dbda854e883263c69.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/ngdemos/ngapp/assets/icons/icon-128x128.png",
+        "/ngdemos/ngapp/assets/icons/icon-144x144.png",
+        "/ngdemos/ngapp/assets/icons/icon-152x152.png",
+        "/ngdemos/ngapp/assets/icons/icon-192x192.png",
+        "/ngdemos/ngapp/assets/icons/icon-384x384.png",
+        "/ngdemos/ngapp/assets/icons/icon-512x512.png",
+        "/ngdemos/ngapp/assets/icons/icon-72x72.png",
+        "/ngdemos/ngapp/assets/icons/icon-96x96.png",
+        "/ngdemos/ngapp/themify.29b39089170885ae2967.woff",
+        "/ngdemos/ngapp/themify.9bad94440d49256265a5.eot",
+        "/ngdemos/ngapp/themify.eda8b94308c6f538f04a.ttf",
+        "/ngdemos/ngapp/themify.f0fc8c798eac5636249c.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-performance",
+      "patterns": [
+        "\\/assets\\/i18n\\/.*",
+        "\\/api\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    },
+    {
+      "name": "api-freshness",
+      "patterns": [
+        "\\/api\\/todos"
+      ],
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "timeoutMs": 10000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/ngdemos/ngapp/1041.1cf812bf4c6b5b5ffaf8.js": "72225a9244ee90d8b7fb95fd15e366a0b3f19a00",
+    "/ngdemos/ngapp/1168.62d8fddc4a91f2df344f.js": "e8ea49d0beea4ddd2bdd7070502d5b0d0a20085f",
+    "/ngdemos/ngapp/168.6d0c6e5b4b4135b0408b.js": "19fffaa75e4160974ce27c6d3e29302ebbc686b5",
+    "/ngdemos/ngapp/2053.12357e27c088f1a6a1bb.js": "ce6c429df655887aeabf3fec111a77a43cc773a8",
+    "/ngdemos/ngapp/2468.03b583f360baec9b7dcb.js": "62476d6884d0be85064468e56c106b6243b34ca5",
+    "/ngdemos/ngapp/2572.f45a9548e5645bee5a24.js": "0bf60a1c73d4c7ce18e67b40ca8c9b990b874474",
+    "/ngdemos/ngapp/2920.bba3f320dcd151cfeb4d.js": "44c64688e38bdbfc3d86638413bc75be317a313e",
+    "/ngdemos/ngapp/2935.43144d6d6a3965b77299.js": "2bcc3edf2d56c6edca08121c744e4a73ebb3d7f6",
+    "/ngdemos/ngapp/3070.c94a01b430e7f647203e.js": "cc3dfcc6bece3a25c93d07fa89133f0d4a073f55",
+    "/ngdemos/ngapp/3118.5d1ba25fee2021834acb.js": "7d262a2c376fef603cdb04be1d3ce025091f57bd",
+    "/ngdemos/ngapp/3681.e7e00dd8265f9008db66.js": "5a0ae5cde062ac8272d88a276614b1ad00096193",
+    "/ngdemos/ngapp/3841.29befb6426c120171612.js": "c5fe3bd16c758ffe9416c0491f743b0ca3af4cec",
+    "/ngdemos/ngapp/3915.2cc0c4e98cc7e321cdfa.js": "cdccab46707d1e1a56a02a1b8842e96d9b799a22",
+    "/ngdemos/ngapp/4443.5125a306b56b338e552d.js": "d555653bf08d6b1eea287dd9c4b478df50c7972b",
+    "/ngdemos/ngapp/447.5aeb2e432443d583abc6.js": "8c7fad83bdf2dd637a444722136a9c884d96ccbb",
+    "/ngdemos/ngapp/4752.996361cd32e353f2a9d5.js": "b32b6ebe15064a722c7be214715cd1f22af15321",
+    "/ngdemos/ngapp/4784.5c5bc174fa50a874a32e.js": "bd9252f67b52c40aa2b4db173bb20f0c2786d1ac",
+    "/ngdemos/ngapp/5291.47a7b3bf9bceea669871.js": "b1ddde2f238c9d9d0485a3ab8da76b5fbf397c98",
+    "/ngdemos/ngapp/5368.04d932c5370230ee1c35.js": "398f812e411608caf1cb5a13523e376538811b15",
+    "/ngdemos/ngapp/5693.7c4b9c6a863c05721461.js": "a227c51a0b6e847d6dfc49b866b5871f80bb8893",
+    "/ngdemos/ngapp/5901.112835a0090f21d7b6da.js": "f06f771957d8803e56799c63e0cf990e7756cb18",
+    "/ngdemos/ngapp/6042.9663523676300b5e42b3.js": "8e344b7ec2a3c92d337785dc94630cb92523da65",
+    "/ngdemos/ngapp/6049.d63d49f7647b1c47add9.js": "ef145dc1a28f2c76fdd8eadd63e28a673b9da2b7",
+    "/ngdemos/ngapp/6140.b7e33e833205e6fc0025.js": "049322f07e503127d2cad0cd1c0fbb6173c9f641",
+    "/ngdemos/ngapp/6157.dfc788d6a9b7a485842b.js": "a50eef20d731a22ba2903aca1de9a9a314d9a1bb",
+    "/ngdemos/ngapp/6347.7d104df73a6bd0c2f8cf.js": "86de67400a652c7656b7d7c456ce1d053f142955",
+    "/ngdemos/ngapp/6547.f3f0bfd6c41451467128.js": "fab354f992ee9e2a96c63b445ab023e7be56fa00",
+    "/ngdemos/ngapp/664.3b44cfe94d23d833acab.js": "282255dad11946387f4ed91e5ddf8e64d23f8543",
+    "/ngdemos/ngapp/6679.2a9d244dbabf9eccb44b.js": "60fc9964d66d19a125a4f239fc321e147325f756",
+    "/ngdemos/ngapp/6757.5013bd3dcf31dae13423.js": "49019f4227c6237b9a861343638885a9e5f06d3b",
+    "/ngdemos/ngapp/6827.3aee7ed987af74bb17ec.js": "489c190b59572a88963f60d1784c2d5969c0e588",
+    "/ngdemos/ngapp/6922.41753db75fe6840dc3f0.js": "a0e2087c05f65cc39a54c91ef3f8e96cbb863ba7",
+    "/ngdemos/ngapp/6982.cc4bb1a15e33f1eac5d4.js": "f7665e1e1cd2039a41c0d2ee7cf5856598d86afa",
+    "/ngdemos/ngapp/7070.6bdab876422d22f88951.js": "1c78d667ea7d6e3d2985e299f22d9b6198634a6a",
+    "/ngdemos/ngapp/7136.d80fef2cf6ba93b4a184.js": "9369d8978e1eb7a16aee1432ea36258313316f90",
+    "/ngdemos/ngapp/7199.aff2886226d643a15e9b.js": "dd5b7beccf4ea8aa6786d1d641cceddf222fa21d",
+    "/ngdemos/ngapp/7307.3167837ba79e6adfcf94.js": "ebe7d8a3920f778dbb8a655bd95d921b4ad900e2",
+    "/ngdemos/ngapp/7327.f74741d0cc12f8085376.js": "e38a3061d65de30334975b30dc2a441b4c59548a",
+    "/ngdemos/ngapp/7583.13c9a74dd4e2c18b9c5c.js": "0f10964c178bf169a3013a5cc1d78348eda6579c",
+    "/ngdemos/ngapp/7743.800793ab70a896682d25.js": "09bbe91ec9ab807f41155f96f952d1c7ab365b93",
+    "/ngdemos/ngapp/8203.ef15dd2dd91a74e6694d.js": "b55789743aef0ce8b952682b0b85ff50f40e5dca",
+    "/ngdemos/ngapp/8545.88e702cac2976aec6277.js": "58502d8a4258bdb9e6a0f21160b80c98534ca52b",
+    "/ngdemos/ngapp/8590.f3e2c994dee56927bdf0.js": "e21a0000cb9ae0101927aa5368da0371f42d749f",
+    "/ngdemos/ngapp/8592.4a380a4b81ca582da42b.js": "fb007ed57308ac63bb8282315602150a615e03cc",
+    "/ngdemos/ngapp/8824.fcf28de2977dca9d2b73.js": "25c271ea5e7dd600bc1705a08382b2cd9d1e3e1d",
+    "/ngdemos/ngapp/9199.9255d26787c22d476b52.js": "8bb0a099e2ab496d1d135bc05684451216a090f8",
+    "/ngdemos/ngapp/9232.c019a0244426c629b92b.js": "c74f4781bb608572dff29c39f428c82948e3c5bf",
+    "/ngdemos/ngapp/9550.6c383b789195f50b870a.js": "5055a99d955859a8ebb0f63efed5a28eb4d72e12",
+    "/ngdemos/ngapp/9629.d33db8b1901c25e3d767.js": "6002c0482a1521fe1c0414dbf7442d9e5e2ce9da",
+    "/ngdemos/ngapp/994.f750f252d89ed70b6027.js": "e70b64d3460d25e1c4b758a9b355c816f237ec97",
+    "/ngdemos/ngapp/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/ngdemos/ngapp/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/ngdemos/ngapp/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/ngdemos/ngapp/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/ngdemos/ngapp/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/ngdemos/ngapp/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/ngdemos/ngapp/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/ngdemos/ngapp/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/ngdemos/ngapp/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/ngdemos/ngapp/index.html": "750e225a6f6d61148b29a1e11d946ca7ab0b0f13",
+    "/ngdemos/ngapp/main.3f5b59aceea493b4c0c7.js": "7a372e6ae8ebd7be9c4517ed468456cac9c8fb06",
+    "/ngdemos/ngapp/manifest.webmanifest": "133d5527e2c2a03de426ec08dcc5e9183b9e8f1d",
+    "/ngdemos/ngapp/polyfills.5f43f6dbebd1ef38d8a8.js": "2f496a35cbab49bd7c35cd58aec7337ad1afe84c",
+    "/ngdemos/ngapp/runtime.ca249b9f06d95bf364f4.js": "81ce9df72adf2be173f2e3129bd8169ba4285409",
+    "/ngdemos/ngapp/styles.563dbda854e883263c69.css": "a6d8a1e16720ea8ab348b368d792f2f27c2bfe7b",
+    "/ngdemos/ngapp/themify.29b39089170885ae2967.woff": "9394f35bd2addd24666b79bfc36d4f9d247cb01d",
+    "/ngdemos/ngapp/themify.9bad94440d49256265a5.eot": "df12a0942cf1933f0915fe3d910fa2379f092d83",
+    "/ngdemos/ngapp/themify.eda8b94308c6f538f04a.ttf": "5bb1fe69452a484566a81076af7567728fe7e43b",
+    "/ngdemos/ngapp/themify.f0fc8c798eac5636249c.svg": "f5af112fb5aa7c4f665acc21a38b035bbb62327c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

@@ -1,0 +1,1 @@
+addEventListener("message",({data:e})=>{let t=e.canvas.getContext("2d");t.beginPath();for(let a=0;a<691;a++)for(let e=0;e<491;e++)t.fillRect(a,e,50,50)});
