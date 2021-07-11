@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   ViewContainerRef,
   ComponentFactoryResolver,
+  ViewChild,
 } from '@angular/core';
 
 @Component({
@@ -13,27 +14,26 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LazyComponentsComponent {
-  constructor(
-    private viewContainerRef: ViewContainerRef,
-    private cfr: ComponentFactoryResolver,
-  ) {}
+  @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
+
+  constructor(private cfr: ComponentFactoryResolver) {}
 
   async getLazy1() {
-    this.viewContainerRef.clear();
+    this.entry.clear();
     const { Lazy1Component } = await import(
       './components/lazy1/lazy1.component'
     );
-    this.viewContainerRef.createComponent(
+    this.entry.createComponent(
       this.cfr.resolveComponentFactory(Lazy1Component),
     );
   }
 
   async getLazy2() {
-    this.viewContainerRef.clear();
+    this.entry.clear();
     const { Lazy2Component } = await import(
       './components/lazy2/lazy2.component'
     );
-    this.viewContainerRef.createComponent(
+    this.entry.createComponent(
       this.cfr.resolveComponentFactory(Lazy2Component),
     );
   }
