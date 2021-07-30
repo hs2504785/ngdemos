@@ -2,29 +2,33 @@
   <header class="d-flex justify-content-between">
     <h1>Scroll down to render more images</h1>
   </header>
-  <div
-    class="d-flex p-4 mb-2 overflow-hidden shadow-sm"
-    *ngFor="let photo of photos$ | async"
-  >
-    <div class="flex-shrink-0 mr-2">
-      <img [src]="photo.thumbnailUrl" alt="photo.title" />
-    </div>
-    <div class="flex-grow-1 ml-2">
-      <div>
-        <strong>{{ photo.title }}</strong>
-        <br />
-        <small
-          ><a [href]="photo.url" target="_blank">{{ photo.url }}</a></small
-        >
+  <ng-container *ngFor="let photo of photos$ | async; trackBy: trackByIndex">
+    <div
+      class="d-flex p-4 mb-2 overflow-hidden shadow-sm image-item"
+      intersectionObserver
+      [intersectionDebounce]="0"
+      (visibilityChange)="onVisibilityChanged(photo, $event)"
+    >
+      <div class="flex-shrink-0 mr-2">
+        <img [src]="photo.thumbnailUrl" alt="photo.title" />
       </div>
-      <div>
-        <button class="btn btn-primary mr-2">
-          <i class="ti-pencil"></i>
-        </button>
-        <button class="btn btn-danger">
-          <i class="ti-trash"></i>
-        </button>
+      <div class="flex-grow-1 ml-2">
+        <div>
+          <strong>{{ photo.title }}</strong>
+          <br />
+          <small
+            ><a [href]="photo.url" target="_blank">{{ photo.url }}</a></small
+          >
+        </div>
+        <div>
+          <button class="btn btn-primary mr-2">
+            <i class="ti-pencil"></i>
+          </button>
+          <button class="btn btn-danger">
+            <i class="ti-trash"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
 </div>
