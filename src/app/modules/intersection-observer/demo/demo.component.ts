@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IntersectionStatus } from 'src/app/shared/directives/from-intersection-observer';
-import { DataService } from '../../shared/services/data.service';
+import { DataService } from '../../../shared/services/data.service';
 
 @Component({
   selector: 'app-demo',

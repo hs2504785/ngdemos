@@ -66,9 +66,9 @@ const routes: Routes = [
   {
     path: 'intersection-observer',
     loadChildren: () =>
-      import('./intersection-observer/intersection-observer.module').then(
-        m => m.IntersectionObserverModule,
-      ),
+      import(
+        './modules/intersection-observer/intersection-observer.module'
+      ).then(m => m.IntersectionObserverModule),
   },
   {
     path: 'virtual-scroll',

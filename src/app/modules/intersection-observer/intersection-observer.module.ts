@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { IntersectionObserverRoutingModule } from './intersection-observer-routing.module';
 import { IntersectionObserverComponent } from './intersection-observer.component';
-import { IntersectionObserverDirective } from '../shared/directives/intersection-observer.directive';
+import { IntersectionObserverDirective } from '../../shared/directives/intersection-observer.directive';
 import { SampleComponent } from './sample/sample.component';
 import { DemoComponent } from './demo/demo.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
