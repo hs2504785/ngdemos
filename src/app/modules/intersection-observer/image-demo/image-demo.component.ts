@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IntersectionStatus } from 'src/app/shared/directives/from-intersection-observer';
+import { IntersectionStatus } from 'src/app/shared/directives/intersection-observer/from-intersection-observer';
 import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
@@ -20,10 +20,11 @@ export class ImageDemoComponent implements OnInit {
   }
 
   onVisibilityChanged(index: string, status: IntersectionStatus) {
+    console.log('HER', index);
     this.visibilityStatus[index] = status;
   }
 
   trackByIndex(index: number, item) {
-    return index;
+    return item.id;
   }
 }

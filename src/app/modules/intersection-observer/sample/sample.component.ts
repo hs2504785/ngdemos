@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IntersectionStatus } from 'src/app/shared/directives/from-intersection-observer';
+import { IntersectionStatus } from 'src/app/shared/directives/intersection-observer/from-intersection-observer';
 
 @Component({
   selector: 'app-sample',

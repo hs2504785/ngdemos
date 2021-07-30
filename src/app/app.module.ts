@@ -1,4 +1,4 @@
-import { ApplicationRef, APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -47,16 +47,16 @@ import { HomeModule } from './home/home.module';
 })
 export class AppModule {
   // change detection profiling
-  constructor(applicationRef: ApplicationRef) {
-    const originalTick = applicationRef.tick;
-    applicationRef.tick = function () {
-      const windowPerfomance = window.performance;
-      const before = windowPerfomance.now();
-      const retValue = originalTick.apply(this, arguments);
-      const after = windowPerfomance.now();
-      const runTime = after - before;
-      window.console.log('CHANGE DETECTION TIME', runTime);
-      return retValue;
-    };
-  }
+  // constructor(applicationRef: ApplicationRef) {
+  //   const originalTick = applicationRef.tick;
+  //   applicationRef.tick = function () {
+  //     const windowPerfomance = window.performance;
+  //     const before = windowPerfomance.now();
+  //     const retValue = originalTick.apply(this, arguments);
+  //     const after = windowPerfomance.now();
+  //     const runTime = after - before;
+  //     window.console.log('CHANGE DETECTION TIME', runTime);
+  //     return retValue;
+  //   };
+  // }
 }

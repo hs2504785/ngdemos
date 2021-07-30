@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IntersectionStatus } from 'src/app/shared/directives/from-intersection-observer';
+import { IntersectionStatus } from 'src/app/shared/directives/intersection-observer/from-intersection-observer';
 import { DataService } from '../../../shared/services/data.service';
 
 @Component({
