@@ -16,7 +16,7 @@ import {
 } from './from-intersection-observer';
 
 @Directive({
-  selector: '[intersectionObserver]',
+  selector: '[appIntersectionObserver]',
 })
 export class IntersectionObserverDirective implements OnInit, OnDestroy {
   @Input() intersectionDebounce = 0;

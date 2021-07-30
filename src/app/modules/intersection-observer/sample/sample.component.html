@@ -2,7 +2,7 @@
   <h1>Sample with 1000 records</h1>
   <ng-container *ngFor="let item of list; trackBy: trackByIndex">
     <div
-      intersectionObserver
+      appIntersectionObserver
       [intersectionDebounce]="0"
       (visibilityChange)="onVisibilityChanged(item, $event)"
       class="max-w-sm rounded overflow-hidden shadow-lg px-5 py-5 m-2"

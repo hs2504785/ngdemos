@@ -5,7 +5,7 @@
   <ng-container *ngFor="let photo of photos$ | async; trackBy: trackByIndex">
     <div
       class="d-flex p-4 mb-2 overflow-hidden shadow-sm image-item"
-      intersectionObserver
+      appIntersectionObserver
       [intersectionDebounce]="0"
       (visibilityChange)="onVisibilityChanged(photo, $event)"
     >
