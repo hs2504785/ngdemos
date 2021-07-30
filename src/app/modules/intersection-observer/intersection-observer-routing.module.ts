@@ -20,6 +20,11 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        path: 'image-demo',
+        loadChildren: () =>
+          import('./image-demo/image-demo.module').then(m => m.ImageDemoModule),
+      },
+      {
         path: '',
         redirectTo: 'sample',
       },
