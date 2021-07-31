@@ -30,7 +30,8 @@
     "demodeploy": "ng build --project=demoapp --base-href \"/ngdemos/demoapp/\"",
     "i18ndeploy": "ng build --project=i18napp --base-href \"/ngdemos/i18napp/\"",
     "ngappdeploy": "ng build --base-href \"/ngdemos/ngapp/\"",
-    "deploy": "ngh --dir=dist --message=\"My First deploy\""
+    "deploy": "ngh --dir=dist --message=\"My First deploy\"",
+    "gzipmainapp": "gzipper c --verbose ./dist/ngapp"
   },
   "private": true,
   "dependencies": {
@@ -91,6 +92,7 @@
     "gulp": "^4.0.2",
     "gulp-purgecss": "^4.0.3",
     "gulp-purifycss": "^0.2.0",
+    "gzipper": "^5.0.0",
     "inquirer": "^6.2.2",
     "inquirer-autocomplete-prompt": "^1.0.1",
     "jasmine-core": "~3.7.1",
