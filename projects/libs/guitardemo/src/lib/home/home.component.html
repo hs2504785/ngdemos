@@ -6,6 +6,6 @@
   </section>
   <!-- guitars list section -->
   <section>
-    <app-guitars-list [guitars]="items"></app-guitars-list>
+    <app-guitars-list [guitars]="items$ | async"></app-guitars-list>
   </section>
 </main>

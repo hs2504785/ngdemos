@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Guitar } from '../models/guitar.model';
+import { GuitarInterface } from '../models/guitar.model';
 
 @Component({
   selector: 'app-guitars-list',
@@ -7,7 +7,7 @@ import { Guitar } from '../models/guitar.model';
   styleUrls: ['./guitars-list.component.scss'],
 })
 export class GuitarsListComponent implements OnInit {
-  @Input() guitars: Guitar[] = [];
+  @Input() guitars: GuitarInterface[] = [];
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { Guitar } from '../models/guitar.model';
-import { GetItems } from '../store/actions';
+import { Observable } from 'rxjs';
+import { GuitarInterface } from '../models/guitar.model';
+import { getItems } from '../state/guitar.actions';
+import { GuitarStateInterface } from '../state/guitar.reducer';
+import { selectGuitars } from '../state/guitar.selectors';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +13,12 @@ import { GetItems } from '../store/actions';
 })
 export class HomeComponent implements OnInit {
   bannersIndex: number[] = [1, 2, 3, 4];
-  items: Guitar[] = [];
-  constructor(private store: Store<any>) {
-    store.pipe(select('shop')).subscribe((state) => (this.items = state.items));
-  }
+  items$: Observable<GuitarInterface[]> = this.store.pipe(
+    select(selectGuitars),
+  );
+  constructor(private store: Store<GuitarStateInterface>) {}
 
   ngOnInit(): void {
-    this.store.dispatch(new GetItems());
+    this.store.dispatch(getItems());
   }
 }

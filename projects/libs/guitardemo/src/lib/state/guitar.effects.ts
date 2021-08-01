@@ -1,29 +1,26 @@
 import { mergeMap, map, catchError } from 'rxjs/operators';
-import { ActionTypes } from './actions';
 import { GuitarsService } from './../services/guitars.service';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
+import { getItems, loadItems } from './guitar.actions';
 
 @Injectable()
-export class ShopEffects {
+export class GuitarEffects {
   constructor(
     private actions$: Actions,
-    private guitarsService: GuitarsService
+    private guitarsService: GuitarsService,
   ) {}
 
   loadGuitars$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ActionTypes.LoadItems),
+      ofType(getItems),
       mergeMap(() =>
         this.guitarsService.getAll().pipe(
-          map((guitars) => ({
-            type: ActionTypes.LoadSuccess,
-            payload: guitars,
-          })),
-          catchError(() => EMPTY)
-        )
-      )
-    )
+          map((guitars: any) => loadItems({ payload: guitars })),
+          catchError(() => EMPTY),
+        ),
+      ),
+    ),
   );
 }

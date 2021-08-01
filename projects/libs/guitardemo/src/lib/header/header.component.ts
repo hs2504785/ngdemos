@@ -9,7 +9,9 @@ import { select, Store } from '@ngrx/store';
 export class HeaderComponent implements OnInit {
   cart = [];
   constructor(private store: Store<any>) {
-    store.pipe(select('shop')).subscribe((state) => (this.cart = state.cart));
+    this.store
+      .pipe(select('guitar'))
+      .subscribe(state => (this.cart = state.cart));
   }
 
   ngOnInit(): void {}

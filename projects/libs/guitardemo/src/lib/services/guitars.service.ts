@@ -7,6 +7,6 @@ export class GuitarsService {
   constructor(private http: HttpClient) {}
 
   getAll() {
-    return this.http.get('http://localhost:4000/guitars');
+    return this.http.get('http://localhost:3000/guitars');
   }
 }

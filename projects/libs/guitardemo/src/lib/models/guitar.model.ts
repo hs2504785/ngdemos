@@ -1,4 +1,4 @@
-export interface Guitar {
+export interface GuitarInterface {
   name: string;
   price: number;
   description: string;
