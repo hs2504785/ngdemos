@@ -854,6 +854,51 @@
           }
         }
       }
+    },
+    "@libs/guitardemo": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/libs/guitardemo",
+      "sourceRoot": "projects/libs/guitardemo/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/libs/guitardemo/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/libs/guitardemo/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/libs/guitardemo/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/libs/guitardemo/src/test.ts",
+            "tsConfig": "projects/libs/guitardemo/tsconfig.spec.json",
+            "karmaConfig": "projects/libs/guitardemo/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/libs/guitardemo/**/*.ts",
+              "projects/libs/guitardemo/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngdemos"

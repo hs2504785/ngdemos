@@ -36,6 +36,12 @@ https://hs2504785.github.io/ngdemos/fitness
 ng generate module customers --route customers --module app.module
 ```
 
+## Generate Library
+
+```
+ng generate library @libs/guitardemo
+```
+
 ## Prettier
 
 ```

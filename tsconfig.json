@@ -4,6 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@libs/guitardemo": [
+        "dist/libs/guitardemo/libs-guitardemo",
+        "dist/libs/guitardemo"
+      ],
       "@libs/shared": [
         "dist/libs/shared/libs-shared",
         "dist/libs/shared"

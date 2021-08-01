@@ -4,6 +4,13 @@ import { TodoResolver } from 'projects/todo/src/lib/services/todo.resolver';
 
 const routes: Routes = [
   {
+    path: 'guitardemo',
+    loadChildren: () =>
+      import('projects/libs/guitardemo/src/public-api').then(
+        m => m.GuitardemoModule,
+      ),
+  },
+  {
     path: 'chat',
     loadChildren: () =>
       import('projects/chat/src/public-api').then(m => m.ChatModule),
