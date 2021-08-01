@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GuitardemoComponent } from './guitardemo.component';
+import { GuitarsListComponent } from './guitars-list/guitars-list.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -22,7 +25,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GuitardemoComponent],
+  declarations: [
+    GuitardemoComponent,
+    HeaderComponent,
+    HomeComponent,
+    GuitarsListComponent,
+  ],
   imports: [RouterModule.forChild(routes)],
 })
 export class GuitardemoModule {}
