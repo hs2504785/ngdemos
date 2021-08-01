@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { GuitarInterface } from '../models/guitar.model';
+import { selectCart } from '../state/guitar.selectors';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +10,8 @@ import { select, Store } from '@ngrx/store';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  cart = [];
-  constructor(private store: Store<any>) {
-    this.store
-      .pipe(select('guitar'))
-      .subscribe(state => (this.cart = state.cart));
-  }
+  cart$: Observable<GuitarInterface[]> = this.store.pipe(select(selectCart));
+  constructor(private store: Store<any>) {}
 
   ngOnInit(): void {}
 }

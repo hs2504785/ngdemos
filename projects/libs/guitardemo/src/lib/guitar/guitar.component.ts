@@ -2,7 +2,7 @@ import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { GuitarInterface } from '../models/guitar.model';
-import { addToCart } from '../state/guitar.actions';
+import { addToCart, removeFromCart } from '../state/guitar.actions';
 
 @Component({
   selector: 'app-guitar',
@@ -19,7 +19,7 @@ export class GuitarComponent implements OnInit {
   }
 
   removeFromCart(item: GuitarInterface) {
-    // this.store.dispatch(new RemoveFromCart(item));
+    this.store.dispatch(removeFromCart({ payload: item }));
     this.inCart = false;
   }
 

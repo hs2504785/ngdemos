@@ -7,7 +7,9 @@
     <ul>
       <li>
         <img src="../../../../../../assets/images/case.png" alt="cart" />
-        <span class="badge" *ngIf="cart.length > 0"> {{ cart.length }}</span>
+        <span *ngIf="cart$ | async as cart" class="badge">
+          {{ cart.length }}</span
+        >
       </li>
     </ul>
   </div>
