@@ -1,1 +1,35 @@
-<p>render-circle works!</p>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1>Display Circles</h1>
+
+    <div>
+      <!-- <button
+        type="button"
+        class="btn btn-warning mr-2"
+        (click)="runMainThread()"
+      >
+        Main Thread Task
+      </button>
+      <button type="button" class="btn btn-success" (click)="runWorkerThread()">
+        Web Worker Task
+      </button> -->
+    </div>
+  </div>
+
+  <div class="main text-center">
+    <div id="first">
+      <div class="innerContainer">
+        <button class="btn btn-primary" (click)="longLoop()">
+          Start Long Process
+        </button>
+      </div>
+      <div class="innerContainer">
+        <textarea
+          rows="10"
+          [ngModel]="longProcessOutput"
+          class="form-control"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+</div>
