@@ -6,7 +6,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import lagRadar from './services/lagRadar';
-import { LongRunningService } from './services/long-running.service';
+import { crazyBusyFunction } from './services/long-running.helper';
 
 const crazyFactor = 1000000;
 
@@ -19,7 +19,7 @@ const crazyFactor = 1000000;
 export class LongRunningComponent implements OnInit {
   @ViewChild('output') output: ElementRef;
   start: any;
-  constructor(private longRunningService: LongRunningService) {}
+  constructor() {}
 
   ngOnInit(): void {
     console.log('here');
@@ -36,7 +36,7 @@ export class LongRunningComponent implements OnInit {
   runMainThread() {
     this.output.nativeElement.textContent = 'Wait...';
     this.start = performance.now();
-    const result = this.longRunningService.crazyBusyFunction(crazyFactor);
+    const result = crazyBusyFunction(crazyFactor);
     this.setResult('Main thread', result, performance.now() - this.start);
   }
 
