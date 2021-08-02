@@ -66,6 +66,8 @@ MIT
 @angular/router
 MIT
 
+@libs/guitardemo
+
 @ngrx/data
 MIT
 
