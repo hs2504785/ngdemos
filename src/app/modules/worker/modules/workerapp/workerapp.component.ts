@@ -6,7 +6,6 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'lib-workerapp',
   templateUrl: './workerapp.component.html',
   styleUrls: [
     '../../../../../../node_modules/nvd3/build/nv.d3.css',

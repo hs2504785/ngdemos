@@ -22,6 +22,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'long-running',
+        loadChildren: () =>
+          import('./modules/long-running/long-running.module').then(
+            m => m.LongRunningModule,
+          ),
+      },
+      {
         path: '',
         redirectTo: 'workersample',
       },

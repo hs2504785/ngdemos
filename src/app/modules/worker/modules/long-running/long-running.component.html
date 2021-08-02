@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1>Long Running Task Demo</h1>
+
+    <div>
+      <button
+        type="button"
+        class="btn btn-warning mr-2"
+        (click)="runMainThread()"
+      >
+        Main Thread Task
+      </button>
+      <button type="button" class="btn btn-success" (click)="runWorkerThread()">
+        Web Worker Task
+      </button>
+    </div>
+  </div>
+
+  <div class="main text-center">
+    <div #output class="text-muted">Nothing to display... yet</div>
+    <div id="longTask"></div>
+  </div>
+</div>
