@@ -13,12 +13,32 @@
     ],
     "resourceSizes": [
       {
+        "resourceType": "document",
+        "budget": 15
+      },
+      {
         "resourceType": "script",
-        "budget": 125
+        "budget": 825
+      },
+      {
+        "resourceType": "image",
+        "budget": 0
+      },
+      {
+        "resourceType": "stylesheet",
+        "budget": 88
+      },
+      {
+        "resourceType": "media",
+        "budget": 0
+      },
+      {
+        "resourceType": "font",
+        "budget": 0
       },
       {
         "resourceType": "total",
-        "budget": 300
+        "budget": 928
       }
     ],
     "resourceCounts": [
