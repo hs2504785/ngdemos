@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
 } from '@angular/core';
+import { keepCounting } from '../services/long-running.helper';
 
 @Component({
   selector: 'app-render-circle',
@@ -29,6 +30,8 @@ export class RenderCircleComponent implements OnInit {
         new URL('./services/circle.worker', import.meta.url),
       );
       this.worker.onmessage = ({ data }) => {
+        console.log('worker thread', data);
+
         this.longProcessOutput += `${data}` + '\n';
         this.cd.detectChanges();
       };
@@ -38,7 +41,18 @@ export class RenderCircleComponent implements OnInit {
     }
   }
 
-  longLoop() {
+  mainThreadLoop() {
+    this.longProcessOutput = '';
+    // the following line starts the long process on the Web Worker
+    // by sending a message to the Web Worker
+    keepCounting(num => {
+      console.log('main thread', num);
+      this.longProcessOutput += `${num}` + '\n';
+      this.cd.detectChanges();
+    }, 9000000000);
+  }
+
+  workerLoop() {
     this.longProcessOutput = '';
     // the following line starts the long process on the Web Worker
     // by sending a message to the Web Worker

@@ -6,7 +6,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import lagRadar from './services/lagRadar';
-import { crazyBusyFunction } from './services/long-running.helper';
+import { crazyBusyFunction } from '../services/long-running.helper';
 
 const crazyFactor = 1000000;
 
