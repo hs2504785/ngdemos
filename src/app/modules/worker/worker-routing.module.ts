@@ -29,6 +29,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'render-circle',
+        loadChildren: () =>
+          import('./modules/render-circle/render-circle.module').then(
+            m => m.RenderCircleModule,
+          ),
+      },
+      {
         path: '',
         redirectTo: 'workersample',
       },
