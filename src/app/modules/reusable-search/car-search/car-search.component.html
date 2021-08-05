@@ -1,0 +1,17 @@
+<div class="p-2">
+  <h1>Search Car</h1>
+</div>
+
+<div class="container-fluid">
+  <input
+    class="form-control"
+    (input)="searchCars($event.target.value)"
+    placeholder="Type car name"
+  />
+
+  <ul class="list-group mt-2 w-50">
+    <li *ngFor="let car of cars$ | async" class="list-group-item">
+      {{ car }}
+    </li>
+  </ul>
+</div>
