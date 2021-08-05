@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { asapScheduler, Observable, of, Subject } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { search } from 'src/app/shared/utils/search.util';
 
 const mockCars = ['Ferrari', 'Ford', 'Porsche', 'Mazda', 'Maserati'];
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CarSearchService {
   private carsQuerySubject = new Subject<string>();
 

@@ -7,6 +7,7 @@ import { CarSearchService } from '../services/car-search.service';
   templateUrl: './car-search.component.html',
   styleUrls: ['./car-search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [CarSearchService],
 })
 export class CarSearchComponent implements OnInit {
   cars$: Observable<string[]>;

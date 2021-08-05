@@ -13,6 +13,20 @@ const routes: Routes = [
           import('./car-search/car-search.module').then(m => m.CarSearchModule),
       },
       {
+        path: 'user-search',
+        loadChildren: () =>
+          import('./user-search/user-search.module').then(
+            m => m.UserSearchModule,
+          ),
+      },
+      {
+        path: 'user-search-cached',
+        loadChildren: () =>
+          import('./user-search-cached/user-search-cached.module').then(
+            m => m.UserSearchCachedModule,
+          ),
+      },
+      {
         path: '',
         redirectTo: 'car-search',
       },

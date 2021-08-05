@@ -1,0 +1,19 @@
+<div class="p-2">
+  <h1>
+    Search User <small class="text-muted">(cached initial response)</small>
+  </h1>
+</div>
+
+<div class="container-fluid">
+  <input
+    class="form-control"
+    (input)="searchUser($event.target.value)"
+    placeholder="Type car name"
+  />
+
+  <ul class="list-group mt-2 w-50">
+    <li *ngFor="let user of users$ | async" class="list-group-item">
+      {{ user.name }} - <small>{{ user.email }}</small>
+    </li>
+  </ul>
+</div>
