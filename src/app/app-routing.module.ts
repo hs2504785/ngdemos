@@ -126,6 +126,7 @@ const routes: Routes = [
         m => m.LazyComponentsModule,
       ),
   },
+  { path: 'reusable-search', loadChildren: () => import('./modules/reusable-search/reusable-search.module').then(m => m.ReusableSearchModule) },
   // Fallbak route
   {
     path: '**',
