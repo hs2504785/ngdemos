@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1627909963047,
+  "timestamp": 1628132218140,
   "index": "/ngdemos/ngapp/index.html",
   "assetGroups": [
     {
@@ -74,7 +74,7 @@
         "/ngdemos/ngapp/9983.2f3fd212133e9d365078.js",
         "/ngdemos/ngapp/favicon.ico",
         "/ngdemos/ngapp/index.html",
-        "/ngdemos/ngapp/main.10f57c720e13f0ebb9fd.js",
+        "/ngdemos/ngapp/main.7c1ae164559ecedac8d3.js",
         "/ngdemos/ngapp/manifest.webmanifest",
         "/ngdemos/ngapp/polyfills.5f43f6dbebd1ef38d8a8.js",
         "/ngdemos/ngapp/runtime.3c962c4122beb0306233.js",
@@ -237,8 +237,8 @@
     "/ngdemos/ngapp/assets/images/prs.jpg": "4ce319d6934addb5e97f23e380ca60b3688e0872",
     "/ngdemos/ngapp/assets/images/remove-from-cart.png": "95a20c7d7699892b7213ebca79336d3a8ff21816",
     "/ngdemos/ngapp/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ngdemos/ngapp/index.html": "441c206b958f944d459a7f8c3e5103e9646a3d9a",
-    "/ngdemos/ngapp/main.10f57c720e13f0ebb9fd.js": "02bc8ebe1489fd458db08f8d54608b1557d5a8c2",
+    "/ngdemos/ngapp/index.html": "00fe21fbe748b01473af91a8b7d295c1f4f5fea2",
+    "/ngdemos/ngapp/main.7c1ae164559ecedac8d3.js": "372c05a20ba99f0ba2e5fc35f9cd1cb33b2e6bc0",
     "/ngdemos/ngapp/manifest.webmanifest": "133d5527e2c2a03de426ec08dcc5e9183b9e8f1d",
     "/ngdemos/ngapp/polyfills.5f43f6dbebd1ef38d8a8.js": "2f496a35cbab49bd7c35cd58aec7337ad1afe84c",
     "/ngdemos/ngapp/runtime.3c962c4122beb0306233.js": "3ee8a0ba858d581740e37a4220716a51bf7f2912",
