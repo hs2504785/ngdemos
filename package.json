@@ -30,6 +30,7 @@
     "demodeploy": "ng build --project=demoapp --base-href \"/ngdemos/demoapp/\"",
     "i18ndeploy": "ng build --project=i18napp --base-href \"/ngdemos/i18napp/\"",
     "fitnessdeploy": "ng build --project=fitness --base-href \"/ngdemos/fitness/\"",
+    "maildeploy": "ng build --project=mailapp --base-href \"/ngdemos/mailapp/\"",
     "ngappdeploy": "ng build --base-href \"/ngdemos/ngapp/\" && npm run gzipmainapp",
     "deploy": "ngh --dir=dist --message=\"My First deploy\"",
     "gzipmainapp": "gzipper c --verbose ./dist/ngapp",
