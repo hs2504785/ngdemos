@@ -1,3 +1,14 @@
 <div class="container-fluid">
-  <p>idb-sample works!</p>
+  <button (click)="add()">Add new entry</button>
+  <button (click)="update()">Update entry</button>
+  <button (click)="delete()">Delete entry</button>
+  <button (click)="clean()">Clean</button>
+  <button (click)="count()">Count</button>
+  <button (click)="addTwoAndGetAllByIndex()">Test #209 getAllByIndex</button>
+  <button (click)="bulkAdd()">bulkAdd</button>
+  <button (click)="bulkGet()">bulkGet</button>
+  <div>
+    <input type="text" [(ngModel)]="storeName" name="store" #store />
+    <button (click)="createStote(storeName)">Create Store</button>
+  </div>
 </div>
