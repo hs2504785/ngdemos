@@ -68,6 +68,8 @@ MIT
 
 @libs/guitardemo
 
+@libs/idb-demo
+
 @ngrx/data
 MIT
 
