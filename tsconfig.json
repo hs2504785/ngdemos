@@ -8,6 +8,10 @@
         "dist/libs/guitardemo/libs-guitardemo",
         "dist/libs/guitardemo"
       ],
+      "@libs/idb-demo": [
+        "dist/libs/idb-demo/libs-idb-demo",
+        "dist/libs/idb-demo"
+      ],
       "@libs/shared": [
         "dist/libs/shared/libs-shared",
         "dist/libs/shared"

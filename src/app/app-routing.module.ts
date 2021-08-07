@@ -4,6 +4,13 @@ import { TodoResolver } from 'projects/todo/src/lib/services/todo.resolver';
 
 const routes: Routes = [
   {
+    path: 'idb-demo',
+    loadChildren: () =>
+      import('projects/libs/idb-demo/src/public-api').then(
+        m => m.IdbDemoModule,
+      ),
+  },
+  {
     path: 'guitardemo',
     loadChildren: () =>
       import('projects/libs/guitardemo/src/public-api').then(
@@ -126,7 +133,13 @@ const routes: Routes = [
         m => m.LazyComponentsModule,
       ),
   },
-  { path: 'reusable-search', loadChildren: () => import('./modules/reusable-search/reusable-search.module').then(m => m.ReusableSearchModule) },
+  {
+    path: 'reusable-search',
+    loadChildren: () =>
+      import('./modules/reusable-search/reusable-search.module').then(
+        m => m.ReusableSearchModule,
+      ),
+  },
   // Fallbak route
   {
     path: '**',

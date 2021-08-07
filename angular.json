@@ -899,6 +899,37 @@
           }
         }
       }
+    },
+    "@libs/idb-demo": {
+      "projectType": "library",
+      "root": "projects/libs/idb-demo",
+      "sourceRoot": "projects/libs/idb-demo/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/libs/idb-demo/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/libs/idb-demo/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/libs/idb-demo/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/libs/idb-demo/src/test.ts",
+            "tsConfig": "projects/libs/idb-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/libs/idb-demo/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngdemos"
