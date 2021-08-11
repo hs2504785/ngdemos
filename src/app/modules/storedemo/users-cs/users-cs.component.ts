@@ -8,31 +8,31 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { exhaustMap, switchMap } from 'rxjs/operators';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserCsDialogComponent } from './dialogs/user-cs-dialog/user-cs-dialog.component';
-import { UserCsInterface } from './models/user-cs-interface';
-import { UsersCsService } from './services/users-cs.service';
+import { UserCs, UserCsInterfaceState } from './models/user-cs-interface';
+import { UserCsStore } from './services/user-cs-store.service';
 
 @Component({
   selector: 'app-users-cs',
   templateUrl: './users-cs.component.html',
   styleUrls: ['./users-cs.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [UserCsStore],
 })
 export class UsersCsComponent implements OnInit, OnDestroy {
-  users$: Observable<UserCsInterface[]>;
+  users$: Observable<UserCs[]> = this.userService.users$;
   sub: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private dialog: MatDialog,
-    private userService: UsersCsService,
+    private userService: UserCsStore,
     private cd: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
-    this.users$ = this.userService.getUsers();
+    this.userService.getUsers();
   }
 
   removeUser(user) {
@@ -48,19 +48,17 @@ export class UsersCsComponent implements OnInit, OnDestroy {
   addUser() {
     const dialogConfig = defaultDialogConfig();
 
-    // dialogConfig.data = {
-    //   dialogTitle: 'Add User',
-    //   mode: 'create',
-    // };
+    dialogConfig.data = {
+      dialogTitle: 'Add User',
+      mode: 'create',
+    };
 
-    // this.sub = this.dialog
-    //   .open(UserCsDialogComponent, dialogConfig)
-    //   .afterClosed()
-    //   .pipe(exhaustMap((user: any) => this.userService.addUser(user)))
-    //   .subscribe(res => {
-    //     this.users = [res, ...this.users];
-    //     this.cd.detectChanges();
-    //   });
+    this.sub = this.dialog
+      .open(UserCsDialogComponent, dialogConfig)
+      .afterClosed()
+      .subscribe(res => {
+        res && this.userService.addUser(res);
+      });
   }
 
   editUser(user) {
