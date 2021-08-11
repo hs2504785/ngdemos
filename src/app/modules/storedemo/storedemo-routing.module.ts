@@ -51,6 +51,11 @@ const routes: Routes = [
         },
       },
       {
+        path: 'users-cs',
+        loadChildren: () =>
+          import('./users-cs/users-cs.module').then(m => m.UsersCsModule),
+      },
+      {
         path: '',
         redirectTo: 'users-data',
       },
