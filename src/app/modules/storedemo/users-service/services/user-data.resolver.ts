@@ -6,13 +6,13 @@ import {
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { UserDataInterface } from '../models/user-data-interface';
-import { UserDataService } from './user-data.service';
+import { UserService } from './user-data.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserDataResolver implements Resolve<UserDataInterface[]> {
-  constructor(private userService: UserDataService) {}
+  constructor(private userService: UserService) {}
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,

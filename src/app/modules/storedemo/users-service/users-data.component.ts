@@ -1,10 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  OnDestroy,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { exhaustMap, switchMap } from 'rxjs/operators';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserDataInterface } from './models/user-data-interface';
-import { UserDataService } from './services/user-data.service';
+import { UserService } from './services/user-data.service';
 import { UserDataDialogComponent } from './user-data-dialog/user-data-dialog.component';
 
 @Component({
@@ -13,17 +20,29 @@ import { UserDataDialogComponent } from './user-data-dialog/user-data-dialog.com
   styleUrls: ['./users-data.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UsersDataComponent {
+export class UsersDataComponent implements OnInit, OnDestroy {
   users: UserDataInterface[];
+  sub: Subscription;
 
-  constructor(private route: ActivatedRoute, private dialog: MatDialog) {}
+  constructor(
+    private route: ActivatedRoute,
+    private dialog: MatDialog,
+    private userService: UserService,
+    private cd: ChangeDetectorRef,
+  ) {}
 
   ngOnInit(): void {
     this.users = this.route.snapshot.data['users'];
   }
 
-  removeUser() {
+  removeUser(user) {
     console.log('Remove user');
+    this.userService.removeUser(user.id).subscribe(res => {
+      this.users = this.users.filter(res => {
+        return res.id !== user.id;
+      });
+      this.cd.detectChanges();
+    });
   }
 
   addUser() {
@@ -34,23 +53,44 @@ export class UsersDataComponent {
       mode: 'create',
     };
 
-    this.dialog.open(UserDataDialogComponent, dialogConfig);
+    this.sub = this.dialog
+      .open(UserDataDialogComponent, dialogConfig)
+      .afterClosed()
+      .pipe(exhaustMap((user: any) => this.userService.addUser(user)))
+      .subscribe(res => {
+        this.users = [res, ...this.users];
+        this.cd.detectChanges();
+      });
   }
 
-  editUser() {
+  editUser(user) {
     const dialogConfig = defaultDialogConfig();
-    const user = { name: 'hemant' };
     dialogConfig.data = {
       dialogTitle: 'Edit User',
       user,
       mode: 'update',
     };
 
-    this.dialog
+    const editSub = this.dialog
       .open(UserDataDialogComponent, dialogConfig)
       .afterClosed()
-      .subscribe(res => {
-        console.log('Closed', res);
+      .pipe(switchMap(res => this.userService.updateUser(res)))
+      .subscribe(updatedUser => {
+        this.users = this.users.map(item => {
+          if (item.id === user.id) {
+            return updatedUser;
+          }
+
+          return item;
+        });
+        console.log('Closed Edit', updatedUser);
+        this.cd.detectChanges();
       });
+
+    this.sub && this.sub.add(editSub);
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

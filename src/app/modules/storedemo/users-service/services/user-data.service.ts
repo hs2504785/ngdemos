@@ -7,7 +7,7 @@ import { UserDataInterface } from '../models/user-data-interface';
 @Injectable({
   providedIn: 'root',
 })
-export class UserDataService {
+export class UserService {
   API_URL = 'https://reqres.in/api/users';
 
   constructor(private http: HttpClient) {}
