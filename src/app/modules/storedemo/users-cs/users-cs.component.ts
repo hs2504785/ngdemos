@@ -2,15 +2,13 @@ import {
   Component,
   OnInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   OnDestroy,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserCsDialogComponent } from './dialogs/user-cs-dialog/user-cs-dialog.component';
-import { UserCs, UserCsInterfaceState } from './models/user-cs-interface';
+import { UserCs } from './models/user-cs-interface';
 import { UserCsStore } from './services/user-cs-store.service';
 
 @Component({
@@ -24,12 +22,7 @@ export class UsersCsComponent implements OnInit, OnDestroy {
   users$: Observable<UserCs[]> = this.userService.users$;
   sub: Subscription;
 
-  constructor(
-    private route: ActivatedRoute,
-    private dialog: MatDialog,
-    private userService: UserCsStore,
-    private cd: ChangeDetectorRef,
-  ) {}
+  constructor(private dialog: MatDialog, private userService: UserCsStore) {}
 
   ngOnInit(): void {
     this.userService.getUsers();
@@ -37,12 +30,7 @@ export class UsersCsComponent implements OnInit, OnDestroy {
 
   removeUser(user) {
     console.log('Remove user');
-    // this.userService.removeUser(user.id).subscribe(res => {
-    //   this.users = this.users.filter(res => {
-    //     return res.id !== user.id;
-    //   });
-    //   this.cd.detectChanges();
-    // });
+    this.userService.removeUser(user.id);
   }
 
   addUser() {

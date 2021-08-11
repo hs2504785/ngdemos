@@ -47,6 +47,23 @@ export class UserCsStore extends ComponentStore<UserCsInterfaceState> {
     );
   });
 
+  readonly removeUser = this.effect((userId$: Observable<string>) => {
+    return userId$.pipe(
+      // 👇 Handle race condition with the proper choice of the flattening operator.
+      switchMap(userId =>
+        this.userCsService.removeUser(+userId).pipe(
+          //👇 Act on the result within inner pipe.
+          tap({
+            next: u => this.removeUserFromStore(userId),
+            error: e => this.logError(e),
+          }),
+          // 👇 Handle potential error within inner pipe.
+          catchError(() => EMPTY),
+        ),
+      ),
+    );
+  });
+
   logError(err) {
     console.log('Errr', err);
   }
@@ -57,5 +74,9 @@ export class UserCsStore extends ComponentStore<UserCsInterfaceState> {
 
   readonly addUserInStore = this.updater((state, user: UserCs) => ({
     users: [user, ...state.users],
+  }));
+
+  readonly removeUserFromStore = this.updater((state, userId: string) => ({
+    users: state.users.filter(item => item.id !== +userId),
   }));
 }
