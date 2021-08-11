@@ -57,23 +57,26 @@ export class UsersCsComponent implements OnInit, OnDestroy {
       mode: 'update',
     };
 
-    // const editSub = this.dialog
-    //   .open(UserCsDialogComponent, dialogConfig)
-    //   .afterClosed()
-    //   .pipe(switchMap(res => this.userService.updateUser(res)))
-    //   .subscribe(updatedUser => {
-    //     this.users = this.users.map(item => {
-    //       if (item.id === user.id) {
-    //         return updatedUser;
-    //       }
+    const editSub = this.dialog
+      .open(UserCsDialogComponent, dialogConfig)
+      .afterClosed()
+      .subscribe(res => {
+        res && this.userService.updateUser(res);
+      });
+    // .pipe(switchMap(res => this.userService.updateUser(res)))
+    // .subscribe(updatedUser => {
+    //   this.users = this.users.map(item => {
+    //     if (item.id === user.id) {
+    //       return updatedUser;
+    //     }
 
-    //       return item;
-    //     });
-    //     console.log('Closed Edit', updatedUser);
-    //     this.cd.detectChanges();
+    //     return item;
     //   });
+    //   console.log('Closed Edit', updatedUser);
+    //   this.cd.detectChanges();
+    // });
 
-    // this.sub && this.sub.add(editSub);
+    this.sub && this.sub.add(editSub);
   }
 
   ngOnDestroy() {
