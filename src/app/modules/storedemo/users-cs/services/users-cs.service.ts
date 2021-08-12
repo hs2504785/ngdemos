@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { CacheService } from 'src/app/shared/services/cache.service';
 import { UserCs } from '../models/user-cs-interface';
 
 @Injectable({
@@ -10,10 +11,12 @@ import { UserCs } from '../models/user-cs-interface';
 export class UsersCsService {
   API_URL = 'https://reqres.in/api/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cacheService: CacheService) {}
 
   getUsers(): Observable<UserCs[]> {
-    return this.http.get(`${this.API_URL}`).pipe(map((res: any) => res.data));
+    return this.cacheService
+      .getData(`${this.API_URL}`)
+      .pipe(map((res: any) => res.data));
   }
 
   addUser(user: UserCs): Observable<UserCs> {
