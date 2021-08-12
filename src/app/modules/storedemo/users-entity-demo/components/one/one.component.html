@@ -1,1 +1,32 @@
-<p>one works!</p>
+<div class="container">
+  <header class="d-flex justify-content-between">
+    <h1>Users List (Entity)</h1>
+    <button
+      type="button"
+      (click)="addUser()"
+      class="btn btn-primary align-self-center"
+    >
+      <i class="ti-plus"></i>
+    </button>
+  </header>
+  <div class="d-flex mb-2" *ngFor="let user of users$ | async">
+    <div class="flex-shrink-0 mr-2">
+      <img [src]="user.avatar" alt="..." />
+    </div>
+    <div class="flex-grow-1 ml-2">
+      <div>
+        <strong>{{ user.first_name }}</strong>
+        <br />
+        <small>{{ user.email }}</small>
+      </div>
+      <div>
+        <button class="btn btn-primary mr-2" (click)="editUser(user)">
+          <i class="ti-pencil"></i>
+        </button>
+        <button class="btn btn-danger" (click)="removeUser(user)">
+          <i class="ti-trash"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
