@@ -8,6 +8,10 @@ import { UsersCsService } from './users-cs.service';
 @Injectable()
 export class UserCsStore extends ComponentStore<UserCsInterfaceState> {
   readonly users$: Observable<UserCs[]> = this.select(state => state.users);
+  readonly usersCount$: Observable<number> = this.select(
+    this.users$,
+    users => users.length,
+  );
   constructor(private userCsService: UsersCsService) {
     super({ users: [] });
   }
