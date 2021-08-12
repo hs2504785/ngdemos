@@ -56,6 +56,11 @@ const routes: Routes = [
           import('./users-cs/users-cs.module').then(m => m.UsersCsModule),
       },
       {
+        path: 'csdemo',
+        loadChildren: () =>
+          import('./csdemo/csdemo.module').then(m => m.CsdemoModule),
+      },
+      {
         path: '',
         redirectTo: 'users-data',
       },
