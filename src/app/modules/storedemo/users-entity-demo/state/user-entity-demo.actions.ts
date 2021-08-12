@@ -54,6 +54,12 @@ export const deleteEntityDemoUserAction = createAction(
   props<{ id: number }>(),
 );
 
+// Set user Id
+export const setUserIdAction = createAction(
+  UserEntityDemoActionTypes.SET_USER_ID,
+  props<{ id: number }>(),
+);
+
 // export const deleteEntityUserSuccessAction = createAction(
 //   UserEntityDemoActionTypes.DELETE_ENTITY_USER_SUCCESS,
 // );

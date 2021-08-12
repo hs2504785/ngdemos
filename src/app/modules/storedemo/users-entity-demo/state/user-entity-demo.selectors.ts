@@ -16,6 +16,19 @@ export const selectEntityDemoUsersEntities = createSelector(
   fromUserDemoEntity.selectEntities,
 );
 
+export const selectUserId = createSelector(
+  selectUserEntityDemoFeatureState,
+  state => state.selectedUserId,
+);
+
+export const selectUserById = createSelector(
+  selectEntityDemoUsersEntities,
+  selectUserId,
+  (entities, userId) => {
+    return entities[userId];
+  },
+);
+
 export const areEntityDemoUsersLoaded = createSelector(
   selectUserEntityDemoFeatureState,
   state => state.loaded,

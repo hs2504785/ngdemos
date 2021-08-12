@@ -7,6 +7,7 @@ export const userEntityDemoFeatureKey = 'userEntityDemo';
 export interface UserEntityDemoStateInterface
   extends EntityState<UserEntityDemoInterface> {
   loaded: boolean;
+  selectedUserId: number;
   // additional entities state properties
 }
 
@@ -18,6 +19,7 @@ export const adapter: EntityAdapter<UserEntityDemoInterface> =
 export const initialState: UserEntityDemoStateInterface =
   adapter.getInitialState({
     loaded: false,
+    selectedUserId: 1,
     // additional entity state properties
   });
 
@@ -120,13 +122,13 @@ export const userEntityDemoReducer = createReducer(
   //   }),
   // ),
 
-  // on(
-  //   UserEntityDemoActions.deleteEntityUserFailureAction,
-  //   (state): UserEntityDemoStateInterface => ({
-  //     ...state,
-  //     isLoading: false,
-  //   }),
-  // ),
+  on(
+    UserEntityDemoActions.setUserIdAction,
+    (state, action): UserEntityDemoStateInterface => ({
+      ...state,
+      selectedUserId: action.id,
+    }),
+  ),
 );
 
 export const { selectIds, selectEntities, selectAll, selectTotal } =

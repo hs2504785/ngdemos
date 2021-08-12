@@ -14,4 +14,6 @@ export enum UserEntityDemoActionTypes {
   DELETE_ENTITY_USER = '[User Entity Component] Delete User',
   DELETE_ENTITY_USER_SUCCESS = '[User Entity Component] Delete User success',
   DELETE_ENTITY_USER_FAILURE = '[User Entity Component] Delete User failure',
+
+  SET_USER_ID = '[One Component] Set User Id',
 }

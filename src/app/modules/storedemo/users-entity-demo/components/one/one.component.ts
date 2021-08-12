@@ -5,7 +5,10 @@ import { Observable } from 'rxjs';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserEntityDialogComponent } from '../../../users-entity/user-entity-dialog/user-entity-dialog.component';
 import { UserEntityDemoInterface } from '../../models/user-entity-demo-interface';
-import { deleteEntityDemoUserAction } from '../../state/user-entity-demo.actions';
+import {
+  deleteEntityDemoUserAction,
+  setUserIdAction,
+} from '../../state/user-entity-demo.actions';
 import { UserEntityDemoStateInterface } from '../../state/user-entity-demo.reducer';
 import { selectEntityDemoUsers } from '../../state/user-entity-demo.selectors';
 
@@ -56,5 +59,9 @@ export class OneComponent implements OnInit {
       .subscribe(res => {
         console.log('Closed', res);
       });
+  }
+
+  selectUser(user) {
+    this.store.dispatch(setUserIdAction({ id: user.id }));
   }
 }
