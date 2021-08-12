@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StoredemoComponent } from './storedemo.component';
 import { UserDataResolver as UserDataResolver1 } from './users-data/services/user-data.resolver';
+import { UserEntityDemoResolver } from './users-entity-demo/services/user-entity-demo.resolver';
 import { UserEntityResolver } from './users-entity/services/user-entity.resolver';
 import { UserDataResolver } from './users-service/services/user-data.resolver';
 import { UserStoreResolver } from './users-store/services/user-store.resolver';
@@ -66,6 +67,7 @@ const routes: Routes = [
           import('./users-entity-demo/users-entity-demo.module').then(
             m => m.UsersEntityDemoModule,
           ),
+        resolve: [UserEntityDemoResolver],
       },
       {
         path: '',

@@ -7,9 +7,9 @@ import {
 import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { filter, first, tap } from 'rxjs/operators';
-import { UserEntityDemoInterface } from '../models/user-entity-interface';
-import { loadEntityUsers } from '../state/user-entity.actions';
-import { areEntityUsersLoaded } from '../state/user-entity.selectors';
+import { UserEntityDemoInterface } from '../models/user-entity-demo-interface';
+import { loadEntityDemoUsers } from '../state/user-entity-demo.actions';
+import { areEntityDemoUsersLoaded } from '../state/user-entity-demo.selectors';
 
 @Injectable({
   providedIn: 'root',
@@ -22,10 +22,10 @@ export class UserEntityDemoResolver implements Resolve<boolean> {
     state: RouterStateSnapshot,
   ): Observable<boolean> {
     return this.store.pipe(
-      select(areEntityUsersLoaded),
+      select(areEntityDemoUsersLoaded),
       tap(loaded => {
         if (!loaded) {
-          this.store.dispatch(loadEntityUsers());
+          this.store.dispatch(loadEntityDemoUsers());
         }
       }),
       filter(loaded => loaded),
