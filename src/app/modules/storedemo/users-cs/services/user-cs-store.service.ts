@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ComponentStore } from '@ngrx/component-store';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, switchMap, tap } from 'rxjs/operators';
@@ -8,12 +9,24 @@ import { UsersCsService } from './users-cs.service';
 @Injectable()
 export class UserCsStore extends ComponentStore<UserCsInterfaceState> {
   readonly users$: Observable<UserCs[]> = this.select(state => state.users);
+  readonly selectedUserId$ = this.select(state => state.selectdUserId);
   readonly usersCount$: Observable<number> = this.select(
     this.users$,
     users => users.length,
   );
-  constructor(private userCsService: UsersCsService) {
-    super({ users: [] });
+  readonly userById$: Observable<UserCs> = this.select(
+    this.users$,
+    this.selectedUserId$,
+    (users, selectedUserId) => {
+      return users.find(item => item.id === selectedUserId);
+    },
+  );
+
+  constructor(
+    private userCsService: UsersCsService,
+    private route: ActivatedRoute,
+  ) {
+    super({ users: [], selectdUserId: 1 });
   }
 
   // Each new call of getMovie(id) pushed that id into movieId$ stream.
@@ -90,18 +103,22 @@ export class UserCsStore extends ComponentStore<UserCsInterfaceState> {
   }
 
   readonly setUsers = this.updater((state, users: UserCs[]) => ({
+    ...state,
     users: [...state.users, ...users],
   }));
 
   readonly addUserInStore = this.updater((state, user: UserCs) => ({
+    ...state,
     users: [user, ...state.users],
   }));
 
   readonly removeUserFromStore = this.updater((state, userId: string) => ({
+    ...state,
     users: state.users.filter(item => item.id !== +userId),
   }));
 
   readonly updateUserInStore = this.updater((state, user: UserCs) => ({
+    ...state,
     users: state.users.map(item => {
       if (item.id === user.id) {
         return user;

@@ -62,20 +62,14 @@ export class OneComponent implements OnInit, OnDestroy {
       .subscribe(res => {
         res && this.userService.updateUser(res);
       });
-    // .pipe(switchMap(res => this.userService.updateUser(res)))
-    // .subscribe(updatedUser => {
-    //   this.users = this.users.map(item => {
-    //     if (item.id === user.id) {
-    //       return updatedUser;
-    //     }
-
-    //     return item;
-    //   });
-    //   console.log('Closed Edit', updatedUser);
-    //   this.cd.detectChanges();
-    // });
 
     this.sub && this.sub.add(editSub);
+  }
+
+  selectUser(user) {
+    this.userService.patchState({
+      selectdUserId: user.id,
+    });
   }
 
   ngOnDestroy() {

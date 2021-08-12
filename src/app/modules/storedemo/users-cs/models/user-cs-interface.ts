@@ -8,4 +8,5 @@ export interface UserCs {
 
 export interface UserCsInterfaceState {
   users: UserCs[];
+  selectdUserId: number;
 }
