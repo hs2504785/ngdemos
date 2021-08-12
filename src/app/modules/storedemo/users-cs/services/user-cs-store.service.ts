@@ -14,6 +14,10 @@ export class UserCsStore extends ComponentStore<UserCsInterfaceState> {
     this.users$,
     users => users.length,
   );
+  readonly top3users$: Observable<UserCs[]> = this.select(this.users$, users =>
+    users.slice(0, 3),
+  );
+
   readonly userById$: Observable<UserCs> = this.select(
     this.users$,
     this.selectedUserId$,

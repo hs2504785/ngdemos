@@ -1,1 +1,15 @@
-<p>four works!</p>
+<div class="container">
+  <h3>Top 3 Users</h3>
+  <div class="d-flex mb-2" *ngFor="let user of users$ | async">
+    <div class="flex-shrink-0 mr-2">
+      <img [src]="user.avatar" alt="..." />
+    </div>
+    <div class="flex-grow-1 ml-2">
+      <div>
+        <strong>{{ user.first_name }}</strong>
+        <br />
+        <small>{{ user.email }}</small>
+      </div>
+    </div>
+  </div>
+</div>
