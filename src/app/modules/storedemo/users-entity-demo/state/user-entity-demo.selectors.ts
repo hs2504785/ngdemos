@@ -17,7 +17,7 @@ export const selectEntityDemoUsersCount = createSelector(
 );
 
 export const selectTop3Users = createSelector(selectEntityDemoUsers, users =>
-  users.slice(3),
+  users.slice(0, 3),
 );
 
 export const selectEntityDemoUsersEntities = createSelector(
