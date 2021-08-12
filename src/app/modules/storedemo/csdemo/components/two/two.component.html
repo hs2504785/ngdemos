@@ -1,19 +1,23 @@
-<div class="container" *ngIf="user$ | async as user">
+<div class="container">
   <h2>View Detail</h2>
-  <pre
-    >{{ user | json }}
-  </pre>
 
-  <div class="d-flex mb-2">
-    <div class="flex-shrink-0 mr-2">
-      <img [src]="user.avatar" alt="..." />
-    </div>
-    <div class="flex-grow-1 ml-2">
-      <div>
-        <strong>{{ user.first_name }}</strong>
-        <br />
-        <small>{{ user.email }}</small>
+  <ng-container *ngIf="user$ | async as user">
+    <pre
+      >{{ user | json }}
+  </pre
+    >
+
+    <div class="d-flex mb-2">
+      <div class="flex-shrink-0 mr-2">
+        <img [src]="user.avatar" alt="..." />
+      </div>
+      <div class="flex-grow-1 ml-2">
+        <div>
+          <strong>{{ user.first_name }}</strong>
+          <br />
+          <small>{{ user.email }}</small>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
 </div>
