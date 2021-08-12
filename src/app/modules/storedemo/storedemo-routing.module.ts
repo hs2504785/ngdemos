@@ -61,6 +61,13 @@ const routes: Routes = [
           import('./csdemo/csdemo.module').then(m => m.CsdemoModule),
       },
       {
+        path: 'users-entity-demo',
+        loadChildren: () =>
+          import('./users-entity-demo/users-entity-demo.module').then(
+            m => m.UsersEntityDemoModule,
+          ),
+      },
+      {
         path: '',
         redirectTo: 'users-data',
       },
