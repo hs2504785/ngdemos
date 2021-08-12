@@ -11,6 +11,15 @@ export const selectEntityDemoUsers = createSelector(
   fromUserDemoEntity.selectAll,
 );
 
+export const selectEntityDemoUsersCount = createSelector(
+  selectEntityDemoUsers,
+  users => users.length,
+);
+
+export const selectTop3Users = createSelector(selectEntityDemoUsers, users =>
+  users.slice(3),
+);
+
 export const selectEntityDemoUsersEntities = createSelector(
   selectUserEntityDemoFeatureState,
   fromUserDemoEntity.selectEntities,
