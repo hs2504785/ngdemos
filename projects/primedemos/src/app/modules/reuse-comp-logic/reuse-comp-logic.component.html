@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Reuse Component logic</h1>
+  <div class="grid">
+    <div class="col-6">
+      <h2>1st Component</h2>
+
+      <p-dropdown
+        [options]="users$ | async"
+        placeholder="Choose an user"
+        [showClear]="true"
+        [filter]="true"
+      ></p-dropdown>
+    </div>
+    <div class="col-6">
+      <h2>Other Component</h2>
+      <app-other></app-other>
+    </div>
+  </div>
+</div>
