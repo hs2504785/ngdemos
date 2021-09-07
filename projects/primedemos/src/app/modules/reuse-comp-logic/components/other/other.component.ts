@@ -8,7 +8,5 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./other.component.scss'],
 })
 export class OtherComponent {
-  users$: Observable<any[]> = this.userService.getEmployeesAsSelectList();
-
-  constructor(private userService: UserService) {}
+  constructor() {}
 }
