@@ -6,6 +6,7 @@ import { NgChallangeComponent } from './ng-challange.component';
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
 import { CardComponent } from '../../components/card/card.component';
 import { AccordianComponent } from '../../components/accordian/accordian.component';
+import { ProgressBarComponent } from '../../components/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AccordianComponent } from '../../components/accordian/accordian.compone
     ToolbarComponent,
     CardComponent,
     AccordianComponent,
+    ProgressBarComponent,
   ],
   imports: [CommonModule, NgChallangeRoutingModule],
 })

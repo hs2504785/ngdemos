@@ -20,6 +20,7 @@ export class NgChallangeComponent implements OnInit {
       isExpanded: false,
     },
   ];
+  progressValue = 25;
   constructor() {}
 
   ngOnInit(): void {}

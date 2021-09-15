@@ -42,3 +42,13 @@
 >
   <app-accordian body [items]="accordionItems"></app-accordian>
 </app-card>
+
+<app-card
+  [iconClasses]="'ti-star'"
+  [title]="'Progress Bar'"
+  [subTitle]="'Components'"
+>
+  <app-progress-bar body [value]="progressValue"></app-progress-bar>
+
+  <button footer (click)="progressValue = 75">Update</button>
+</app-card>
