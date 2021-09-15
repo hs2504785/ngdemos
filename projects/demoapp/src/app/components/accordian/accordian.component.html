@@ -1,0 +1,16 @@
+<div class="accordion-container">
+  <div class="item" *ngFor="let item of items">
+    <div class="header">
+      <h4>{{ item.title }}</h4>
+      <i
+        class="ti-angle-down"
+        [class.is-expanded]="item.isExpanded"
+        (click)="toggle(item)"
+      ></i>
+    </div>
+
+    <div class="content" [class.is-expanded]="item.isExpanded">
+      <p>{{ item.content }}</p>
+    </div>
+  </div>
+</div>

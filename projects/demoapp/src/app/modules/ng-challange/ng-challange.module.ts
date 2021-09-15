@@ -5,9 +5,10 @@ import { NgChallangeRoutingModule } from './ng-challange-routing.module';
 import { NgChallangeComponent } from './ng-challange.component';
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
 import { CardComponent } from '../../components/card/card.component';
+import { AccordianComponent } from '../../components/accordian/accordian.component';
 
 @NgModule({
-  declarations: [NgChallangeComponent, ToolbarComponent, CardComponent],
+  declarations: [NgChallangeComponent, ToolbarComponent, CardComponent, AccordianComponent],
   imports: [CommonModule, NgChallangeRoutingModule],
 })
 export class NgChallangeModule {}
