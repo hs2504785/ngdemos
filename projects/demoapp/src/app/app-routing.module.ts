@@ -50,7 +50,18 @@ const routes: Routes = [
         m => m.FileSizeModule,
       ),
   },
-  { path: 'songs', loadChildren: () => import('./modules/songs/songs.module').then(m => m.SongsModule) },
+  {
+    path: 'songs',
+    loadChildren: () =>
+      import('./modules/songs/songs.module').then(m => m.SongsModule),
+  },
+  {
+    path: 'ng-challange',
+    loadChildren: () =>
+      import('./modules/ng-challange/ng-challange.module').then(
+        m => m.NgChallangeModule,
+      ),
+  },
   {
     path: '**',
     redirectTo: '/',

@@ -1,0 +1,36 @@
+<app-toolbar [title]="'Angular Challenge'">
+  <ul>
+    <li
+      routerLink=""
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Components
+    </li>
+    <li routerLink="directives" routerLinkActive="active">Directives</li>
+    <li routerLink="services" routerLinkActive="active">Services</li>
+    <li routerLink="pipes" routerLinkActive="active">Pipes</li>
+    <li routerLink="other" routerLinkActive="active">Other</li>
+  </ul>
+</app-toolbar>
+
+<app-card
+  [iconClasses]="'ti-user'"
+  [title]="'my Title'"
+  [subTitle]="'sub title'"
+>
+  <div body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+      voluptate id quos obcaecati iure sunt fuga aliquam doloremque tempore
+      reprehenderit esse amet unde, atque, quod rerum. Architecto quisquam
+      excepturi earum?
+    </p>
+  </div>
+
+  <div footer>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
+    reiciendis?
+  </div>
+</app-card>

@@ -1,9 +1,22 @@
+@import '../../../scss/base/themify-icon';
+
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   font: 300 15px/1.4 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
 }
 
 html,
@@ -67,9 +80,6 @@ p {
   margin: 5px 0;
 }
 
-body {
-  padding: 50px;
-}
 h1 {
   font-size: 30px;
   font-weight: bold;
@@ -85,14 +95,14 @@ h4 {
   font-weight: 300;
   margin: 0;
 }
-app-root {
-  display: block;
-  background-color: #ffffff;
-  border-radius: 2px;
-  border: 1px solid #dce5f2;
-  box-shadow: 0 1px 4px rgba(53, 60, 72, 0.1);
-  padding: 20px 30px;
-}
+// app-root {
+//   display: block;
+//   background-color: #ffffff;
+//   border-radius: 2px;
+//   border: 1px solid #dce5f2;
+//   box-shadow: 0 1px 4px rgba(53, 60, 72, 0.1);
+//   padding: 20px 30px;
+// }
 form {
   flex: 1 0;
   padding: 0 40px;
@@ -112,9 +122,7 @@ label {
   margin-bottom: 20px;
   display: block;
 }
-h3 {
-  margin-bottom: 20px;
-}
+
 .tooltip-container {
   position: relative;
 }
@@ -172,4 +180,47 @@ select {
     linear-gradient(135deg, rgba(0, 0, 0, 0.7) 50%, transparent 50%) no-repeat
       calc(100% - 15px) calc(1em + 4px);
   background-size: 5px 5px, 5px 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Ripple effect */
+.ripple {
+  background-position: center;
+  transition: all 0.8s;
+
+  &:hover {
+    color: white;
+    transition: background 0.8s;
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%)
+      center/15000%;
+  }
+
+  &:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+
+.ripple2 {
+  background-position: center;
+  transition: all 0.8s;
+
+  &:hover {
+    color: white;
+    transition: background 0.8s;
+    background: green radial-gradient(circle, transparent 1%, green 1%)
+      center/15000%;
+  }
+
+  &:active {
+    background-color: green;
+    background-size: 100%;
+    transition: background 0s;
+  }
 }
