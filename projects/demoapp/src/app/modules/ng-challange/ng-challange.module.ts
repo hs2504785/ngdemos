@@ -8,7 +8,12 @@ import { CardComponent } from '../../components/card/card.component';
 import { AccordianComponent } from '../../components/accordian/accordian.component';
 
 @NgModule({
-  declarations: [NgChallangeComponent, ToolbarComponent, CardComponent, AccordianComponent],
+  declarations: [
+    NgChallangeComponent,
+    ToolbarComponent,
+    CardComponent,
+    AccordianComponent,
+  ],
   imports: [CommonModule, NgChallangeRoutingModule],
 })
 export class NgChallangeModule {}
