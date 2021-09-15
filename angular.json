@@ -1040,5 +1040,11 @@
       }
     }
   },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush"
+    }
+  },
   "defaultProject": "ngdemos"
 }
