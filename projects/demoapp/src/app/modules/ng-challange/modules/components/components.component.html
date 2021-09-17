@@ -58,6 +58,15 @@
     [title]="'Loader'"
     [subTitle]="'Components'"
   >
-    <app-loader body [isLoading]="true" [loaderType]="loaderType"></app-loader>
+    <app-loader body [isLoading]="false" [loaderType]="loaderType"></app-loader>
+  </app-card>
+
+  <app-card
+    [iconClasses]="'fas fa-info-circle'"
+    [title]="'Twitter Post'"
+    [subTitle]="'Components'"
+    class="mt-3"
+  >
+    <app-twitter-post body></app-twitter-post>
   </app-card>
 </div>
