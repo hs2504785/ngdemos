@@ -7,6 +7,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { LoaderComponent } from './loader/loader.component';
 import { TwitterPostComponent } from './twitter-post/twitter-post.component';
 import { LinkedinPostComponent } from './linkedin-post/linkedin-post.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { LinkedinPostComponent } from './linkedin-post/linkedin-post.component';
     LoaderComponent,
     TwitterPostComponent,
     LinkedinPostComponent,
+    ModalComponent,
   ],
   imports: [CommonModule, SharedModule, ComponentsRoutingModule],
 })

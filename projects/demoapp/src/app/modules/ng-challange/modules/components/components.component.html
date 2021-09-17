@@ -1,60 +1,6 @@
-<!-- <app-banner-cut-out [title]="'Pipes'" [imageUrl]="'assets/back-4.jpg'"></app-banner-cut-out>
- <hr>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Sort By Key'" [subTitle]="'Pipes'">
-   <div body>
-     <h5>String Ascending</h5>
-     <p *ngFor="let obj of objectArray | sortByKey : 'content'">{{ obj.content  }}</p>
-
-     <h5>String Descending</h5>
-     <p *ngFor="let obj of objectArray | sortByKey : 'content' : false">{{ obj.content  }}</p>
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Sort By'" [subTitle]="'Pipes'">
-   <div body>
-     <h5>String Ascending</h5>
-     <p>{{ stringArray | sortBy }}</p>
-
-     <h5>String Descending</h5>
-     <p>{{ stringArray | sortBy : false }}</p>
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Rich Text'" [subTitle]="'Pipes'">
-   <div body>
-     <div [innerHtml]="html | richText"> </div>
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Filter Term'" [subTitle]="'Pipes'">
-   <div body>
-     {{ ['Hello', 'World', 'Hello World'] | appFilterTerm : 'World'  }}
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Flatten'" [subTitle]="'Pipes'">
-   <div body>
-     {{ flattenData | appFlatten}}
-   </div>
-
-   <div class="footer" footer>
-     <button (click)="modifyFlatten()">Modify</button>
-     <button (click)="reassignFlatten()">Reassign</button>
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Credit Card Formatter'" [subTitle]="'Pipes'">
-   <div body>
-     <p>{{'1111222233334444' | creditCardFormatter}}</p>
-     <p>{{'111111111111111111111111111111' | creditCardFormatter}}</p>
-     <p>{{'a111222233334444' | creditCardFormatter}}</p>
-   </div>
- </app-card>
- -->
 <div class="dashboard">
   <app-card
-    [iconClasses]="'fas fa-info-circle'"
+    [iconClasses]="'ti-bag'"
     [title]="'Loader'"
     [subTitle]="'Components'"
   >
@@ -76,5 +22,21 @@
     [subTitle]="'Components'"
   >
     <app-linkedin-post body></app-linkedin-post>
+  </app-card>
+
+  <app-card
+    [iconClasses]="'ti-bag'"
+    [title]="'Modal'"
+    [subTitle]="'Components'"
+  >
+    <div body>
+      <app-modal [title]="'Modal Example'" #modal>
+        <p>Some Content</p>
+      </app-modal>
+    </div>
+
+    <div footer>
+      <button (click)="modal.open()">Call Modal</button>
+    </div>
   </app-card>
 </div>
