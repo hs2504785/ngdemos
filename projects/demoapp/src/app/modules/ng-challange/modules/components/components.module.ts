@@ -12,6 +12,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { DebounceSearchComponent } from './debounce-search/debounce-search.component';
 import { SearchListComponent } from './search-list/search-list.component';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SearchListComponent } from './search-list/search-list.component';
     ToggleComponent,
     DebounceSearchComponent,
     SearchListComponent,
+    CounterComponent,
   ],
   imports: [CommonModule, SharedModule, ComponentsRoutingModule],
 })

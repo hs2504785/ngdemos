@@ -10,6 +10,5 @@ import { FlattenPipe } from './flatten/flatten.pipe';
 @NgModule({
   declarations: [PipesComponent, TruncatePipe, FlattenPipe],
   imports: [CommonModule, PipesRoutingModule, SharedModule],
-  exports: [TruncatePipe],
 })
 export class PipesModule {}

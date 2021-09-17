@@ -1,5 +1,13 @@
 <div class="dashboard">
   <app-card
+    [iconClasses]="'ti-dashboard'"
+    [title]="'Counter'"
+    [subTitle]="'Components'"
+  >
+    <app-counter body></app-counter>
+  </app-card>
+
+  <app-card
     [iconClasses]="'ti-bag'"
     [title]="'Search List'"
     [subTitle]="'Components'"

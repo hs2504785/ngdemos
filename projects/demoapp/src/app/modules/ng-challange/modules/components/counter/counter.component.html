@@ -1,0 +1,17 @@
+<div class="counter-container">
+  <button class="decrement" (click)="minusOne()">
+    <i class="ti-minus"></i>
+  </button>
+
+  <input
+    type="number"
+    [value]="counter"
+    (input)="counter = $event.target.value"
+    [min]="min"
+    [max]="max"
+  />
+
+  <button class="increment" (click)="addOne()">
+    <i class="ti-plus"></i>
+  </button>
+</div>
