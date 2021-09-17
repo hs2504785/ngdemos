@@ -1,6 +1,28 @@
 <div class="dashboard">
   <app-card
     [iconClasses]="'ti-bag'"
+    [title]="'Search List'"
+    [subTitle]="'Components'"
+  >
+    <app-search-list
+      body
+      [items]="['United States', 'Mexico', 'United Arab Emirates']"
+    ></app-search-list>
+  </app-card>
+
+  <app-card
+    [iconClasses]="'ti-bag'"
+    [title]="'Debounce Search'"
+    [subTitle]="'Components'"
+  >
+    <app-debounce-search
+      body
+      (searchUpdate)="debounceExampleMethod($event)"
+    ></app-debounce-search>
+  </app-card>
+
+  <app-card
+    [iconClasses]="'ti-bag'"
     [title]="'Loader'"
     [subTitle]="'Components'"
   >
@@ -11,7 +33,6 @@
     [iconClasses]="'ti-palette'"
     [title]="'Twitter Post'"
     [subTitle]="'Components'"
-    class="mt-3"
   >
     <app-twitter-post body></app-twitter-post>
   </app-card>
@@ -55,7 +76,6 @@
   </app-card>
 
   <app-card
-    class="mt-3"
     [iconClasses]="'ti-bag'"
     [title]="'Toggle'"
     [subTitle]="'Components'"

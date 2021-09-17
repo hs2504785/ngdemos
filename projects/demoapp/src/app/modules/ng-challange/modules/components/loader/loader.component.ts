@@ -37,7 +37,6 @@ export class LoaderComponent implements OnInit, OnDestroy {
     let currentStep = 0;
 
     this.timer = setInterval(() => {
-      console.log('Running');
       switch (currentStep % 3) {
         case 0:
           this.loadingPeriods = '..\0';

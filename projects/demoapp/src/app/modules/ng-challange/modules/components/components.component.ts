@@ -18,4 +18,8 @@ export class ComponentsComponent implements OnInit {
   onToggle(val) {
     console.log('Emmitted value ', val);
   }
+
+  public debounceExampleMethod(value: string): void {
+    console.log('Component Documentation', value);
+  }
 }

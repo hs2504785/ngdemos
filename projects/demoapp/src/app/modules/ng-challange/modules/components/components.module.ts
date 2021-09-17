@@ -10,6 +10,8 @@ import { LinkedinPostComponent } from './linkedin-post/linkedin-post.component';
 import { ModalComponent } from './modal/modal.component';
 import { QuoteComponent } from './quote/quote.component';
 import { ToggleComponent } from './toggle/toggle.component';
+import { DebounceSearchComponent } from './debounce-search/debounce-search.component';
+import { SearchListComponent } from './search-list/search-list.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { ToggleComponent } from './toggle/toggle.component';
     ModalComponent,
     QuoteComponent,
     ToggleComponent,
+    DebounceSearchComponent,
+    SearchListComponent,
   ],
   imports: [CommonModule, SharedModule, ComponentsRoutingModule],
 })
