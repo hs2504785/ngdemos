@@ -1,12 +1,13 @@
 <app-toolbar [title]="'Angular Challenge'">
   <ul>
     <li
-      routerLink=""
+      routerLink="./"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      Components
+      Dashboard
     </li>
+    <li routerLink="components" routerLinkActive="active">Components</li>
     <li routerLink="directives" routerLinkActive="active">Directives</li>
     <li routerLink="services" routerLinkActive="active">Services</li>
     <li routerLink="pipes" routerLinkActive="active">Pipes</li>
@@ -14,7 +15,9 @@
   </ul>
 </app-toolbar>
 
-<app-card
+<router-outlet></router-outlet>
+
+<!-- <app-card
   [iconClasses]="'ti-user'"
   [title]="'my Title'"
   [subTitle]="'sub title'"
@@ -201,4 +204,4 @@
   <app-star-ratings body [rating]="'2.75'"></app-star-ratings>
 </app-card>
 
-<app-top-of-page></app-top-of-page>
+<app-top-of-page></app-top-of-page> -->
