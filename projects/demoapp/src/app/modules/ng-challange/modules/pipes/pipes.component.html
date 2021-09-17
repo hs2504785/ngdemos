@@ -81,4 +81,14 @@
       <button class="mr-1" (click)="reassignFlatten()">Reassign</button>
     </div>
   </app-card>
+
+  <app-card
+    [iconClasses]="'ti-eye'"
+    [title]="'Filter Term'"
+    [subTitle]="'Pipes'"
+  >
+    <div body>
+      {{ ['Hello', 'World', 'Hello World'] | appFilterTerm: 'hello' }}
+    </div>
+  </app-card>
 </div>

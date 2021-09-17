@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../../components/card/card.component';
+import { FilterTermPipe } from '../modules/pipes/filter-term/filter-term.pipe';
 // import { FilterTermPipe } from '../pipes/filter-term/filter-term.pipe';
 // import { BannerCutOutComponent } from '../components/banner-cut-out/banner-cut-out.component';
 // import { SnackbarComponent } from '../components/snackbar/snackbar.component';
@@ -12,7 +13,7 @@ import { CardComponent } from '../../../components/card/card.component';
 @NgModule({
   declarations: [
     CardComponent,
-    // FilterTermPipe,
+    FilterTermPipe,
     // BannerCutOutComponent,
     // SnackbarComponent,
     // FooterComponent,
@@ -22,7 +23,7 @@ import { CardComponent } from '../../../components/card/card.component';
   ],
   exports: [
     CardComponent,
-    // FilterTermPipe,
+    FilterTermPipe,
     // BannerCutOutComponent,
     // SnackbarComponent,
     // FooterComponent,
