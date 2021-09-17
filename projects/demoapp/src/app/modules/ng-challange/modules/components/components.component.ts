@@ -9,8 +9,13 @@ import { LoaderType } from './loader/models/loader-type.enum';
 })
 export class ComponentsComponent implements OnInit {
   public loaderType = LoaderType.Loading;
+  public toggleValue = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onToggle(val) {
+    console.log('Emmitted value ', val);
+  }
 }

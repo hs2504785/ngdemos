@@ -4,13 +4,17 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-directives',
   templateUrl: './directives.component.html',
   styleUrls: ['./directives.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DirectivesComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  log() {
+    console.log('Making users api call...');
+    fetch('https://jsonplaceholder.typicode.com/users').then(res => {
+      console.log(res);
+    });
   }
-
 }

@@ -56,4 +56,15 @@
   <app-card [iconClasses]="'ti-package'" [title]="'Credit Card'">
     <app-credit-card body></app-credit-card>
   </app-card>
+
+  <app-card
+    class="mt-3"
+    [iconClasses]="'fas fa-info-circle'"
+    [title]="'Debounce Click'"
+    [subTitle]="'Directives'"
+  >
+    <div body>
+      <button appDebounceClick (debounceClick)="log()">Log</button>
+    </div>
+  </app-card>
 </div>

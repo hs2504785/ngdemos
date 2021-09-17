@@ -39,4 +39,31 @@
       <button (click)="modal.open()">Call Modal</button>
     </div>
   </app-card>
+
+  <app-card
+    [iconClasses]="'ti-list'"
+    [title]="'Quote'"
+    [subTitle]="'Components'"
+  >
+    <app-quote
+      body
+      [quote]="'Get Good. Get Great. Get Better.'"
+      [author]="'Hemant'"
+      [occupation]="'Software Engineer, UI Star'"
+    >
+    </app-quote>
+  </app-card>
+
+  <app-card
+    class="mt-3"
+    [iconClasses]="'ti-bag'"
+    [title]="'Toggle'"
+    [subTitle]="'Components'"
+  >
+    <app-toggle
+      [isOn]="toggleValue"
+      (toggleChange)="onToggle($event)"
+      body
+    ></app-toggle>
+  </app-card>
 </div>

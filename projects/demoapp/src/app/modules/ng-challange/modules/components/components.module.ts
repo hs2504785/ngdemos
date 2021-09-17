@@ -8,6 +8,8 @@ import { LoaderComponent } from './loader/loader.component';
 import { TwitterPostComponent } from './twitter-post/twitter-post.component';
 import { LinkedinPostComponent } from './linkedin-post/linkedin-post.component';
 import { ModalComponent } from './modal/modal.component';
+import { QuoteComponent } from './quote/quote.component';
+import { ToggleComponent } from './toggle/toggle.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ModalComponent } from './modal/modal.component';
     TwitterPostComponent,
     LinkedinPostComponent,
     ModalComponent,
+    QuoteComponent,
+    ToggleComponent,
   ],
   imports: [CommonModule, SharedModule, ComponentsRoutingModule],
 })
