@@ -65,4 +65,20 @@
       }}
     </p>
   </app-card>
+
+  <app-card
+    class="mt-3"
+    [iconClasses]="'ti-star'"
+    [title]="'Flatten'"
+    [subTitle]="'Pipes'"
+  >
+    <div body>
+      {{ flattenData | appFlatten }}
+    </div>
+
+    <div class="footer" footer>
+      <button class="mr-1" (click)="modifyFlatten()">Modify</button>
+      <button class="mr-1" (click)="reassignFlatten()">Reassign</button>
+    </div>
+  </app-card>
 </div>
