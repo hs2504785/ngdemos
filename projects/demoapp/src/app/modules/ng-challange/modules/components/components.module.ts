@@ -13,6 +13,7 @@ import { ToggleComponent } from './toggle/toggle.component';
 import { DebounceSearchComponent } from './debounce-search/debounce-search.component';
 import { SearchListComponent } from './search-list/search-list.component';
 import { CounterComponent } from './counter/counter.component';
+import { SimpleTableComponent } from './simple-table/simple-table.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CounterComponent } from './counter/counter.component';
     DebounceSearchComponent,
     SearchListComponent,
     CounterComponent,
+    SimpleTableComponent,
   ],
   imports: [CommonModule, SharedModule, ComponentsRoutingModule],
 })
