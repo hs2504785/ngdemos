@@ -1,0 +1,26 @@
+<div class="credit-card-input-container">
+  <div class="input-container">
+    <ng-container [ngSwitch]="creditCardNumber[0]">
+      <i *ngSwitchCase="'3'" class="ti-credit-card green"></i>
+      <i *ngSwitchCase="'4'" class="ti-credit-card yellow"></i>
+      <i *ngSwitchCase="'5'" class="ti-credit-card pink"></i>
+      <i *ngSwitchCase="'6'" class="ti-credit-card purple"></i>
+      <i *ngSwitchDefault class="ti-credit-card red"></i>
+    </ng-container>
+
+    <input #card type="text" credit-card (input)="updateNum(card.value)" />
+  </div>
+
+  <button (click)="setMask()">Set Mask</button>
+  <div class="input-container">
+    <ng-container [ngSwitch]="creditCardNumber[0]">
+      <i *ngSwitchCase="'3'" class="ti-credit-card green"></i>
+      <i *ngSwitchCase="'4'" class="ti-credit-card yellow"></i>
+      <i *ngSwitchCase="'5'" class="ti-credit-card pink"></i>
+      <i *ngSwitchCase="'6'" class="ti-credit-card purple"></i>
+      <i *ngSwitchDefault class="ti-credit-card red"></i>
+    </ng-container>
+
+    <input type="text" credit-card [value]="ccMasked" readonly />
+  </div>
+</div>

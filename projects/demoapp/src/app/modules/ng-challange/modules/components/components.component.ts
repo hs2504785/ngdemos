@@ -1,16 +1,16 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { LoaderType } from './loader/models/loader-type.enum';
 
 @Component({
   selector: 'app-components',
   templateUrl: './components.component.html',
   styleUrls: ['./components.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComponentsComponent implements OnInit {
+  public loaderType = LoaderType.Loading;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

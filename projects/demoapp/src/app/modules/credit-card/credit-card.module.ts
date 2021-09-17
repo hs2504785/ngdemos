@@ -11,5 +11,6 @@ import {
 @NgModule({
   declarations: [CreditCardComponent, CreditCardDirective, TooltipDirective],
   imports: [CommonModule, CreditCardRoutingModule],
+  exports: [CreditCardDirective],
 })
 export class CreditCardModule {}

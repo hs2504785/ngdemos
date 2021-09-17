@@ -1,0 +1,42 @@
+@import '../../../../../../scss/variables';
+
+.credit-card-input-container {
+  display: grid;
+  grid-gap: 10px;
+
+  .input-container {
+    position: relative;
+
+    input {
+      padding: 10px;
+      padding-left: 2.5em;
+      margin-top: 0;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 1em;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+h2 {
+  margin: 10px 0 5px 0;
+}
+.red {
+  color: $red;
+}
+.green {
+  color: $green;
+}
+.yellow {
+  color: $yellow;
+}
+.pink {
+  color: $pink;
+}
+.purple {
+  color: $purple;
+}
