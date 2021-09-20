@@ -14,6 +14,8 @@ import { DebounceSearchComponent } from './debounce-search/debounce-search.compo
 import { SearchListComponent } from './search-list/search-list.component';
 import { CounterComponent } from './counter/counter.component';
 import { SimpleTableComponent } from './simple-table/simple-table.component';
+import { PagingComponent } from './paging/paging.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { SimpleTableComponent } from './simple-table/simple-table.component';
     SearchListComponent,
     CounterComponent,
     SimpleTableComponent,
+    PagingComponent,
+    ProgressBarComponent,
   ],
   imports: [CommonModule, SharedModule, ComponentsRoutingModule],
 })

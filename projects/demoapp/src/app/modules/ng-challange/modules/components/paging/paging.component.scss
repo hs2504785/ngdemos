@@ -1,0 +1,28 @@
+@import '../../../../../../scss/variables';
+
+ul {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+
+  li {
+    display: inline;
+    list-style: none;
+    margin: 3px;
+
+    button {
+      border: none;
+      background-color: white;
+      @include box-shadow();
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+
+      &.current-page {
+        background-color: $blue;
+        color: white;
+        transition: all 0.3s;
+      }
+    }
+  }
+}

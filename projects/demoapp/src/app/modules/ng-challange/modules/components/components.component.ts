@@ -10,6 +10,7 @@ import { LoaderType } from './loader/models/loader-type.enum';
 export class ComponentsComponent implements OnInit {
   public loaderType = LoaderType.Loading;
   public toggleValue = false;
+  progressValue = 25;
 
   constructor() {}
 

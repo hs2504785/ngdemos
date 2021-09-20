@@ -1,5 +1,23 @@
 <div class="dashboard">
   <app-card
+    [iconClasses]="'ti-star'"
+    [title]="'Progress Bar'"
+    [subTitle]="'Components'"
+  >
+    <app-progress-bar body [value]="progressValue"></app-progress-bar>
+
+    <button footer (click)="progressValue = 75">Update</button>
+  </app-card>
+
+  <app-card
+    [iconClasses]="'ti-bag'"
+    [title]="'Paging'"
+    [subTitle]="'Components'"
+  >
+    <app-paging body [totalItems]="200"> </app-paging>
+  </app-card>
+
+  <app-card
     [iconClasses]="'ti-list'"
     [title]="'Simple Table'"
     [subTitle]="'Components'"
