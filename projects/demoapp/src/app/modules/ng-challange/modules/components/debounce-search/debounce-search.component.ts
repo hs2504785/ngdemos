@@ -1,7 +1,6 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Subject } from 'rxjs';
-import { debounceTime } from 'rxjs/internal/operators/debounceTime';
-import { distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-debounce-search',
