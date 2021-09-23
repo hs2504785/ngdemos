@@ -23,6 +23,11 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'lazydemo',
+    loadChildren: () =>
+      import('./modules/lazydemo/lazydemo.module').then(m => m.LazydemoModule),
+  },
 ];
 
 @NgModule({
