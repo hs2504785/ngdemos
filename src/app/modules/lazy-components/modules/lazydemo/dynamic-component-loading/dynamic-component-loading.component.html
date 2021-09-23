@@ -1,0 +1,16 @@
+<div class="dynamic-component-loading-wrapper">
+    <button mat-raised-button color="primary" (click)="showBusinessCard()">
+        Show Business Card
+    </button>
+    <br >
+    <button mat-raised-button color="primary" (click)="showUserList()">
+        Show User List
+    </button>
+    <br >
+    <button mat-raised-button color="primary" (click)="clear()">
+        Clear
+    </button>
+</div>
+<div>
+    <ng-container #dynamicComponent></ng-container>
+</div>

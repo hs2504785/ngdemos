@@ -39,6 +39,11 @@
                 "glob": "**/*",
                 "input": "assets/",
                 "output": "assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/modules/lazy-components/modules/lazydemo/weather-forecast/assets/",
+                "output": "assets/"
               }
             ],
             "styles": [
