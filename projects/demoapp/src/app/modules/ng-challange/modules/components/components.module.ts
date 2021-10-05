@@ -16,6 +16,7 @@ import { CounterComponent } from './counter/counter.component';
 import { SimpleTableComponent } from './simple-table/simple-table.component';
 import { PagingComponent } from './paging/paging.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     SimpleTableComponent,
     PagingComponent,
     ProgressBarComponent,
+    TabsComponent,
   ],
   imports: [CommonModule, SharedModule, ComponentsRoutingModule],
 })

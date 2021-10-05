@@ -11,6 +11,11 @@ export class ComponentsComponent implements OnInit {
   public loaderType = LoaderType.Loading;
   public toggleValue = false;
   progressValue = 25;
+  public tabs: { title: string; active: boolean }[] = [
+    { title: 'Tab 1', active: true },
+    { title: 'Tab 2', active: false },
+  ];
+  public selectedTab = 0;
 
   constructor() {}
 

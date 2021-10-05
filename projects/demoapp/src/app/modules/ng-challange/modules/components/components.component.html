@@ -1,6 +1,17 @@
 <div class="dashboard">
   <app-card
     [iconClasses]="'ti-star'"
+    [title]="'Tabs'"
+    [subTitle]="'Components'"
+  >
+    <app-tabs body [tabs]="tabs" (selectedTabIndex)="selectedTab = $event">
+      <app-paging *ngIf="selectedTab === 0" [totalItems]="200"> </app-paging>
+      <app-counter *ngIf="selectedTab === 1"></app-counter>
+    </app-tabs>
+  </app-card>
+
+  <app-card
+    [iconClasses]="'ti-star'"
     [title]="'Progress Bar'"
     [subTitle]="'Components'"
   >
