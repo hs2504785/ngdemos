@@ -7,6 +7,7 @@ import { CreditCardComponent } from './credit-card/credit-card.component';
 import { SharedModule } from '../../shared/shared.module';
 import { CreditCardDirective } from './dirs/credit-card.directive';
 import { DebounceClickDirective } from './debounce-click/debounce-click.directive';
+import { RippleDirective } from './ripple/ripple.directive';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { DebounceClickDirective } from './debounce-click/debounce-click.directiv
     CreditCardComponent,
     CreditCardDirective,
     DebounceClickDirective,
+    RippleDirective,
   ],
   imports: [CommonModule, SharedModule, DirectivesRoutingModule],
 })

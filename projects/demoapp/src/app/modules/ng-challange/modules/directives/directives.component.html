@@ -1,58 +1,14 @@
-<!-- <app-banner-cut-out [title]="'Pipes'" [imageUrl]="'assets/back-4.jpg'"></app-banner-cut-out>
- <hr>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Sort By Key'" [subTitle]="'Pipes'">
-   <div body>
-     <h5>String Ascending</h5>
-     <p *ngFor="let obj of objectArray | sortByKey : 'content'">{{ obj.content  }}</p>
-
-     <h5>String Descending</h5>
-     <p *ngFor="let obj of objectArray | sortByKey : 'content' : false">{{ obj.content  }}</p>
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Sort By'" [subTitle]="'Pipes'">
-   <div body>
-     <h5>String Ascending</h5>
-     <p>{{ stringArray | sortBy }}</p>
-
-     <h5>String Descending</h5>
-     <p>{{ stringArray | sortBy : false }}</p>
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Rich Text'" [subTitle]="'Pipes'">
-   <div body>
-     <div [innerHtml]="html | richText"> </div>
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Filter Term'" [subTitle]="'Pipes'">
-   <div body>
-     {{ ['Hello', 'World', 'Hello World'] | appFilterTerm : 'World'  }}
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Flatten'" [subTitle]="'Pipes'">
-   <div body>
-     {{ flattenData | appFlatten}}
-   </div>
-
-   <div class="footer" footer>
-     <button (click)="modifyFlatten()">Modify</button>
-     <button (click)="reassignFlatten()">Reassign</button>
-   </div>
- </app-card>
-
- <app-card [iconClasses]="'fas fa-info-circle'" [title]="'Credit Card Formatter'" [subTitle]="'Pipes'">
-   <div body>
-     <p>{{'1111222233334444' | creditCardFormatter}}</p>
-     <p>{{'111111111111111111111111111111' | creditCardFormatter}}</p>
-     <p>{{'a111222233334444' | creditCardFormatter}}</p>
-   </div>
- </app-card>
- -->
 <div class="dashboard">
+  <app-card
+    [iconClasses]="'ti-user'"
+    [title]="'Ripple'"
+    [subTitle]="'Directives'"
+  >
+    <div body>
+      <button appRipple>Ripple Button</button>
+    </div>
+  </app-card>
+
   <app-card [iconClasses]="'ti-package'" [title]="'Credit Card'">
     <app-credit-card body></app-credit-card>
   </app-card>
