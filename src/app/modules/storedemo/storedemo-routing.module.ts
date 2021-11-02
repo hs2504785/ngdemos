@@ -5,6 +5,7 @@ import { UserDataResolver as UserDataResolver1 } from './users-data/services/use
 import { UserEntityDemoResolver } from './users-entity-demo/services/user-entity-demo.resolver';
 import { UserEntityResolver } from './users-entity/services/user-entity.resolver';
 import { UserDataResolver } from './users-service/services/user-data.resolver';
+import { UserStoreFeatureResolver } from './users-store-feature/services/user-store-feature-resolver.service';
 import { UserStoreResolver } from './users-store/services/user-store.resolver';
 import { UserWsResolver } from './users-ws/services/user-ws.resolver';
 
@@ -75,6 +76,7 @@ const routes: Routes = [
           import('./users-store-feature/users-store-feature.module').then(
             m => m.UsersStoreFeatureModule,
           ),
+        resolve: [UserStoreFeatureResolver],
       },
       {
         path: '',
