@@ -70,6 +70,13 @@ const routes: Routes = [
         resolve: [UserEntityDemoResolver],
       },
       {
+        path: 'users-store-feature',
+        loadChildren: () =>
+          import('./users-store-feature/users-store-feature.module').then(
+            m => m.UsersStoreFeatureModule,
+          ),
+      },
+      {
         path: '',
         redirectTo: 'users-data',
       },
