@@ -119,7 +119,7 @@ export class WorkerappComponent implements OnInit {
 
   handleWebWorkerProcess() {
     this.clearCanvas();
-    let canvas = this.createCanvas();
+    let canvas: any = this.createCanvas();
     document.getElementById('canContainer').append(canvas);
     let offscreen = canvas.transferControlToOffscreen();
     this.worker.postMessage({ canvas: offscreen }, [offscreen]);

@@ -67,16 +67,16 @@
     "jquery": "^3.6.0",
     "ng-dynamic-component": "^8.0.1",
     "ng2-nvd3": "^2.0.0",
-    "ngx-indexed-db": "^9.1.2",
+    "ngx-indexed-db": "^9.4.0",
     "primeflex": "^3.0.1",
     "primeicons": "^4.1.0",
     "primeng": "^12.1.0",
     "pusher-js": "^7.0.3",
+    "rxfire": "^6.0.0",
     "rxjs": "6.6.7",
     "spectrum-colorpicker": "^1.8.1",
     "tslib": "^2.3.1",
-    "zone.js": "~0.11.4",
-    "rxfire": "^6.0.0"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/architect": "0.1300.1",

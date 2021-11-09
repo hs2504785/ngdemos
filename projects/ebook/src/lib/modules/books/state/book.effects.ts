@@ -17,11 +17,11 @@ import { searchBooks, searchFailure, searchSuccess } from './books.actions';
 export class BookEffects {
   search$ = createEffect(
     () =>
-      ({ debounce = 300, scheduler = asyncScheduler } = {}) =>
+      ({ debounce = 300, scheduler = asyncScheduler } = {}): any =>
         this.actions$.pipe(
           ofType(searchBooks),
           debounceTime(debounce, scheduler),
-          switchMap(({ query }) => {
+          switchMap(({ query }): any => {
             if (query === '') {
               return empty;
             }
