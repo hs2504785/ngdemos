@@ -32,6 +32,7 @@ All done!
 https://hs2504785.github.io/ngdemos/ngapp
 https://hs2504785.github.io/ngdemos/demoapp
 https://hs2504785.github.io/ngdemos/fitness
+https://hs2504785.github.io/ngdemos/movies-app
 
 ## Generate lazy module
 
