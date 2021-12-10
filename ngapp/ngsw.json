@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1636442739054,
+  "timestamp": 1639147061228,
   "index": "/ngdemos/ngapp/index.html",
   "assetGroups": [
     {
@@ -93,10 +93,10 @@
         "/ngdemos/ngapp/common.b21d4c75e8e85318.js",
         "/ngdemos/ngapp/favicon.ico",
         "/ngdemos/ngapp/index.html",
-        "/ngdemos/ngapp/main.ac77c65f2e5dcf4b.js",
+        "/ngdemos/ngapp/main.053d3571f3e9f73e.js",
         "/ngdemos/ngapp/manifest.webmanifest",
         "/ngdemos/ngapp/polyfills.a4eae00a483aaee0.js",
-        "/ngdemos/ngapp/runtime.13a9719a2d59f981.js",
+        "/ngdemos/ngapp/runtime.940220307508c805.js",
         "/ngdemos/ngapp/styles.ad8ae07f6dee33ac.css"
       ],
       "patterns": []
@@ -311,11 +311,11 @@
     "/ngdemos/ngapp/assets/weather-icons/10n.png": "3a6d055460cc3c5591476ca769e165143042ce74",
     "/ngdemos/ngapp/common.b21d4c75e8e85318.js": "cb1eb2cce94724242bff36f9b47199b9bcd7a6da",
     "/ngdemos/ngapp/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ngdemos/ngapp/index.html": "dcb61f32cb896f56feee271d196be0cd97db47d7",
-    "/ngdemos/ngapp/main.ac77c65f2e5dcf4b.js": "b034dcbcc0c7c3246628d7aa9eed50195098bbbf",
+    "/ngdemos/ngapp/index.html": "46086db212fa3bb31f67144a72fa0527a9238131",
+    "/ngdemos/ngapp/main.053d3571f3e9f73e.js": "64e710191f53e681f36ce1143250091f25853cbc",
     "/ngdemos/ngapp/manifest.webmanifest": "133d5527e2c2a03de426ec08dcc5e9183b9e8f1d",
     "/ngdemos/ngapp/polyfills.a4eae00a483aaee0.js": "9600b5a3c239e83d1129d1049d0551b3870f045a",
-    "/ngdemos/ngapp/runtime.13a9719a2d59f981.js": "353d9f305ae986a28df7a486a175e10478e881b3",
+    "/ngdemos/ngapp/runtime.940220307508c805.js": "353d9f305ae986a28df7a486a175e10478e881b3",
     "/ngdemos/ngapp/styles.ad8ae07f6dee33ac.css": "3b4be3201035f4b3a40e14aec5d202ff1467a954",
     "/ngdemos/ngapp/themify.0504804445e9a55f.eot": "df12a0942cf1933f0915fe3d910fa2379f092d83",
     "/ngdemos/ngapp/themify.521461b29694f8e6.svg": "f5af112fb5aa7c4f665acc21a38b035bbb62327c",
