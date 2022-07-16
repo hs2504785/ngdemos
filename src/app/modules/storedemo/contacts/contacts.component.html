@@ -1,1 +1,8 @@
-<p>contacts works!</p>
+<app-header
+  (searchContacts)="searchContacts($event)"
+  (addContact)="addContact()"
+></app-header>
+<app-contact-list
+  [data]="filteredContacts"
+  (deleteContact)="deleteContact($event)"
+></app-contact-list>
