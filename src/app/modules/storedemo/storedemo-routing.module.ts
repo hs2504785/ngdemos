@@ -79,11 +79,28 @@ const routes: Routes = [
         resolve: [UserStoreFeatureResolver],
       },
       {
+        path: 'contacts',
+        loadChildren: () =>
+          import('./contacts/contacts.module').then(m => m.ContactsModule),
+      },
+      {
+        path: 'contacts-cs',
+        loadChildren: () =>
+          import('./contacts-cs/contacts-cs.module').then(
+            m => m.ContactsCsModule,
+          ),
+      },
+      {
         path: '',
         redirectTo: 'users-data',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
     ],
+  },
+  {
+    path: 'contacts',
+    loadChildren: () =>
+      import('./contacts/contacts.module').then(m => m.ContactsModule),
   },
 ];
 
