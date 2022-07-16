@@ -40,6 +40,11 @@ export class ContactsStore extends ComponentStore<ContactsState> {
     contacts,
   }));
 
+  readonly removeContactFromStore = this.updater((state, name: string) => ({
+    ...state,
+    contacts: state.contacts.filter(item => item.name !== name),
+  }));
+
   readonly fetchContacts = this.effect(trigger$ =>
     trigger$.pipe(
       switchMap(() =>
@@ -93,7 +98,7 @@ export class ContactsStore extends ComponentStore<ContactsState> {
             success: 'Contact deleted!',
             error: 'Could not delete.',
           }),
-          tap(() => this.fetchContacts()),
+          tap(() => this.removeContactFromStore(contact.name)),
           catchError(() => EMPTY),
         ),
       ),
