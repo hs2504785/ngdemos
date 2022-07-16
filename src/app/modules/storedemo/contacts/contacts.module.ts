@@ -15,7 +15,6 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
     ContactListComponent,
     HeaderComponent,
     AddContactComponent,
-    ContactListComponent,
   ],
   imports: [
     CommonModule,

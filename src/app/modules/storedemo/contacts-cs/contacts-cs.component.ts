@@ -1,16 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ContactsStore } from './state/contacts.store';
 
 @Component({
   selector: 'app-contacts-cs',
   templateUrl: './contacts-cs.component.html',
   styleUrls: ['./contacts-cs.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ContactsStore],
 })
-export class ContactsCsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class ContactsCsComponent {
+  constructor() {}
 }
