@@ -29,6 +29,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'car-search',
+        pathMatch: 'full',
       },
     ],
   },

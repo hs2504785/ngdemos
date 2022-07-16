@@ -13,7 +13,7 @@ export const routes: Routes = [
       ),
     data: { preload: true },
   },
-  { path: '**', redirectTo: 'mail/folder/inbox' },
+  { path: '**', redirectTo: 'mail/folder/inbox', pathMatch: 'full' },
 ];
 
 @NgModule({

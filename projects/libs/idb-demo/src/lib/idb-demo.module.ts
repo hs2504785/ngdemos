@@ -24,6 +24,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'idb-sample',
+        pathMatch: 'full',
       },
     ],
   },

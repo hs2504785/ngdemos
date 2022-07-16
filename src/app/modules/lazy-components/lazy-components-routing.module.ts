@@ -20,6 +20,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'lazy1',
+        pathMatch: 'full',
       },
     ],
   },

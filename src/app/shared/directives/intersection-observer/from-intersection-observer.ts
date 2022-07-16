@@ -14,8 +14,8 @@ export const fromIntersectionObserver = (
 ) =>
   new Observable<IntersectionStatus>(subscriber => {
     const subject$ = new Subject<{
-      entry: IntersectionObserverEntry;
-      observer: IntersectionObserver;
+      entry: IntersectionObserverEntry,
+      observer: IntersectionObserver
     }>();
 
     const intersectionObserver = new IntersectionObserver(

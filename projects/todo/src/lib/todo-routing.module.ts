@@ -41,6 +41,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'no-entity',
+        pathMatch: 'full',
       },
     ],
   },

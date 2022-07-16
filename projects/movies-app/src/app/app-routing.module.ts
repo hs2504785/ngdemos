@@ -8,32 +8,33 @@ import { MoviesComponent } from './pages/movies/movies.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'movies',
-    component: MoviesComponent
+    component: MoviesComponent,
   },
   {
     path: 'movies/genres/:genreId',
-    component: MoviesComponent
+    component: MoviesComponent,
   },
   {
     path: 'movie/:id',
-    component: MovieComponent
+    component: MovieComponent,
   },
   {
     path: 'genres',
-    component: GenresComponent
+    component: GenresComponent,
   },
   {
     path: '**',
-    redirectTo: ''
-  }
+    redirectTo: '',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
