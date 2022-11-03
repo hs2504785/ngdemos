@@ -107,3 +107,6 @@ https://1linelayouts.glitch.me/
 ## Lazy Load Components
 
 https://johnpapa.net/angular-9-lazy-loading-components/
+
+## Todo
+upgrade to v12 than v13
