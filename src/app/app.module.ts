@@ -18,6 +18,7 @@ import { metaReducers } from './store/meta-reducers';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeModule } from './home/home.module';
+import { CacheInterceptor } from './interceptors/cache.interceptor';
 
 @NgModule({
   declarations: [AppComponent, LoaderComponent],
@@ -42,6 +43,7 @@ import { HomeModule } from './home/home.module';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
