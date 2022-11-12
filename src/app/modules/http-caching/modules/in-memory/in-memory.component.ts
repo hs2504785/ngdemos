@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { HttpCachingService } from '../../services/http-caching.service';
+import { InMemoryService } from './services/in-memory.service';
 
 @Component({
   selector: 'app-in-memory',
@@ -12,7 +13,7 @@ export class InMemoryComponent implements OnInit {
   states = [];
   cities = [];
 
-  constructor(private httpCaching: HttpCachingService) {}
+  constructor(private httpCaching: InMemoryService) {}
 
   ngOnInit(): void {
     this.countries = this.httpCaching.getAllCountries();
