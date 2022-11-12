@@ -140,6 +140,7 @@ const routes: Routes = [
         m => m.ReusableSearchModule,
       ),
   },
+  { path: 'http-caching', loadChildren: () => import('./modules/http-caching/http-caching.module').then(m => m.HttpCachingModule) },
   // Fallbak route
   {
     path: '**',

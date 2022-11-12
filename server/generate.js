@@ -1,5 +1,8 @@
 //Documentation: https://www.npmjs.com/package/faker
 var faker = require('faker');
+var countries = require('./json/countries');
+var states = require('./json/states');
+var cities = require('./json/cities');
 
 var database = {
   products: [],
@@ -9,6 +12,9 @@ var database = {
   messages: [],
   playlist: [],
   guitars: [],
+  countries: countries,
+  states: states,
+  cities: cities,
 };
 
 for (var i = 1; i <= 200; i++) {
