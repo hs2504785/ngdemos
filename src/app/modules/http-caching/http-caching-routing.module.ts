@@ -28,6 +28,21 @@ const routes: Routes = [
             m => m.WithoutCachingModule,
           ),
       },
+      {
+        path: 'simple-caching',
+        loadChildren: () =>
+          import('./modules/simple-caching/simple-caching.module').then(
+            m => m.SimpleCachingModule,
+          ),
+      },
+
+      {
+        path: 'simple-caching-demo',
+        loadChildren: () =>
+          import(
+            './modules/simple-caching-demo/simple-caching-demo.module'
+          ).then(m => m.SimpleCachingDemoModule),
+      },
 
       {
         path: '',

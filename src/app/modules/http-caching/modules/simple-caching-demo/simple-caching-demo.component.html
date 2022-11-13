@@ -1,0 +1,20 @@
+<header class="m-2 d-flex justify-content-center">
+  <h2>Simple Caching Demo</h2>
+</header>
+
+<div class="container-fluid">
+  <div class="row" *ngIf="countries$ | async as countries">
+    <div class="col-sm-3 mb-4" *ngFor="let country of countries">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i>{{ country.flag }}</i>
+            {{ country.name }}
+          </h5>
+          <p class="card-text">Phone Code: {{ country.phonecode }}</p>
+          <p class="card-text">Phone Currency: {{ country.currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
