@@ -1,1 +1,0 @@
-(()=>{"use strict";addEventListener("message",({data:n})=>{const r=function(n){let r;for(var e=0;e<=n;e+=.1)r=performance.now();return r}(n);postMessage(r)})})();
