@@ -1,0 +1,6 @@
+<app-vsdumb
+  [photos]="photos$ | async"
+  [isLoading]="isLoading"
+  [theEnd]="theEnd"
+  (nextBatchFn)="nextBatch($event)"
+></app-vsdumb>

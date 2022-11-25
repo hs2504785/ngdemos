@@ -20,6 +20,11 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        path: 'vs',
+        loadChildren: () =>
+          import('./modules/vs/vs.module').then(m => m.VsModule),
+      },
+      {
         path: '',
         redirectTo: 'basic',
         pathMatch: 'full',
