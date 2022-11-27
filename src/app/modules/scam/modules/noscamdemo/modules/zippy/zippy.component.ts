@@ -12,12 +12,5 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ZippyComponent {
-  @Input()
-  label = 'Toggle';
-
-  isExpanded = false;
-
-  onToggle() {
-    this.isExpanded = !this.isExpanded;
-  }
+  title = 'my zippy test';
 }

@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ZippyRoutingModule } from './zippy-routing.module';
-import { ZippyComponent } from './zippy.component';
+import { ZippyComponent as LandingZippy } from './zippy.component';
 import { UiModule } from '../../ui/ui.module';
-import { CapitalizePipe } from '../../../shared/pipes/capitalize.pipe';
-import { ButtonDirective } from '../../../shared/directives/button.directive';
+import { NoscamSharedModule } from '../../../shared/noscam-shared.module';
+import { ZippyComponent } from '../components/zippy/zippy.component';
 
 @NgModule({
-  declarations: [ZippyComponent, CapitalizePipe, ButtonDirective],
-  imports: [CommonModule, ZippyRoutingModule, UiModule],
+  declarations: [LandingZippy, ZippyComponent],
+  imports: [CommonModule, ZippyRoutingModule, UiModule, NoscamSharedModule],
 })
 export class ZippyModule {}

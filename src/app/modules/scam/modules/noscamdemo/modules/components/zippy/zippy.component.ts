@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-zippy',
+  selector: 'app-zippycomp',
   templateUrl: './zippy.component.html',
   styleUrls: ['./zippy.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
