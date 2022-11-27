@@ -4,13 +4,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   selector: 'app-zippy',
   templateUrl: './zippy.component.html',
   styleUrls: ['./zippy.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ZippyComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class ZippyComponent {
+  title = 'my zippy test';
 }

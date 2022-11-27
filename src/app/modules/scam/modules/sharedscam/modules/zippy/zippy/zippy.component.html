@@ -1,0 +1,7 @@
+<button appButton (appClick)="onToggle()">
+  {{ label }}
+</button>
+
+<div [hidden]="!isExpanded">
+  <ng-content></ng-content>
+</div>
