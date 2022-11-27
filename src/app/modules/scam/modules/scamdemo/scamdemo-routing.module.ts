@@ -19,7 +19,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'zipp1',
+        redirectTo: 'zippy',
         pathMatch: 'full',
       },
     ],
