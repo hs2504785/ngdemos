@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { UiModule } from '../ui/ui.module';
+import { UiModule } from './ui/ui.module';
 import { ZippyComponent } from './components/zippy/zippy.component';
 import { Zippy1Component } from './components/zippy1/zippy1.component';
 import { ButtonDirective } from './directives/button.directive';
