@@ -34,7 +34,7 @@
     "primedeploy": "ng build --project=primedemos --base-href \"/ngdemos/primedemos/\"",
     "moviesapp": "ng build --project=movies-app --base-href \"/ngdemos/movies-app/\"",
     "ngappdeploy": "ng build --base-href \"/ngdemos/ngapp/\" && npm run gzipmainapp",
-    "deploy": "ngh --dir=dist --message=\"My First deploy\"",
+    "deploy": "ngh --dir=dist/ngapp --message=\"My First deploy\"",
     "gzipmainapp": "gzipper c --verbose ./dist/ngapp",
     "imageoptim": "imageoptim './assets'"
   },
