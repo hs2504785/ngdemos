@@ -96,6 +96,14 @@ than deploy
 
 # References
 
+## Module Bundling
+
+https://christiankohler.net/bundling-angular-modules
+
+## Module best practices
+
+https://christiankohler.net/angular-modules-best-practices-2021
+
 ## Locale Flags
 
 https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.css
@@ -109,4 +117,5 @@ https://1linelayouts.glitch.me/
 https://johnpapa.net/angular-9-lazy-loading-components/
 
 ## Todo
-upgrade to v12 than v13
+
+upgrade to v14 than v14
