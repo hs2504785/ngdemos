@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
-  declarations: [],
+  declarations: [ToolbarComponent],
   imports: [CommonModule, MatToolbarModule, MatIconModule, MatMenuModule],
   exports: [ToolbarComponent],
 })

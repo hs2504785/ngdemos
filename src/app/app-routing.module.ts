@@ -142,6 +142,7 @@ const routes: Routes = [
   },
   { path: 'http-caching', loadChildren: () => import('./modules/http-caching/http-caching.module').then(m => m.HttpCachingModule) },
   { path: 'scam', loadChildren: () => import('./modules/scam/scam.module').then(m => m.ScamModule) },
+  { path: 'aggriddemo', loadChildren: () => import('./modules/aggriddemo/aggriddemo.module').then(m => m.AggriddemoModule) },
   // Fallbak route
   {
     path: '**',

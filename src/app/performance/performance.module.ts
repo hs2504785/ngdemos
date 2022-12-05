@@ -9,17 +9,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-import { ToolbarComponent } from '../shared/components/toolbar/toolbar.component';
 import { AvoidFunctionCallComponent } from './components/avoid-function-call/avoid-function-call.component';
 import { ReturnSymbolPipe } from './pipes/return-symbol.pipe';
 import { NgforTrackByComponent } from './components/ngfor-track-by/ngfor-track-by.component';
 import { JustMatTableComponent } from './components/just-mat-table/just-mat-table.component';
 import { MatTableModule } from '@angular/material/table';
+import { ToolbarModule } from '../shared/components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [
     PerformanceComponent,
-    ToolbarComponent,
     AvoidFunctionCallComponent,
     ReturnSymbolPipe,
     NgforTrackByComponent,
@@ -35,6 +34,7 @@ import { MatTableModule } from '@angular/material/table';
     MatMenuModule,
     MatButtonModule,
     MatTableModule,
+    ToolbarModule,
   ],
 })
 export class PerformanceModule {}
