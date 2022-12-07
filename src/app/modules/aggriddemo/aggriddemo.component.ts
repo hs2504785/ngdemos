@@ -4,9 +4,11 @@ import {
   Component,
   OnInit,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { HelperService } from 'src/app/shared/services/helper.service';
 const SMALL_WIDTH_BREAKPOINT = 720;
 
 @Component({
@@ -14,6 +16,7 @@ const SMALL_WIDTH_BREAKPOINT = 720;
   templateUrl: './aggriddemo.component.html',
   styleUrls: ['./aggriddemo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class AggriddemoComponent implements OnInit {
   public isScreenSmall: boolean;
@@ -24,7 +27,10 @@ export class AggriddemoComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private router: Router,
-  ) {}
+    private helperService: HelperService,
+  ) {
+    this.helperService.loadStyle('aggrid.min.css');
+  }
 
   @ViewChild(MatSidenav) sidenav: MatSidenav;
 

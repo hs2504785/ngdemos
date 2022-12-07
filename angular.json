@@ -52,7 +52,12 @@
               }
             ],
             "styles": [
-              "scss/main.scss"
+              "scss/main.scss",
+              {
+                "input": "scss/components/ag-grid.scss",
+                "inject": false,
+                "bundleName": "aggrid.min"
+              }
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
