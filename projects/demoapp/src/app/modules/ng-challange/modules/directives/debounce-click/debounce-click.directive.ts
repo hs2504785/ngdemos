@@ -33,6 +33,6 @@ export class DebounceClickDirective implements OnInit, OnDestroy {
   public clickEvent(event: any): void {
     event.preventDefault();
     event.stopPropagation();
-    this.clicks.next();
+    this.clicks.next(null);
   }
 }
