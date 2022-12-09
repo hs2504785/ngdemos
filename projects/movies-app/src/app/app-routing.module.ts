@@ -1,30 +1,42 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GenresComponent } from './pages/genres/genres.component';
 import { HomeComponent } from './pages/home/home.component';
-import { MovieComponent } from './pages/movie/movie.component';
-import { MoviesComponent } from './pages/movies/movies.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
   },
+  // {
+  //   path: 'movies',
+  //   component: MoviesComponent,
+  // },
+  // {
+  //   path: 'movies/genres/:genreId',
+  //   component: MoviesComponent,
+  // },
+  // {
+  //   path: 'movie/:id',
+  //   component: MovieComponent,
+  // },
+  // {
+  //   path: 'genres',
+  //   component: GenresComponent,
+  // },
   {
     path: 'movies',
-    component: MoviesComponent,
+    loadChildren: () =>
+      import('./modules/movies/movies.module').then(m => m.MoviesModule),
   },
   {
-    path: 'movies/genres/:genreId',
-    component: MoviesComponent,
-  },
-  {
-    path: 'movie/:id',
-    component: MovieComponent,
+    path: 'movie',
+    loadChildren: () =>
+      import('./modules/movie/movie.module').then(m => m.MovieModule),
   },
   {
     path: 'genres',
-    component: GenresComponent,
+    loadChildren: () =>
+      import('./modules/genres/genres.module').then(m => m.GenresModule),
   },
   {
     path: '**',
