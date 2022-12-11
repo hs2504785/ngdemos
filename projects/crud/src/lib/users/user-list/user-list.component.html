@@ -8,6 +8,7 @@
 
   <div class="user-cards">
     <mat-card
+      appearance="outlined"
       class="example-card m-4"
       *ngFor="let user of users$ | async; trackBy: trackByUser"
     >

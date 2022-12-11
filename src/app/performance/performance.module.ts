@@ -4,16 +4,16 @@ import { CommonModule } from '@angular/common';
 import { PerformanceRoutingModule } from './performance-routing.module';
 import { PerformanceComponent } from './performance.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
+import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { AvoidFunctionCallComponent } from './components/avoid-function-call/avoid-function-call.component';
 import { ReturnSymbolPipe } from './pipes/return-symbol.pipe';
 import { NgforTrackByComponent } from './components/ngfor-track-by/ngfor-track-by.component';
 import { JustMatTableComponent } from './components/just-mat-table/just-mat-table.component';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
+import { MatTableModule } from '@angular/material/table';
 import { ToolbarModule } from '../shared/components/toolbar/toolbar.module';
 
 @NgModule({

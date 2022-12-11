@@ -1,5 +1,5 @@
 <a [routerLink]="['/ebook/books', id]">
-  <mat-card>
+  <mat-card appearance="outlined">
     <mat-card-title-group>
       <img mat-card-sm-image *ngIf="thumbnail" [src]="thumbnail" />
       <mat-card-title>{{ title | ellipsis: 35 }}</mat-card-title>

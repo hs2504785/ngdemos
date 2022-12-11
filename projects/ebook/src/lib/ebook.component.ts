@@ -46,16 +46,16 @@ import { selectShowSidenav } from './state/layout.selectors';
   `,
   styles: [
     `
-      mat-sidenav-container {
-        background: rgba(0, 0, 0, 0.03);
-      }
-
-      /* *,
-      ::ng-deep * {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      } */
-    `,
+          mat-sidenav-container {
+            background: rgba(0, 0, 0, 0.03);
+          }
+    
+          /* *,
+          ::ng-deep * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          } */
+        `,
   ],
 })
 export class EbookComponent {

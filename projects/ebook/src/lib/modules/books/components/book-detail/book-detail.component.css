@@ -3,9 +3,11 @@
   justify-content: center;
   margin: 75px 0;
 }
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
 mat-card {
   max-width: 600px;
 }
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
 mat-card-title-group {
   margin-left: 0;
 }
@@ -14,12 +16,15 @@ img {
   min-width: 60px;
   margin-left: 5px;
 }
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
 mat-card-content {
   margin: 15px 0 50px;
 }
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
 mat-card-actions {
   margin: 25px 0 0 !important;
 }
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
 mat-card-footer {
   padding: 0 25px 25px;
   position: relative;

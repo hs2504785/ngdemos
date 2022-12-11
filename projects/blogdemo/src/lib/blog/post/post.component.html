@@ -1,4 +1,4 @@
-<mat-card *ngIf="post$ | async as post">
+<mat-card appearance="outlined" *ngIf="post$ | async as post">
   <mat-card-header class="bg-light">
     <mat-form-field *ngIf="editingTitle">
       <input matInput [formControl]="title" (blur)="setTitle(post)" />

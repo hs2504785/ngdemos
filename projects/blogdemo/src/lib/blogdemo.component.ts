@@ -5,10 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './blogdemo.component.html',
   styles: [
     `
-      :host {
-        height: 100vh;
-      }
-    `,
+          :host {
+            height: 100vh;
+          }
+        `,
   ],
 })
 export class BlogdemoComponent {}

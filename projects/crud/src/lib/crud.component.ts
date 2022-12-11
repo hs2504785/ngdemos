@@ -5,10 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './crud.component.html',
   styles: [
     `
-      header a {
-        margin-left: 6px;
-      }
-    `,
+          header a {
+            margin-left: 6px;
+          }
+        `,
   ],
 })
 export class CrudComponent implements OnInit {

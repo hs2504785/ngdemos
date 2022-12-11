@@ -43,27 +43,27 @@ import { AuthRememberComponent } from './auth-remember.component';
   `,
   styles: [
     `
-      form {
-        flex: 1 0;
-        padding: 0 40px;
-      }
-
-      input {
-        display: block;
-        border: none;
-        background: #ffffff;
-        font-size: 13px;
-        padding: 6px 30px 6px 10px;
-        border-radius: 1px;
-        border: 1px solid #eeeeee;
-      }
-      label {
-        margin-bottom: 20px;
-      }
-      h3 {
-        margin-bottom: 20px;
-      }
-    `,
+          form {
+            flex: 1 0;
+            padding: 0 40px;
+          }
+    
+          input {
+            display: block;
+            border: none;
+            background: #ffffff;
+            font-size: 13px;
+            padding: 6px 30px 6px 10px;
+            border-radius: 1px;
+            border: 1px solid #eeeeee;
+          }
+          label {
+            margin-bottom: 20px;
+          }
+          h3 {
+            margin-bottom: 20px;
+          }
+        `,
   ],
 })
 export class AuthFormComponent {
