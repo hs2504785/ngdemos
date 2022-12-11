@@ -6,8 +6,9 @@ import { ContactsComponent } from './contacts.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { FormsModule } from '@angular/forms';
-import { DialogModule, DialogService } from '@ngneat/dialog';
+import { DialogService } from '@ngneat/dialog';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
+import { DialogModule } from '@angular/cdk/dialog';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,7 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
     HeaderComponent,
     AddContactComponent,
   ],
-  imports: [
-    CommonModule,
-    ContactsRoutingModule,
-    FormsModule,
-    DialogModule.forRoot(),
-  ],
+  imports: [CommonModule, ContactsRoutingModule, FormsModule, DialogModule],
   providers: [DialogService],
 })
 export class ContactsModule {}

@@ -7,8 +7,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { FormsModule } from '@angular/forms';
-import { DialogModule, DialogService } from '@ngneat/dialog';
+import { DialogService } from '@ngneat/dialog';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
     CommonModule,
     ContactsCsRoutingModule,
     FormsModule,
-    DialogModule.forRoot(),
+    MatDialogModule,
     HotToastModule.forRoot(),
   ],
   providers: [DialogService],
