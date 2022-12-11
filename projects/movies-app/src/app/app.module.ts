@@ -15,7 +15,6 @@ import { VideoEmbedComponent } from './components/video-embed/video-embed.compon
 import { ImageModule } from 'primeng/image';
 import { CarouselModule } from 'primeng/carousel';
 import { InputTextModule } from 'primeng/inputtext';
-import { ItemModule } from './modules/item/item.module';
 import { ItemsBannerModule } from './modules/items-banner/items-banner.module';
 
 @NgModule({
@@ -37,7 +36,6 @@ import { ItemsBannerModule } from './modules/items-banner/items-banner.module';
     ImageModule,
     CarouselModule,
     InputTextModule,
-    ItemModule,
     ItemsBannerModule,
   ],
   providers: [],

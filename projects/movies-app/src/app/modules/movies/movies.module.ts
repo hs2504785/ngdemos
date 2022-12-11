@@ -5,7 +5,6 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './movies.component';
 import { FormsModule } from '@angular/forms';
 import { PaginatorModule } from 'primeng/paginator';
-import { ItemModule } from '../item/item.module';
 
 @NgModule({
   declarations: [MoviesComponent],
@@ -14,7 +13,6 @@ import { ItemModule } from '../item/item.module';
     MoviesRoutingModule,
     FormsModule,
     PaginatorModule,
-    ItemModule,
   ],
 })
 export class MoviesModule {}
