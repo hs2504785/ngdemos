@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   OnDestroy,
 } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Observable, Subscription } from 'rxjs';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserCsDialogComponent } from './dialogs/user-cs-dialog/user-cs-dialog.component';

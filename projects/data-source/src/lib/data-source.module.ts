@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { DataSourceListComponent } from './data-source-list/data-source-list.component';
 import {
   EntityDataService,

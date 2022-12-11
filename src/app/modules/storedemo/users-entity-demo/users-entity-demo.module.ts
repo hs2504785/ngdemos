@@ -14,10 +14,10 @@ import {
 } from './state/user-entity-demo.reducer';
 import { UserEntityDemoEffects } from './state/user-entity-demo.effects';
 import { EffectsModule } from '@ngrx/effects';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({

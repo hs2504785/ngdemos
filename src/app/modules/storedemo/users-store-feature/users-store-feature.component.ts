@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { UserStoreInterface } from '../users-store/models/user-store-interface';
 import { select, Store } from '@ngrx/store';
 import { deleteStoreUserAction } from './state/actions/users-store-feature.actions';

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from './toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
 
 @NgModule({
   declarations: [ToolbarComponent],

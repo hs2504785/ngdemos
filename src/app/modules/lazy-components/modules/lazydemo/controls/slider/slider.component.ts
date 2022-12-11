@@ -3,10 +3,10 @@ import {
   ChangeDetectionStrategy, Component, OnInit, Self, NgModule, Input, Optional
 } from '@angular/core';
 import { ControlValueAccessor, FormControl, FormGroup, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
 import { Subscription } from 'rxjs';
-import {MatSliderModule} from '@angular/material/slider';
+import {MatLegacySliderModule as MatSliderModule} from '@angular/material/legacy-slider';
 
 @Component({
   selector: 'app-slider',

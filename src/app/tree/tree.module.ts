@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TreeRoutingModule } from './tree-routing.module';
 import { TreeComponent } from './tree.component';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { DataSourceModule } from 'projects/data-source/src/public-api';
 
 @NgModule({

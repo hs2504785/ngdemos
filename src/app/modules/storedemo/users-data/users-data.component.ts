@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Observable } from 'rxjs';
 import { defaultDialogConfig } from 'src/app/shared/dialogs/default-dialog-config';
 import { UserDataInterface } from './models/user-data-interface';
