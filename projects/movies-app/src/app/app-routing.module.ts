@@ -1,28 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-  },
-  // {
-  //   path: 'movies',
-  //   component: MoviesComponent,
-  // },
-  // {
-  //   path: 'movies/genres/:genreId',
-  //   component: MoviesComponent,
-  // },
-  // {
-  //   path: 'movie/:id',
-  //   component: MovieComponent,
-  // },
-  // {
-  //   path: 'genres',
-  //   component: GenresComponent,
-  // },
+  { path: '', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) },
   {
     path: 'movies',
     loadChildren: () =>

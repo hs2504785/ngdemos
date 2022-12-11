@@ -12,54 +12,18 @@
         "dist/libs/idb-demo/libs-idb-demo",
         "dist/libs/idb-demo"
       ],
-      "@libs/shared": [
-        "dist/libs/shared/libs-shared",
-        "dist/libs/shared"
-      ],
-      "blog": [
-        "dist/blog/blog",
-        "dist/blog"
-      ],
-      "blogdemo": [
-        "dist/blogdemo/blogdemo",
-        "dist/blogdemo"
-      ],
-      "chat": [
-        "dist/chat/chat",
-        "dist/chat"
-      ],
-      "crud": [
-        "dist/crud/crud",
-        "dist/crud"
-      ],
-      "data-source": [
-        "dist/data-source/data-source",
-        "dist/data-source"
-      ],
-      "ebook": [
-        "dist/ebook/ebook",
-        "dist/ebook"
-      ],
-      "github-repo": [
-        "dist/github-repo/github-repo",
-        "dist/github-repo"
-      ],
-      "rxdb": [
-        "dist/rxdb/rxdb",
-        "dist/rxdb"
-      ],
-      "test": [
-        "dist/test/test",
-        "dist/test"
-      ],
-      "todo": [
-        "dist/todo/todo",
-        "dist/todo"
-      ],
-      "workerdemo": [
-        "dist/workerdemo/workerdemo",
-        "dist/workerdemo"
-      ]
+      "@libs/shared": ["dist/libs/shared/libs-shared", "dist/libs/shared"],
+      "blog": ["dist/blog/blog", "dist/blog"],
+      "blogdemo": ["dist/blogdemo/blogdemo", "dist/blogdemo"],
+      "chat": ["dist/chat/chat", "dist/chat"],
+      "crud": ["dist/crud/crud", "dist/crud"],
+      "data-source": ["dist/data-source/data-source", "dist/data-source"],
+      "ebook": ["dist/ebook/ebook", "dist/ebook"],
+      "github-repo": ["dist/github-repo/github-repo", "dist/github-repo"],
+      "rxdb": ["dist/rxdb/rxdb", "dist/rxdb"],
+      "test": ["dist/test/test", "dist/test"],
+      "todo": ["dist/todo/todo", "dist/todo"],
+      "workerdemo": ["dist/workerdemo/workerdemo", "dist/workerdemo"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -70,13 +34,11 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
+    "strictTemplates": false,
+    "enableI18nLegacyMessageIdFormat": false
   }
 }
