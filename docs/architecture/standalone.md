@@ -55,3 +55,11 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent).catch(err => console.error(err));
 ```
+
+## Register root routes
+
+```javascript
+bootstrapApplication(AppComponent, {
+  providers: [importProvidersFrom(RouterModule.forRoot(routes))],
+}).catch(err => console.error(err));
+```
