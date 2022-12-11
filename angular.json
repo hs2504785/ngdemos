@@ -1162,6 +1162,12 @@
     "@schematics/angular:component": {
       "style": "scss",
       "changeDetection": "OnPush"
+    },
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
     }
   },
   "defaultProject": "ngdemos"
