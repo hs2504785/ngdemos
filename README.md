@@ -119,3 +119,8 @@ https://johnpapa.net/angular-9-lazy-loading-components/
 ## Todo
 
 upgrade to v14 than v14
+
+## Global Error Handling
+
+https://medium.com/angular-in-depth/expecting-the-unexpected-best-practices-for-error-handling-in-angular-21c3662ef9e4
+
