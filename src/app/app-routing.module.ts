@@ -144,6 +144,7 @@ const routes: Routes = [
   { path: 'scam', loadChildren: () => import('./modules/scam/scam.module').then(m => m.ScamModule) },
   { path: 'aggriddemo', loadChildren: () => import('./modules/aggriddemo/aggriddemo.module').then(m => m.AggriddemoModule) },
   { path: 'lazy-modals', loadChildren: () => import('./modules/lazy-modals/lazy-modals.module').then(m => m.LazyModalsModule) },
+  { path: 'apmdemo', loadChildren: () => import('./modules/apmdemo/apmdemo.module').then(m => m.ApmdemoModule) },
   // Fallbak route
   {
     path: '**',
