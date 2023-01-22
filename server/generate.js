@@ -3,9 +3,11 @@ var faker = require('faker');
 var countries = require('./json/countries');
 var states = require('./json/states');
 var cities = require('./json/cities');
+var apmProducts = require('./json/products');
 
 var database = {
   products: [],
+  apmProducts,
   categories: [],
   carts: [],
   users: [],
