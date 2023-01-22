@@ -68,6 +68,7 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "ag-grid-angular": "^29.0.0",
     "ag-grid-community": "^29.0.0",
+    "angular-in-memory-web-api": "^0.15.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.0",
     "bootswatch": "^4.6.0",

@@ -19,6 +19,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeModule } from './home/home.module';
 import { CacheInterceptor } from './interceptors/cache.interceptor';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ProductData } from './modules/apmdemo/products/product-data';
 
 @NgModule({
   declarations: [AppComponent, LoaderComponent],
@@ -40,6 +42,8 @@ import { CacheInterceptor } from './interceptors/cache.interceptor';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    // for apm demo- remove it
+    HttpClientInMemoryWebApiModule.forRoot(ProductData),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
