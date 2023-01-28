@@ -34,12 +34,14 @@ You can do it for all projects, and for individual project
   },
   "defaultProject": "ngdemos"
 }
+
+// for nx update nx.jsons
 ```
 
 4. styles
 
 ```json
-// include css in main css bundle
+// include css in main css bundle (styles.78437542374.css)
 "styles": [
   "scss/main.scss",
   "assets/tiktik.css"
@@ -68,7 +70,8 @@ You can do it for all projects, and for individual project
   "scss/main.scss",
   {
     "input": "assets/tiktik.css",
-    "bundleName": "titik-compiled"
+    "bundleName": "titik-compiled",
+    "inject": false
   }
 ],
 ```
@@ -98,7 +101,7 @@ You can do it for all projects, and for individual project
 
 6. Configuration
 
-lets add new configuration for staging environment
+lets add new configuration for staging environment ( env b/w dev and prod)
 
 - create file environment.staging.ts inside environments/ folder
 - duplicate production configuration and configure it for staging

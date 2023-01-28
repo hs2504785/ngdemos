@@ -211,3 +211,7 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
   providers: [{ provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig }]
 })
 ```
+
+## Resources
+
+https://www.youtube.com/watch?v=alXyNfxmTjw
