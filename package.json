@@ -36,7 +36,9 @@
     "ngappdeploy": "ng build --base-href \"/ngdemos/ngapp/\" && npm run gzipmainapp",
     "deploy": "ngh --dir=dist --message=\"My First deploy\"",
     "gzipmainapp": "gzipper c --verbose ./dist/ngapp",
-    "imageoptim": "imageoptim './assets'"
+    "imageoptim": "imageoptim './assets'",
+    "compodoc": "compodoc -p tsconfig.doc.json --includes docs -d dist/documentation && npm run copyDocsAsset",
+    "copyDocsAsset": "cpx \"docs/images/*\" dist/documentation/additional-documentation/images"
   },
   "private": true,
   "dependencies": {
@@ -98,6 +100,7 @@
     "@angular-eslint/template-parser": "15.2.0",
     "@angular/cli": "~15.1.2",
     "@angular/compiler-cli": "~15.1.1",
+    "@compodoc/compodoc": "^1.1.19",
     "@ngrx/schematics": "^15.1.0",
     "@schuchard/prettier": "^5.1.0",
     "@types/faker": "^6.6.8",
@@ -106,6 +109,7 @@
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "concurrently": "^7.6.0",
+    "cpx": "^1.5.0",
     "eslint": "^8.32.0",
     "faker": "^6.6.6",
     "firebase-tools": "^11.21.0",
