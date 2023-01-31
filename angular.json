@@ -2,7 +2,6 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
     "analytics": "69553b96-faaf-44a2-b009-f05173eb964d",
-    "defaultCollection": "@ngrx/schematics",
     "cache": {
       "enabled": true,
       "path": ".cache",

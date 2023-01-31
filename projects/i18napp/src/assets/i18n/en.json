@@ -1,5 +1,6 @@
 {
   "BUY": "Buy",
   "CONGRATULATIONS": "Congratulations on your order",
-  "TITLE": "{{ value1 }} Title"
+  "TITLE": "{{ value1 }} Title",
+  "NAME": "PAA"
 }

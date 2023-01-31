@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { I18nhomeRoutingModule } from './i18nhome-routing.module';
-import { I18nhomeComponent } from './i18nhome.component';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { Lazyi18nRoutingModule } from './lazyi18n-routing.module';
+import { Lazyi18nComponent } from './lazyi18n.component';
 import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { createTranslateLoader } from '../../utils/i18nutils';
 
 @NgModule({
-  declarations: [I18nhomeComponent],
+  declarations: [Lazyi18nComponent],
   imports: [
     CommonModule,
-    I18nhomeRoutingModule,
+    Lazyi18nRoutingModule,
     TranslateModule.forChild({
       defaultLanguage: 'en',
       loader: {
@@ -24,4 +24,4 @@ import { createTranslateLoader } from '../../utils/i18nutils';
     }),
   ],
 })
-export class I18nhomeModule {}
+export class Lazyi18nModule {}
