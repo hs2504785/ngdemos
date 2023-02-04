@@ -1,0 +1,14 @@
+<div class="dashboard">
+  <div class="box" [ngClass]="{'bggreen': env === 'Local'}">
+    <h2>Local</h2>
+  </div>
+  <div class="box" [ngClass]="{'bggreen': env === 'Development'}">
+    <h2>Development</h2>
+  </div>
+  <div class="box" [ngClass]="{'bggreen': env === 'Test'}">
+    <h2>Test</h2>
+  </div>
+  <div class="box" [ngClass]="{'bggreen': env === 'Production'}">
+    <h2>Production</h2>
+  </div>
+</div>

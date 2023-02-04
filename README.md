@@ -124,3 +124,6 @@ upgrade to v14 than v14
 
 https://medium.com/angular-in-depth/expecting-the-unexpected-best-practices-for-error-handling-in-angular-21c3662ef9e4
 
+## Env Configuration
+
+https://medium.com/bb-tutorials-and-thoughts/how-to-read-environment-specific-variables-in-angular-9f2cee0b2b4

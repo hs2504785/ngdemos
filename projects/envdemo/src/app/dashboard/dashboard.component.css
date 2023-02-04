@@ -1,0 +1,20 @@
+.box {
+    padding: 20px;
+    width: 100%;
+    border: grey 1px solid;
+    text-align: center;
+    background-color: gray;
+    color: white;
+}
+
+.dashboard {
+    margin: 20px 100px;
+}
+
+.dashboard .box {
+    margin-bottom: 10px;
+}
+
+.bggreen {
+    background-color: yellowgreen;
+}
