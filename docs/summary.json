@@ -60,5 +60,14 @@
         "file": "ngrx/modern-ngrx.md"
       }
     ]
+  },
+  {
+    "title": "Best Practices",
+    "children": [
+      {
+        "title": "RxJS Best Practices",
+        "file": "best-practices/rxjs-best-practices.md"
+      }
+    ]
   }
 ]
