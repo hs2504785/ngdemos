@@ -26,6 +26,12 @@ ng build --project=mailapp --base-href "https://hs2504785.github.io/ngdemos/mail
 ng build --project=movies-app --base-href "https://hs2504785.github.io/ngdemos/movies-app/"
 
 ngh --dir=dist --message="My First deploy"
+
+// zip content
+"ngappdeploy": "npm run build && npm run gzipmainapp",
+
+// uncss
+npm run postbuild
 ```
 
 All done!
@@ -85,8 +91,9 @@ than deploy
 - Performance Demo
 - RxDB Demo
 - On scroll load api on demand
-- Upgraded to Angular v12
+- Upgraded to Angular v15
 - Caching http calls
+- Uncss
 
 ## i18n Feature
 
