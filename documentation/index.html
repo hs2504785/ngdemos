@@ -51,7 +51,13 @@ ng build --project=mailapp --base-href &quot;https://hs2504785.github.io/ngdemos
 //  Movies app
 ng build --project=movies-app --base-href &quot;https://hs2504785.github.io/ngdemos/movies-app/&quot;
 
-ngh --dir=dist --message=&quot;My First deploy&quot;</code></pre></div><p>All done!
+ngh --dir=dist --message=&quot;My First deploy&quot;
+
+// zip content
+&quot;ngappdeploy&quot;: &quot;npm run build &amp;&amp; npm run gzipmainapp&quot;,
+
+// uncss
+npm run postbuild</code></pre></div><p>All done!
 <a href="https://hs2504785.github.io/ngdemos/ngapp">https://hs2504785.github.io/ngdemos/ngapp</a>
 <a href="https://hs2504785.github.io/ngdemos/demoapp">https://hs2504785.github.io/ngdemos/demoapp</a>
 <a href="https://hs2504785.github.io/ngdemos/fitness">https://hs2504785.github.io/ngdemos/fitness</a>
@@ -80,8 +86,9 @@ than deploy</code></pre></div><h2 id="feature">Feature</h2>
 <li>Performance Demo</li>
 <li>RxDB Demo</li>
 <li>On scroll load api on demand</li>
-<li>Upgraded to Angular v12</li>
+<li>Upgraded to Angular v15</li>
 <li>Caching http calls</li>
+<li>Uncss</li>
 </ul>
 <h2 id="i18n-feature">i18n Feature</h2>
 <ul>

@@ -56,6 +56,21 @@
 npm run purgecss</code></pre></div><h2 id="ebook-module-implementation-with-uncss">eBook module implementation with uncss</h2>
 <p><img src="images/before-uncss.png" alt="before" class="img-responsive"></p>
 <p><img src="images/after-uncss.png" alt="after" class="img-responsive"></p>
+<h1 id="app-uncss">App Uncss</h1>
+<div><pre class="line-numbers"><code class="language-none">npm run ngappdeploy
+npm run criticalCss</code></pre></div><ol>
+<li>Uncss - remove dead ( unused css ) from styles.326467264244324.css</li>
+<li>coveragecss - split #1 css into critical css + lazy css</li>
+</ol>
+<div><pre class="line-numbers"><code class="language-none">// run build, postbuild(uncss)
+npm run ngappdeploy
+
+// split styles.3247328473244.css into critical css ( used css ) and lazy (unused css)
+// and appends critical css into html
+// also update styles.3247328473244.css with unused css
+// as of now it use source prod url 
+npm run criticalCss</code></pre></div><p><img src="images/uncss.png" alt="before" class="img-responsive"></p>
+<p><img src="images/uncss-now.png" alt="Now" class="img-responsive"></p>
 
                    </div><div class="search-results">
     <div class="has-results">

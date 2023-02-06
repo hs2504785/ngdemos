@@ -66,6 +66,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         <a href="additional-documentation/material-module-import.html" data-type="entity-link" data-context-id="additional">Material Module Import</a>
                                     </li>
                                     <li class="link ">
+                                        <a href="additional-documentation/uncss.html" data-type="entity-link" data-context-id="additional">UNCSS</a>
+                                    </li>
+                                    <li class="link ">
                                         <a href="additional-documentation/scss.html" data-type="entity-link" data-context-id="additional">SCSS</a>
                                     </li>
                                     <li class="chapter inner">
@@ -429,6 +432,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             'id="xs-components-links-module-ContactsCsModule-2cda8b8ced5430bd4b018f0ffd0b2fdcbd791623facb3a8f4970e794a5742fdb467d17a2d178d289949d2c20401a157b840c08d90c9cc3c35a4647ec34a5fd8c"' }>
                                             <li class="link">
                                                 <a href="components/AddContactComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AddContactComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ContactsComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ContactsComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/ContactsCsComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ContactsCsComponent</a>
