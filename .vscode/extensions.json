@@ -4,6 +4,7 @@
     "angular.ng-template",
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
-    "pucelle.vscode-css-navigation"
+    "pucelle.vscode-css-navigation",
+    "kisstkondoros.vscode-codemetrics"
   ]
 }
