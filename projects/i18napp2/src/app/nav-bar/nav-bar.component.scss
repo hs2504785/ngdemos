@@ -1,6 +1,11 @@
 nav {
   background-color: #1565c0;
   color: #ffffff;
+
+  a {
+    margin-right: 20px;
+    text-decoration: none;
+  }
 }
 
 button:focus {

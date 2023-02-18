@@ -6,6 +6,10 @@ import { MiscellaneousExampleComponent } from './miscellaneous-example/miscellan
 const routes: Routes = [
   { path: '', component: FeedbackComponent, pathMatch: 'full' },
   { path: 'miscellaneous-example', component: MiscellaneousExampleComponent },
+  { path: 'lazy1', loadChildren: () => import('./lazy1/lazy1.module').then(m => m.Lazy1Module) },
+  { path: 'lazy2', loadChildren: () => import('./lazy2/lazy2.module').then(m => m.Lazy2Module) },
+  { path: 'eager1', loadChildren: () => import('./eager1/eager1.module').then(m => m.Eager1Module) },
+  { path: 'eager2', loadChildren: () => import('./eager2/eager2.module').then(m => m.Eager2Module) },
   { path: '**', component: FeedbackComponent },
 ];
 
