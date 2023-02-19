@@ -4,24 +4,16 @@ import { CommonModule } from '@angular/common';
 import { Lazyi18nRoutingModule } from './lazyi18n-routing.module';
 import { Lazyi18nComponent } from './lazyi18n.component';
 import { HttpClient } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { Router } from '@angular/router';
-import { createTranslateLoader } from '../../utils/i18nutils';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// AoT requires an exported function for factories
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, `./assets/i18n/lazyi18n/`, '.json');
+}
 
 @NgModule({
   declarations: [Lazyi18nComponent],
-  imports: [
-    CommonModule,
-    Lazyi18nRoutingModule,
-    TranslateModule.forChild({
-      defaultLanguage: 'en',
-      loader: {
-        provide: TranslateLoader,
-        useFactory: createTranslateLoader,
-        deps: [HttpClient, Router],
-      },
-      isolate: true,
-    }),
-  ],
+  imports: [CommonModule, Lazyi18nRoutingModule, TranslateModule.forChild()],
 })
 export class Lazyi18nModule {}

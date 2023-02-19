@@ -12,6 +12,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/lazyi18n/lazyi18n.module').then(m => m.Lazyi18nModule),
   },
+  {
+    path: 'lazyi18ndemo',
+    loadChildren: () =>
+      import('./modules/lazyi18ndemo/lazyi18ndemo.module').then(
+        m => m.Lazyi18ndemoModule,
+      ),
+  },
 ];
 
 @NgModule({

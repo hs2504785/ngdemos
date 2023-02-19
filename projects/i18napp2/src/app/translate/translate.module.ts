@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader, TranslateCompiler } from '@ngx-translate/core';
+import {
+  TranslateModule,
+  TranslateLoader,
+  TranslateCompiler,
+} from '@ngx-translate/core';
 import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+import { HttpLoaderFactory } from '../shared/utils/i18n-util';
 
 @NgModule({
   imports: [
@@ -22,10 +22,11 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
       compiler: {
         provide: TranslateCompiler,
-        useClass: TranslateMessageFormatCompiler
-      }
-    })
+        useClass: TranslateMessageFormatCompiler,
+      },
+      extend: true,
+    }),
   ],
   exports: [TranslateModule],
 })
-export class NgxTranslateModule { }
+export class NgxTranslateModule {}

@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'lazy2', loadChildren: () => import('./lazy2/lazy2.module').then(m => m.Lazy2Module) },
   { path: 'eager1', loadChildren: () => import('./eager1/eager1.module').then(m => m.Eager1Module) },
   { path: 'eager2', loadChildren: () => import('./eager2/eager2.module').then(m => m.Eager2Module) },
+  { path: 'lazy3', loadChildren: () => import('./lazy3/lazy3.module').then(m => m.Lazy3Module) },
   { path: '**', component: FeedbackComponent },
 ];
 

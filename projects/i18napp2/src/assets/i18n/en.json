@@ -1,4 +1,5 @@
 {
+  "parent": "From parent (root module)",
   "title": "Service feedback for {company}",
   "name": {
     "label": "Name",
