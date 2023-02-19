@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1675653299782,
+  "timestamp": 1676798919809,
   "index": "/ngdemos/ngapp/index.html",
   "assetGroups": [
     {
@@ -120,7 +120,7 @@
         "/ngdemos/ngapp/common.33543d915651396c.js",
         "/ngdemos/ngapp/favicon.ico",
         "/ngdemos/ngapp/index.html",
-        "/ngdemos/ngapp/main.15ab218e43a80659.js",
+        "/ngdemos/ngapp/main.61f7e08eb46d2fe1.js",
         "/ngdemos/ngapp/manifest.webmanifest",
         "/ngdemos/ngapp/polyfills.9590e000c21c418f.js",
         "/ngdemos/ngapp/runtime.946307297805a098.js",
@@ -367,8 +367,8 @@
     "/ngdemos/ngapp/assets/weather-icons/10n.png": "3a6d055460cc3c5591476ca769e165143042ce74",
     "/ngdemos/ngapp/common.33543d915651396c.js": "5ee00534692ba3e2ae8a8c267fb66ebd37af1fe4",
     "/ngdemos/ngapp/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ngdemos/ngapp/index.html": "aae44128e606b5c31130c379b7aefd085a380508",
-    "/ngdemos/ngapp/main.15ab218e43a80659.js": "63af26b4d9cb2fb974a0567d931764563f591ddf",
+    "/ngdemos/ngapp/index.html": "45316cf8f0d6f11b33d16c85c04e0555e002c206",
+    "/ngdemos/ngapp/main.61f7e08eb46d2fe1.js": "a05a702caa0c985dc8a65a9ff4ce6391a810f04d",
     "/ngdemos/ngapp/manifest.webmanifest": "133d5527e2c2a03de426ec08dcc5e9183b9e8f1d",
     "/ngdemos/ngapp/polyfills.9590e000c21c418f.js": "830a26d8f5bd842829929b565be98ba1d3c456c1",
     "/ngdemos/ngapp/runtime.946307297805a098.js": "cf18588fa9fbff3c6d78e720f22d4b8a9538a264",

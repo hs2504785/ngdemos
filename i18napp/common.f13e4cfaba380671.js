@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunki18napp=self.webpackChunki18napp||[]).push([[592],{5909:(p,n,e)=>{e.d(n,{p:()=>s});var a=e(9832);function s(t,_){return new a.w(t,`./assets/i18n${_.url}/`,".json")}}}]);
