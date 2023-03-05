@@ -1,0 +1,21 @@
+<header class="m-2 d-flex justify-content-center">
+  <a
+    routerLink="without-template-outlet"
+    routerLinkActive="active"
+    class="btn btn-outline-warning mr-2"
+    >Without Template Outlet</a
+  >
+  <a
+    routerLink="with-template-outlet"
+    routerLinkActive="active"
+    class="btn btn-outline-success mr-2"
+    >With Template Outlet</a
+  >
+</header>
+
+<div class="container">
+  <h1>Outlet Demo</h1>
+  <div class="card card-body">
+    <router-outlet></router-outlet>
+  </div>
+</div>
