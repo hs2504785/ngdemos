@@ -151,6 +151,12 @@ MIT
 @ngrx/store
 MIT
 
+@rx-angular/cdk
+MIT
+
+@rx-angular/template
+MIT
+
 ag-grid-angular
 MIT
 
