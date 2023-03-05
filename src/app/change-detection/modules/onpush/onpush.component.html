@@ -1,1 +1,10 @@
-<p>onpush works!</p>
+<ng-container *ngIf="logChangeDetection()"></ng-container>
+<button (click)="({})">AppComponent</button>
+<app-home></app-home>
+
+<div class="card m-3 p-2">
+  <p>Count: {{ count }}</p>
+  <button class="btn btn-primary" (click)="changeCount()">
+    Change Counter
+  </button>
+</div>
