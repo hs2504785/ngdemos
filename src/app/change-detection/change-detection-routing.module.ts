@@ -27,6 +27,33 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'default-onpush',
+        loadChildren: () =>
+          import('./modules/default-onpush/default-onpush.module').then(
+            m => m.DefaultOnpushModule,
+          ),
+      },
+      {
+        path: 'onpush',
+        loadChildren: () =>
+          import('./modules/onpush/onpush.module').then(m => m.OnpushModule),
+      },
+      {
+        path: 'onpush-async',
+        loadChildren: () =>
+          import('./modules/onpush-async/onpush-async.module').then(
+            m => m.OnpushAsyncModule,
+          ),
+      },
+      {
+        path: 'rx-angular-push',
+        loadChildren: () =>
+          import('./modules/rx-angular-push/rx-angular-push.module').then(
+            m => m.RxAngularPushModule,
+          ),
+      },
+
+      {
         path: '',
         redirectTo: 'timers',
         pathMatch: 'full',
