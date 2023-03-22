@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1679492002610,
+  "timestamp": 1679497678860,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -385,7 +385,7 @@
     "/assets/weather-icons/10n.png": "3a6d055460cc3c5591476ca769e165143042ce74",
     "/common.beca273e150abe0a.js": "1417a2149ba80ff51c31ac2a7a7eae0ab9fc2f44",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "90be7d9ef75c3dcaf96022faae973c9298f845c5",
+    "/index.html": "9313a045aa16432ec7599d8274c82b878ecd8d30",
     "/main.0a20b65f4fe6260c.js": "d34de9cc0c7f8a202f71ed4c91074f17d209cec5",
     "/manifest.webmanifest": "133d5527e2c2a03de426ec08dcc5e9183b9e8f1d",
     "/polyfills.ffa1453734dc0f2e.js": "fe6fb03baf5e021d7262d62f79242be02e289b16",
