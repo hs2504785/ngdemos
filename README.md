@@ -94,6 +94,17 @@ than deploy
 - Upgraded to Angular v15
 - Caching http calls
 - Uncss
+- SSR
+
+## SSR
+
+```
+// generate spa build , npm run ngappdeploy
+//   "outputPath": "dist/ngapp",
+
+// To generate SSR build ( default now )
+// "outputPath": "dist/ngssr",
+```
 
 ## i18n Feature
 
