@@ -48,7 +48,7 @@
     "dev:ssr": "ng run ngdemos:serve-ssr",
     "serve:ssr": "node dist/ngdemos/server/main.js",
     "build:ssr": "ng build && ng run ngdemos:server",
-    "prerender": "ng run ngdemos:prerender"
+    "prerender": "ng run ngdemos:prerender && node tools/scripts/html.js"
   },
   "private": true,
   "dependencies": {
