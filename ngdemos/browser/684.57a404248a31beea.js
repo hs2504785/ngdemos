@@ -1,0 +1,1 @@
+addEventListener("message",({data:a})=>{let e=0;const s=[];for(;e<a;e++)s.push(e);postMessage(s)});
