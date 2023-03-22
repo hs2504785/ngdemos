@@ -29,7 +29,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngapp",
+            "outputPath": "dist/ngdemos/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -59,16 +59,11 @@
               }
             ],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "scss/abstracts"
-              ]
+              "includePaths": ["scss/abstracts"]
             },
             "scripts": [],
             "webWorkerTsConfig": "tsconfig.worker.json",
-            "allowedCommonJsDependencies": [
-              "ng2-nvd3",
-              "nvd3"
-            ],
+            "allowedCommonJsDependencies": ["ng2-nvd3", "nvd3"],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },
@@ -141,9 +136,7 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [
-              "scss/main.scss"
-            ],
+            "styles": ["scss/main.scss"],
             "scripts": [],
             "webWorkerTsConfig": "tsconfig.worker.json"
           }
@@ -151,10 +144,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
         "e2e": {
@@ -172,6 +162,72 @@
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {}
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/ngdemos/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": ["scss/abstracts"]
+            },
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/build-specifics/index.ts",
+                  "with": "src/build-specifics/index.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "ngdemos:build:development",
+              "serverTarget": "ngdemos:server:development"
+            },
+            "production": {
+              "browserTarget": "ngdemos:build:production",
+              "serverTarget": "ngdemos:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": ["/"],
+            "guessRoutes": false
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngdemos:build:production",
+              "serverTarget": "ngdemos:server:production"
+            },
+            "development": {
+              "browserTarget": "ngdemos:build:development",
+              "serverTarget": "ngdemos:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     },
@@ -458,9 +514,7 @@
               "projects/fitness/src/favicon.ico",
               "projects/fitness/src/assets"
             ],
-            "styles": [
-              "projects/fitness/src/styles.scss"
-            ],
+            "styles": ["projects/fitness/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -526,9 +580,7 @@
               "projects/fitness/src/favicon.ico",
               "projects/fitness/src/assets"
             ],
-            "styles": [
-              "projects/fitness/src/styles.scss"
-            ],
+            "styles": ["projects/fitness/src/styles.scss"],
             "scripts": []
           }
         }
@@ -561,9 +613,7 @@
               "projects/demoapp/src/favicon.ico",
               "projects/demoapp/src/assets"
             ],
-            "styles": [
-              "projects/demoapp/src/styles.scss"
-            ],
+            "styles": ["projects/demoapp/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -629,9 +679,7 @@
               "projects/demoapp/src/favicon.ico",
               "projects/demoapp/src/assets"
             ],
-            "styles": [
-              "projects/demoapp/src/styles.scss"
-            ],
+            "styles": ["projects/demoapp/src/styles.scss"],
             "scripts": []
           }
         }
@@ -695,9 +743,7 @@
               "projects/mailapp/src/favicon.ico",
               "projects/mailapp/src/assets"
             ],
-            "styles": [
-              "projects/mailapp/src/styles.scss"
-            ],
+            "styles": ["projects/mailapp/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -763,9 +809,7 @@
               "projects/mailapp/src/favicon.ico",
               "projects/mailapp/src/assets"
             ],
-            "styles": [
-              "projects/mailapp/src/styles.scss"
-            ],
+            "styles": ["projects/mailapp/src/styles.scss"],
             "scripts": []
           }
         }
@@ -798,9 +842,7 @@
               "projects/i18napp/src/favicon.ico",
               "projects/i18napp/src/assets"
             ],
-            "styles": [
-              "projects/i18napp/src/styles.scss"
-            ],
+            "styles": ["projects/i18napp/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -866,9 +908,7 @@
               "projects/i18napp/src/favicon.ico",
               "projects/i18napp/src/assets"
             ],
-            "styles": [
-              "projects/i18napp/src/styles.scss"
-            ],
+            "styles": ["projects/i18napp/src/styles.scss"],
             "scripts": []
           }
         }
@@ -977,9 +1017,7 @@
               "projects/primedemos/src/favicon.ico",
               "projects/primedemos/src/assets"
             ],
-            "styles": [
-              "projects/primedemos/src/styles.scss"
-            ],
+            "styles": ["projects/primedemos/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -1045,9 +1083,7 @@
               "projects/primedemos/src/favicon.ico",
               "projects/primedemos/src/assets"
             ],
-            "styles": [
-              "projects/primedemos/src/styles.scss"
-            ],
+            "styles": ["projects/primedemos/src/styles.scss"],
             "scripts": []
           }
         }
@@ -1080,9 +1116,7 @@
               "projects/movies-app/src/favicon.ico",
               "projects/movies-app/src/assets"
             ],
-            "styles": [
-              "projects/movies-app/src/styles.scss"
-            ],
+            "styles": ["projects/movies-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -1148,9 +1182,7 @@
               "projects/movies-app/src/favicon.ico",
               "projects/movies-app/src/assets"
             ],
-            "styles": [
-              "projects/movies-app/src/styles.scss"
-            ],
+            "styles": ["projects/movies-app/src/styles.scss"],
             "scripts": []
           }
         }
@@ -1173,18 +1205,14 @@
             "outputPath": "dist/envdemo",
             "index": "projects/envdemo/src/index.html",
             "main": "projects/envdemo/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/envdemo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/envdemo/src/favicon.ico",
               "projects/envdemo/src/assets"
             ],
-            "styles": [
-              "projects/envdemo/src/styles.scss"
-            ],
+            "styles": ["projects/envdemo/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -1270,19 +1298,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/envdemo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/envdemo/src/favicon.ico",
               "projects/envdemo/src/assets"
             ],
-            "styles": [
-              "projects/envdemo/src/styles.scss"
-            ],
+            "styles": ["projects/envdemo/src/styles.scss"],
             "scripts": []
           }
         }
@@ -1305,18 +1328,14 @@
             "outputPath": "dist/i18napp2",
             "index": "projects/i18napp2/src/index.html",
             "main": "projects/i18napp2/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/i18napp2/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/i18napp2/src/favicon.ico",
               "projects/i18napp2/src/assets"
             ],
-            "styles": [
-              "projects/i18napp2/src/styles.scss"
-            ],
+            "styles": ["projects/i18napp2/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -1367,19 +1386,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/i18napp2/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/i18napp2/src/favicon.ico",
               "projects/i18napp2/src/assets"
             ],
-            "styles": [
-              "projects/i18napp2/src/styles.scss"
-            ],
+            "styles": ["projects/i18napp2/src/styles.scss"],
             "scripts": []
           }
         }

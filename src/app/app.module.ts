@@ -25,7 +25,7 @@ import { ProductData } from './modules/apmdemo/products/product-data';
 @NgModule({
   declarations: [AppComponent, LoaderComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HomeModule,
     AppRoutingModule,
     BrowserAnimationsModule,
