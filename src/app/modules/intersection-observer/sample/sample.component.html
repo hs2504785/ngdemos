@@ -7,19 +7,13 @@
       (visibilityChange)="onVisibilityChanged(item, $event)"
       class="max-w-sm rounded overflow-hidden shadow-lg px-5 py-5 m-2"
     >
-      <div class="px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+      <div class="px-3 py-1 text-sm font-semibold text-gray-700 me-2">
         <div class="flex">
           <div class="flex-grow content-center text-6xl font-sans">
             {{ item }}
           </div>
           <div
-            class="
-              flex-grow flex-end
-              content-center
-              self-center
-              text-6xl
-              font-sans
-            "
+            class="flex-grow flex-end content-center self-center text-6xl font-sans"
             [ngSwitch]="visibilityStatus[item]"
           >
             <ng-container *ngSwitchCase="intersectionStatus.Visible">

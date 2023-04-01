@@ -10,7 +10,7 @@
     </button>
   </header>
   <div class="d-flex mb-2" *ngFor="let user of users$ | async">
-    <div class="flex-shrink-0 mr-2">
+    <div class="flex-shrink-0 me-2">
       <img [src]="user.avatar" alt="..." />
     </div>
     <div class="flex-grow-1 ml-2">
@@ -20,10 +20,10 @@
         <small>{{ user.email }}</small>
       </div>
       <div>
-        <button class="btn btn-primary mr-2" (click)="editUser(user)">
+        <button class="btn btn-primary me-2" (click)="editUser(user)">
           <i class="ti-pencil"></i>
         </button>
-        <button class="btn btn-danger mr-2" (click)="removeUser(user)">
+        <button class="btn btn-danger me-2" (click)="removeUser(user)">
           <i class="ti-trash"></i>
         </button>
         <button class="btn btn-info" (click)="selectUser(user)">

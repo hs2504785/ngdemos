@@ -4,7 +4,7 @@
     *ngFor="let contact of data; let idx = index"
   >
     <div class="text-xl">
-      <a class="mr-2" [href]="'tel:' + contact.phone">
+      <a class="me-2" [href]="'tel:' + contact.phone">
         <i class="ti-microphone"> </i> </a
       >{{ contact.name }}
     </div>
