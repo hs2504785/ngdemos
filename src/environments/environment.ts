@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:3000',
+  apiKey: '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'
+
   // socketConfig: {
   //   url: 'http://localhost:3000',
   //   opts: {

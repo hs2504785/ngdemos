@@ -146,6 +146,10 @@ const routes: Routes = [
   { path: 'lazy-modals', loadChildren: () => import('./modules/lazy-modals/lazy-modals.module').then(m => m.LazyModalsModule) },
   { path: 'apmdemo', loadChildren: () => import('./modules/apmdemo/apmdemo.module').then(m => m.ApmdemoModule) },
   { path: 'outletdemo', loadChildren: () => import('./modules/outletdemo/outletdemo.module').then(m => m.OutletdemoModule) },
+  {
+    path: 'chat-bot',
+    loadComponent: () => import('./modules/chat-bot/chat-bot.component').then(m => m.ChatBotComponent)
+  },
   // Fallbak route
   {
     path: '**',
