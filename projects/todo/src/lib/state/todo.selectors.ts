@@ -1,4 +1,4 @@
-import { getSelectors, RouterReducerState } from '@ngrx/router-store';
+import {  RouterReducerState, getRouterSelectors } from '@ngrx/router-store';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { of } from 'rxjs';
 import { TodoStateInterface } from '../models/todo-state.interface';
@@ -29,7 +29,7 @@ export const selectTodos = createSelector(
 export const selectRouterState =
   createFeatureSelector<RouterReducerState>('router');
 
-export const { selectRouteParams } = getSelectors(selectRouterState);
+export const { selectRouteParams } = getRouterSelectors(selectRouterState);
 
 export const getTodoById = createSelector(
   selectTodos,

@@ -1,4 +1,4 @@
-import { getSelectors, RouterReducerState } from '@ngrx/router-store';
+import {  RouterReducerState, getRouterSelectors } from '@ngrx/router-store';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import {
   entityTodoesFeatureKey,
@@ -23,7 +23,7 @@ export const selectTodosEntities = createSelector(
 export const selectRouterState =
   createFeatureSelector<RouterReducerState>('router');
 
-export const { selectRouteParams } = getSelectors(selectRouterState);
+export const { selectRouteParams } = getRouterSelectors(selectRouterState);
 
 export const getEntityTodoById = createSelector(
   selectTodosEntities,

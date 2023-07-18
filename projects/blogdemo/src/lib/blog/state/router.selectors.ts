@@ -9,7 +9,7 @@ export const selectRouter =
   createFeatureSelector<State, fromRouter.RouterReducerState<any>>('router');
 
 export const { selectRouteParam, selectQueryParam } =
-  fromRouter.getSelectors(selectRouter);
+  fromRouter.getRouterSelectors(selectRouter);
 
 const selectCurrentUserIdParam = selectRouteParam('userId');
 

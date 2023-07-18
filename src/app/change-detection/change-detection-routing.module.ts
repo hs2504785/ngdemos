@@ -45,13 +45,13 @@ const routes: Routes = [
             m => m.OnpushAsyncModule,
           ),
       },
-      {
-        path: 'rx-angular-push',
-        loadChildren: () =>
-          import('./modules/rx-angular-push/rx-angular-push.module').then(
-            m => m.RxAngularPushModule,
-          ),
-      },
+      // {
+      //   path: 'rx-angular-push',
+      //   loadChildren: () =>
+      //     import('./modules/rx-angular-push/rx-angular-push.module').then(
+      //       m => m.RxAngularPushModule,
+      //     ),
+      // },
 
       {
         path: '',
