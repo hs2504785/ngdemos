@@ -10,14 +10,14 @@ export class RxjsCounterService {
 
   double$ = this.count$.pipe(
     map(count => {
-      console.log('Double: ', count);
+      console.log('Double: ', count * 2);
 
       return count * 2;
     }),
   );
   triple$ = this.count$.pipe(
     map(count => {
-      console.log('Triple: ', count);
+      console.log('Triple: ', count * 3);
 
       return count * 3;
     }),
