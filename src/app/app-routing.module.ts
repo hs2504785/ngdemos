@@ -140,15 +140,57 @@ const routes: Routes = [
         m => m.ReusableSearchModule,
       ),
   },
-  { path: 'http-caching', loadChildren: () => import('./modules/http-caching/http-caching.module').then(m => m.HttpCachingModule) },
-  { path: 'scam', loadChildren: () => import('./modules/scam/scam.module').then(m => m.ScamModule) },
-  { path: 'aggriddemo', loadChildren: () => import('./modules/aggriddemo/aggriddemo.module').then(m => m.AggriddemoModule) },
-  { path: 'lazy-modals', loadChildren: () => import('./modules/lazy-modals/lazy-modals.module').then(m => m.LazyModalsModule) },
-  { path: 'apmdemo', loadChildren: () => import('./modules/apmdemo/apmdemo.module').then(m => m.ApmdemoModule) },
-  { path: 'outletdemo', loadChildren: () => import('./modules/outletdemo/outletdemo.module').then(m => m.OutletdemoModule) },
+  {
+    path: 'http-caching',
+    loadChildren: () =>
+      import('./modules/http-caching/http-caching.module').then(
+        m => m.HttpCachingModule,
+      ),
+  },
+  {
+    path: 'scam',
+    loadChildren: () =>
+      import('./modules/scam/scam.module').then(m => m.ScamModule),
+  },
+  {
+    path: 'aggriddemo',
+    loadChildren: () =>
+      import('./modules/aggriddemo/aggriddemo.module').then(
+        m => m.AggriddemoModule,
+      ),
+  },
+  {
+    path: 'lazy-modals',
+    loadChildren: () =>
+      import('./modules/lazy-modals/lazy-modals.module').then(
+        m => m.LazyModalsModule,
+      ),
+  },
+  {
+    path: 'apmdemo',
+    loadChildren: () =>
+      import('./modules/apmdemo/apmdemo.module').then(m => m.ApmdemoModule),
+  },
+  {
+    path: 'outletdemo',
+    loadChildren: () =>
+      import('./modules/outletdemo/outletdemo.module').then(
+        m => m.OutletdemoModule,
+      ),
+  },
   {
     path: 'chat-bot',
-    loadComponent: () => import('./modules/chat-bot/chat-bot.component').then(m => m.ChatBotComponent)
+    loadComponent: () =>
+      import('./modules/chat-bot/chat-bot.component').then(
+        m => m.ChatBotComponent,
+      ),
+  },
+  {
+    path: 'rxjs-vs-signal',
+    loadComponent: () =>
+      import('./modules/rxjs-vs-signal/rxjs-vs-signal.component').then(
+        m => m.RxjsVsSignalComponent,
+      ),
   },
   // Fallbak route
   {
@@ -158,9 +200,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabledBlocking',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
