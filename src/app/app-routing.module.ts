@@ -187,9 +187,9 @@ const routes: Routes = [
   },
   {
     path: 'rxjs-vs-signal',
-    loadComponent: () =>
-      import('./modules/rxjs-vs-signal/rxjs-vs-signal.component').then(
-        m => m.RxjsVsSignalComponent,
+    loadChildren: () =>
+      import('./modules/rxjs-vs-signal/rxjs-vs-signal.routes').then(
+        m => m.RXJS_VS_SIGNAL_ROUTES,
       ),
   },
   // Fallbak route
