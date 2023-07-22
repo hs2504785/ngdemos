@@ -1,0 +1,1 @@
+(()=>{"use strict";addEventListener("message",({})=>{!function t(n,r=1e9){for(var e=1;e<=r;e++)e%2e7==0&&n(e)}(r=>{postMessage(r)},9e9)})})();
