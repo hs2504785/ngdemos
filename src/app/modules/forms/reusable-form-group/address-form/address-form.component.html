@@ -1,5 +1,5 @@
-<fieldset formGroupName="address">
-  <legend>Address</legend>
+<fieldset [formGroupName]="controlKey">
+  <legend>{{ label }}</legend>
   <div class="mb-3">
     <label for="state" class="form-label">State</label>
     <input class="form-control" id="state" formControlName="state" />
