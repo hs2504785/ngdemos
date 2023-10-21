@@ -192,6 +192,11 @@ const routes: Routes = [
         m => m.RXJS_VS_SIGNAL_ROUTES,
       ),
   },
+  {
+    path: 'forms',
+    loadChildren: () =>
+      import('./modules/forms/forms.routes').then(m => m.FORMS_ROUTES),
+  },
   // Fallbak route
   {
     path: '**',
